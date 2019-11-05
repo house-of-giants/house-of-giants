@@ -5,5 +5,15 @@
  */
 
 module.exports = {
-  plugins: [`gatsby-plugin-styled-components`],
+  siteMetadata: {
+    title: `House of Giants`,
+    organization: {
+      name: `House of Giants LLC`,
+      url: `https://houseofgiants.com`,
+    },
+  },
+  plugins: [
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-react-helmet'
+  ],
 }
