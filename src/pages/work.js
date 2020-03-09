@@ -6,9 +6,9 @@ import DisplayHeading from "../components/typography/DisplayHeading"
 
 export default () => (
   <Layout>
-    <Head title="House of Giants" titleTemplate="%s" />
+    <Head title="Work" />
     <DisplayHeading>
-      House of Giants
+      Work
     </DisplayHeading>
   </Layout>
 )
