@@ -3,35 +3,48 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
-const Head = ({ data }) => (
-  <Helmet>
-    {/* @TODO :: Figure out how to output current page title in <title> */}
-    <title>{data.site.siteMetadata.title} | </title>
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto&display=swap" rel="stylesheet"></link>
-  </Helmet>
-)
-
-export default props => (
+const Head = ({ title, titleTemplate }) => (
   <StaticQuery
-    query={graphql`
-      query SiteMetaQuery {
-        site {
-          siteMetadata {
-            title
-          }
+    query={query}
+    render={({
+      site: {
+        siteMetadata: {
+          defaultTitle,
+          defaultTitleTemplate
         }
       }
-    `}
-    render={ data => <Head data={data} {...props} /> }
+      }) => {
+        const meta = {
+          title: title || defaultTitle,
+          titleTemplate: titleTemplate || defaultTitleTemplate,
+        }
+        return (
+          <Helmet title={meta.title} titleTemplate={meta.titleTemplate}>
+            <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto&display=swap" rel="stylesheet"></link>
+          </Helmet>
+        )
+      }
+    }
   />
 )
 
-Head.propTypes = {
-  data: PropTypes.shape({
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
+const query = graphql`
+query SiteMetaQuery {
+  site {
+    siteMetadata {
+      defaultTitle
+      defaultTitleTemplate
+    }
+  }
 }
+`
+
+Head.propTypes = {
+  title: PropTypes.string,
+}
+
+Head.defaultProps = {
+  title: null,
+}
+
+export default Head
