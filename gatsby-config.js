@@ -25,6 +25,10 @@ module.exports = {
         name: 'Work',
         slug: '/work',
       },
+      {
+        name: 'Contact',
+        slug: '/contact',
+      },
     ],
   },
   plugins: [
