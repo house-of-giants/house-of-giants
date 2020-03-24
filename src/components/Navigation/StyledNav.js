@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { colors, headerFont } from '../../styles/base/variables'
+import { colors, headerFont, sp, fs, bp } from '../../styles/base/variables'
 
 export const StyledNav = styled.nav`
-  padding: 2rem;
+  padding: ${sp.base};
 
   & .activator {
     background-color: transparent;
@@ -32,24 +32,24 @@ export const StyledNav = styled.nav`
       outline: none;
 
       &::before {
-        transform: translateY(-.5rem);
+        transform: translateY(-.8rem);
       }
       &::after {
-        transform: translateY(.5rem);
+        transform: translateY(.8rem);
       }
     }
 
     &.-active {
       &::before {
-        transform: rotate(45deg) translateY(-0.6rem);
+        transform: rotate(45deg) translateY(-.7rem);
       }
 
       &::after {
-        transform: rotate(-45deg) translateY(0.55rem);
+        transform: rotate(-45deg) translateY(.7rem);
       }
 
       &:focus {
-        outline-offset: 0.5rem;
+        outline-offset: 0.8rem;
         outline-style: dotted;
         outline-width: thin;
       }
@@ -57,36 +57,74 @@ export const StyledNav = styled.nav`
   }
 
   & .site-nav {
+    align-items: flex-start;
     background-color: ${colors.gallery};
     bottom: 0;
     box-sizing: border-box;
-    list-style: none;
-    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
     overflow: hidden;
-    padding: 0;
+    padding: ${sp.xl};
     position: absolute;
     right: 0;
     top: 0;
-    white-space: nowrap;
+    width: 100vw;
 
-    & li {
-      padding-bottom: 3rem;
-      padding-left: 3rem;
+    @media(${bp.m}) {
+      width: 60vw;
     }
 
-    & a {
-      box-shadow: 0 0 0 inset ${colors.blueGreen};
-      color: ${colors.richBlack};
-      font-size: 4rem;
-      font-family: ${headerFont};
-      text-decoration: none;
-      transition: 300ms ease box-shadow;
+    & ul {
+      box-sizing: border-box;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-      &:hover,
-      &:focus {
-        box-shadow: 0 -2rem 0 inset ${colors.blueGreen};
-        outline: none;
+    & li {
+      padding-bottom: ${sp.xl};
+
+      & a {
+        box-shadow: 0 0 0 inset ${colors.yellow};
+        color: ${colors.richBlack};
+        font-family: ${headerFont};
+        font-size: ${fs.xxl};
+        text-decoration: none;
+        transition: 300ms ease box-shadow;
+
+        @media(${bp.l}) {
+          font-size: ${fs.xxxl};
+        }
+
+        &:hover,
+        &:focus {
+          box-shadow: 0 -4rem 0 inset ${colors.yellow};
+          outline: none;
+        }
       }
+    }
+
+  }
+
+  & .who {
+    border-top: 2px solid ${colors.mintCream};
+    display: grid;
+    align-self: end;
+    grid-gap: ${sp.xl};
+    padding-top: ${sp.base};
+
+    @media(${bp.l}) {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    & h3 {
+      box-shadow: 0 -1.3rem 0 inset ${colors.yellow};
+      display: inline;
+    }
+
+    & p {
+      font-size: ${fs.base};
+      line-height: 1.6;
     }
   }
 `
