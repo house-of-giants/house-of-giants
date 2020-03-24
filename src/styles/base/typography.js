@@ -22,6 +22,7 @@ export const Typography = css`
   h2,
   .h2 {
     font-size: 5.063rem;
+    box-shadow: 0 -2rem 0 inset ${colors.yellow};
   }
 
   h3,
@@ -52,5 +53,13 @@ export const Typography = css`
 
   a {
     color: ${colors.richBlack};
+    text-decoration-color: ${colors.blueGreen};
+    transition: 300ms ease box-shadow;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 -.5rem 0 inset ${colors.blueGreen};
+      outline: none;
+    }
   }
 `

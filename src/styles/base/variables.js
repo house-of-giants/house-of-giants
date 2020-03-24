@@ -29,15 +29,19 @@ export const sp = {
   lg: '2.25rem',
   xl: '3.375rem',
   xxl: '5.063rem',
-  xxxl: '7.594rem'
+  xxxl: '7.594rem',
 }
 
-export const fs = sp
+export const fs = {
+  ...sp,
+  fluid: `calc(${sp.xl} + 12vw)`,
+}
 
 export const bp = {
   xs: 'min-width: 25em' /* 400px */,
   s: 'min-width: 40.625em' /* 650px */,
   m: 'min-width: 53.125em' /* 850px */,
   l: 'min-width: 62.5em' /* 1000px */,
-  xl: 'min-width: 90em' /* 1440px */,
+  xl: 'min-width: 72.5em' /* 1160 */,
+  xxl: 'min-width: 90em' /* 1440px */,
 }
