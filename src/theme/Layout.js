@@ -1,7 +1,7 @@
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
-import Navigation from '../components/Navigation'
+import Nav from '../components/Navigation/Nav'
 
 import { PrefersReducedMotion, SiteResets, Typography } from '../styles/base'
 
@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
 const Layout = ( {children} ) => (
   <div className="layout">
     <GlobalStyles />
-    <Navigation />
+    <Nav />
     {children}
   </div>
 )
