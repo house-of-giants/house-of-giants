@@ -5,7 +5,13 @@ import { colors, bodyFont } from './variables'
 export const SiteResets = css`
   body{
     background-color: ${colors.mintCream};
+    color: ${colors.richBlack};
     margin: 0;
+    overflow-x: hidden;
     font-family: ${bodyFont};
+  }
+
+  html {
+    font-size: 87.5%;
   }
 `

@@ -22,8 +22,22 @@ export const typography = {
   bodyFont,
 }
 
-export const bpSmall = 'min-width: 480px'
+export const sp = {
+  xs: '0.667rem',
+  sm: '1rem',
+  base: '1.5rem',
+  lg: '2.25rem',
+  xl: '3.375rem',
+  xxl: '5.063rem',
+  xxxl: '7.594rem'
+}
 
-export const mq = {
-  bpSmall
+export const fs = sp
+
+export const bp = {
+  xs: 'min-width: 25em' /* 400px */,
+  s: 'min-width: 40.625em' /* 650px */,
+  m: 'min-width: 53.125em' /* 850px */,
+  l: 'min-width: 62.5em' /* 1000px */,
+  xl: 'min-width: 90em' /* 1440px */,
 }
