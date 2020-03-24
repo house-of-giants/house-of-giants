@@ -14,10 +14,6 @@ module.exports = {
     },
     nav: [
       {
-        name: 'Home',
-        slug: '/',
-      },
-      {
         name: 'About Us',
         slug: '/about-us',
       },
