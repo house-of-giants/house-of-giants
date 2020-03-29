@@ -20,7 +20,7 @@ const Head = ({ title, titleTemplate }) => (
         }
         return (
           <Helmet title={meta.title} titleTemplate={meta.titleTemplate}>
-            <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto&display=swap" rel="stylesheet"></link>
+            <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto:300,400,900&display=swap" rel="stylesheet"></link>
           </Helmet>
         )
       }
