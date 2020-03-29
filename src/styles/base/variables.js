@@ -4,12 +4,14 @@ export const mintCream = '#F7FFF7'
 export const tulip = '#FF8585'
 export const yellow = '#FFEA87'
 export const gallery = '#F0F0F0'
+export const alto = '#d7d7d7'
 
 export const colors = {
   richBlack,
   blueGreen,
   mintCream,
   gallery,
+  alto,
   tulip,
   yellow,
 }
