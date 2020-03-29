@@ -9,14 +9,16 @@ export const StyledNav = styled.nav`
     box-sizing: border-box;
     display: grid;
     grid-template-rows: 1fr 3fr;
+    left: 0;
     overflow: auto;
+    padding: ${sp.xxxl} ${sp.lg};
     position: fixed;
     right: 0;
     top: 0;
     width: 100vw;
 
-    @media(${bp.m}) {
-      width: 60vw;
+    @media(${bp.l}) {
+      padding: ${sp.xxxl};
     }
 
     & ul {
@@ -24,7 +26,7 @@ export const StyledNav = styled.nav`
       box-sizing: border-box;
       list-style: none;
       margin: 0;
-      padding: ${sp.xl};
+      padding-bottom: ${sp.lg};
     }
 
     & li:not(:last-child) {

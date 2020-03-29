@@ -1,15 +1,16 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { motion } from 'framer-motion'
 
-const NavItem = ( { navItem } ) => {
+const NavItem = ( { navItem, variants } ) => {
   const { name, slug } = navItem
 
   return (
-    <li>
+    <motion.li variants={variants}>
       <Link to={slug}>
         {name}
       </Link>
-    </li>
+    </motion.li>
   )
 }
 

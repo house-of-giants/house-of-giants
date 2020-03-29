@@ -9,6 +9,30 @@ import { StyledNav } from './StyledNav'
 import Spaceship from '../SVG/Spaceship'
 import { StyledNavHead } from './StyledNavHead'
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    }
+  }
+}
+
+const item = {
+  hidden: {
+    opacity: 0,
+    x: 50
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      x: { stiffness: 0, velocity: 100 }
+    }
+  }
+}
+
 const Nav = ( { navItems } ) => {
   const [isOpen, setOpen] = useState(false)
 
@@ -23,9 +47,9 @@ const Nav = ( { navItems } ) => {
       <StyledNav>
         <AnimatePresence>
           { isOpen &&
-            <motion.div initial={{ x: '100%' }} animate={{ x: '0' }} exit={{ x: '100%' }} transition={{ ease: "easeInOut", stiffness: 100 }} className="site-nav">
+            <motion.div variants={container} initial="hidden" animate="show" exit={{ opacity: 0 }} className="site-nav">
               <ul>
-                {navItems.map( navItem => <NavItem key={navItem.name} navItem={navItem} /> )}
+                {navItems.map( navItem => <NavItem variants={item} key={navItem.name} navItem={navItem} /> )}
               </ul>
               <div className="who">
                 <div className="how">
