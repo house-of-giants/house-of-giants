@@ -23,6 +23,10 @@ export const Typography = css`
   .h2 {
     font-size: 5.063rem;
     box-shadow: 0 -2rem 0 inset ${colors.yellow};
+
+    &.-noshadow {
+      box-shadow: none;
+    }
   }
 
   h3,
