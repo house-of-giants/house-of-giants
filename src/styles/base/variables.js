@@ -1,7 +1,7 @@
 export const richBlack = '#030809'
 export const blueGreen = '#7EDAD4'
 export const mintCream = '#F7FFF7'
-export const tulip = '#FF8585'
+export const tulip = '#FF1654'
 export const yellow = '#FFEA87'
 export const gallery = '#F0F0F0'
 export const alto = '#d7d7d7'
