@@ -39,6 +39,8 @@ export const fs = {
   fluid: `calc(${sp.xl} + 12vw)`,
 }
 
+export const container = '72.5em';
+
 export const bp = {
   xs: 'min-width: 25em' /* 400px */,
   s: 'min-width: 40.625em' /* 650px */,
