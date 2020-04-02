@@ -16,6 +16,7 @@ export const StyledNav = styled.nav`
     right: 0;
     top: 0;
     width: 100vw;
+    z-index: 10;
 
     @media(${bp.l}) {
       padding: ${sp.xxxl};
