@@ -7,7 +7,7 @@ export const StyledNavHead = styled.div`
   padding: ${sp.base};
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 15;
 
   & .logo {
     justify-self: center;
@@ -22,7 +22,7 @@ export const StyledNavHead = styled.div`
     background-color: transparent;
     border: 0;
     cursor: pointer;
-    z-index: 10;
+    z-index: 15;
 
     &::before,
     &::after {
