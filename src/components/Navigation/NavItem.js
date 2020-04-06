@@ -1,15 +1,14 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { motion } from 'framer-motion'
 
-const NavItem = ( { navItem, variants } ) => {
+const NavItem = ( { navItem, variants, setOpen, isOpen } ) => {
   const { name, slug } = navItem
 
   return (
     <motion.li variants={variants}>
-      <Link to={slug}>
+      <a href={`#${slug}`} onClick={() => setOpen( !isOpen )}>
         {name}
-      </Link>
+      </a>
     </motion.li>
   )
 }
