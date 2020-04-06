@@ -15,15 +15,15 @@ module.exports = {
     nav: [
       {
         name: 'About Us',
-        slug: '/about-us',
+        slug: 'about',
       },
       {
         name: 'Work',
-        slug: '/work',
+        slug: 'work',
       },
       {
         name: 'Contact',
-        slug: '/contact',
+        slug: 'contact',
       },
     ],
     work: [
