@@ -1,6 +1,5 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
 
 import Head from '../theme/Head'
 import Layout from '../theme/Layout'
@@ -8,16 +7,10 @@ import DisplayHeading from '../components/Typography/DisplayHeading'
 import StyledHero from '../components/Hero/StyledHero'
 import ListItem from '../components/List/ListItem'
 
-import { colors } from '../styles/base/variables'
+import StyledBox from '../components/Content/StyledBox'
 
-const StyledBox = styled.section`
-  align-items: center;
-  background-color: ${props => props.bg ? props.bg : 'transparent'};
-  color: ${props => props.color ? props.color : 'inherit'};
-  display: flex;
-  flex-direction: column;
-  position: relative;
-`
+import { colors } from '../styles/base/variables'
+import Heading from '../components/Typography/Heading'
 
 const WorkQuery = graphql`
   query WorkItemsQuery {
@@ -26,6 +19,7 @@ const WorkQuery = graphql`
         work {
           name
           img
+          url
           services
         }
       }
@@ -42,8 +36,11 @@ const Home = ({ work }) => (
         <p>Dreaming of <span>innovation</span>, experimenting with <span>dedication</span>, creating web applications with <span>purpose</span>. Living in the pursuit of <span>prosperity</span>, our greatest accomplishments are ahead of us.</p>
       </div>
     </StyledHero>
-    <StyledBox bg={colors.richBlack} color={colors.mintCream}>
-        {work.map( (workItem, i) => <ListItem key={workItem.name} name={workItem.name} img={workItem.img} count={`${i + 1 <= 9 ? '0' : ''}${i + 1}.`} services={workItem.services} /> )}
+    <StyledBox bg={colors.richBlack} color={colors.mintCream} fullH>
+        {work.map( (workItem, i) => <ListItem key={workItem.name} name={workItem.name} img={workItem.img} url={workItem.url} count={`${i + 1 <= 9 ? '0' : ''}${i + 1}.`} services={workItem.services} /> )}
+    </StyledBox>
+    <StyledBox fullH>
+      <Heading>Who</Heading>
     </StyledBox>
   </Layout>
 )
