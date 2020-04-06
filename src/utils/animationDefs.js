@@ -26,3 +26,14 @@ export const shadowU = {
     }
   },
 }
+
+export const fade = {
+  hidden: { opacity: 0 },
+  shown: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      delay: 1.3
+    }
+  },
+}

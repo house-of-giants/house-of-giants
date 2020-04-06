@@ -64,8 +64,15 @@ const StyledListItem = styled.div`
   }
 
   & .details {
+    color: ${colors.gallery};
     display: inline-block;
     overflow: hidden;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
   }
 
   & .services {

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { sp, bp, fs } from '../../styles/base/variables'
+import { sp, bp, fs, colors } from '../../styles/base/variables'
 
 const StyledHero = styled.div`
   align-items: center;
@@ -31,6 +31,7 @@ const StyledHero = styled.div`
     }
 
     & span {
+      box-shadow: 0 -1rem 0 inset ${colors.alto};
       font-weight: 900;
     }
   }

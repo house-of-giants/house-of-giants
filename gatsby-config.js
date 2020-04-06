@@ -15,26 +15,28 @@ module.exports = {
     nav: [
       {
         name: 'About Us',
-        slug: '/about-us',
+        slug: 'about',
       },
       {
         name: 'Work',
-        slug: '/work',
+        slug: 'work',
       },
       {
         name: 'Contact',
-        slug: '/contact',
+        slug: 'contact',
       },
     ],
     work: [
       {
         name: 'Sheryl Glubok',
         img: 'https://compassionate-lamarr-33dd20.netlify.com/sheryl-stretch.jpg',
+        url: 'https://sherylglubok.com',
         services: ['Experemental Design', 'Development', 'Gatsby', 'React', 'Strategy']
       },
       {
         name: 'The Spoon',
         img: 'https://images.unsplash.com/photo-1548103898-96322e3154b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
+        url: 'https://thespoon.tech',
         services: ['WordPress', 'Development', 'Strategy', 'Consulting']
       }
     ]
