@@ -4,11 +4,9 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 import { shadowU, slideL } from '../../utils/animationDefs'
-import { container, colors, sp } from '../../styles/base/variables'
+import { container, sp } from '../../styles/base/variables'
 
 const StyledHeading = styled.div`
-  border-bottom: 1px solid ${colors.alto};
-
   & .wrap {
     margin: 0 auto;
     max-width: ${container};
@@ -24,6 +22,7 @@ const StyledHeading = styled.div`
 
 const Heading = ({ children }) => {
   const [ref, inView] = useInView({
+    triggerOnce: true,
     threshold: [0.0, 1.0]
   })
 
