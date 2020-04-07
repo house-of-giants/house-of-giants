@@ -4,7 +4,7 @@ import { colors, bodyFont } from './variables'
 
 export const SiteResets = css`
   body{
-    background-color: ${colors.mintCream};
+    background-color: ${colors.richBlack};
     color: ${colors.richBlack};
     margin: 0;
     overflow-x: hidden;
