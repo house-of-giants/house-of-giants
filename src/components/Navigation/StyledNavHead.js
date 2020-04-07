@@ -5,7 +5,7 @@ export const StyledNavHead = styled.div`
   display: flex;
   justify-content: flex-end;
   padding: ${sp.base};
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 15;
 

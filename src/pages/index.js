@@ -51,9 +51,13 @@ const Home = ({ work }) => {
       <Head title="House of Giants" titleTemplate="%s" />
       <StyledHero>
         <DisplayHeading>House of Giants</DisplayHeading>
-        <div className="blurb">
-          <p>Dreaming of <span>innovation</span>, experimenting with <span>dedication</span>, creating web applications with <span>purpose</span>. Living in the pursuit of <span>prosperity</span>, our greatest accomplishments are ahead of us.</p>
-        </div>
+        <svg viewBox="0 0 600 520">
+          <filter id="blursed">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+          </filter>
+          <polygon points="300,50 550,500 50,500" fill="none" stroke="rgba(255, 61, 0, 0.7)" stroke-width="32" filter="url(#blursed)"/>
+          <polygon points="300,50 550,500 50,500" fill="none" stroke={colors.tulip} stroke-width="20" />
+        </svg>
       </StyledHero>
       <StyledBox id="work" bg={colors.richBlack} color={colors.mintCream} fullH>
           {work.map( (workItem, i) => <ListItem key={workItem.name} name={workItem.name} img={workItem.img} url={workItem.url} count={`${i + 1 <= 9 ? '0' : ''}${i + 1}.`} services={workItem.services} /> )}
