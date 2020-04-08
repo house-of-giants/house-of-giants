@@ -10,10 +10,11 @@ import DisplayHeading from '../components/Typography/DisplayHeading'
 import StyledHero from '../components/Hero/StyledHero'
 import ListItem from '../components/List/ListItem'
 import StyledBox from '../components/Content/StyledBox'
+import Heading from '../components/Typography/Heading'
+import HeroScene from '../components/SVG/HeroScene'
 
 import { colors, sp, fs } from '../styles/base/variables'
 import { fade } from '../utils/animationDefs'
-import Heading from '../components/Typography/Heading'
 
 const WorkQuery = graphql`
   query WorkItemsQuery {
@@ -51,13 +52,10 @@ const Home = ({ work }) => {
       <Head title="House of Giants" titleTemplate="%s" />
       <StyledHero>
         <DisplayHeading>House of Giants</DisplayHeading>
-        <svg viewBox="0 0 600 520">
-          <filter id="blursed">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
-          </filter>
-          <polygon points="300,50 550,500 50,500" fill="none" stroke="rgba(255, 61, 0, 0.7)" stroke-width="32" filter="url(#blursed)"/>
-          <polygon points="300,50 550,500 50,500" fill="none" stroke={colors.tulip} stroke-width="20" />
-        </svg>
+        <motion.div className="blurb" initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 50, opacity: 0 }} transition={{ duration: 2.0, ease: "easeInOut", delay: 10 }}>
+          <p>Dreaming of <span>innovation</span>, experimenting with <span>dedication</span>, creating web applications with <span>purpose</span>. Living in the pursuit of <span>prosperity</span>, our greatest accomplishments are ahead of us.</p>
+        </motion.div>
+        <HeroScene />
       </StyledHero>
       <StyledBox id="work" bg={colors.richBlack} color={colors.mintCream} fullH>
           {work.map( (workItem, i) => <ListItem key={workItem.name} name={workItem.name} img={workItem.img} url={workItem.url} count={`${i + 1 <= 9 ? '0' : ''}${i + 1}.`} services={workItem.services} /> )}

@@ -1,36 +1,33 @@
 import styled from 'styled-components'
-import { sp, bp, fs, colors } from '../../styles/base/variables'
+import { sp, bp, fs, colors, headerFont } from '../../styles/base/variables'
 
-const { mintCream, tulip } = colors
+const { mintCream, tulip, richBlack } = colors
 
 const StyledHero = styled.div`
   align-items: center;
-  display: grid;
+  border-bottom: 1px solid ${tulip};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: ${sp.xxl};
   min-height: 100vh;
+  padding-bottom: ${sp.xxl};
   position: relative;
 
   & svg {
     position: absolute;
-    height: 100%;
+    height: 50%;
     left: 0;
-    top: 0;
-    transform-origin: 50%;
+    top: 25%;
     width: 100%;
     z-index: -1;
-
-    & polygon {
-      transform: scale(0.6) translate(40%, 25%);
-
-      &:first-child {
-        opacity: 0.7;
-      }
-    }
-
   }
 
   & .blurb {
-    align-self: end;
+    box-sizing: border-box;
     font-size: ${fs.base};
+    padding: ${sp.base};
+    text-align: center;
 
     @media(${bp.xxl}) {
       max-width: 80%;
@@ -50,16 +47,12 @@ const StyledHero = styled.div`
 
     & span {
       box-shadow: 0 -1rem 0 inset ${tulip};
-      font-weight: 900;
-    }
-  }
+      font-weight: 300;
+      line-height: 0;
 
-  @keyframes slowtate {
-    from {
-      transform: rotate(0);
-    }
-    to {
-      transform: rotate(1turn);
+      @media(${bp.xl}) {
+        box-shadow: 0 -1.5rem 0 inset ${tulip};
+      }
     }
   }
 `
