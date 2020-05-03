@@ -3,6 +3,7 @@ import { headerFont, colors } from './variables'
 
 export const Typography = css`
   p {
+    font-size: 2.25rem;
     margin-bottom: 1.15rem;
   }
 
@@ -22,11 +23,6 @@ export const Typography = css`
   h2,
   .h2 {
     font-size: 5.063rem;
-    box-shadow: 0 -2rem 0 inset ${colors.yellow};
-
-    &.-noshadow {
-      box-shadow: none;
-    }
   }
 
   h3,
@@ -41,7 +37,16 @@ export const Typography = css`
 
   h5,
   .h5 {
+    color: ${colors.tulip};
     font-size: 1.5rem;
+    letter-spacing: 6px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  small {
+    font-size: 1.25rem;
+    letter-spacing: 0;
   }
 
   .screen-reader-text {
@@ -56,7 +61,7 @@ export const Typography = css`
   }
 
   a {
-    color: ${colors.richBlack};
+    color: ${colors.gallery};
     text-decoration-color: ${colors.blueGreen};
     transition: 300ms ease box-shadow;
 

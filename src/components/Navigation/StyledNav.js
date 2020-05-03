@@ -4,7 +4,7 @@ import { colors, headerFont, sp, fs, bp } from '../../styles/base/variables'
 export const StyledNav = styled.nav`
   & .site-nav {
     align-items: flex-start;
-    background-color: ${colors.gallery};
+    background-color: ${colors.richBlack};
     bottom: 0;
     box-sizing: border-box;
     display: grid;
@@ -23,7 +23,7 @@ export const StyledNav = styled.nav`
     }
 
     & ul {
-      background-color: ${colors.gallery};
+      background-color: ${colors.richBlack};
       box-sizing: border-box;
       list-style: none;
       margin: 0;
@@ -36,8 +36,8 @@ export const StyledNav = styled.nav`
 
     & li {
       & a {
-        box-shadow: 0 0 0 inset ${colors.yellow};
-        color: ${colors.richBlack};
+        box-shadow: 0 0 0 inset ${colors.tulip};
+        color: ${colors.gallery};
         font-family: ${headerFont};
         font-size: ${fs.xxl};
         text-decoration: none;
@@ -50,7 +50,7 @@ export const StyledNav = styled.nav`
         &:hover,
         &:focus,
         &[aria-current] {
-          box-shadow: 0 -4rem 0 inset ${colors.yellow};
+          box-shadow: 0 -2rem 0 inset ${colors.tulip};
           outline: none;
         }
       }
@@ -59,7 +59,7 @@ export const StyledNav = styled.nav`
   }
 
   & .who {
-    background-color: ${colors.gallery};
+    background-color: ${colors.richBlack};
     border-top: 2px solid ${colors.mintCream};
     display: grid;
     align-self: end;
@@ -71,7 +71,7 @@ export const StyledNav = styled.nav`
     }
 
     & h3 {
-      box-shadow: 0 -1.3rem 0 inset ${colors.yellow};
+      box-shadow: 0 -1.3rem 0 inset ${colors.tulip};
       display: inline;
     }
 

@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
-import { shadowU, slideL } from '../../utils/animationDefs'
-import { container, sp } from '../../styles/base/variables'
+import { slideL } from '../../utils/animationDefs'
+import { container } from '../../styles/base/variables'
 
 const StyledHeading = styled.div`
   & .wrap {
@@ -16,7 +16,7 @@ const StyledHeading = styled.div`
     display: inline-block;
     line-height: 0.81;
     margin: 0;
-    padding: 0 ${sp.base};
+    padding: 0;
   }
 `
 
@@ -34,14 +34,9 @@ const Heading = ({ children }) => {
         animate={inView ? "shown" : "hidden"}
         className="wrap"
       >
-        <motion.h2
-          key="heading"
-          variants={shadowU}
-          animate={inView ? "shown" : "hidden"}
-          className="h1"
-        >
+        <h2 className="h1">
           {children}
-        </motion.h2>
+        </h2>
       </motion.div>
     </StyledHeading>
   )

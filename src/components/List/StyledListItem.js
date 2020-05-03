@@ -7,10 +7,6 @@ const StyledListItem = styled.div`
   padding: ${sp.xxl};
   width: 100%;
 
-  &:last-child {
-    padding-top: 0;
-  }
-
   &:hover {
     & img {
       opacity: 0.6;
@@ -52,8 +48,7 @@ const StyledListItem = styled.div`
     z-index: 1;
   }
 
-  & span {
-    color: ${colors.tulip};
+  & .figure {
     display: block;
     font-weight: 100;
     padding-bottom: 1rem;

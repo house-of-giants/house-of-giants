@@ -16,7 +16,7 @@ export const colors = {
   yellow,
 }
 
-export const headerFont = '"Abril Fatface", serif;'
+export const headerFont = '"Crimson Text", serif;'
 export const bodyFont = 'Roboto, sans-serif'
 
 export const typography = {

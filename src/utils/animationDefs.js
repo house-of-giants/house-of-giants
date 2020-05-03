@@ -17,9 +17,9 @@ export const slideL = {
 };
 
 export const shadowU = {
-  hidden: { boxShadow: `0 0 0 inset ${colors.yellow}` },
+  hidden: { boxShadow: `0 0 0 inset ${colors.tulip}` },
   shown: {
-    boxShadow: `0 -2rem 0 inset ${colors.yellow}`,
+    boxShadow: `0 -2rem 0 inset ${colors.tulip}`,
     transition: {
       duration: 0.3,
       delay: 1.3
@@ -34,6 +34,16 @@ export const fade = {
     transition: {
       duration: 0.3,
       delay: 1.3
+    }
+  },
+}
+
+export const fadeNoD = {
+  hidden: { opacity: 0 },
+  shown: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
     }
   },
 }
