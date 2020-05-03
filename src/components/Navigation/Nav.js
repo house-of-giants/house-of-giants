@@ -53,7 +53,7 @@ const Nav = ( { navItems } ) => {
               </ul>
               <div className="who">
                 <div className="how">
-                  <h3 id="contact">Get in Touch</h3>
+                  <h3 className="contact">Get in Touch</h3>
                   <p>We're always around to chat. Consulting, general questions, work from home tips, we've got it all. Get at us <a href="mailto:&#104;&#101;&#108;&#108;&#111;&#064;&#104;&#111;&#117;&#115;&#101;&#111;&#102;&#103;&#105;&#097;&#110;&#116;&#115;&#046;&#099;&#111;&#109;">&#104;&#101;&#108;&#108;&#111;&#064;&#104;&#111;&#117;&#115;&#101;&#111;&#102;&#103;&#105;&#097;&#110;&#116;&#115;&#046;&#099;&#111;&#109;</a></p>
                 </div>
                 <div className="what">

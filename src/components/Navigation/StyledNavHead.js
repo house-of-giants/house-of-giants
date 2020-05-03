@@ -2,11 +2,13 @@ import styled from 'styled-components'
 import { colors, sp } from '../../styles/base/variables'
 
 export const StyledNavHead = styled.div`
+  box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
   padding: ${sp.base};
   position: fixed;
   top: 0;
+  width: 100%;
   z-index: 15;
 
   & .logo {
@@ -15,6 +17,7 @@ export const StyledNavHead = styled.div`
   }
 
   & .spaceship {
+    fill: ${colors.gallery};
     height: 40px;
   }
 
@@ -22,11 +25,12 @@ export const StyledNavHead = styled.div`
     background-color: transparent;
     border: 0;
     cursor: pointer;
+    margin-left: auto;
     z-index: 15;
 
     &::before,
     &::after {
-      background-color: ${colors.richBlack};
+      background-color: ${colors.gallery};
       border-radius: 3px;
       content: "";
       display: block;

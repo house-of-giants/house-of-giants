@@ -35,8 +35,14 @@ module.exports = {
       },
       {
         name: 'The Spoon',
-        img: 'https://images.unsplash.com/photo-1548103898-96322e3154b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
+        img: 'https://images.unsplash.com/photo-1428515613728-6b4607e44363?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80',
         url: 'https://thespoon.tech',
+        services: ['WordPress', 'Development', 'Strategy', 'Consulting']
+      },
+      {
+        name: 'NHRA',
+        img: 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80',
+        url: 'https://humanresources.org',
         services: ['WordPress', 'Development', 'Strategy', 'Consulting']
       }
     ]

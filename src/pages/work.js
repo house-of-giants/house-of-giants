@@ -27,7 +27,7 @@ const Work = ({ work }) => (
   <Layout>
     <Head title="Work" />
     <StyledBox bg={colors.richBlack} color={colors.mintCream} fullH>
-        {work.map( (workItem, i) => <ListItem key={workItem.name} name={workItem.name} img={workItem.img} url={workItem.url} count={`${i + 1 <= 9 ? '0' : ''}${i + 1}.`} services={workItem.services} /> )}
+        {work.map( (workItem, i) => <ListItem key={workItem.name} name={workItem.name} img={workItem.img} url={workItem.url} count={`${i + 1 <= 9 ? '0' : ''}${i + 1}`} services={workItem.services} /> )}
     </StyledBox>
   </Layout>
 )
