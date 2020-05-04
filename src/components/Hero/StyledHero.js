@@ -5,7 +5,6 @@ const { mintCream, tulip } = colors
 
 const StyledHero = styled.div`
   align-items: center;
-  border-bottom: 1px solid ${tulip};
   display: flex;
   flex-direction: column;
   justify-content: center;

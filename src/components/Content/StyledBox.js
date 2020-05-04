@@ -21,22 +21,15 @@ const StyledBox = styled.section`
   }
 
   & .service {
+
+    &:not(:last-child) {
+      padding-bottom: ${sp.xxxl};
+    }
+
     & h2 {
       @media (${bp.l}) {
         display: inline-flex;
         align-items: center;
-      }
-    }
-
-    &:nth-child(2n) {
-      @media (${bp.l}) {
-        text-align: right;
-
-        & svg {
-          margin-right: 0;
-          margin-left: ${sp.lg};
-          order: 2;
-        }
       }
     }
 

@@ -12,10 +12,6 @@ import StyledBox from '../components/Content/StyledBox'
 import Heading from '../components/Typography/Heading'
 
 import HeroScene from '../components/SVG/HeroScene'
-import Saturn from '../components/SVG/Saturn'
-import Neptune from '../components/SVG/Neptune'
-import Uranus from '../components/SVG/Uranus'
-import Pluto from '../components/SVG/Pluto'
 
 import { colors } from '../styles/base/variables'
 import { fade, slideL } from '../utils/animationDefs'
@@ -56,10 +52,10 @@ const Home = ({ work }) => {
         <HeroScene />
         <HeroScene />
       </StyledHero>
-      <StyledBox id="work" bg={colors.richBlack} bb={`1px solid ${colors.tulip}`} color={colors.mintCream} fullH>
+      <StyledBox id="work" bg={colors.richBlack} color={colors.mintCream} fullH>
           {work.map( (workItem, i) => <ListItem key={workItem.name} name={workItem.name} img={workItem.img} url={workItem.url} count={`${i + 1 <= 9 ? '0' : ''}${i + 1}.`} services={workItem.services} /> )}
       </StyledBox>
-      <StyledBox id="about" fullH row bb={`1px solid ${colors.tulip}`} color={colors.gallery}>
+      <StyledBox id="about" fullH row color={colors.gallery}>
         <div className="wrapper">
           <Services />
         </div>
