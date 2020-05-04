@@ -21,7 +21,7 @@ const Services = () => {
           <h2><Saturn />Interactive Experiences</h2>
         </div>
         <div className="blurb">
-          <p>We forge our web applications and development projects to to ensure that you and your users are met with the most enjoyable experience possible.</p>
+          <p>We forge our web applications and development projects to ensure that you and your users are met with the most enjoyable experience possible.</p>
         </div>
       </div>
       <div className="service">

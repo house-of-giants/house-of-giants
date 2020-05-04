@@ -31,7 +31,7 @@ module.exports = {
         name: 'Sheryl Glubok',
         img: 'https://compassionate-lamarr-33dd20.netlify.com/sheryl-stretch.jpg',
         url: 'https://sherylglubok.com',
-        services: ['Experemental Design', 'Development', 'Gatsby', 'React', 'Strategy']
+        services: ['Experimental Design', 'Development', 'Gatsby', 'React', 'Strategy']
       },
       {
         name: 'The Spoon',
