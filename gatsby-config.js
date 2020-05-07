@@ -6,6 +6,7 @@
 
 module.exports = {
   siteMetadata: {
+    siteUrl: 'https://houseofgiants.com',
     defaultTitle: "House of Giants",
     defaultTitleTemplate: "%s | House of Giants",
     organization: {
