@@ -12,9 +12,8 @@ const StyledHero = styled.div`
   padding-bottom: ${sp.xxl};
   position: relative;
 
-  & svg {
+  & img {
     position: absolute;
-    fill: red;
     left: 0;
     mix-blend-mode: screen;
     opacity: 0.1;
