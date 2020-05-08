@@ -6,9 +6,12 @@
 
 module.exports = {
   siteMetadata: {
+    title: "House of Giants",
+    titleTemplate: "%s | House of Giants",
+    description: "Small web app development shop based out of Denver, CO.",
+    image: "/hog-social.jpg",
+    twitterUsername: "@magnificode",
     siteUrl: 'https://houseofgiants.com',
-    defaultTitle: "House of Giants",
-    defaultTitleTemplate: "%s | House of Giants",
     organization: {
       name: `House of Giants LLC`,
       url: `https://houseofgiants.com`,
