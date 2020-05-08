@@ -3,19 +3,19 @@ import { StaticQuery, graphql } from 'gatsby'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
-import Head from '../theme/Head'
 import Layout from '../theme/Layout'
+import SEO from '../components/SEO/SEO'
 import DisplayHeading from '../components/Typography/DisplayHeading'
 import StyledHero from '../components/Hero/StyledHero'
 import ListItem from '../components/List/ListItem'
 import StyledBox from '../components/Content/StyledBox'
 import Heading from '../components/Typography/Heading'
+import Services from '../components/Content/Services'
 
 import HeroScene from '../components/SVG/HeroScene'
 
 import { colors } from '../styles/base/variables'
 import { fade, slideL } from '../utils/animationDefs'
-import Services from '../components/Content/Services'
 
 const WorkQuery = graphql`
   query WorkItemsQuery {
@@ -40,7 +40,7 @@ const Home = ({ work }) => {
 
   return (
     <Layout>
-      <Head title="House of Giants" titleTemplate="%s" />
+      <SEO titleTemplate="%s" />
       <StyledHero>
         <div>
           <DisplayHeading>House of Giants</DisplayHeading>
