@@ -54,17 +54,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
-      {
-        resolve: 'gatsby-plugin-robots-txt',
-        options: {
-          host: 'https://houseofgiants.com',
-          sitemap: 'https://houseofgiants.com/sitemap.xml',
-          policy: [
-            { userAgent: 'Twitterbot', allow: '/'},
-            { userAgent: '*', allow: '/' }
-          ]
-        }
-      }
+    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-sitemap'
   ],
 }
