@@ -7,12 +7,12 @@ const StyledHero = styled.div`
 	flex-direction: column;
 	justify-content: flex-end;
 	min-height: 100vh;
-	overflow: hidden;
+	overflow: visible;
 	position: relative;
 
 	& img {
 		position: absolute;
-		left: 0;
+		currentcolor;
 		mix-blend-mode: screen;
 		opacity: 0.1;
 		width: 100%;
@@ -34,6 +34,7 @@ const StyledHero = styled.div`
 		background-size: contain;
 		opacity: 0.1;
 		position: absolute;
+		height: 50vh;
 		top: 0;
 		right: 0;
 		bottom: 0;
@@ -43,7 +44,7 @@ const StyledHero = styled.div`
 	}
 
 	& .blurbwrap {
-		background-color: var(--c-dark);
+		background-color: var(--c-light);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -76,7 +77,7 @@ const StyledHero = styled.div`
 
 	& p {
 		box-shadow: none;
-		color: var(--c-light);
+		color: var(--c-dark);
 		font-size: 1rem;
 		font-weight: 100;
 		margin-top: 0;
