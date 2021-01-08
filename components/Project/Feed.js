@@ -1,4 +1,5 @@
 import useSWR from 'swr'
+
 import ProjectCard from '@/components/Project/ProjectCard'
 
 const fetcher = url => fetch(url).then(r => r.json())
