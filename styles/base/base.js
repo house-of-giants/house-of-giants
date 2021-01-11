@@ -52,4 +52,20 @@ export const Base = css`
 	html {
 		font-size: 87.5%;
 	}
+
+	& .textured {
+		position: relative;
+
+		&::after {
+			background-image: url(/paper.png);
+			content: "";
+			height: 300%;
+			left: -50%;
+			opacity: 0.3;
+			position: absolute;
+			top: -100%;
+			width: 300%;
+			z-index: 0;
+		}
+	}
 `

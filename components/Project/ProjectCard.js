@@ -14,15 +14,22 @@ const StyledCard = styled.div`
 	align-items: center;
 	background-color: var(--c-light-h);
 	display: grid;
-	grid-template-columns: 3fr 2fr;
 	min-height: 100vh;
 	overflow: hidden;
 
+	@media (min-width: 768px) {
+		grid-template-columns: 3fr 2fr;
+	}
+
 	&:nth-child(2n) {
-		grid-template-columns: 2fr 3fr;
+		@media (min-width: 768px) {
+			grid-template-columns: 2fr 3fr;
+		}
 
 		& .image {
-			order: 2;
+			@media (min-width: 768px) {
+				order: 2;
+			}
 		}
 	}
 
@@ -41,17 +48,28 @@ const StyledCard = styled.div`
 		position: absolute;
 		top: 0;
 		width: 100%;
+		z-index: 1;
 	}
 
 	& .blurb {
 		opacity: 0;
-		padding: 4rem;
+		padding: 2rem;
+		z-index: 1;
+		
+		@media (min-width: 768px) {
+			padding: 4rem;
+		}
 
 		& h2 {
 			font-family: var(--f-heading);
+			font-size: 4rem;
 			font-weight: 900;
-			font-size: 8rem;
 			line-height: 1;
+			margin-top: 0;
+
+			@media (min-width: 768px) {
+				font-size: 8rem;
+			}
 		}
 
 		& p {
@@ -96,7 +114,7 @@ const ProjectCard = ({ image, name, excerpt }) => {
 		}, 0.3)
 
 		tl.to(img, {
-			y: -(img.offsetHeight / 5),
+			y: -(img.offsetHeight / 3),
 			ease: 'none'
 		}, 0)
 	}, [cardRef])
@@ -117,9 +135,13 @@ const ProjectCard = ({ image, name, excerpt }) => {
 
 	return (
 		<>
-			<StyledCard ref={cardRef}>
+			<StyledCard ref={cardRef} className="textured">
 				<div className="image">
-					<img src={image} />
+					<Link href="/">
+						<a>
+							<img src={image} />
+						</a>
+					</Link>
 				</div>
 				<div className="blurb" ref={blurbRef}>
 					<h2>{name}</h2>

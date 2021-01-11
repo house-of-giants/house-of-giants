@@ -71,5 +71,9 @@ export const Typography = css`
 			box-shadow: 0 -.5rem 0 inset var(--c-primary-h);
 			outline: none;
 		}
+
+		&.-nobox {
+			box-shadow: none;
+		}
 	}
 `

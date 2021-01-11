@@ -29,9 +29,8 @@ const StyledHero = styled.div`
 	}
 
 	& .hero-scene {
-		background-attachment: fixed;
 		background-repeat: repeat-x;
-		background-size: contain;
+		background-size: cover;
 		opacity: 0.1;
 		position: absolute;
 		height: 50vh;
@@ -44,7 +43,6 @@ const StyledHero = styled.div`
 	}
 
 	& .blurbwrap {
-		background-color: var(--c-light);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -65,7 +63,9 @@ const StyledHero = styled.div`
 		width: 100%;
 
 		& > * {
-			max-width: 60%;
+			@media (min-width: 768px) {
+				max-width: 60%;
+			}
 		}
 	}
 
@@ -78,7 +78,7 @@ const StyledHero = styled.div`
 	& p {
 		box-shadow: none;
 		color: var(--c-dark);
-		font-size: 1rem;
+		font-size: 1.5rem;
 		font-weight: 100;
 		margin-top: 0;
 

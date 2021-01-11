@@ -1,12 +1,9 @@
 import { useCallback, useEffect, useRef } from 'react'
 import styled from 'styled-components'
+import gsap, { TweenMax } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import StyledHero from '@/components/Hero/StyledHero'
 import HeroScene from '@/components/SVG/HeroScene'
-import DisplayHeading from '@/components/Typography/DisplayHeading'
-import ThreeEye from '@/components/SVG/ThreeEye'
-import gsap, { TweenMax, Linear } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import Spaceship from '@/components/SVG/Spaceship'
 import Feed from '@/components/Project/Feed'
 
 if (typeof window !== `undefined`) {
@@ -21,7 +18,7 @@ const TypeBG = styled.div.attrs({
 	display: flex;
 	flex-direction: column;
 	font-size: 4rem;
-	height: 100vh;
+	height: 90vh;
 	justify-content: center;
 	overflow: visible;
 	pointer-events: none;
@@ -46,6 +43,7 @@ const TypeBG = styled.div.attrs({
 		line-height: 0;
 		opacity: 0;
 		text-align: center;
+		z-index: 1;
 	}
 `
 
@@ -121,7 +119,7 @@ export default function Home() {
 	const [ref] = useHookWithRefCallback();
 	return (
 		<>
-			<StyledHero>
+			<StyledHero className="textured">
 				<div>
 					<TypeBG ref={ref}>
 						<div className="title">
@@ -130,7 +128,6 @@ export default function Home() {
 					</TypeBG>
 					<div className="blurbwrap">
 						<div className="blurb">
-							<h5><span className="y-up">Fig. <small>I</small></span></h5>
 							<p>
 								<span className="y-up">Dreaming of <span className="line">innovation</span>, experimenting with </span>
 								<span className="y-up"><span className="line">dedication</span>, creating web applications with <span className="line">purpose</span>. </span>
@@ -138,7 +135,6 @@ export default function Home() {
 								<span className="y-up">accomplishments are ahead of us.</span>
 							</p>
 						</div>
-						<HeroScene />
 					</div>
 				</div>
 			</StyledHero>
