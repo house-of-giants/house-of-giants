@@ -21,11 +21,11 @@ const StyledProjectHero = styled.div`
 	}
 `
 
-function Project({ project: { name, image, slug } }) {
+function Project({ project }) {
 	return (
 		<StyledProjectHero>
-			<h1 className="title">{name}</h1>
-			<img src={image} className="image"/>
+			<h1 className="title">{project.name}</h1>
+			<img src={project.image} className="image"/>
 		</StyledProjectHero>
 	)
 }
