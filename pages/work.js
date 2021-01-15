@@ -7,11 +7,22 @@ const Container = styled.div`
 	padding-top: 3rem;
 	counter-reset: menucounter;
 
+	& .wrap {
+		margin: 3rem auto;
+		max-width: 1280px;
+	}
+
 	& a {
 		box-shadow: none;
+		border-bottom: 1px solid var(--c-light-s);
 		display: block;
 		margin: 0 auto;
 		max-width: 1280px;
+		padding: 0 4rem;
+
+		@media (--min-width: 1220px) {
+			padding: 0;
+		}
 
 		&:hover,
 		&:focus {
@@ -47,7 +58,7 @@ const Container = styled.div`
 			font-weight: bold;
 			opacity: 0;
 			transform: translateX(-1rem);
-			transition: transform 0.3s, opacity 0.3s;
+			transition: transform 300ms, opacity 300ms;
 		}
 
 		&:hover {
@@ -88,8 +99,8 @@ const Container = styled.div`
 	}
 
 	& .project-image {
-		height: 530px;
-		width: 364px;
+		height: 320px;
+		width: 220px;
 		overflow: hidden;
 
 		& img {
@@ -113,6 +124,10 @@ export default function Work() {
 
 	return(
 		<Container>
+			<div className="wrap">
+				<h1>Portfolio</h1>
+				<p>House of Giants is proud to have partnered with these excellent folks</p>
+			</div>
 			{data.map(project => (
 				<ListItem project={project} animateable={animateable} key={project.slug} />
 			))}

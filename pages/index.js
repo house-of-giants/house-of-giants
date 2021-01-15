@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import gsap, { TweenMax } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import StyledHero from '@/components/Hero/StyledHero'
-import Feed from '@/components/Project/Feed'
+import FeaturedFeed from '@/components/Project/FeaturedFeed'
 
 if (typeof window !== `undefined`) {
 	gsap.registerPlugin(ScrollTrigger)
@@ -137,7 +137,7 @@ export default function Home() {
 						</div>
 					</div>
 			</StyledHero>
-			<Feed />
+			<FeaturedFeed />
 		</>
 	)
 }

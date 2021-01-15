@@ -4,19 +4,20 @@ import { useCallback, useRef } from 'react'
 import gsap from 'gsap'
 import { clamp, getMousePos, map, lerp } from '@/utils/animationHelpers'
 
+// track the mouse position
+let mousepos = {x: 0, y: 0};
+// cache the mouse position
+let mousePosCache = mousepos;
+let direction = {x: mousePosCache.x - mousepos.x, y: mousePosCache.y - mousepos.y};
+// update mouse position when moving the mouse
+if (typeof window !== 'undefined') {
+	window.addEventListener('mousemove', ev => mousepos = getMousePos(ev));
+}
+
 function useHookWithRefCallback(animateable) {
 	const ref = useRef(null);
 	const setRef = useCallback(node => {
 		if (node) {
-			// track the mouse position
-			let mousepos = {x: 0, y: 0};
-			// cache the mouse position
-			let mousePosCache = mousepos;
-			let direction = {x: mousePosCache.x - mousepos.x, y: mousePosCache.y - mousepos.y};
-			// update mouse position when moving the mouse
-			if (typeof window !== 'undefined') {
-				window.addEventListener('mousemove', ev => mousepos = getMousePos(ev));
-			}
 			let requestId;
 			let firstRAFCycle;
 			let bounds;
@@ -86,7 +87,7 @@ function useHookWithRefCallback(animateable) {
 				}, 0)
 			}
 
-			const mouseenterFn = ev => {
+			const mouseenterFn = () => {
 				showImage()
 				firstRAFCycle = true
 				loopRender()
@@ -125,8 +126,8 @@ function useHookWithRefCallback(animateable) {
 				// updated cache values
 				mousePosCache = {x: mousepos.x, y: mousepos.y};
 
-				animateable.tx.current = Math.abs(mousepos.x - bounds.el.left) - bounds.reveal.width / 2;
-				animateable.ty.current = Math.abs(mousepos.y - bounds.el.top) - bounds.reveal.height / 2;
+				animateable.tx.current = Math.abs(mousepos.x-bounds.el.left)-bounds.reveal.width/2;
+				animateable.ty.current = Math.abs(mousepos.y-bounds.el.top)-bounds.reveal.height/2;
 				// new rotation value
 				animateable.rotation.current = firstRAFCycle ? 0 : map(mouseDistanceX,0,100,0,direction.x < 0 ? 60 : -60);
 				// new filter value

@@ -3,18 +3,19 @@ import useSWR from 'swr'
 import ProjectCard from '@/components/Project/ProjectCard'
 import { fetcher } from '@/utils/fetcher'
 
-const Feed = () => {
+const FeaturedFeed = () => {
 	const { data } = useSWR('/api/projects', fetcher)
+	const featured = data.filter(project => project.featured === true)
 
 	if (!data) return 'loading...'
 
 	return (
 		<div>
-			{data.map(project => (
+			{featured.map(project => (
 				<ProjectCard name={project.name} excerpt={project.excerpt} image={project.image} slug={project.slug} tech={project.tech} key={project.slug} />
 			))}
 		</div>
 	)
 }
 
-export default Feed
+export default FeaturedFeed
