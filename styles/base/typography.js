@@ -7,7 +7,7 @@ export const Typography = css`
 		margin-bottom: 1.15rem;
 	}
 
-	h1, h2, h3, h4, h5 {
+	h1, .h1, h2, .h2, h3, h4, h5 {
 		font-family: var(--f-heading);
 		font-weight: 400;
 		line-height: 1.15;

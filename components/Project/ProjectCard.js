@@ -51,6 +51,15 @@ const StyledCard = styled.div`
 		z-index: 1;
 	}
 
+	& .tech {
+		margin: 0;
+		padding: 0;
+
+		& small {
+			font-size: 1rem;
+		}
+	}
+
 	& .blurb {
 		opacity: 0;
 		padding: 2rem;
@@ -85,7 +94,7 @@ const StyledCard = styled.div`
 	}
 `
 
-const ProjectCard = ({ image, name, excerpt }) => {
+const ProjectCard = ({ image, name, slug, excerpt, tech }) => {
 	const cardRef = useRef(null);
 	const blurbRef = useRef(null);
 
@@ -137,7 +146,7 @@ const ProjectCard = ({ image, name, excerpt }) => {
 		<>
 			<StyledCard ref={cardRef} className="textured">
 				<div className="image">
-					<Link href="/">
+					<Link href={`/project/${slug}`}>
 						<a>
 							<img src={image} />
 						</a>
@@ -145,8 +154,9 @@ const ProjectCard = ({ image, name, excerpt }) => {
 				</div>
 				<div className="blurb" ref={blurbRef}>
 					<h2>{name}</h2>
+					<p className="tech"><small>{tech}</small></p>
 					<p>{excerpt}</p>
-					<Link href="/">
+					<Link href={`/project/${slug}`}>
 						<a>more</a>
 					</Link>
 				</div>

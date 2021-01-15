@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import gsap, { TweenMax } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import StyledHero from '@/components/Hero/StyledHero'
-import HeroScene from '@/components/SVG/HeroScene'
 import Feed from '@/components/Project/Feed'
 
 if (typeof window !== `undefined`) {
@@ -121,22 +120,22 @@ export default function Home() {
 		<>
 			<StyledHero className="textured">
 				<div>
-					<TypeBG ref={ref}>
-						<div className="title">
-							<p>House of Giants</p>
-						</div>
-					</TypeBG>
-					<div className="blurbwrap">
-						<div className="blurb">
-							<p>
-								<span className="y-up">Dreaming of <span className="line">innovation</span>, experimenting with </span>
-								<span className="y-up"><span className="line">dedication</span>, creating web applications with <span className="line">purpose</span>. </span>
-								<span className="y-up">Living in the pursuit of <span className="line">prosperity</span>, our greatest </span>
-								<span className="y-up">accomplishments are ahead of us.</span>
-							</p>
+						<TypeBG ref={ref}>
+							<div className="title">
+								<p>House of Giants</p>
+							</div>
+						</TypeBG>
+						<div className="blurbwrap">
+							<div className="blurb">
+								<p>
+									<span className="y-up">Dreaming of <span className="line">innovation</span>, experimenting with </span>
+									<span className="y-up"><span className="line">dedication</span>, creating web applications with <span className="line">purpose</span>. </span>
+									<span className="y-up">Living in the pursuit of <span className="line">prosperity</span>, our greatest </span>
+									<span className="y-up">accomplishments are ahead of us.</span>
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
 			</StyledHero>
 			<Feed />
 		</>

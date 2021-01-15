@@ -1,7 +1,8 @@
-import PrimaryNav from '@/components/Nav/PrimaryNav'
-import { Base, Typography } from '@/styles/base'
+import { AnimateSharedLayout } from 'framer-motion'
 import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
+import PrimaryNav from '@/components/Nav/PrimaryNav'
+import { Base, Typography } from '@/styles/base'
 
 const GlobalStyle = createGlobalStyle`
 	${Base}
@@ -18,7 +19,9 @@ export default function App({ Component, pageProps }) {
 			</Head>
 			<GlobalStyle />
 			<PrimaryNav />
-			<Component {...pageProps} />
+			<AnimateSharedLayout>
+				<Component {...pageProps} />
+			</AnimateSharedLayout>
 		</>
 	)
 }

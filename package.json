@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "alea": "^1.0.0",
+    "framer-motion": "^3.2.1",
     "gsap": "./gsap-bonus.tgz",
     "next": "10.0.3",
     "paper": "^0.12.11",
