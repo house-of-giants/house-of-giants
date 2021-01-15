@@ -40,11 +40,11 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
 	const { slug } = context.params
 
-	const project = allProjects.filter( project => project.slug === slug )[0]
+	const project = allProjects.filter( project => project.slug === slug )
 
 	return {
 		props: {
-			project
+			project: project[0]
 		}
 	}
 }

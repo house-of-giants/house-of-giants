@@ -7,7 +7,7 @@ const FeaturedFeed = () => {
 	const { data } = useSWR('/api/projects', fetcher)
 	
 	if (!data) return 'loading...'
-	
+
 	const featured = data.filter(project => project.featured === true)
 
 	return (
