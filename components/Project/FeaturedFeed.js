@@ -5,9 +5,10 @@ import { fetcher } from '@/utils/fetcher'
 
 const FeaturedFeed = () => {
 	const { data } = useSWR('/api/projects', fetcher)
-	const featured = data.filter(project => project.featured === true)
-
+	
 	if (!data) return 'loading...'
+	
+	const featured = data.filter(project => project.featured === true)
 
 	return (
 		<div>
