@@ -2,15 +2,9 @@ import { css } from 'styled-components'
 
 export const Base = css`
 	:root {
-		--c-richBlack: #261626;
 		--c-gondola: #261626;
 		--c-ebony-clay: #262c36;
 		--c-salt-box: #735c75;
-		--c-blueGreen: #2B7691;
-		--c-mintCream: #262C36;
-		--c-tulip: #EF5350;
-		--c-yellow: #FFCD8F;
-		--c-wild-sand: #f5f5f5;
 		--c-alto: #e0e0e0;
 		--c-silver: #bdbdbd;
 		--c-silver-chalice: #9e9e9e;

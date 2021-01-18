@@ -10,6 +10,7 @@ const Container = styled.div`
 	& .wrap {
 		margin: 3rem auto;
 		max-width: 1280px;
+		padding: 0 4rem;
 	}
 
 	& a {
