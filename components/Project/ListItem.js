@@ -171,10 +171,10 @@ const ListItem = ({project, animateable}) => {
 					<span className="project-title h2">
 						{project.name}
 					</span>
-					<span className="project-meta">{project.tech}</span>
+					<span className="project-meta">{project.tech.map(tech => tech)}</span>
 					<div className="project-reveal">
 						<div className="project-image">
-							<img src={project.image} />
+							<img src={project.images[0]} />
 						</div>
 					</div>
 				</a>

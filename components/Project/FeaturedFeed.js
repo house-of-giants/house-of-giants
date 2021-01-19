@@ -13,7 +13,7 @@ const FeaturedFeed = () => {
 	return (
 		<div>
 			{featured.map(project => (
-				<ProjectCard name={project.name} excerpt={project.excerpt} image={project.image} slug={project.slug} tech={project.tech} key={project.slug} />
+				<ProjectCard name={project.name} excerpt={project.excerpt} images={project.images} slug={project.slug} tech={project.tech} key={project.slug} />
 			))}
 		</div>
 	)

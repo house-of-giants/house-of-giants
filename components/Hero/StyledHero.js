@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 const StyledHero = styled.div`
 	align-items: center;
-	background-color: var(--c-light);
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;

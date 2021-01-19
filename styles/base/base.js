@@ -47,7 +47,7 @@ export const Base = css`
 		font-size: 87.5%;
 	}
 
-	& .textured {
+	.textured {
 		position: relative;
 
 		&::after {
@@ -60,6 +60,11 @@ export const Base = css`
 			top: -100%;
 			width: 300%;
 			z-index: 0;
+		}
+
+		& > * {
+			position: relative;
+			z-index: 1;
 		}
 	}
 `
