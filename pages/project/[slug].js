@@ -40,7 +40,10 @@ const StyledProject = styled.div`
 
 		& h1 {
 			background-color: var(--c-secondary-h);
-			white-space: nowrap;
+
+			@media (min-width: 768px) {
+				white-space: nowrap;
+			}
 		}
 
 		& p {

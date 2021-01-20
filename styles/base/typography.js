@@ -16,29 +16,33 @@ export const Typography = css`
 
 	h1,
 	.h1 {
+		font-size: 4.236rem;
 		margin-top: 0;
-		font-size: 7.594rem;
+
+		@media (min-width: 768px) {
+			font-size: 6.854rem;
+		}
 	}
 
 	h2,
 	.h2 {
-		font-size: 5.063rem;
+		font-size: 4.236rem;
 	}
 
 	h3,
 	.h3 {
-		font-size: 3.375rem;
+		font-size: 2.618rem;
 	}
 
 	h4,
 	.h4 {
-		font-size: 2.25rem;
+		font-size: 1.618rem;
 	}
 
 	h5,
 	.h5 {
 		color: var(--c-primary-h);
-		font-size: 3rem;
+		font-size: 1em;
 		letter-spacing: 2px;
 		margin-bottom: 0;
 		

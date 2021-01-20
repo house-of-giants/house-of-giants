@@ -71,13 +71,12 @@ const StyledCard = styled.div`
 
 		& h2 {
 			font-family: var(--f-heading);
-			font-size: 4rem;
 			font-weight: 900;
 			line-height: 1;
 			margin-top: 0;
 
 			@media (min-width: 768px) {
-				font-size: 8rem;
+				font-size: 6.854rem;
 			}
 		}
 
