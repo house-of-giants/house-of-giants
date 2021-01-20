@@ -1,14 +1,14 @@
-<svg id="spaceship" className="spaceship" viewBox="0 0 48.6 73.6">
+<svg xmlns="http://www.w3.org/2000/svg"  id="spaceship" className="spaceship" viewBox="0 0 48.6 73.6">
 	<style>
 		circle,
 		path {
-			fill: #ffecb3;
+			fill: #261626;
 		}
 
 		@media (prefers-color-scheme: dark) {
 			circle,
 			path {
-				fill: #261626;
+				fill: #ffecb3;
 			}
 		}
 	</style>
