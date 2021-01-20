@@ -3,7 +3,7 @@ import { css } from 'styled-components'
 export const Typography = css`
 	p {
 		font-weight: 100;
-		font-size: 2.25rem;
+		font-size: 1.618rem;
 		margin-bottom: 1.15rem;
 	}
 
@@ -26,7 +26,11 @@ export const Typography = css`
 
 	h2,
 	.h2 {
-		font-size: 4.236rem;
+		font-size: 2.618rem;
+
+		@media (min-width: 768px) {
+			font-size: 4.236rem;
+		}
 	}
 
 	h3,
@@ -75,5 +79,10 @@ export const Typography = css`
 		&.-nobox {
 			box-shadow: none;
 		}
+	}
+
+	hr {
+		border-color: var(--c-light-h);
+		border-bottom: none;
 	}
 `
