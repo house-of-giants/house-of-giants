@@ -1,7 +1,9 @@
+import StyledWrap from "@/components/Global/StyledWrap";
+
 export default function About() {
  return(
-   <div>
-     <h1>About</h1>
-   </div>
+	 <StyledWrap>
+		 <h1>About</h1>
+	 </StyledWrap>
  )
 }

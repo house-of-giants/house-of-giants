@@ -2,16 +2,10 @@ import useSWR from 'swr'
 import styled from 'styled-components'
 import { fetcher } from '@/utils/fetcher'
 import ListItem from '@/components/Project/ListItem'
+import StyledWrap from '@/components/Global/StyledWrap'
 
-const Container = styled.div`
-	padding-top: 3rem;
+const WorkContainer = styled.div`
 	counter-reset: menucounter;
-
-	& .wrap {
-		margin: 3rem auto;
-		max-width: 1280px;
-		padding: 0 4rem;
-	}
 
 	& a {
 		box-shadow: none;
@@ -124,14 +118,14 @@ export default function Work() {
 	if(!data) return <div>Loading...</div>
 
 	return(
-		<Container>
-			<div className="wrap">
+		<WorkContainer>
+			<StyledWrap>
 				<h1>Portfolio</h1>
 				<p>House of Giants is proud to have partnered with these excellent folks</p>
-			</div>
+			</StyledWrap>
 			{data.map(project => (
 				<ListItem project={project} animateable={animateable} key={project.slug} />
 			))}
-		</Container>
+		</WorkContainer>
 	)
 }

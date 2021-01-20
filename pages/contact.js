@@ -1,7 +1,9 @@
+import StyledWrap from "@/components/Global/StyledWrap";
+
 export default function Contact() {
  return(
-   <div>
-     <h1>Contact</h1>
-   </div>
+	 <StyledWrap>
+		 <h1>Contact</h1>
+	 </StyledWrap>
  )
 }
