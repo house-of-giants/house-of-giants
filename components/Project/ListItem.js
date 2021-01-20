@@ -73,18 +73,11 @@ function useHookWithRefCallback(animateable) {
 					},
 					onComplete: () => {
 						gsap.set(reveal, {opacity: 0})
+						gsap.set(revealMeta, {opacity: 0})
+						gsap.set(revealTitle, {backgroundColor: 'transparent'})
+						gsap.set(revealMeta, {backgroundColor: 'transparent'})
 					}
 				})
-				.to(reveal, {
-					duration: 0.2,
-					ease: 'Sine.easeOut',
-					x: direction.x <= 0 ? '100%' : '-100%'
-				})
-				.to(revealImage, {
-					duration: 0.2,
-					ease: 'Sine.easeOUt',
-					x: direction.x <= 0 ? '-100%' : '100%'
-				}, 0)
 			}
 
 			const mouseenterFn = () => {
