@@ -79,7 +79,7 @@ function useHookWithRefCallback(animateable) {
 					}
 				})
 				.to(reveal, {
-					duration: 0.2,
+					duration: 0,
 					ease: 'Sine.easeOut'
 				})
 			}
