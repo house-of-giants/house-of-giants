@@ -54,7 +54,7 @@ function useHookWithRefCallback(animateable) {
 				})
 				.to(revealImage, {
 					duration: 0.2,
-					ease: 'Sine.easeOUt',
+					ease: 'Sine.easeOut',
 					startAt: {x: direction.x < 0 ? '100%' : '-100%'},
 					x: '0%'
 				}, 0)
@@ -77,6 +77,10 @@ function useHookWithRefCallback(animateable) {
 						gsap.set(revealTitle, {backgroundColor: 'transparent'})
 						gsap.set(revealMeta, {backgroundColor: 'transparent'})
 					}
+				})
+				.to(reveal, {
+					duration: 0.2,
+					ease: 'Sine.easeOut'
 				})
 			}
 
