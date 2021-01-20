@@ -41,11 +41,7 @@ export const Typography = css`
 
 	h5,
 	.h5 {
-		color: var(--c-primary-h);
 		font-size: 1em;
-		letter-spacing: 2px;
-		margin-bottom: 0;
-		
 	}
 
 	small {

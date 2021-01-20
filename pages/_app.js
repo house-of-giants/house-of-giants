@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 import PrimaryNav from '@/components/Nav/PrimaryNav'
 import { Base, Typography } from '@/styles/base'
+import Footer from '@/components/Global/Footer'
 
 const GlobalStyle = createGlobalStyle`
 	${Base}
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }) {
 			<AnimateSharedLayout>
 				<Component {...pageProps} />
 			</AnimateSharedLayout>
+			<Footer />
 		</>
 	)
 }
