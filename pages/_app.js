@@ -17,6 +17,7 @@ export default function App({ Component, pageProps }) {
 		<>
 			<Head>
 				<link rel="stylesheet" href="https://use.typekit.net/itw5okx.css"></link>
+				<link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"></link>
 			</Head>
 			<GlobalStyle />
 			<PrimaryNav />
