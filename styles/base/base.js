@@ -38,13 +38,25 @@ export const Base = css`
 	body{
 		background-color: var(--c-light);
 		color: var(--c-dark);
-		margin: 0;
-		overflow-x: hidden;
 		font-family: var(--f-body);
+		margin: 0;
+		min-height: 100%;
+		overflow-x: hidden;
+	}
+
+	div#__next {
+		min-height: 100vh;
 	}
 
 	html {
 		font-size: 87.5%;
+		height: 100%;
+	}
+
+	.global-wrap {
+		display: grid;
+		grid-template-rows: 1fr auto;
+		min-height: 100vh;
 	}
 
 	.textured {

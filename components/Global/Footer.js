@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const StyledFooter = styled.footer`
+const StyledFooter = styled.div`
 	background-color: var(--c-dark);
 	color: var(--c-light);
 	display: grid;

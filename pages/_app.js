@@ -20,11 +20,13 @@ export default function App({ Component, pageProps }) {
 				<link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"></link>
 			</Head>
 			<GlobalStyle />
-			<PrimaryNav />
-			<AnimateSharedLayout>
-				<Component {...pageProps} />
-			</AnimateSharedLayout>
-			<Footer />
+			<div className="global-wrap">
+				<PrimaryNav />
+				<AnimateSharedLayout>
+					<Component {...pageProps} />
+				</AnimateSharedLayout>
+				<Footer />
+			</div>
 		</>
 	)
 }
