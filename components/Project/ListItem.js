@@ -168,7 +168,7 @@ const ListItem = ({project, animateable}) => {
 					<span className="project-title h2">
 						{project.name}
 					</span>
-					<span className="project-meta">{project.tech.map((tech, i) => <>{tech}{i < project.tech.length - 1 ? ' / ' : ''}</>)}</span>
+					<span className="project-meta">{project.tech.map((tech, i) => <span key={i}>{tech}{i < project.tech.length - 1 ? ' / ' : ''}</span>)}</span>
 					<div className="project-reveal">
 						<div className="project-image">
 							<img src={project.images[0]} />
