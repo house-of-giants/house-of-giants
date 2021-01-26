@@ -154,7 +154,7 @@ const ProjectCard = ({ images, name, slug, excerpt, tech }) => {
 				<div className="blurb" ref={blurbRef}>
 					<h2>{name}</h2>
 					<p className="tech"><small>{tech.map((item, i) => <>{item}{i < tech.length - 1 ? ' / ' : ''}</>)}</small></p>
-					<p>{excerpt}</p>
+					<p dangerouslySetInnerHTML={{__html: excerpt}} />
 					<Link href={`/project/${slug}`}>
 						<a>more</a>
 					</Link>

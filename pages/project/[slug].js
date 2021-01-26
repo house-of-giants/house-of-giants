@@ -98,8 +98,8 @@ const StyledSection = styled.div`
 	}
 
 	& img {
-		max-width: 100%;
 		overflow: hidden;
+		width: 100%;
 	}
 
 	& .project-content {
@@ -314,7 +314,7 @@ function Project({ project, nextProject }) {
 				<img src={project.images[0]} className="image"/>
 			</div>
 			<StyledSection ref={detailsRef}>
-				<p>{project.excerpt}</p>
+				<p dangerouslySetInnerHTML={{__html: project.excerpt}} />
 				<ProjectInfo>
 					<div>
 						<h4 className="header">client</h4>
