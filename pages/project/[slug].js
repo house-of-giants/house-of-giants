@@ -5,12 +5,10 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Link from 'next/link';
 
-
 if (typeof window !== `undefined`) {
 	gsap.registerPlugin(ScrollTrigger)
 	gsap.core.globals('ScrollTrigger', ScrollTrigger)
 }
-
 
 const StyledProject = styled.div`
 	overflow: hidden;
@@ -28,6 +26,23 @@ const StyledProject = styled.div`
 		text-align: center;
 	}
 
+	& .credit {
+		background-color: #efefef;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		
+		& p {
+			font-size: 1rem;
+			margin: 0;
+			padding: 0.5rem 1rem;
+		}
+
+		& a {
+			font-weight: 700;
+		}
+	}
+
 	& .info {
 		display: flex;
 		flex-direction: column;
@@ -40,10 +55,7 @@ const StyledProject = styled.div`
 
 		& h1 {
 			background-color: var(--c-secondary-h);
-
-			@media (min-width: 768px) {
-				white-space: nowrap;
-			}
+			white-space: nowrap;
 		}
 
 		& p {
@@ -172,7 +184,7 @@ const ProjectImageGrid = styled.div`
 	& img {
 		height: 100%;
 		object-fit: cover;
-		object-position: center center;
+		object-position: top center;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -278,6 +290,9 @@ function Project({ project, nextProject }) {
 			width: 'auto',
 			ease: 'power3.inOut',
 		}, 0.7)
+		.to(title, {
+			whiteSpace: 'normal',
+		})
 
 		tlO.to(titleText, {
 			opacity: 1,
@@ -312,6 +327,11 @@ function Project({ project, nextProject }) {
 					<p>{project.tech.map((tech, i) => <span key={tech}>{tech}{i < project.tech.length - 1 ? ' / ' : ''}</span>)}</p>
 				</div>
 				<img src={project.images[0]} className="image"/>
+				{project.credits && (
+					<div className="credit">
+						<p>Photo by: <a href={project.credits[0].url} target="_blank" rel="noopener">{project.credits[0].name}</a></p>
+					</div>
+				)}
 			</div>
 			<StyledSection ref={detailsRef}>
 				<p dangerouslySetInnerHTML={{__html: project.excerpt}} />
