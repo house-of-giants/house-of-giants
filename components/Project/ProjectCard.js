@@ -98,6 +98,7 @@ const ProjectCard = ({ images, name, slug, excerpt, tech }) => {
 	const blurbRef = useRef(null);
 
 	useEffect(() => {
+		const mql = window.matchMedia('(min-width: 1024px)');
 		const img = cardRef.current.querySelector(`.image img`);
 
 		const tl = gsap.timeline({
@@ -112,7 +113,7 @@ const ProjectCard = ({ images, name, slug, excerpt, tech }) => {
 		const tlO = gsap.timeline({
 			scrollTrigger: {
 				trigger: cardRef.current,
-				start: 'top bottom',
+				start: mql.matches ? 'top bottom' : 'top bottom',
 			}
 		})
 
@@ -128,10 +129,11 @@ const ProjectCard = ({ images, name, slug, excerpt, tech }) => {
 	}, [cardRef])
 
 	useEffect(() => {
+		const mql = window.matchMedia('(min-width: 1024px)');
 		const tlBlurb = gsap.timeline({
 			scrollTrigger: {
 				trigger: blurbRef.current,
-				start: 'top center',
+				start: mql.matches ? 'top center' : 'top bottom',
 			}
 		})
 
