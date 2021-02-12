@@ -6,10 +6,10 @@ import StyledWrap from '@/components/Global/StyledWrap'
 
 const WorkContainer = styled.div`
 	counter-reset: menucounter;
+	padding-bottom: 8rem;
 
 	& a {
 		box-shadow: none;
-		border-bottom: 1px solid var(--c-light-s);
 		display: block;
 		margin: 0 auto;
 		max-width: 1280px;
@@ -37,6 +37,10 @@ const WorkContainer = styled.div`
 
 	& .project-item {
 		position: relative;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid var(--c-light-s);
+		}
 
 		&::before {
 			counter-increment: menucounter;
