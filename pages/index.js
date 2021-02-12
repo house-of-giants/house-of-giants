@@ -17,11 +17,17 @@ const TypeBG = styled.div.attrs({
 	display: flex;
 	flex-direction: column;
 	font-size: 4rem;
-	height: 90vh;
+	height: 40vh;
 	justify-content: center;
-	overflow: visible;
+	overflow: hidden;
 	pointer-events: none;
-	width: 100vw;
+	max-width: 100%;
+	
+	@media (min-width: 1024px) {
+		height: 90vh;
+		overflow: visible;
+		width: 100vw;
+	}
 
 	& svg {
 		fill: var(--c-prmary);
@@ -59,6 +65,7 @@ function useHookWithRefCallback() {
 		}
 		
 		if (node) {
+			const mql = window.matchMedia('(min-width: 1024px)');
 			const title = document.querySelector('.bgtext .title');
 			const blurbLines = document.querySelectorAll('.y-up');
 			TweenMax.to(
@@ -69,24 +76,27 @@ function useHookWithRefCallback() {
 				}
 			).delay(1);
 
-			const bigText = gsap.timeline({
-				paused: true,
-				fontSize: '9rem',
-				scrollTrigger: {
-					trigger: title,
-					scrub: 0.75,
-				}
-			});
-
-			bigText.from(title, {
-				fontSize: '9rem',
-			})
-
-			bigText.to(title, {
-				fontSize: '100vh',
-				x: '-25%',
-				ease: "power3.inOut"
-			});
+			if(mql.matches) {
+				const bigText = gsap.timeline({
+					paused: true,
+					fontSize: '9rem',
+					scrollTrigger: {
+						trigger: title,
+						scrub: 0.75,
+					}
+				});
+	
+				bigText.from(title, {
+					fontSize: '9rem',
+				})
+	
+				bigText.to(title, {
+					fontSize: '100vh',
+					x: '-25%',
+					ease: "power3.inOut"
+				});
+	
+			}
 
 			const blurbText = gsap.timeline({
 				paused: true,
@@ -105,6 +115,7 @@ function useHookWithRefCallback() {
 				rotate: '0deg',
 				opacity: 1
 			}, 0.222);
+
 		}
 		
 		// Save a reference to the node

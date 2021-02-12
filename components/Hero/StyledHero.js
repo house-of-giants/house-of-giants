@@ -5,9 +5,13 @@ const StyledHero = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
-	min-height: 100vh;
-	overflow: visible;
+	min-height: 40vh;
+	overflow: hidden;
 	position: relative;
+	
+	@media (min-width: 1024px) {
+		min-height: 100vh;
+	}
 
 	& img {
 		position: absolute;
@@ -45,9 +49,12 @@ const StyledHero = styled.div`
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		min-height: 50vh;
 		position: relative;
 		z-index: 5;
+		
+		@media (min-width: 1024px) {
+			min-height: 50vh;
+		}
 	}
 
 	& h5 {
