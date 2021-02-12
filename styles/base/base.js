@@ -79,4 +79,8 @@ export const Base = css`
 			z-index: 1;
 		}
 	}
+
+	.map {
+		max-width: 100%;
+	}
 `

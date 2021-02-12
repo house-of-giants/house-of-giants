@@ -5,6 +5,10 @@ export const Typography = css`
 		font-weight: 100;
 		font-size: 1.618rem;
 		margin-bottom: 1.15rem;
+
+		& a {
+			font-weight: 700;
+		}
 	}
 
 	h1, .h1, h2, .h2, h3, h4, h5 {
