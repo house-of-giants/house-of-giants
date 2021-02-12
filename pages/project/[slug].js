@@ -225,6 +225,7 @@ const NextProject = styled.div`
 
 	& h2 {
 		margin: 0;
+		text-align: center;
 	}
 
 	& img {
