@@ -74,9 +74,9 @@ const Footer = () => {
 			<div>
 				<h5>The socials</h5>
 				<ul>
-					{/* <li><a href="#">Twitter</a></li>
-					<li><a href="#">Instagram</a></li> */}
-					<li><a href="https://www.linkedin.com/company/house-of-giants/" rel="noopener noreferrer">Linkedin</a></li>
+					<li><a href="https://twitter.com/_houseofgiants" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+					<li><a href="https://instagram.com/_houseofgiants/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+					<li><a href="https://linkedin.com/company/house-of-giants/" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
 				</ul>
 			</div>
 
