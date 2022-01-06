@@ -52,11 +52,6 @@ export const Typography = css`
 		font-size: 1em;
 	}
 
-	small {
-		font-size: 2rem;
-		letter-spacing: 0;
-	}
-
 	.screen-reader-text {
 		clip: rect(1px, 1px, 1px, 1px);
 		clip-path: inset(50%);
@@ -66,27 +61,5 @@ export const Typography = css`
 		padding: 0;
 		position: absolute;
 		width: 1px;
-	}
-
-	a {
-		color: var(--c-dark);
-		text-decoration: none;
-		box-shadow: 0 -.15rem 0 inset var(--c-primary-h);
-		transition: 300ms ease box-shadow;
-
-		&:hover,
-		&:focus {
-			box-shadow: 0 -.5rem 0 inset var(--c-primary-h);
-			outline: none;
-		}
-
-		&.-nobox {
-			box-shadow: none;
-		}
-	}
-
-	hr {
-		border-color: var(--c-light-h);
-		border-bottom: none;
 	}
 `

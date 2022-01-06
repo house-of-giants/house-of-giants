@@ -44,43 +44,8 @@ export const Base = css`
 		overflow-x: hidden;
 	}
 
-	div#__next {
-		min-height: 100vh;
-	}
-
 	html {
 		font-size: 87.5%;
 		height: 100%;
-	}
-
-	.global-wrap {
-		display: grid;
-		grid-template-rows: 1fr auto;
-		min-height: 100vh;
-	}
-
-	.textured {
-		position: relative;
-
-		&::after {
-			background-image: url(/paper.png);
-			content: "";
-			height: 300%;
-			left: -50%;
-			opacity: 0.3;
-			position: absolute;
-			top: -100%;
-			width: 300%;
-			z-index: 0;
-		}
-
-		& > * {
-			position: relative;
-			z-index: 1;
-		}
-	}
-
-	.map {
-		max-width: 100%;
 	}
 `
