@@ -1,6 +1,23 @@
 import { css } from 'styled-components'
 
 export const Typography = css`
+	@font-face {
+		font-family: 'Nikolai';
+		src:
+			url('/fonts/Nikolai/italic/Nikolai-Italic.woff2') format('woff2'),
+			url('/fonts/Nikolai/italic/Nikolai-Italic.woff') format('woff');
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Nikolai';
+		src:
+			url('/fonts/Nikolai/regular/Nikolai-Regular.woff2') format('woff2'),
+			url('/fonts/Nikolai/regular/Nikolai-Regular.woff') format('woff');
+		font-display: swap;
+	}
+
 	p {
 		font-weight: 100;
 		font-size: 1.618rem;
@@ -20,8 +37,10 @@ export const Typography = css`
 
 	h1,
 	.h1 {
-		font-size: 4.236rem;
+		font-size: var(--fs-2xl);
+		font-weight: 800;
 		margin-top: 0;
+		text-transform: uppercase;
 
 		@media (min-width: 768px) {
 			font-size: 6.854rem;
@@ -30,7 +49,7 @@ export const Typography = css`
 
 	h2,
 	.h2 {
-		font-size: 2.618rem;
+		font-size: var(--fs-xl);
 
 		@media (min-width: 768px) {
 			font-size: 4.236rem;
@@ -39,17 +58,19 @@ export const Typography = css`
 
 	h3,
 	.h3 {
-		font-size: 2.618rem;
+		font-family: var(--f-serif);
+		font-size: var(--fs-l);
+		font-style: italic;
 	}
 
 	h4,
 	.h4 {
-		font-size: 1.618rem;
+		font-size: var(--fs-m);
 	}
 
 	h5,
 	.h5 {
-		font-size: 1em;
+		font-size: var(--fs-base);
 	}
 
 	.screen-reader-text {
