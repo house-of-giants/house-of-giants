@@ -19,7 +19,7 @@ export const Base = css`
 		--c-cyber-green: #c1ff1d;
 		--c-white: #ffffff;
 
-		--grad: linear-gradient(270deg, var(--c-lime) 0%, var(--c-neon-turq) 100%);
+		--grad: linear-gradient(270deg, var(--c-cyber-green) 0%, var(--c-neon-sky) 100%);
 
 		--f-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 		--f-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
