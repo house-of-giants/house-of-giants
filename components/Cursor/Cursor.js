@@ -6,18 +6,8 @@ import Pause from "@/components/SVG/Pause";
 
 import { CircleGrad, StyledCursor } from "./StyledCursor";
 
-export const Cursor = ({ el, video, isPlaying, setPlaying }) => {
+export const Cursor = ({ el, isPlaying }) => {
   const { clientX, clientY } = useMousePos(el);
-
-	const handlePlayPause = () => {
-		setPlaying(!isPlaying);
-
-		if(isPlaying) {
-			video.current.pause();
-		} else {
-			video.current.play();
-		}
-	}
 
   return (
     <StyledCursor initial={{ opacity: 0  }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -27,7 +17,6 @@ export const Cursor = ({ el, video, isPlaying, setPlaying }) => {
           left: clientX,
           top: clientY,
         }}
-				onClick={() => handlePlayPause()}
 			>
 				{!isPlaying ? (
 					<>
