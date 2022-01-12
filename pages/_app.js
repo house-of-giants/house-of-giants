@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 import { Base, Typography } from '@/styles/base'
 
+import { Header } from '@/components/Header/Header'
+
 const GlobalStyle = createGlobalStyle`
 	${Base}
 	${Typography}
@@ -27,6 +29,7 @@ export default function App({ Component, pageProps }) {
 			</Head>
 			<GlobalStyle />
 			<div className="global-wrap">
+				<Header />
 				<Component {...pageProps} />
 			</div>
 		</>
