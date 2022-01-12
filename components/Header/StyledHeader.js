@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { StyledButton } from "../Button/StyledButton";
+import { StyledContainer } from "../Container/StyledContainer";
 
 export const StyledHeader = styled.nav`
   align-items: center;
@@ -25,5 +26,9 @@ export const StyledHeader = styled.nav`
 
   ${StyledButton} {
     margin-left: auto;
+  }
+
+  & + ${StyledContainer} {
+    margin-top: var(--sp-s);
   }
 `;
