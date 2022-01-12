@@ -32,28 +32,26 @@ export const Typography = css`
 		font-family: var(--f-heading);
 		font-weight: 400;
 		line-height: 1.15;
-		margin: 2.75rem 0 1.05rem;
+		margin: 0 0 var(--sp-m);
 	}
 
 	h1,
 	.h1 {
-		font-size: var(--fs-2xl);
+		font-size: var(--fs-3xl);
 		font-weight: 800;
 		margin-top: 0;
 		text-transform: uppercase;
-
-		@media (min-width: 768px) {
-			font-size: 6.854rem;
-		}
 	}
 
 	h2,
 	.h2 {
 		font-size: var(--fs-xl);
+		font-weight: 500;
+		line-height: 1.8;
+	}
 
-		@media (min-width: 768px) {
-			font-size: 4.236rem;
-		}
+	.h2 + .h1 {
+		margin-top: var(--sp-2xl);
 	}
 
 	h3,
@@ -71,6 +69,10 @@ export const Typography = css`
 	h5,
 	.h5 {
 		font-size: var(--fs-base);
+	}
+
+	.-uppercase {
+		text-transform: uppercase;
 	}
 
 	.screen-reader-text {
