@@ -7,6 +7,7 @@ const StyledDots = styled.div`
 
   & span {
     overflow: visible !important;
+    pointer-events: none;
   }
 
   & img {
@@ -14,6 +15,8 @@ const StyledDots = styled.div`
     height: 110% !important;
     left: -5% !important;
     max-width: none !important;
+    opacity: ${props => props.opacity};
+    pointer-events: none;
     top: -5% !important;
     width: 110% !important;
     z-index: 0;
@@ -30,8 +33,8 @@ const StyledDots = styled.div`
   }
 `;
 
-const Dots = ({ children }) => (
-	<StyledDots>
+export const Dots = ({ children, opacity }) => (
+	<StyledDots opacity={opacity}>
     <Image
       className="dots"
       src="/images/dots.png"
@@ -41,5 +44,3 @@ const Dots = ({ children }) => (
     {children}
   </StyledDots>
 );
-
-export default Dots;
