@@ -10,7 +10,7 @@ export const Cursor = ({ el, isPlaying }) => {
   const { clientX, clientY } = useMousePos(el);
 
   return (
-    <StyledCursor initial={{ opacity: 0  }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+    <StyledCursor initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
 			<CircleGrad
 				className={isPlaying ? '-is-playing' : ''}
         style={{
