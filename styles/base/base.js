@@ -94,4 +94,148 @@ export const Base = css`
 	html {
 		font-size: 87.5%;
 	}
+
+	.-c-wolf-gray {
+		color: var(--c-wolf-gray);
+	}
+
+	.-fs-2xl {
+		font-size: var(--fs-2xl);
+	}
+
+	.-lh-1 {
+		line-height: 1;
+	}
+
+	.-m0 {
+		margin: 0;
+	}
+
+	.-uppercase {
+		text-transform: uppercase;
+	}
+
+	.-grad-header {
+		background: var(--grad);
+		background-clip: text;
+		display: block;
+		padding-bottom: var(--sp-2xs);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.-dots {
+		position: relative;
+
+		&::before {
+			background-image: url("/images/dots.png");
+			background-repeat: repeat;
+			bottom: 0;
+			content: "";
+			height: 33%;
+			left: 0;
+			position: absolute;
+			transform: translateY(0);
+			width: 100%;
+			z-index: 0;
+		}
+
+		& span {
+			position: relative;
+			z-index: 1;
+		}
+
+		&.-dots-l {
+			padding-left: var(--sp-l);
+
+			&::before {
+				bottom: initial;
+				height: 150%;
+				top: 0;
+				transform: translateY(-15%);
+				width: 10%;
+			}
+		}
+	}
+
+	.carousel-root {
+		margin-top: var(--sp-2xl);
+
+		@media (min-width: 768px) {
+			margin: 0;
+		}
+	}
+
+	.carousel {
+		display: grid;
+		padding: var(--sp-xl) 0;
+
+		@media (min-width: 768px) {
+			gap: calc(var(--sp-2xl) * 2.75);
+			grid-template-columns: 1.5fr 1fr;
+			margin: 0;
+			padding: calc(var(--sp-2xl) * 2) 0 calc(var(--sp-2xl) * 2) var(--sp-xl);
+		}
+
+		& .arrow {
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+			height: 35px;
+			padding: 0;
+			position: absolute;
+			width: 35px;
+
+			@media (min-width: 768px) {
+				grid-row: 1;
+				grid-column: 2;
+			}
+
+			&:hover {
+				& path {
+					fill: var(--c-cyber-green);
+				}
+			}
+
+			&.-prev {
+				transform: rotate(-180deg);
+			}
+
+			&.-next {
+				left: 75px;
+			}
+		}
+
+		& .slider-wrapper {
+			margin: 0;
+		}
+
+		& .slide {
+			text-align: left;
+		}
+
+		& blockquote {
+			font-size: var(--fs-l);
+			margin: 0 0 var(--sp-m);
+			quotes: "“" "”" "‘" "’";
+
+			&::before,
+			&::after {
+				color: var(--c-cyber-green);
+			}
+
+			&::before {
+				content: open-quote;
+				padding-right: var(--sp-2xs);
+			}
+
+			&::after {
+				content: close-quote;
+			}
+		}
+
+		& figcaption {
+			color: var(--c-wolf-gray);
+		}
+	}
 `

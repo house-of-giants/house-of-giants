@@ -19,9 +19,8 @@ export const Typography = css`
 	}
 
 	p {
-		font-weight: 100;
-		font-size: 1.618rem;
-		margin-bottom: 1.15rem;
+		font-size: var(--fs-base);
+		margin-bottom: var(--sp-m);
 
 		& a {
 			font-weight: 700;
@@ -64,6 +63,7 @@ export const Typography = css`
 	h4,
 	.h4 {
 		font-size: var(--fs-m);
+		font-weight: 700;
 	}
 
 	h5,
@@ -71,8 +71,16 @@ export const Typography = css`
 		font-size: var(--fs-base);
 	}
 
-	.-uppercase {
-		text-transform: uppercase;
+	.-serif {
+		font-family: var(--f-serif);
+	}
+
+	.-fw-700 {
+		font-weight: 700;
+	}
+
+	.-lh-1 {
+		line-height: 1;
 	}
 
 	.screen-reader-text {
