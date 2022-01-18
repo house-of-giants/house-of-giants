@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
-  background-color: ${props => props.background};
+  background: ${props => props.background};
+  color: var(--c-primary-dark);
   overflow: hidden;
   position: relative;
   padding-bottom: ${props => props.pBottom || 'var(--sp-2xl)'};
