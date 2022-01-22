@@ -289,6 +289,29 @@
   resolved "https://registry.yarnpkg.com/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.0.7.tgz#8d75d3b6a872ab97ab73e3b4173d56dbb2991917"
   integrity sha512-frEWtbf+q8Oz4e2UqKJrNssk6DZ6/NLCQXn5/ORWE9dPAfe9XS6aK5FRZ6DuEPmmKd5gOoRkKJFFz5nYd+TeyQ==
 
+"@sendgrid/client@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@sendgrid/client/-/client-7.6.0.tgz#f90cb8759c96e1d90224f29ad98f8fdc2be287f3"
+  integrity sha512-cpBVZKLlMTO+vpE18krTixubYmZa98oTbLkqBDuTiA3zRkW+urrxg7pDR24TkI35Mid0Zru8jDHwnOiqrXu0TA==
+  dependencies:
+    "@sendgrid/helpers" "^7.6.0"
+    axios "^0.21.4"
+
+"@sendgrid/helpers@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@sendgrid/helpers/-/helpers-7.6.0.tgz#b381bfab391bcd66c771811b22bb6bb2d5c1dfc6"
+  integrity sha512-0uWD+HSXLl4Z/X3cN+UMQC20RE7xwAACgppnfjDyvKG0KvJcUgDGz7HDdQkiMUdcVWfmyk6zKSg7XKfKzBjTwA==
+  dependencies:
+    deepmerge "^4.2.2"
+
+"@sendgrid/mail@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-7.6.0.tgz#e74ee30110527feab5d3b83d68af0cd94537f6d2"
+  integrity sha512-0KdaSZzflJD/vUAZjB3ALBIuaVGoLq22hrb2fvQXZHRepU/yhRNlEOqrr05MfKBnKskzq1blnD1J0fHxiwaolw==
+  dependencies:
+    "@sendgrid/client" "^7.6.0"
+    "@sendgrid/helpers" "^7.6.0"
+
 "@types/node@*":
   version "17.0.8"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.8.tgz#50d680c8a8a78fe30abe6906453b21ad8ab0ad7b"
@@ -355,6 +378,13 @@ available-typed-arrays@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
+
+axios@^0.21.4:
+  version "0.21.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
+  dependencies:
+    follow-redirects "^1.14.0"
 
 "babel-plugin-styled-components@>= 1.12.0", babel-plugin-styled-components@^2.0.2:
   version "2.0.2"
@@ -722,6 +752,11 @@ debug@^4.1.0:
   dependencies:
     ms "2.1.2"
 
+deepmerge@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+  integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
+
 define-properties@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/define-properties/-/define-properties-1.1.3.tgz#cf88da6cbee26fe6db7094f61d870cbd84cee9f1"
@@ -877,6 +912,11 @@ find-up@^4.0.0:
   dependencies:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
+
+follow-redirects@^1.14.0:
+  version "1.14.7"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.7.tgz#2004c02eb9436eee9a21446a6477debf17e81685"
+  integrity sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ==
 
 foreach@^2.0.5:
   version "2.0.5"
@@ -1657,6 +1697,16 @@ react-easy-swipe@^0.0.21:
   integrity sha512-OeR2jAxdoqUMHIn/nS9fgreI5hSpgGoL5ezdal4+oO7YSSgJR8ga+PkYGJrSrJ9MKlPcQjMQXnketrD7WNmNsg==
   dependencies:
     prop-types "^15.5.8"
+
+react-hook-form@^7.24.1:
+  version "7.24.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.24.1.tgz#00e80ca20fe3bb3b86d236d74ed1a4e5f6525228"
+  integrity sha512-UndVzKetChAsO+qkRo/6vOgaeTP60x324mHQ4iXVgHDvFjd+X/caWW0/QuAqipt8Bs7pyKH8147UQCrPTYFc2g==
+
+react-intersection-observer@^8.33.1:
+  version "8.33.1"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.33.1.tgz#8e6442cac7052ed63056e191b7539e423e7d5c64"
+  integrity sha512-3v+qaJvp3D1MlGHyM+KISVg/CMhPiOlO6FgPHcluqHkx4YFCLuyXNlQ/LE6UkbODXlQcLOppfX6UMxCEkUhDLw==
 
 react-is@17.0.2:
   version "17.0.2"
