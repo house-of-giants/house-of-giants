@@ -1,33 +1,38 @@
 import styled from "styled-components";
 import { CircleGrad } from "../Cursor/StyledCursor";
 import { StyledGrid } from "../Grid/StyledGrid";
-import Arrow from "../SVG/Arrow";
 
 export const StyledContact = styled.div`
-  background: ${props => props.background};
+  background: linear-gradient(-270deg, var(--c-neon-sky) 0%, var(--c-cyber-green) 100%);
   color: var(--c-primary-dark);
   overflow: hidden;
   position: relative;
-  padding-bottom: ${props => props.pBottom || 'var(--sp-2xl)'};
   padding-top: ${props => props.pTop};
+  
+  @media (min-width: 1220px) {
+    background: ${props => props.background};
+    padding-bottom: ${props => props.pBottom || 'var(--sp-2xl)'};
+  }
 
   &.-has-background {
     color: var(--c-white);
   }
 
   &.-active {
-    overflow: visible;
+    @media (min-width: 1220px) {
+      overflow: visible;
 
-    & ${CircleGrad} {
-      left: 80vw;
+      & ${CircleGrad} {
+        left: 80vw;
 
-      & .arrow {
-        transform: rotate(-180deg);
+        & .arrow {
+          transform: rotate(-180deg);
+        }
       }
-    }
 
-    & .contact-wrap {
-      transform: translateX(-35vw);
+      & .contact-wrap {
+        transform: translateX(-35vw);
+      }
     }
   }
 
@@ -43,16 +48,25 @@ export const StyledContact = styled.div`
   }
 
   & ${StyledGrid} {
-    max-width: 80vw;
+    width: 100%;
+
+    @media (min-width: 1220px) {
+      max-width: 80vw;
+    }
   }
 
   & ${CircleGrad} {
     cursor: pointer;
+    display: none;
     position: absolute;
     left: 80vw;
     transform: translate(-50%, -50%);
     top: 50%;
     z-index: 5;
+
+    @media (min-width: 1220px) {
+      display: flex;
+    }
 
     & svg:last-of-type {
       position: absolute;
@@ -61,12 +75,29 @@ export const StyledContact = styled.div`
   }
 
   & .form {
+    align-items: center;
     background-color: var(--c-white);
-    left: 80vw;
-    padding: calc(var(--sp-2xl) * 2);
-    position: absolute;
-    top: calc(var(--sp-2xl) * -2);
-    width: 80vw;
-    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    padding: var(--sp-xl);
+
+    @media (min-width: 1220px) {
+      height: calc(100% + (var(--sp-2xl) * 4));
+      left: 80vw;
+      padding: var(--sp-2xl) var(--sp-2xl) calc(var(--sp-2xl) * 2) calc(var(--sp-2xl) * 4);
+      position: absolute;
+      top: calc(var(--sp-2xl) * -2);
+      width: 50vw;
+    }
+
+    & form {
+      width: 100%;
+    }
+  }
+
+  & .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--sp-s);
   }
 `;

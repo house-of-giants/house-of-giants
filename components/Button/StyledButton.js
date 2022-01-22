@@ -6,13 +6,15 @@ export const StyledButton = styled.button`
   border: none;
   box-shadow: 0 0 0 1px var(--c-primary-dark) inset;
   cursor: pointer;
-  display: flex;
+  color: currentColor;
+  display: inline-flex;
   font-family: var(--f-serif);
   font-size: var(--fs-base);
   font-style: italic;
   line-height: 1;
   padding: var(--sp-xs) var(--sp-s);
   margin: 0;
+  text-decoration: none;
 
   &:hover,
   &:focus {

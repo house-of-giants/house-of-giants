@@ -26,6 +26,7 @@ export const StyledHeader = styled.nav`
 
   ${StyledButton} {
     margin-left: auto;
+    white-space: nowrap;
   }
 
   & + ${StyledContainer} {

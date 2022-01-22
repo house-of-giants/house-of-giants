@@ -36,17 +36,26 @@ export const Typography = css`
 
 	h1,
 	.h1 {
-		font-size: var(--fs-3xl);
+		font-size: var(--fs-xl);
 		font-weight: 800;
+		hyphens: auto;
 		margin-top: 0;
 		text-transform: uppercase;
+		
+		@media (min-width: 768px) {
+			font-size: var(--fs-3xl);
+		}
 	}
 
 	h2,
 	.h2 {
-		font-size: var(--fs-xl);
+		font-size: var(--fs-l);
 		font-weight: 500;
-		line-height: 1.8;
+		line-height: 1.2;
+		
+		@media (min-width: 768px) {
+			font-size: var(--fs-xl);
+		}
 	}
 
 	.h2 + .h1 {

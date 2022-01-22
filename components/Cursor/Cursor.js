@@ -14,8 +14,8 @@ export const Cursor = ({ el, isPlaying }) => {
 			<CircleGrad
 				className={isPlaying ? '-is-playing' : ''}
         style={{
-          left: clientX,
-          top: clientY,
+          left: clientX || '-100%',
+          top: clientY || '-100%',
         }}
 			>
 				{!isPlaying ? (

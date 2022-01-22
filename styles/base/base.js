@@ -93,6 +93,7 @@ export const Base = css`
 
 	html {
 		font-size: 87.5%;
+		scroll-behavior: smooth;
 	}
 
 	.-c-wolf-gray {
@@ -115,6 +116,31 @@ export const Base = css`
 		text-transform: uppercase;
 	}
 
+	.-green {
+		color: var(--c-cyber-green);
+		font-weight: 700;
+	}
+
+	.-stagger {
+    padding-bottom: var(--sp-xl);
+
+    @media (min-width: 768px) {
+      padding-bottom: 0;
+
+      &:first-child {
+        padding-top: var(--sp-2xs);
+      }
+  
+      &:nth-child(2) {
+        padding-top: calc(var(--sp-2xl) * 4);
+      }
+  
+      &:last-child {
+        padding-top: var(--sp-l);
+      }
+    }
+  }
+
 	.-grad-header {
 		background: var(--grad);
 		background-clip: text;
@@ -125,7 +151,12 @@ export const Base = css`
 	}
 
 	.-dots {
+		overflow: hidden;
 		position: relative;
+
+		@media (min-width: 768px) {
+			overflow: visible;
+		}
 
 		&::before {
 			background-image: url("/images/dots.png");
@@ -181,9 +212,11 @@ export const Base = css`
 			border: none;
 			background-color: transparent;
 			cursor: pointer;
+			display: flex;
 			height: 35px;
 			padding: 0;
 			position: absolute;
+			top: 0;
 			width: 35px;
 
 			@media (min-width: 768px) {
@@ -237,5 +270,25 @@ export const Base = css`
 		& figcaption {
 			color: var(--c-wolf-gray);
 		}
+	}
+
+	label {
+		font-weight: 700;
+		font-size: var(--fs-base);
+		margin-bottom: var(--sp-xs);
+	}
+
+	input,
+	textarea,
+	select {
+		border: 1px solid var(--c-primary-dark);
+		box-sizing: border-box;
+		font-size: var(--fs-s);
+		padding: var(--sp-2xs) var(--sp-xs);
+	}
+
+	textarea {
+		resize: none;
+		width: 100%;
 	}
 `
