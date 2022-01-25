@@ -80,12 +80,20 @@ export const Typography = css`
 		font-size: var(--fs-base);
 	}
 
+	.-fs-s {
+		font-size: var(--fs-s);
+	}
+
 	.-serif {
 		font-family: var(--f-serif);
 	}
 
 	.-fw-700 {
 		font-weight: 700;
+	}
+	
+	.-fw-500 {
+		font-weight: 500;
 	}
 
 	.-lh-1 {

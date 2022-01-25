@@ -22,6 +22,7 @@ import Explore from '@/components/SVG/Explore';
 
 import fetchJson from '@/utils/fetchJson';
 import { useMedia } from '@/utils/useMedia';
+import { StyledSocial } from '@/components/Social/StyledSocial';
 
 export default function Home() {
 	const [cursor, setCursor] = useState(false);
@@ -83,10 +84,11 @@ export default function Home() {
 
   const { scrollYProgress } = useViewportScroll();
 	const scaleAnim = useTransform(scrollYProgress, [0.01, 0.1], [1, 0.75]);
-	const kellyAnim = useTransform(scrollYProgress, [0.75, 0.85], [isBig ? 400 : 0, 0 ]);
-	const domAnim = useTransform(scrollYProgress, [0.7, 0.85], [isBig ? 550 : 0, 0 ]);
-	const danielAnim = useTransform(scrollYProgress, [0.7, 0.85], [isBig ? 250 : 0, 0 ]);
-	const teamOpacityAnim = useTransform(scrollYProgress, [0.75, 0.8], [isBig ? 0 : 1, 1 ]);
+	const kellyAnim = useTransform(scrollYProgress, [0.75, 0.8], [isBig ? 400 : 0, 0 ]);
+	const domAnim = useTransform(scrollYProgress, [0.7, 0.8], [isBig ? 550 : 0, 0 ]);
+	const danielAnim = useTransform(scrollYProgress, [0.7, 0.8], [isBig ? 250 : 0, 0 ]);
+	const teamOpacityAnim = useTransform(scrollYProgress, [0.7, 0.8], [isBig ? 0 : 1, 1 ]);
+	const opacityAnim = useTransform(scrollYProgress, [0.1, 0.15], [1, 0]);
 
 	return (
 		<>
@@ -94,7 +96,7 @@ export default function Home() {
 				<AnimatePresence>
 					{cursor && <Cursor el={mouseEl} video={videoEl} setPlaying={setPlaying} isPlaying={isPlaying} />}
 				</AnimatePresence>
-				<motion.div style={{ scale: scaleAnim }}>
+				<motion.div style={{ scale: scaleAnim, opacity: opacityAnim }}>
 					<Video poster="/images/poster.jpg" controls ref={videoEl} onClick={() => handlePlayPause()} loop>
 						<source src="/video/reel2022.mp4" type="video/webm" />
 						<source src="/video/reel2022.mp4" type="video/mp4" />
@@ -102,17 +104,15 @@ export default function Home() {
 				</motion.div>
 			</Container>
 
-			<motion.div>
-				<Container className="-has-background" background="var(--c-primary-dark)" pTop="calc(var(--sp-2xl) * 2)">
-						<Dots>
-							<h3>Our values &amp; ethos</h3>
-							<p className="h2">Dreaming of <span className="-green">innovation</span>. Experimenting with <span className="-green">passion</span>. Creating with <span className="-green">purpose</span>. We believe creativity &amp; technology can change the world right after <span className="-green">punk</span> does.</p>
-							<p className="h1 -uppercase">We create Digital experiences that<br />people love to use.</p>
-						</Dots>
-				</Container>
-			</motion.div>
+			<Container className="-has-background" background="var(--c-primary-dark)" pTop="calc(var(--sp-2xl) * 2)" pBottom="calc(var(--sp-2xl) * 2)">
+				<Dots>
+					<h3>Our values &amp; ethos</h3>
+					<p className="h2">Dreaming of <span className="-green">innovation</span>. Experimenting with <span className="-green">passion</span>. Creating with <span className="-green">purpose</span>. We believe creativity &amp; technology can change the world right after <span className="-green">punk</span> does.</p>
+					<p className="h1 -uppercase">We create Digital experiences that<br />people love to use.</p>
+				</Dots>
+			</Container>
 
-			<Container className="-has-background" background="var(--c-primary-dark)">
+			<Container className="-has-background" background="var(--c-primary-dark)" pBottom="calc(var(--sp-2xl) * 4)">
 				<SectionBar count="1.0" title="Services" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pBottom="var(--sp-2xl)">
 					<h2 className="-lh-1 -m0 -fs-2xl -dots"><span className="-grad-header">This is how we help you build amazing experiences</span></h2>
@@ -155,18 +155,94 @@ export default function Home() {
 				</Grid>
 			</Container>
 
-			<Container className="-has-background" background="var(--c-primary-dark)">
+			<Container className="-has-background" background="var(--c-primary-dark)" pBottom="calc(var(--sp-2xl) * 2)">
 				<SectionBar count="2.0" title="Clients" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pBottom="var(--sp-2xl)">
 					<h2 className="-lh-1 -m0 -fs-2xl -dots -dots-l"><span className="-grad-header">We know what we are doing. Here is a list.</span></h2>
 					<p className="-c-wolf-gray -m0">Do we need this? maybe, who cares. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.</p>
 				</Grid>
-				<Image
-					src="/images/trustbar.png"
-					layout="responsive"
-					width="1372"
-					height="342"
-				/>
+				<Grid cols="repeat(auto-fit, minmax(114px, 220px))" pTop="var(--sp-2xl)" gap="var(--sp-xl)" justify="center">
+					<div className="logo">
+						<Image
+							src="/images/microsoft.png"
+							layout="fixed"
+							width="157"
+							height="96"
+						/>
+					</div>
+					<div className="logo">
+						<Image
+							src="/images/purdue.png"
+							layout="fixed"
+							width="169"
+							height="48"
+						/>
+					</div>
+					<div className="logo">
+						<Image
+							src="/images/uber.png"
+							layout="fixed"
+							width="163"
+							height="99"
+						/>
+					</div>
+					<div className="logo">
+						<Image
+							src="/images/botanic-gardens.png"
+							layout="fixed"
+							width="182"
+							height="51"
+						/>
+					</div>
+					<div className="logo">
+						<Image
+							src="/images/comcast.png"
+							layout="fixed"
+							width="210"
+							height="46"
+						/>
+					</div>
+					<div className="logo">
+						<Image
+							src="/images/ea.png"
+							layout="fixed"
+							width="114"
+							height="114"
+						/>
+					</div>
+					<div className="logo">
+						<Image
+							src="/images/shakey.png"
+							layout="fixed"
+							width="151"
+							height="151"
+						/>
+					</div>
+					<div className="logo">
+						<Image
+							src="/images/pacers.png"
+							layout="fixed"
+							width="114"
+							height="114"
+						/>
+					</div>
+					<div className="logo">
+						<Image
+							src="/images/nobel.png"
+							layout="fixed"
+							width="114"
+							height="89"
+						/>
+					</div>
+					<div className="logo">
+						<Image
+							src="/images/salesforce.png"
+							layout="fixed"
+							width="163"
+							height="114"
+						/>
+					</div>
+				</Grid>
 				<Carousel
 					infiniteLoop
 					showIndicators={false}
@@ -203,7 +279,7 @@ export default function Home() {
 			</Container>
 
 
-			<Container className="-has-background" background="var(--c-primary-dark)">
+			<Container className="-has-background" background="var(--c-primary-dark)" pBottom="calc(var(--sp-2xl) * 2)">
 				<SectionBar count="3.0" title="Team" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pBottom="var(--sp-2xl)">
 					<h2 className="-lh-1 -m0 -fs-2xl -grad-header">We are a three person team kicking ass</h2>
@@ -221,7 +297,7 @@ export default function Home() {
 									height="547"
 								/>
 							</div>
-							<h2 className="-m0 -lh-1 -fw-700">Daniel Luke</h2>
+							<h4 className="-m0 -lh-1 -fw-700">Daniel Luke</h4>
 							<h5 className="-m0 -serif">Partner, Creative Director</h5>
 						</StyledGridItem>
 					</motion.div>
@@ -235,7 +311,7 @@ export default function Home() {
 									height="547"
 								/>
 							</div>
-							<h2 className="-m0 -lh-1 -fw-700">Kelly Bleck</h2>
+							<h4 className="-m0 -lh-1 -fw-700">Kelly Bleck</h4>
 							<h5 className="-m0 -serif">Partner, Developer</h5>
 						</StyledGridItem>
 					</motion.div>
@@ -249,7 +325,7 @@ export default function Home() {
 									height="547"
 								/>
 							</div>
-							<h2 className="-m0 -lh-1 -fw-700">Dominic Magnifico</h2>
+							<h4 className="-m0 -lh-1 -fw-700">Dominic Magnifico</h4>
 							<h5 className="-m0 -serif">Partner, Developer</h5>
 						</StyledGridItem>
 					</motion.div>
@@ -257,6 +333,7 @@ export default function Home() {
 			</Container>
 
 			<Contact
+				id="contact"
 				className={showForm ? '-active' : ''}
 				background="linear-gradient(-270deg, var(--c-neon-sky) 0%, var(--c-cyber-green) 80%, var(--c-white) 80% 100%)"
 				pTop="calc(var(--sp-2xl) * 2)"
@@ -275,7 +352,7 @@ export default function Home() {
 					<Arrow fill="var(--c-white)" />
 				</CircleGrad>
 
-				<div id="contact" className="form" onClick={() => setShowForm(true)}>
+				<div className="form" onClick={() => setShowForm(true)}>
 					{!contactSuccess ? (
 						<AnimatePresence>
 							<motion.form initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onSubmit={handleSubmit(onSubmit)} ref={formEl}>
@@ -299,9 +376,9 @@ export default function Home() {
 								<div className="form-group">
 									<label htmlFor="project-type">Project type</label>
 									<select id="project-type" {...register('project')}>
-										<option>Web Design &amp; Development - starting at $10k</option>
-										<option>Product Branding - starting at $5k</option>
-										<option>Product Development - starting at $15k</option>
+										<option>Web Design &amp; Development</option>
+										<option>Product Branding</option>
+										<option>Product Development</option>
 										<option>Unsure - I just have a great idea!</option>
 									</select>
 								</div>
@@ -325,6 +402,18 @@ export default function Home() {
 						</AnimatePresence>
 					)}
 				</div>
+
+				<StyledSocial>
+					<Container>
+						<ul>
+							<li><a href="https://twitter.com/_houseofgiants" target="_blank">Twitter <Arrow width="10" height="10" /></a></li>
+							<li><a href="https://www.instagram.com/_houseofgiants/" target="_blank">Instagram <Arrow width="10" height="10" /></a></li>
+							<li><a href="#">Dribbble <Arrow width="10" height="10" /></a></li>
+						</ul>
+
+						<p className="-fw-500 -m0">&copy;{new Date().getFullYear()} House of Giants</p>
+					</Container>
+				</StyledSocial>
 			</Contact>
 		</>
 	)

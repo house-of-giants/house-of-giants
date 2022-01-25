@@ -3,8 +3,11 @@ import { CircleGrad } from "../Cursor/StyledCursor";
 import { StyledGrid } from "../Grid/StyledGrid";
 
 export const StyledContact = styled.div`
+  align-items: center;
   background: linear-gradient(-270deg, var(--c-neon-sky) 0%, var(--c-cyber-green) 100%);
   color: var(--c-primary-dark);
+  display: flex;
+  min-height: 100vh;
   overflow: hidden;
   position: relative;
   padding-top: ${props => props.pTop};
@@ -31,7 +34,7 @@ export const StyledContact = styled.div`
       }
 
       & .contact-wrap {
-        transform: translateX(-35vw);
+        transform: translateX(-60vw);
       }
     }
   }
@@ -82,12 +85,14 @@ export const StyledContact = styled.div`
     padding: var(--sp-xl);
 
     @media (min-width: 1220px) {
-      height: calc(100% + (var(--sp-2xl) * 4));
+      min-height: calc(100vh + (calc(var(--sp-2xl) * 4)));
+      height: calc(100% + (calc(var(--sp-2xl) * 4)));;
       left: 80vw;
       padding: var(--sp-2xl) var(--sp-2xl) calc(var(--sp-2xl) * 2) calc(var(--sp-2xl) * 4);
       position: absolute;
-      top: calc(var(--sp-2xl) * -2);
-      width: 50vw;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 80vw;
     }
 
     & form {
