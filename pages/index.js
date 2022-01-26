@@ -23,6 +23,7 @@ import Explore from '@/components/SVG/Explore';
 import fetchJson from '@/utils/fetchJson';
 import { useMedia } from '@/utils/useMedia';
 import { StyledSocial } from '@/components/Social/StyledSocial';
+import Twerk from '@/components/SVG/Twerk';
 
 export default function Home() {
 	const [cursor, setCursor] = useState(false);
@@ -107,30 +108,30 @@ export default function Home() {
 			<Container className="-has-background" background="var(--c-primary-dark)" pTop="calc(var(--sp-2xl) * 2)" pBottom="calc(var(--sp-2xl) * 2)">
 				<Dots>
 					<h3>Our values &amp; ethos</h3>
-					<p className="h2">Dreaming of <span className="-green">innovation</span>. Experimenting with <span className="-green">passion</span>. Creating with <span className="-green">purpose</span>. We believe creativity &amp; technology can change the world, right after <span className="-green">punk</span> does.</p>
-					<p className="h1 -uppercase">We create Digital experiences that<br />people love to use.</p>
+					<p className="h2 -uppercase -lh-2">Dreaming of innovation.<br />Experimenting with passion.<br />Creating with purpose.<br />We are a Digital Interactive Studio Focused on creating <span className="-cross">fucking</span> beautiful, bold, thoughtfully crafted websites.</p>
+					<p className="h1">We help you become impossible to ignore.</p>
 				</Dots>
 			</Container>
 
 			<Container className="-has-background" background="var(--c-primary-dark)" pBottom="calc(var(--sp-2xl) * 4)">
 				<SectionBar count="1.0" title="Services" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pBottom="var(--sp-2xl)">
-					<h2 className="-lh-1 -m0 -fs-2xl -dots"><span className="-grad-header">Collaboration, passion, whiskey, friendship.</span></h2>
+					<h2 className="-lh-1 -m0 -fs-2xl -dots"><span className="-grad-header">We&apos;ll handle the black magic so you don&apos;t have to dabble in the dark arts.</span></h2>
 					<p className="-c-wolf-gray -m0">Denver based and Colorado raised, we have been honing our craft for over a decade. From strategy to user experience, to design and development, we know how to creatively solve complex problems on the web.</p>
 				</Grid>
 				<Grid cols="repeat(2, 1fr)" gap="var(--sp-2xl)" pBottom="var(--sp-xl)" align="start">
 					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
 						<p className="-m0 -serif">01</p>
 						<div>
-							<h4><span className="-green">Strategy</span> as solid as<br />Dwayne "The Rock" Johnson.</h4>
-							<p className="-m0">Each project we are a part of deserves a thoughtful and detail oriented approach. We'll work with you as a strategic partner to establish the best path forward for your specific needs.</p>
+							<h4>Digital strategy </h4>
+							<p className="-m0">It's important to have a strategy as solid as<br />Dwayne "The Rock" Johnson. Each project we are a part of deserves a thoughtful and detail oriented approach. We'll work with you as a strategic partner to establish the best path forward for your specific needs.</p>
 						</div>
 					</Grid>
 
 					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
 						<p className="-m0 -serif">02</p>
 						<div>
-							<h4><span className="-green">User experience</span> curation<br />fancier than the Louvre.</h4>
+							<h4>User experience</h4>
 							<p className="-m0">User experience strategy and desgin is unique to your project. We&apos;re not going to throw trashy buzzwords your way unless they'll provide true benefit to you and your users.</p>
 						</div>
 					</Grid>
@@ -140,7 +141,7 @@ export default function Home() {
 					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
 						<p className="-m0 -serif">03</p>
 						<div>
-							<h4><span className="-green">Visual identity and designs</span> that<br />awaken your inner creative.</h4>
+							<h4>User interfaces</h4>
 							<p className="-m0">We&apos;ve worked our asses off to be able flex our creative muscles at will, and we are <strong><em>ripped</em></strong>. We get pumped up like Arnold to be able to show you the unique visual designs we come up with for your brand.</p>
 						</div>
 					</Grid>
@@ -148,7 +149,7 @@ export default function Home() {
 					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
 						<p className="-m0 -serif">04</p>
 						<div>
-							<h4><span className="-green">Development</span> strategies more organized<br />than your sock drawer.</h4>
+							<h4>Development</h4>
 							<p className="-m0">We take an absurd amount of pride in the code we write. Performace, accessibility, and scalability are built into everything we do from the start. Your socks won't grow with your feet. On the other foot, our code will grow with you as your business scales.</p>
 						</div>
 					</Grid>
@@ -366,7 +367,7 @@ export default function Home() {
 				</Grid>
 
 				<CircleGrad solid onClick={() => setShowForm(!showForm)}>
-					<Explore fill="var(--c-white)" />
+					<Twerk fill="var(--c-white)" />
 					<Arrow fill="var(--c-white)" />
 				</CircleGrad>
 
@@ -420,19 +421,19 @@ export default function Home() {
 						</AnimatePresence>
 					)}
 				</div>
-
-				<StyledSocial>
-					<Container>
-						<ul>
-							<li><a href="https://twitter.com/_houseofgiants" target="_blank">Twitter <Arrow width="10" height="10" /></a></li>
-							<li><a href="https://www.instagram.com/_houseofgiants/" target="_blank">Instagram <Arrow width="10" height="10" /></a></li>
-							<li><a href="#">Dribbble <Arrow width="10" height="10" /></a></li>
-						</ul>
-
-						<p className="-fw-500 -m0">&copy;{new Date().getFullYear()} House of Giants</p>
-					</Container>
-				</StyledSocial>
 			</Contact>
+
+			<StyledSocial className={showForm ? '-active' : ''}>
+				<Container pBottom="var(--sp-s)">
+					<ul>
+						<li><a href="https://twitter.com/_houseofgiants" target="_blank">Twitter <Arrow width="10" height="10" /></a></li>
+						<li><a href="https://www.instagram.com/_houseofgiants/" target="_blank">Instagram <Arrow width="10" height="10" /></a></li>
+						<li><a href="#">Dribbble <Arrow width="10" height="10" /></a></li>
+					</ul>
+
+					<p className="-fw-500 -m0">&copy;{new Date().getFullYear()} House of Giants</p>
+				</Container>
+			</StyledSocial>
 		</>
 	)
 }

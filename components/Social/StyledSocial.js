@@ -3,10 +3,19 @@ import styled from "styled-components";
 export const StyledSocial = styled.div`
   background-color: var(--c-white);
   font-size: var(--fs-s);
+  transition: transform 333ms cubic-bezier(0.25, 1, 0.5, 1);
   width: 100%;
-
+  
   @media (min-width: 1220px) {
+    background: linear-gradient(-270deg, var(--c-neon-sky) 0%, var(--c-cyber-green) 100%);
     background-color: transparent;
+    max-width: 80vw;
+  }
+
+  &.-active {
+    @media (min-width: 1220px) {
+      transform: translateX(-60vw);
+    }
   }
 
   & .wrap {

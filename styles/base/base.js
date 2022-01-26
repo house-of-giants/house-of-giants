@@ -93,7 +93,6 @@ export const Base = css`
 
 	html {
 		font-size: 87.5%;
-		scroll-behavior: smooth;
 	}
 
 	.-c-wolf-gray {

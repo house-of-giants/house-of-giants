@@ -96,8 +96,21 @@ export const Typography = css`
 		font-weight: 500;
 	}
 
+	.-fw-900 {
+		font-weight: 900;
+	}
+
 	.-lh-1 {
 		line-height: 1;
+	}
+	
+	.-lh-2 {
+		line-height: 2;
+	}
+
+	.-cross {
+		background-image: url('/images/cross.png');
+		background-size: cover;
 	}
 
 	.screen-reader-text {

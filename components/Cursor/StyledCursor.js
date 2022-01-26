@@ -15,8 +15,9 @@ export const CircleGrad = styled.button`
   transition: transform 233ms ease;
   width: 254px;
 
-  & .explore {
-    animation: spin 45s infinite;
+  & .explore,
+  & .twerk {
+    animation: spin 45s infinite linear;
     width: 100%;
   }
 

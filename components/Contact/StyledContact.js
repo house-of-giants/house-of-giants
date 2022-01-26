@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { CircleGrad } from "../Cursor/StyledCursor";
 import { StyledGrid } from "../Grid/StyledGrid";
+import { StyledSocial } from "../Social/StyledSocial";
 
 export const StyledContact = styled.div`
   align-items: center;
