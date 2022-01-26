@@ -1,10 +1,26 @@
 import { css } from 'styled-components'
 
 export const Typography = css`
+	@font-face {
+		font-family: 'Nikolai';
+		src:
+			url('/fonts/Nikolai/italic/Nikolai-Italic.woff2') format('woff2'),
+			url('/fonts/Nikolai/italic/Nikolai-Italic.woff') format('woff');
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Nikolai';
+		src:
+			url('/fonts/Nikolai/regular/Nikolai-Regular.woff2') format('woff2'),
+			url('/fonts/Nikolai/regular/Nikolai-Regular.woff') format('woff');
+		font-display: swap;
+	}
+
 	p {
-		font-weight: 100;
-		font-size: 1.618rem;
-		margin-bottom: 1.15rem;
+		font-size: var(--fs-base);
+		margin-bottom: var(--sp-m);
 
 		& a {
 			font-weight: 700;
@@ -15,46 +31,86 @@ export const Typography = css`
 		font-family: var(--f-heading);
 		font-weight: 400;
 		line-height: 1.15;
-		margin: 2.75rem 0 1.05rem;
+		margin: 0 0 var(--sp-m);
 	}
 
 	h1,
 	.h1 {
-		font-size: 4.236rem;
+		font-size: var(--fs-xl);
+		font-weight: 800;
+		hyphens: auto;
 		margin-top: 0;
-
+		text-transform: uppercase;
+		
 		@media (min-width: 768px) {
-			font-size: 6.854rem;
+			font-size: var(--fs-3xl);
 		}
 	}
 
 	h2,
 	.h2 {
-		font-size: 2.618rem;
-
+		font-size: var(--fs-l);
+		font-weight: 500;
+		line-height: 1.2;
+		
 		@media (min-width: 768px) {
-			font-size: 4.236rem;
+			font-size: var(--fs-xl);
 		}
+	}
+
+	.h2 + .h1 {
+		margin-top: var(--sp-2xl);
 	}
 
 	h3,
 	.h3 {
-		font-size: 2.618rem;
+		font-family: var(--f-serif);
+		font-size: var(--fs-l);
+		font-style: italic;
 	}
 
 	h4,
 	.h4 {
-		font-size: 1.618rem;
+		font-size: var(--fs-m);
+		font-weight: 700;
 	}
 
 	h5,
 	.h5 {
-		font-size: 1em;
+		font-size: var(--fs-base);
 	}
 
-	small {
-		font-size: 2rem;
-		letter-spacing: 0;
+	.-fs-s {
+		font-size: var(--fs-s);
+	}
+
+	.-serif {
+		font-family: var(--f-serif);
+	}
+
+	.-fw-700 {
+		font-weight: 700;
+	}
+	
+	.-fw-500 {
+		font-weight: 500;
+	}
+
+	.-fw-900 {
+		font-weight: 900;
+	}
+
+	.-lh-1 {
+		line-height: 1;
+	}
+	
+	.-lh-2 {
+		line-height: 2;
+	}
+
+	.-cross {
+		background-image: url('/images/cross.png');
+		background-size: cover;
 	}
 
 	.screen-reader-text {
@@ -66,27 +122,5 @@ export const Typography = css`
 		padding: 0;
 		position: absolute;
 		width: 1px;
-	}
-
-	a {
-		color: var(--c-dark);
-		text-decoration: none;
-		box-shadow: 0 -.15rem 0 inset var(--c-primary-h);
-		transition: 300ms ease box-shadow;
-
-		&:hover,
-		&:focus {
-			box-shadow: 0 -.5rem 0 inset var(--c-primary-h);
-			outline: none;
-		}
-
-		&.-nobox {
-			box-shadow: none;
-		}
-	}
-
-	hr {
-		border-color: var(--c-light-h);
-		border-bottom: none;
 	}
 `

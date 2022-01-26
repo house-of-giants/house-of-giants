@@ -1,16 +1,13 @@
-import { AnimateSharedLayout } from 'framer-motion'
 import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
-import PrimaryNav from '@/components/Nav/PrimaryNav'
 import { Base, Typography } from '@/styles/base'
-import Footer from '@/components/Global/Footer'
+
+import { Header } from '@/components/Header/Header'
 
 const GlobalStyle = createGlobalStyle`
 	${Base}
 	${Typography}
 `
-
-const theme = {}
 
 export default function App({ Component, pageProps }) {
 	return (
@@ -32,11 +29,8 @@ export default function App({ Component, pageProps }) {
 			</Head>
 			<GlobalStyle />
 			<div className="global-wrap">
-				<PrimaryNav />
-				<AnimateSharedLayout>
-					<Component {...pageProps} />
-				</AnimateSharedLayout>
-				<Footer />
+				<Header />
+				<Component {...pageProps} />
 			</div>
 		</>
 	)
