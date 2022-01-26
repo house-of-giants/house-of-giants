@@ -107,7 +107,7 @@ export default function Home() {
 			<Container className="-has-background" background="var(--c-primary-dark)" pTop="calc(var(--sp-2xl) * 2)" pBottom="calc(var(--sp-2xl) * 2)">
 				<Dots>
 					<h3>Our values &amp; ethos</h3>
-					<p className="h2">Dreaming of <span className="-green">innovation</span>. Experimenting with <span className="-green">passion</span>. Creating with <span className="-green">purpose</span>. We believe creativity &amp; technology can change the world right after <span className="-green">punk</span> does.</p>
+					<p className="h2">Dreaming of <span className="-green">innovation</span>. Experimenting with <span className="-green">passion</span>. Creating with <span className="-green">purpose</span>. We believe creativity &amp; technology can change the world, right after <span className="-green">punk</span> does.</p>
 					<p className="h1 -uppercase">We create Digital experiences that<br />people love to use.</p>
 				</Dots>
 			</Container>
@@ -115,23 +115,23 @@ export default function Home() {
 			<Container className="-has-background" background="var(--c-primary-dark)" pBottom="calc(var(--sp-2xl) * 4)">
 				<SectionBar count="1.0" title="Services" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pBottom="var(--sp-2xl)">
-					<h2 className="-lh-1 -m0 -fs-2xl -dots"><span className="-grad-header">This is how we help you build amazing experiences</span></h2>
-					<p className="-c-wolf-gray -m0">Do we need this? maybe, who cares. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.</p>
+					<h2 className="-lh-1 -m0 -fs-2xl -dots"><span className="-grad-header">Collaboration, passion, whiskey, friendship.</span></h2>
+					<p className="-c-wolf-gray -m0">Denver based and Colorado raised, we have been honing our craft for over a decade. From strategy to user experience, to design and development, we know how to creatively solve complex problems on the web.</p>
 				</Grid>
 				<Grid cols="repeat(2, 1fr)" gap="var(--sp-2xl)" pBottom="var(--sp-xl)" align="start">
 					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
 						<p className="-m0 -serif">01</p>
 						<div>
-							<h4>Digital design for services,<br />products and platforms</h4>
-							<p className="-m0">Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.</p>
+							<h4><span className="-green">Strategy</span> as solid as<br />Dwayne "The Rock" Johnson.</h4>
+							<p className="-m0">Each project we are a part of deserves a thoughtful and detail oriented approach. We'll work with you as a strategic partner to establish the best path forward for your specific needs.</p>
 						</div>
 					</Grid>
 
 					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
 						<p className="-m0 -serif">02</p>
 						<div>
-							<h4>Development,<br />Accessability and scale.</h4>
-							<p className="-m0">Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.</p>
+							<h4><span className="-green">User experience</span> curation<br />fancier than the Louvre.</h4>
+							<p className="-m0">User experience strategy and desgin is unique to your project. We&apos;re not going to throw trashy buzzwords your way unless they'll provide true benefit to you and your users.</p>
 						</div>
 					</Grid>
 				</Grid>
@@ -140,16 +140,16 @@ export default function Home() {
 					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
 						<p className="-m0 -serif">03</p>
 						<div>
-							<h4>Visiual identities and<br />logos for cool people</h4>
-							<p className="-m0">Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.</p>
+							<h4><span className="-green">Visual identity and designs</span> that<br />awaken your inner creative.</h4>
+							<p className="-m0">We&apos;ve worked our asses off to be able flex our creative muscles at will, and we are <strong><em>ripped</em></strong>. We get pumped up like Arnold to be able to show you the unique visual designs we come up with for your brand.</p>
 						</div>
 					</Grid>
 
 					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
 						<p className="-m0 -serif">04</p>
 						<div>
-							<h4>Consultation and<br />strategy planning</h4>
-							<p className="-m0">Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.</p>
+							<h4><span className="-green">Development</span> strategies more organized<br />than your sock drawer.</h4>
+							<p className="-m0">We take an absurd amount of pride in the code we write. Performace, accessibility, and scalability are built into everything we do from the start. Your socks won't grow with your feet. On the other foot, our code will grow with you as your business scales.</p>
 						</div>
 					</Grid>
 				</Grid>
@@ -158,8 +158,8 @@ export default function Home() {
 			<Container className="-has-background" background="var(--c-primary-dark)" pBottom="calc(var(--sp-2xl) * 2)">
 				<SectionBar count="2.0" title="Clients" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pBottom="var(--sp-2xl)">
-					<h2 className="-lh-1 -m0 -fs-2xl -dots -dots-l"><span className="-grad-header">We know what we are doing. Here is a list.</span></h2>
-					<p className="-c-wolf-gray -m0">Do we need this? maybe, who cares. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.</p>
+					<h2 className="-lh-1 -m0 -fs-2xl -dots -dots-l"><span className="-grad-header">We know what we&apos;re doing. They can attest.</span></h2>
+					<p className="-c-wolf-gray -m0">This is just a short list of the kick ass partners we&apos;ve worked with. A tiny logo in a trust bar will never express the true gratitude for every partner we&apos;ve engaged with over the years.</p>
 				</Grid>
 				<Grid cols="repeat(auto-fit, minmax(114px, 220px))" pTop="var(--sp-2xl)" gap="var(--sp-xl)" justify="center">
 					<div className="logo">
@@ -271,9 +271,27 @@ export default function Home() {
 					</div>
 					<div>
 						<blockquote>
-							They even took the time for in-depth research before calls which proved to me they understood the history and path.
+							I was most impressed with how seriously they took my ideas and incorporated them into their awesome design ability.
 						</blockquote>
-						<figcaption>Body Johnson<br />CEO &amp; Owner, BackForty Management</figcaption>
+						<figcaption>Sheryl Glubok<br />Independent Filmmaker</figcaption>
+					</div>
+					<div>
+						<blockquote>
+							The outcome has been fantastic, as we&apos;re successfully generating new people who want to get involved in our program.
+						</blockquote>
+						<figcaption>Ann Marie Beresford<br />Executive Director, Adaptive Sports Association</figcaption>
+					</div>
+					<div>
+						<blockquote>
+							House of Giants was really forward-thinking in their design.
+						</blockquote>
+						<figcaption>Devan Crean<br />Former Marketing &amp; Communications Manager, Air Methods</figcaption>
+					</div>
+					<div>
+						<blockquote>
+							They do a great job at getting to know the brand and investing in our collaboration.
+						</blockquote>
+						<figcaption>Katie Zak<br />Marketing Director, Untapped Learning</figcaption>
 					</div>
 				</Carousel>
 			</Container>
@@ -283,7 +301,7 @@ export default function Home() {
 				<SectionBar count="3.0" title="Team" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pBottom="var(--sp-2xl)">
 					<h2 className="-lh-1 -m0 -fs-2xl -grad-header">We are a three person team kicking ass</h2>
-					<p className="-c-wolf-gray -m0">Do we need this? maybe, who cares. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.</p>
+					<p className="-c-wolf-gray -m0">Ten years of dreaming, aspiring, and pushing each other to be creative in the pursuit of lifelong web design and development mastery.</p>
 				</Grid>
 
 				<Grid cols="repeat(3, 1fr)" gap="var(--sp-m)" pBottom="var(--sp-2xl)">
@@ -336,13 +354,13 @@ export default function Home() {
 				id="contact"
 				className={showForm ? '-active' : ''}
 				background="linear-gradient(-270deg, var(--c-neon-sky) 0%, var(--c-cyber-green) 80%, var(--c-white) 80% 100%)"
-				pTop="calc(var(--sp-2xl) * 2)"
-				pBottom="calc(var(--sp-2xl) * 2)"
+				pTop="var(--sp-2xl)"
+				pBottom="var(--sp-2xl)"
 			>
 				<Grid cols="2fr 1fr" gap="var(--sp-m)" pBottom="var(--sp-2xl)" onClick={() => showForm ? setShowForm(false) : null}>
 					<Dots opacity="0.1">
-						<h2 className="-lh-1 -fw-700">Let's Build something amazing and become BFF's</h2>
-						<p>Do we need this? Maybe, who cares. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.</p>
+						<h2 className="-lh-1 -fw-700">Let&apos;s build something amazing together</h2>
+						<p>Whether you have a fully fleshed out idea, or just want to talk through options, we'd love to chat with you. Give us some quick information that will help us better understand your needs, and we'll let you know the options.</p>
 						<Button href="#contact" onClick={() => setShowForm(true)}>Let me fill out a form <Arrow width="13" height="13" /></Button>
 					</Dots>
 				</Grid>
