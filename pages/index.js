@@ -268,7 +268,7 @@ export default function Home() {
 						<blockquote>
 							They even took the time for in-depth research before calls which proved to me they understood the history and path.
 						</blockquote>
-						<figcaption>Body Johnson<br />CEO &amp; Owner, BackForty Management</figcaption>
+						<figcaption>Bodie Johnson<br />CEO &amp; Owner, BackForty Management</figcaption>
 					</div>
 					<div>
 						<blockquote>
@@ -428,7 +428,7 @@ export default function Home() {
 					<ul>
 						<li><a href="https://twitter.com/_houseofgiants" target="_blank">Twitter <Arrow width="10" height="10" /></a></li>
 						<li><a href="https://www.instagram.com/_houseofgiants/" target="_blank">Instagram <Arrow width="10" height="10" /></a></li>
-						<li><a href="#">Dribbble <Arrow width="10" height="10" /></a></li>
+						<li><a href="https://www.linkedin.com/company/house-of-giants" target="_blank">LinkedIn <Arrow width="10" height="10" /></a></li>
 					</ul>
 
 					<p className="-fw-500 -m0">&copy;{new Date().getFullYear()} House of Giants</p>

@@ -105,7 +105,11 @@ export const Typography = css`
 	}
 	
 	.-lh-2 {
-		line-height: 2;
+		line-height: 1.3;
+
+		@media (min-width: 1024px) {
+			line-height: 2;
+		}
 	}
 
 	.-cross {
