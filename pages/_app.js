@@ -13,6 +13,7 @@ export default function App({ Component, pageProps }) {
 	return (
 		<>
 			<Head>
+				<title>House of Giants :: A digital interactive studio</title>
 				<link rel="stylesheet" href="https://use.typekit.net/itw5okx.css"></link>
 				<link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"></link>
 
@@ -20,7 +21,7 @@ export default function App({ Component, pageProps }) {
 				<meta name="image" content="/social/share.jpg" />
 
 				<meta property="og:url" content="https://houseofgiants.com" />
-				<meta property="og:title" content="House of Giants" />
+				<meta property="og:title" content="House of Giants :: A digital interactive studio" />
 				<meta property="og:description" content="Dreaming of innovation. Experimenting with passion. Creating with purpose. We are a digital interactive studio focused on creating beautiful, bold, thoughtfully crafted websites." />
 				<meta property="og:image" content="/social/share.jpg" />
 
