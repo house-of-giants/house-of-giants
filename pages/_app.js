@@ -18,19 +18,19 @@ export default function App({ Component, pageProps }) {
 				<link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"></link>
 
 				<meta name="description" content="Dreaming of innovation. Experimenting with passion. Creating with purpose. We are a digital interactive studio focused on creating beautiful, bold, thoughtfully crafted websites." />
-				<meta name="image" content="/social/share.jpg" />
+				<meta name="image" content="/share.jpg" />
 
 				<meta property="og:url" content="https://houseofgiants.com" />
 				<meta property="og:title" content="House of Giants :: A digital interactive studio" />
 				<meta property="og:description" content="Dreaming of innovation. Experimenting with passion. Creating with purpose. We are a digital interactive studio focused on creating beautiful, bold, thoughtfully crafted websites." />
-				<meta property="og:image" content="/social/share.jpg" />
+				<meta property="og:image" content="/share.jpg" />
 
 				{/* Start Twitter specific meta */}
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="_houseofgiants" />
-				<meta name="twitter:title" content="House of Giants" />
+				<meta name="twitter:title" content="House of Giants :: A digital interactive studio" />
 				<meta name="twitter:description" content="Dreaming of innovation. Experimenting with passion. Creating with purpose. We are a digital interactive studio focused on creating beautiful, bold, thoughtfully crafted websites." />
-				<meta name="twitter:image" content="/social/share.jpg" />
+				<meta name="twitter:image" content="/share.jpg" />
 
 				<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXCP9HFX0" />
 				<script dangerouslySetInnerHTML={
