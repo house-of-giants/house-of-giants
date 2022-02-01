@@ -99,16 +99,16 @@ export default function Home() {
 				</AnimatePresence>
 				<motion.div style={{ scale: scaleAnim, opacity: opacityAnim }}>
 					<Video poster="/images/poster.jpg" controls ref={videoEl} onClick={() => handlePlayPause()} loop>
-						<source src="/video/reel2022.mp4" type="video/webm" />
+						<source src="/video/reel2022.webm" type="video/webm" />
 						<source src="/video/reel2022.mp4" type="video/mp4" />
 					</Video>
 				</motion.div>
 			</Container>
 
-			<Container className="-has-background" background="var(--c-primary-dark)" pTop="calc(var(--sp-2xl) * 2)" pBottom="calc(var(--sp-2xl) * 2)">
+			<Container className="-has-background -m-nop" background="var(--c-primary-dark)" pTop="calc(var(--sp-2xl) * 2)" pBottom="calc(var(--sp-2xl) * 2)">
 				<Dots>
 					<h3>Our values &amp; ethos</h3>
-					<p className="h2 -uppercase -lh-2">Dreaming of innovation.<br />Experimenting with passion.<br />Creating with purpose.<br />We are a Digital Interactive Studio Focused on creating <span className="-cross">fucking</span> beautiful, bold, thoughtfully crafted websites.</p>
+					<p className="h2 -uppercase -lh-2 -m-sm">Dreaming of innovation. Experimenting with passion. Creating with purpose. We are a Digital Interactive Studio Focused on creating <span className="-cross">fucking</span> beautiful, bold, thoughtfully crafted websites.</p>
 					<p className="h1">We help you become impossible to ignore.</p>
 				</Dots>
 			</Container>

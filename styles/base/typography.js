@@ -112,6 +112,16 @@ export const Typography = css`
 		}
 	}
 
+	.-m-sm {
+		font-size: var(--fs-m);
+		text-transform: none;
+
+		@media (min-width: 768px) {
+			font-size: var(--fs-l);
+			text-transform: uppercase;
+		}
+	}
+
 	.-cross {
 		background-image: url('/images/cross.png');
 		background-size: cover;

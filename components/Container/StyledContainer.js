@@ -10,6 +10,16 @@ export const StyledContainer = styled.div`
   top: ${props => props.stick ? 'var(--sp-m)' : 0};
   z-index: ${props => props.stick ? 0 : 1};
 
+  &.-m-nop {
+    & .wrap {
+      padding: 0;
+
+      @media (min-width: 768px) {
+        padding: 0 var(--sp-xl);
+      }
+    }
+  }
+
   &.-has-background {
     color: var(--c-white);
   }

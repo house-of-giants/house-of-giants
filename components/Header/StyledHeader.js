@@ -18,6 +18,7 @@ export const StyledHeader = styled.nav`
     display: flex;
     font-size: var(--fs-m);
     margin-bottom: 0;
+    word-break: break-word;
 
     & svg {
       margin-right: var(--sp-2xs);

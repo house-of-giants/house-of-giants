@@ -100,7 +100,11 @@ export const Base = css`
 	}
 
 	.-fs-2xl {
-		font-size: var(--fs-2xl);
+		font-size: var(--fs-l);
+		
+		@media (min-width: 768px) {			
+			font-size: var(--fs-2xl);
+		}
 	}
 
 	.-lh-1 {
