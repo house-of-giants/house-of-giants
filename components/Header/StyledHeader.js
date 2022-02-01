@@ -15,10 +15,11 @@ export const StyledHeader = styled.nav`
 
   & h1 {
     align-items: center;
-    display: flex;
+    display: inline-flex;
     font-size: var(--fs-m);
     margin-bottom: 0;
     word-break: break-word;
+    -webkit-hyphens: none;
 
     & svg {
       margin-right: var(--sp-2xs);
