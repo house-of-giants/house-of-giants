@@ -132,7 +132,7 @@ export default function Home() {
 						<p className="-m0 -serif">02</p>
 						<div>
 							<h4>User experience</h4>
-							<p className="-m0">User experience strategy and desgin is unique to your project. We&apos;re not going to throw trashy buzzwords your way unless they'll provide true benefit to you and your users.</p>
+							<p className="-m0">User experience strategy and design is unique to your project. We&apos;re not going to throw trashy buzzwords your way unless they'll provide true benefit to you and your users.</p>
 						</div>
 					</Grid>
 				</Grid>
