@@ -1,14 +1,16 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components';
 
 export const Base = css`
-/* @link https://utopia.fyi/type/calculator?c=320,18,1.3659098494,1140,24,1.3659098494,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+	/* @link https://utopia.fyi/type/calculator?c=320,18,1.3659098494,1140,24,1.3659098494,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
 
 	:root {
 		--fluid-min-width: 320;
 		--fluid-max-width: 1440;
 
 		--fluid-screen: 100vw;
-		--fluid-bp: calc((var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) / (var(--fluid-max-width) - var(--fluid-min-width)));
+		--fluid-bp: calc(
+			(var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) / (var(--fluid-max-width) - var(--fluid-min-width))
+		);
 
 		--container-width: 1440px;
 
@@ -21,15 +23,17 @@ export const Base = css`
 
 		--grad: linear-gradient(270deg, var(--c-cyber-green) 0%, var(--c-neon-sky) 100%);
 
-		--f-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-		--f-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		--f-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+			'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+		--f-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+			'Segoe UI Emoji', 'Segoe UI Symbol';
 		--f-serif: Nikolai, serif;
 
-		--fs-xs: clamp(0.60rem, 0.52rem + 0.39vw, 0.80rem);
-		--fs-s: clamp(0.82rem, 0.72rem + 0.54vw, 1.10rem);
-		--fs-base: clamp(1.13rem, 0.98rem + 0.73vw, 1.50rem);
-		--fs-m: clamp(1.54rem, 1.34rem + 1.00vw, 2.05rem);
-		--fs-l: clamp(2.10rem, 1.83rem + 1.37vw, 2.80rem);
+		--fs-xs: clamp(0.6rem, 0.52rem + 0.39vw, 0.8rem);
+		--fs-s: clamp(0.82rem, 0.72rem + 0.54vw, 1.1rem);
+		--fs-base: clamp(1.13rem, 0.98rem + 0.73vw, 1.5rem);
+		--fs-m: clamp(1.54rem, 1.34rem + 1vw, 2.05rem);
+		--fs-l: clamp(2.1rem, 1.83rem + 1.37vw, 2.8rem);
 		--fs-xl: clamp(2.87rem, 2.49rem + 1.86vw, 3.82rem);
 		--fs-2xl: clamp(3.92rem, 3.41rem + 2.55vw, 5.22rem);
 		--fs-3xl: clamp(5.35rem, 4.65rem + 3.48vw, 7.13rem);
@@ -44,25 +48,25 @@ export const Base = css`
 	}
 
 	:root {
-		--fc-2xs-min: (var(--fc-s-min) * 0.5); 
+		--fc-2xs-min: (var(--fc-s-min) * 0.5);
 		--fc-2xs-max: (var(--fc-s-max) * 0.5);
 
-		--fc-xs-min: (var(--fc-s-min) * 0.75); 
+		--fc-xs-min: (var(--fc-s-min) * 0.75);
 		--fc-xs-max: (var(--fc-s-max) * 0.75);
 
-		--fc-s-min: (var(--f-0-min, 18)); 
+		--fc-s-min: (var(--f-0-min, 18));
 		--fc-s-max: (var(--f-0-max, 24));
 
-		--fc-m-min: (var(--fc-s-min) * 1.5); 
+		--fc-m-min: (var(--fc-s-min) * 1.5);
 		--fc-m-max: (var(--fc-s-max) * 1.5);
 
-		--fc-l-min: (var(--fc-s-min) * 2); 
+		--fc-l-min: (var(--fc-s-min) * 2);
 		--fc-l-max: (var(--fc-s-max) * 2);
 
-		--fc-xl-min: (var(--fc-s-min) * 3); 
+		--fc-xl-min: (var(--fc-s-min) * 3);
 		--fc-xl-max: (var(--fc-s-max) * 3);
 
-		--fc-2xl-min: (var(--fc-s-min) * 3); 
+		--fc-2xl-min: (var(--fc-s-min) * 3);
 		--fc-2xl-max: (var(--fc-s-max) * 3);
 
 		/* T-shirt sizes */
@@ -73,7 +77,7 @@ export const Base = css`
 		--sp-l: calc(((var(--fc-l-min) / 16) * 1rem) + (var(--fc-l-max) - var(--fc-l-min)) * var(--fluid-bp));
 		--sp-xl: calc(((var(--fc-xl-min) / 16) * 1rem) + (var(--fc-xl-max) - var(--fc-xl-min)) * var(--fluid-bp));
 		--sp-2xl: calc(((var(--fc-2xl-min) / 16) * 1rem) + (var(--fc-2xl-max) - var(--fc-2xl-min)) * var(--fluid-bp));
-		
+
 		/* One-up pairs */
 		--sp-2xs-xs: calc(((var(--fc-2xs-min) / 16) * 1rem) + (var(--fc-xs-max) - var(--fc-2xs-min)) * var(--fluid-bp));
 		--sp-xs-s: calc(((var(--fc-xs-min) / 16) * 1rem) + (var(--fc-s-max) - var(--fc-xs-min)) * var(--fluid-bp));
@@ -83,7 +87,7 @@ export const Base = css`
 		--sp-xl-2xl: calc(((var(--fc-xl-min) / 16) * 1rem) + (var(--fc-2xl-max) - var(--fc-xl-min)) * var(--fluid-bp));
 	}
 
-	body{
+	body {
 		background: var(--c-white);
 		color: var(--c-primary-dark);
 		font-family: var(--f-body);
@@ -101,8 +105,8 @@ export const Base = css`
 
 	.-fs-2xl {
 		font-size: var(--fs-l);
-		
-		@media (min-width: 768px) {			
+
+		@media (min-width: 768px) {
 			font-size: var(--fs-2xl);
 		}
 	}
@@ -125,24 +129,24 @@ export const Base = css`
 	}
 
 	.-stagger {
-    padding-bottom: var(--sp-xl);
+		padding-bottom: var(--sp-xl);
 
-    @media (min-width: 768px) {
-      padding-bottom: 0;
+		@media (min-width: 768px) {
+			padding-bottom: 0;
 
-      &:first-child {
-        padding-top: var(--sp-2xs);
-      }
-  
-      &:nth-child(2) {
-        padding-top: calc(var(--sp-2xl) * 4);
-      }
-  
-      &:last-child {
-        padding-top: var(--sp-l);
-      }
-    }
-  }
+			&:first-child {
+				padding-top: var(--sp-2xs);
+			}
+
+			&:nth-child(2) {
+				padding-top: calc(var(--sp-2xl) * 4);
+			}
+
+			&:last-child {
+				padding-top: var(--sp-l);
+			}
+		}
+	}
 
 	.-grad-header {
 		background: var(--grad);
@@ -162,10 +166,10 @@ export const Base = css`
 		}
 
 		&::before {
-			background-image: url("/images/dots.png");
+			background-image: url('/images/dots.png');
 			background-repeat: repeat;
 			bottom: 0;
-			content: "";
+			content: '';
 			height: 33%;
 			left: 0;
 			position: absolute;
@@ -253,7 +257,7 @@ export const Base = css`
 		& blockquote {
 			font-size: var(--fs-l);
 			margin: 0 0 var(--sp-m);
-			quotes: "“" "”" "‘" "’";
+			quotes: '“' '”' '‘' '’';
 
 			&::before,
 			&::after {
@@ -294,4 +298,4 @@ export const Base = css`
 		resize: none;
 		width: 100%;
 	}
-`
+`;

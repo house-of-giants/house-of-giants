@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components';
 
 export const Typography = css`
 	@font-face {
@@ -27,7 +27,13 @@ export const Typography = css`
 		}
 	}
 
-	h1, .h1, h2, .h2, h3, h4, h5 {
+	h1,
+	.h1,
+	h2,
+	.h2,
+	h3,
+	h4,
+	h5 {
 		font-family: var(--f-heading);
 		font-weight: 400;
 		line-height: 1.15;
@@ -41,7 +47,7 @@ export const Typography = css`
 		hyphens: auto;
 		margin-top: 0;
 		text-transform: uppercase;
-		
+
 		@media (min-width: 768px) {
 			font-size: var(--fs-3xl);
 		}
@@ -52,7 +58,7 @@ export const Typography = css`
 		font-size: var(--fs-l);
 		font-weight: 500;
 		line-height: 1.2;
-		
+
 		@media (min-width: 768px) {
 			font-size: var(--fs-xl);
 		}
@@ -91,7 +97,7 @@ export const Typography = css`
 	.-fw-700 {
 		font-weight: 700;
 	}
-	
+
 	.-fw-500 {
 		font-weight: 500;
 	}
@@ -103,7 +109,7 @@ export const Typography = css`
 	.-lh-1 {
 		line-height: 1;
 	}
-	
+
 	.-lh-2 {
 		line-height: 1.3;
 
@@ -137,4 +143,4 @@ export const Typography = css`
 		position: absolute;
 		width: 1px;
 	}
-`
+`;
