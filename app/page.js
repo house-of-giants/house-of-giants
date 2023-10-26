@@ -1,17 +1,15 @@
 'use client';
 
-import { Carousel } from 'react-responsive-carousel';
+import Image from 'next/image';
 
 import { Container } from '@/components/Container/Container';
+import ContactForm from '@/components/Contact/ContactForm';
 import { Dots } from '@/components/Dots/Dots';
 import { Grid } from '@/components/Grid/Grid';
 import Reel from '@/components/Reel/Reel';
 import { SectionBar } from '@/components/SectionBar/SectionBar';
 import Team from '@/components/Team/Team';
-import Image from 'next/image';
-import Arrow from '@/components/SVG/Arrow';
 import Testimonials from '@/components/Testimonials/Testimonials';
-import ContactForm from '@/components/Contact/ContactForm';
 
 export default function Page() {
 	return (
