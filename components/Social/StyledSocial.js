@@ -1,60 +1,60 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledSocial = styled.div`
-  background-color: var(--c-white);
-  font-size: var(--fs-s);
-  transition: transform 333ms cubic-bezier(0.25, 1, 0.5, 1);
-  width: 100%;
-  
-  @media (min-width: 1220px) {
-    background: linear-gradient(-270deg, var(--c-neon-sky) 0%, var(--c-cyber-green) 100%);
-    background-color: transparent;
-    max-width: 80vw;
-  }
+	background-color: var(--c-white);
+	font-size: var(--fs-s);
+	transition: transform 333ms cubic-bezier(0.25, 1, 0.5, 1);
+	width: 100%;
 
-  &.-active {
-    @media (min-width: 1220px) {
-      transform: translateX(-60vw);
-    }
-  }
+	@media (min-width: 1220px) {
+		background: linear-gradient(-270deg, var(--c-neon-sky) 0%, var(--c-cyber-green) 100%);
+		background-color: transparent;
+		max-width: 80vw;
+	}
 
-  & .wrap {
-    border-top: 1px solid var(--c-primary-dark);
-    display: flex;
-    justify-content: space-between;
-    padding-top: var(--sp-s);
-  }
+	&.-active {
+		@media (min-width: 1220px) {
+			transform: translateX(-60vw);
+		}
+	}
 
-  ul {
-    margin: 0;
-    padding: 0;
-  }
+	& .wrap {
+		border-top: 1px solid var(--c-primary-dark);
+		display: flex;
+		justify-content: space-between;
+		padding-top: var(--sp-s);
+	}
 
-  & li {
-    display: inline;
+	ul {
+		margin: 0;
+		padding: 0;
+	}
 
-    &:not(:last-child) {
-      padding-right: var(--sp-m);
-    }
-  }
+	& li {
+		display: inline;
 
-  & a {
-    align-items: center;
-    color: var(--c-primary-dark);
-    display: inline-flex;
-    font-family: var(--f-serif);
-    text-decoration: none;
+		&:not(:last-child) {
+			padding-right: var(--sp-m);
+		}
+	}
 
-    &:hover {
-      text-decoration: underline;
-    }
+	& a {
+		align-items: center;
+		color: var(--c-primary-dark);
+		display: inline-flex;
+		font-family: var(--f-serif);
+		text-decoration: none;
 
-    & svg {
-      margin-left: var(--sp-2xs);
-    }
-  }
+		&:hover {
+			text-decoration: underline;
+		}
 
-  & p {
-    font-size: var(--fs-s);
-  }
+		& svg {
+			margin-left: var(--sp-2xs);
+		}
+	}
+
+	& p {
+		font-size: var(--fs-s);
+	}
 `;

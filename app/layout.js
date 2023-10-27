@@ -1,0 +1,17 @@
+import { Header } from '@/components/Header/Header';
+import GlobalStyles from '@/components/Styles/GlobalStyles';
+import StyledComponentsRegistry from 'lib/registry';
+
+export default function RootLayout({ children }) {
+	return (
+		<html>
+			<body>
+				<StyledComponentsRegistry>
+					<GlobalStyles />
+					<Header />
+					{children}
+				</StyledComponentsRegistry>
+			</body>
+		</html>
+	);
+}
