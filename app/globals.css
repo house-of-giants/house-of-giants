@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.spin {
+	animation: spin 45s infinite linear;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(1turn);
+	}
+}
