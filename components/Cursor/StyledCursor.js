@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 
 export const CircleGrad = styled.button`
 	align-items: center;
-	background: ${(props) => (props.$solid ? 'var(--c-primary-dark)' : 'var(--grad)')};
+	background: ${(props) =>
+		props.$solid ? 'var(--c-primary-dark)' : props.$transparent ? 'transparent' : 'var(--grad)'};
 	border-radius: 50%;
 	border: none;
 	cursor: none;
@@ -29,12 +30,6 @@ export const CircleGrad = styled.button`
 
 	& .pause {
 		width: 82px;
-	}
-
-	@keyframes spin {
-		to {
-			transform: rotate(1turn);
-		}
 	}
 `;
 
