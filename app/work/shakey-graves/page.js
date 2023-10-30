@@ -30,9 +30,9 @@ export default function ShakeyGraves() {
 				</div>
 				<p className="my-32 max-w-5xl mx-auto text-3xl lh-3 leading-[3rem]">
 					Shakey Graves, the globally acclaimed artist, embarked on a remarkable musical journey with his latest album,
-					"Movies of the Week." The album's unique concept was to create a film score for a fictional movie, resulting
-					in a multifaceted collection of song versions that explore various dimensions of the same tracks. This
-					audacious endeavor presented an opportunity to engage fans in an interactive and innovative way.
+					"Movie of the Week." The album's unique concept was to create a film score for a fictional movie, resulting in
+					a multifaceted collection of song versions that explore various dimensions of the same tracks. This audacious
+					endeavor presented an opportunity to engage fans in an interactive and innovative way.
 				</p>
 				<figure>
 					<div className="aspect-[27/13] relative">
