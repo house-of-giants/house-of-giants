@@ -13,7 +13,7 @@ import Testimonials from '@/components/Testimonials/Testimonials';
 
 export default function Page() {
 	return (
-		<div className="space-y-4">
+		<div>
 			<Reel />
 			<Container
 				className="-has-background -m-nop"
