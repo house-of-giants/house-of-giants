@@ -27,4 +27,10 @@ export const StyledButton = styled.button`
 		padding-left: var(--sp-2xs);
 		transition: transform 666ms cubic-bezier(0.87, 0, 0.13, 1);
 	}
+
+	&.-link {
+		box-shadow: none;
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+	}
 `;
