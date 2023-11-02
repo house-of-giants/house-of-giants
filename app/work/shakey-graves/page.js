@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 import { Button } from '@/components/Button/Button';
 import { Container } from '@/components/Container/Container';
@@ -25,64 +26,110 @@ export default function ShakeyGraves() {
 					</Button>
 				</header>
 
-				<div className="aspect-[27/13] relative my-12">
-					<Image src="/images/shakeycase1.jpg" fill alt="Wide shot of Shakey Graves Movie of The Week album cover." />
-				</div>
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
+					viewport={{ once: true, margin: '200px' }}
+					className="aspect-[27/13] relative my-12"
+				>
+					<Image
+						src="/images/shakeycase1.jpg"
+						fill
+						loading="lazy"
+						alt="Wide shot of Shakey Graves Movie of The Week album cover."
+					/>
+				</motion.div>
 				<p className="my-32 max-w-5xl mx-auto text-3xl lh-3 leading-[3rem]">
 					Shakey Graves, the globally acclaimed artist, embarked on a remarkable musical journey with his latest album,
 					"Movie of the Week." The album's unique concept was to create a film score for a fictional movie, resulting in
 					a multifaceted collection of song versions that explore various dimensions of the same tracks. This audacious
 					endeavor presented an opportunity to engage fans in an interactive and innovative way.
 				</p>
-				<figure>
-					<div className="aspect-[27/13] relative">
+				<motion.figure
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
+					viewport={{ once: true, margin: '200px' }}
+				>
+					<div className="aspect-[27/13] relative my-12">
 						<Image src="/images/shakeycase2.jpg" fill alt="" />
 					</div>
 					<figcaption className="text-lg font-serif leading-10 italic">01 - Shakey Graves - homepage</figcaption>
-				</figure>
+				</motion.figure>
 				<p className="my-32 max-w-5xl mx-auto text-3xl lh-3 leading-[3rem]">
 					The challenge was to introduce a diverse array of song versions within the album and allow fans to interact
 					with them, ultimately crafting their own "Movie of the Week" soundtrack. Fans' input would generate a unique
 					album title, artwork, and a movie synopsis, all powered by A.I.
 				</p>
-				<figure>
+				<motion.figure
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
+					viewport={{ once: true, margin: '200px' }}
+				>
 					<div className="aspect-[27/13] relative">
-						<Image src="/images/shakeycase3.jpg" fill alt="" />
+						<Image src="/images/shakeycase3.jpg" loading="lazy" fill alt="" />
 					</div>
 					<figcaption className="text-lg font-serif leading-10 italic">
 						02 - Shakey Graves - homepage - mobile
 					</figcaption>
-				</figure>
+				</motion.figure>
 				<p className="my-32 max-w-5xl mx-auto text-3xl lh-3 leading-[3rem]">
 					Drawing inspiration from the album artwork, which featured a wall of TV screens, our creative concept centered
 					on recreating this visual motif within an interactive web experience. Users could navigate the site by
 					exploring a wall of TVs playing Shakey Graves' retro-style videos. This immersive journey led users to the
 					heart of the experience: the "Movie of the Week" generator page.
 				</p>
-				<figure>
+				<motion.figure
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
+					viewport={{ once: true, margin: '200px' }}
+				>
 					<div className="aspect-[27/13] relative">
-						<Image src="/images/shakeycase4.jpg" fill alt="" />
+						<Image src="/images/shakeycase4.jpg" loading="lazy" fill alt="" />
 					</div>
 					<figcaption className="text-lg font-serif leading-10 italic">
 						03 - Shakey Graves - soundtrack generator
 					</figcaption>
-				</figure>
+				</motion.figure>
 				<p className="my-32 max-w-5xl mx-auto text-3xl lh-3 leading-[3rem]">
 					On this page, users were prompted to input their preferred movie genre. Their input triggered the generation
 					of a unique tailored page that consisted of artwork, movie title, movie synopsis and a film score to match.
 					This personalized experience empowered users to create, listen to, and even purchase their unique album.
 				</p>
-				<figure className="grid lg:grid-cols-2 gap-4 lg:gap-y-0 gap-x-6">
+				<motion.figure
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
+					viewport={{ once: true, margin: '200px' }}
+					className="grid lg:grid-cols-2 gap-4 lg:gap-y-0 gap-x-6"
+				>
 					<div className="aspect-square relative">
-						<Image src="/images/shakeycase5.jpg" className="aspect-square" height={652} width={659} alt="" />
+						<Image
+							src="/images/shakeycase5.jpg"
+							loading="lazy"
+							className="aspect-square"
+							height={652}
+							width={659}
+							alt=""
+						/>
 					</div>
 					<div className="aspect-square relative">
-						<Image src="/images/shakeycase6.jpg" className="aspect-square" height={652} width={659} alt="" />
+						<Image
+							src="/images/shakeycase6.jpg"
+							loading="lazy"
+							className="aspect-square"
+							height={652}
+							width={659}
+							alt=""
+						/>
 					</div>
 					<figcaption className="text-lg font-serif leading-10 italic">
 						04 - Shakey Graves - generated soundtrack - mobile
 					</figcaption>
-				</figure>
+				</motion.figure>
 				<p className="my-32 max-w-5xl mx-auto text-3xl lh-3 leading-[3rem]">
 					This innovative tool not only captivated users with its uniqueness but also had a substantial impact on his
 					website's performance. In the first week after the site's launch, we witnessed an impressive 91% surge in new
@@ -105,8 +152,8 @@ export default function ShakeyGraves() {
 							/>
 							<defs>
 								<linearGradient id="paint0_linear_45_105" x1="73" y1="65" x2="0" y2="65" gradientUnits="userSpaceOnUse">
-									<stop stop-color="#C1FF1D" />
-									<stop offset="1" stop-color="#00FFE0" />
+									<stop stopColor="#C1FF1D" />
+									<stop offset="1" stopColor="#00FFE0" />
 								</linearGradient>
 							</defs>
 						</svg>
@@ -127,8 +174,8 @@ export default function ShakeyGraves() {
 							/>
 							<defs>
 								<linearGradient id="paint0_linear_45_105" x1="73" y1="65" x2="0" y2="65" gradientUnits="userSpaceOnUse">
-									<stop stop-color="#C1FF1D" />
-									<stop offset="1" stop-color="#00FFE0" />
+									<stop stopColor="#C1FF1D" />
+									<stop offset="1" stopColor="#00FFE0" />
 								</linearGradient>
 							</defs>
 						</svg>
