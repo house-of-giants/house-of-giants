@@ -1,6 +1,6 @@
 const Arrow = ({ fill = '#000', width, height }) => (
 	<svg
-		className="arrow"
+		className="arrow box-content"
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg"
 		width={width}
