@@ -10,6 +10,28 @@ import Reel from '@/components/Reel/Reel';
 import { SectionBar } from '@/components/SectionBar/SectionBar';
 import Team from '@/components/Team/Team';
 import Testimonials from '@/components/Testimonials/Testimonials';
+import CaseCard from '@/components/Cards/CaseCard';
+
+const work = [
+	{
+		title: 'Shakey Graves',
+		type: ['Design', 'Development'],
+		img: '/images/shakeycard.jpg',
+		url: '/work/shakey-graves',
+	},
+	{
+		title: 'Hayashi',
+		type: ['Design', 'Development'],
+		img: '/images/hayashicard.jpg',
+		url: '/work/hayashi',
+	},
+	{
+		title: 'BackForty',
+		type: ['Design', 'Development'],
+		img: '/images/backfortycard.jpg',
+		url: '/work/backforty',
+	},
+];
 
 export default function Page() {
 	return (
@@ -102,7 +124,15 @@ export default function Page() {
 				</Grid>
 			</Container>
 			<Container className="-has-background" background="var(--c-primary-dark)" pb="calc(var(--sp-2xl) * 2)">
-				<SectionBar count="2.0" title="Clients" />
+				<SectionBar count="2.0" title="Work" />
+				<div className="grid md:grid-flow-col gap-10 grid-cols-1 md:auto-cols-fr">
+					{work.map(({ title, type, img, url }) => (
+						<CaseCard title={title} img={img} url={url} type={type} />
+					))}
+				</div>
+			</Container>
+			<Container className="-has-background" background="var(--c-primary-dark)" pb="calc(var(--sp-2xl) * 2)">
+				<SectionBar count="3.0" title="Clients" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pb="var(--sp-2xl)">
 					<h2 className="-lh-1 -m0 -fs-2xl -dots -dots-l">
 						<span className="-grad-header">We know what we&apos;re doing. They can attest.</span>
@@ -148,7 +178,7 @@ export default function Page() {
 			</Container>
 
 			<Container className="-has-background" background="var(--c-primary-dark)" pb="calc(var(--sp-2xl) * 2)">
-				<SectionBar count="3.0" title="Team" />
+				<SectionBar count="4.0" title="Team" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pb="var(--sp-2xl)">
 					<h2 className="-lh-1 -m0 -fs-2xl -grad-header">We are a three person team kicking ass</h2>
 					<p className="-c-wolf-gray -m0">
