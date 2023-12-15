@@ -35,7 +35,7 @@ const work = [
 
 export default function Page() {
 	return (
-		<div>
+		<main>
 			<Reel />
 			<Container
 				className="-has-background -m-nop"
@@ -127,7 +127,7 @@ export default function Page() {
 				<SectionBar count="2.0" title="Work" />
 				<div className="grid md:grid-flow-col gap-10 grid-cols-1 md:auto-cols-fr">
 					{work.map(({ title, type, img, url }) => (
-						<CaseCard title={title} img={img} url={url} type={type} />
+						<CaseCard key={url} title={title} img={img} url={url} type={type} />
 					))}
 				</div>
 			</Container>
@@ -191,6 +191,6 @@ export default function Page() {
 			</Container>
 
 			<ContactForm />
-		</div>
+		</main>
 	);
 }
