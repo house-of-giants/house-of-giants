@@ -57,7 +57,7 @@ export default function Page() {
 			<Container className="-has-background" background="var(--c-primary-dark)" pb="calc(var(--sp-2xl) * 4)">
 				<SectionBar count="1.0" title="Services" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pb="var(--sp-2xl)">
-					<h2 className="-lh-1 -m0 -fs-2xl -dots">
+					<h2 className="-lh-1 -m0 -fs-2xl -dots font-bold">
 						<span className="-grad-header">
 							We&apos;ll handle the black magic so you don&apos;t have to dabble in the dark arts.
 						</span>
@@ -115,9 +115,87 @@ export default function Page() {
 						<div>
 							<h4>Development</h4>
 							<p className="-m0">
-								We take an absurd amount of pride in the code we write. Performace, accessibility, and scalability are
+								We take an absurd amount of pride in the code we write. Performance, accessibility, and scalability are
 								built into everything we do from the start. Your socks won't grow with your feet. On the other foot, our
 								code will grow with you as your business scales.
+							</p>
+						</div>
+					</Grid>
+				</Grid>
+				<Grid cols="1.75fr" gap="var(--sp-2xl)" pb="var(--sp-2xl)" pt="var(--sp-2xl)">
+					<h2 className="-lh-1 -m0 -fs-2xl -dots font-bold">
+						<span className="-grad-header">We don't worship at the digital altar.</span>
+					</h2>
+					<p className="-m0">
+						In our industry, technology changes faster than we change our socks (which is often, I promise). That's why
+						we consider ourselves tech agnostic. We'll never prescribe to you a set of technology just because it's the
+						new hotness, or because it's what we're most comfortable with. We make suggestions based on your needs, and
+						choose technologies that will grow with your business. Here are a few that we like right now:
+					</p>
+				</Grid>
+				<Grid cols="repeat(2, 1fr)" gap="var(--sp-2xl)" pt="var(--sp-2xl)" pb="var(--sp-2xl)" align="start">
+					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
+						<p className="-m0 -serif">01</p>
+						<div>
+							<h4>WordPress 😱</h4>
+							<p className="-m0">
+								I know, I know, WordPress has a bad rap. But once you experience a finely crafted, custom WordPress
+								theme from us, you'll never want to go back. Our experience building lean, efficient, and performant
+								WordPress websites comes from years of experience with the platform. We don't load you up with plugins,
+								or pre-built themes that are more bloated than we are after a seven course Italian meal. We build{' '}
+								<em>using core technology within WordPress</em> to give you ultimate flexibility and control over your
+								content.
+							</p>
+						</div>
+					</Grid>
+
+					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
+						<p className="-m0 -serif">02</p>
+						<div>
+							<h4>NextJS 😎</h4>
+							<p className="-m0">
+								We love React and NextJS right now. Dynamic applications, self contained and scalable technology all
+								wrapped up into a fantastic developer experience. When it comes to building web apps NextJS is a
+								phenomenal option. The community is robust, and the future is bright for a framework as flexible as
+								Next. You can even pair it <em>with WordPress</em> as a headless CMS to combine the superpowers of both
+								worlds. ✨ Magic ✨
+							</p>
+						</div>
+					</Grid>
+				</Grid>
+				<Grid cols="repeat(2, 1fr)" gap="var(--sp-2xl)" pt="var(--sp-2xl)" pb="var(--sp-2xl)" align="start">
+					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
+						<p className="-m0 -serif">03</p>
+						<div>
+							<h4>ThreeJS 🤯</h4>
+							<p className="-m0">
+								The sheer amount of incredible 3d rendering capabilities within ThreeJS is mind blowing. If you can
+								dream it in 3d space, ThreeJS can build it. From a{' '}
+								<a
+									href="https://shakeygraves.com"
+									target="_blank"
+									rel="noopener"
+									style={{ textDecoration: 'underline' }}
+								>
+									wall of old TVs
+								</a>{' '}
+								to a fully immersive 3d world, ThreeJS, using WebGL and some other voodoo to render this stuff on the
+								screen, is an incredible option for your loftiest and most ambitious website fever dreams.
+							</p>
+						</div>
+					</Grid>
+
+					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
+						<p className="-m0 -serif">02</p>
+						<div>
+							<h4>AI in general 🤖</h4>
+							<p className="-m0">
+								It goes without saying but AI is fascinating. There are so many practical applications for AI in web
+								applications and websites. Analyzing large swathes of content and making suggestions, summarizing,
+								researching, creative storytelling, the list goes on and on. If you have a solid data set, you can
+								benefit from AI. The things we can do with it are both terrifying and exciting. But it's okay, we'll
+								have each other to ensure that things don't run wild. I know I don't want to end up like John Connor
+								running away from Arnold Schwarzenegger.
 							</p>
 						</div>
 					</Grid>
@@ -180,10 +258,10 @@ export default function Page() {
 			<Container className="-has-background" background="var(--c-primary-dark)" pb="calc(var(--sp-2xl) * 2)">
 				<SectionBar count="4.0" title="Team" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pb="var(--sp-2xl)">
-					<h2 className="-lh-1 -m0 -fs-2xl -grad-header">We are a three person team kicking ass</h2>
+					<h2 className="-lh-1 -m0 -fs-2xl -grad-header font-bold">Nothing short of GIANT.</h2>
 					<p className="-c-wolf-gray -m0">
-						Ten years of dreaming, aspiring, and pushing each other to be creative in the pursuit of lifelong web design
-						and development mastery.
+						10+ years of dreaming, aspiring, and honing our craft in the pursuit of lifelong web design and development
+						mastery.
 					</p>
 				</Grid>
 
