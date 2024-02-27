@@ -212,7 +212,7 @@ export default function Page() {
 			<Container className="-has-background" background="var(--c-primary-dark)" pb="calc(var(--sp-2xl) * 2)">
 				<SectionBar count="3.0" title="Clients" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pb="var(--sp-2xl)">
-					<h2 className="-lh-1 -m0 -fs-2xl -dots -dots-l">
+					<h2 className="-lh-1 -m0 -fs-2xl -dots -dots-l font-bold">
 						<span className="-grad-header">We know what we&apos;re doing. They can attest.</span>
 					</h2>
 					<p className="-c-wolf-gray -m0">
