@@ -8,7 +8,6 @@ import { Dots } from '@/components/Dots/Dots';
 import { Grid } from '@/components/Grid/Grid';
 import Reel from '@/components/Reel/Reel';
 import { SectionBar } from '@/components/SectionBar/SectionBar';
-import Team from '@/components/Team/Team';
 import Testimonials from '@/components/Testimonials/Testimonials';
 import CaseCard from '@/components/Cards/CaseCard';
 
@@ -255,6 +254,7 @@ export default function Page() {
 				<Testimonials />
 			</Container>
 
+			<ContactForm />
 			<Container className="-has-background" background="var(--c-primary-dark)" pb="calc(var(--sp-2xl) * 2)">
 				<SectionBar count="4.0" title="Team" />
 				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pb="var(--sp-2xl)">
@@ -264,11 +264,7 @@ export default function Page() {
 						mastery.
 					</p>
 				</Grid>
-
-				<Team />
 			</Container>
-
-			<ContactForm />
 		</main>
 	);
 }

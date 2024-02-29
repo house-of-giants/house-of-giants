@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { StyledGrid } from '../Grid/StyledGrid';
-import { CircleGrad } from '../Cursor/StyledCursor';
 
 export const StyledContact = styled.div`
 	align-items: center;
@@ -79,7 +78,7 @@ export const StyledContact = styled.div`
 
 	& .form {
 		align-items: center;
-		background-color: var(--c-white);
+		background-color: var(--c-moon-rock);
 		box-sizing: border-box;
 		display: flex;
 		padding: var(--sp-xl);
@@ -97,6 +96,11 @@ export const StyledContact = styled.div`
 
 		& form {
 			width: 100%;
+		}
+
+		& input,
+		& textarea {
+			border-radius: 3px;
 		}
 	}
 

@@ -13,8 +13,11 @@ export const Header = () => (
 				<Mark width="32" height="50" /> House of Giants
 			</h1>
 		</Link>
-		<Button href="#contact">
-			Start your project <Arrow width="13" height="13" />
-		</Button>
+		<div className="flex gap-4">
+			<Button href="/blog">Blog</Button>
+			<Button href="#contact" style={{ backgroundColor: '#1a1f24', color: '#F4F3EC' }}>
+				Start your project <Arrow width="13" height="13" fill="#F4F3EC" />
+			</Button>
+		</div>
 	</StyledHeader>
 );

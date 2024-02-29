@@ -6,9 +6,6 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/Button/Button';
 import { Container } from '@/components/Container/Container';
 import ContactForm from '@/components/Contact/ContactForm';
-import { CircleGrad } from '@/components/Cursor/StyledCursor';
-import Mark from '@/components/SVG/Mark';
-import Love from '@/components/SVG/Love';
 
 export default function Hayashi() {
 	return (
