@@ -8,7 +8,6 @@ import { Dots } from '@/components/Dots/Dots';
 import { Grid } from '@/components/Grid/Grid';
 import Reel from '@/components/Reel/Reel';
 import { SectionBar } from '@/components/SectionBar/SectionBar';
-import Team from '@/components/Team/Team';
 import Testimonials from '@/components/Testimonials/Testimonials';
 import CaseCard from '@/components/Cards/CaseCard';
 
@@ -256,6 +255,16 @@ export default function Page() {
 			</Container>
 
 			<ContactForm />
+			<Container className="-has-background" background="var(--c-primary-dark)" pb="calc(var(--sp-2xl) * 2)">
+				<SectionBar count="4.0" title="Team" />
+				<Grid cols="1.75fr 1fr" gap="var(--sp-2xl)" pb="var(--sp-2xl)">
+					<h2 className="-lh-1 -m0 -fs-2xl -grad-header font-bold">Nothing short of GIANT.</h2>
+					<p className="-c-wolf-gray -m0">
+						10+ years of dreaming, aspiring, and honing our craft in the pursuit of lifelong web design and development
+						mastery.
+					</p>
+				</Grid>
+			</Container>
 		</main>
 	);
 }

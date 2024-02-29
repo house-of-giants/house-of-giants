@@ -1,5 +1,5 @@
 import { getSortedPostsData } from '@/lib/blog';
-import ListLayout from 'layouts/listlayout';
+import ListLayout from 'layouts/ListLayout';
 
 const POSTS_PER_PAGE = 5;
 
