@@ -6,7 +6,7 @@ export function PostHeader({ title, coverImage, date, author }) {
 	return (
 		<>
 			<header className="grid lg:grid-cols-[2fr_3fr] gap-y-8 md:gap-x-12 mb-12">
-				<div className="contianer max-w-7xl col-span-full mx-auto px-4 w-full">
+				<div className="contianer max-w-[1440px] col-span-full mx-auto px-4 w-full">
 					<Link href="/blog" className="block mb-6 italic ">
 						&larr; All posts
 					</Link>
