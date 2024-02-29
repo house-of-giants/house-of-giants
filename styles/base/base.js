@@ -19,7 +19,7 @@ export const Base = css`
 		--c-moon-rock: #ececec;
 		--c-neon-sky: #00ffe0;
 		--c-cyber-green: #c1ff1d;
-		--c-white: #ffffff;
+		--c-white: #fefefe;
 
 		--grad: linear-gradient(270deg, var(--c-cyber-green) 0%, var(--c-neon-sky) 100%);
 
@@ -88,7 +88,7 @@ export const Base = css`
 	}
 
 	body {
-		background: var(--c-white);
+		background: var(--c-moon-rock);
 		color: var(--c-primary-dark);
 		font-family: var(--f-body);
 		margin: 0;
@@ -288,7 +288,8 @@ export const Base = css`
 	input,
 	textarea,
 	select {
-		border: 1px solid var(--c-primary-dark);
+		background-color: transparent;
+		border: 1px solid var(--c-wolf-gray);
 		box-sizing: border-box;
 		font-size: var(--fs-s);
 		padding: var(--sp-2xs) var(--sp-xs);

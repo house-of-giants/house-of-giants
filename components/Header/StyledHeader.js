@@ -5,9 +5,15 @@ import { StyledContainer } from '../Container/StyledContainer';
 export const StyledHeader = styled.nav`
 	align-items: center;
 	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	max-width: var(--container-width);
 	margin: 0 auto;
 	padding: var(--sp-s) var(--sp-2xs);
+
+	@media (min-width: 1024px) {
+		flex-direction: row;
+	}
 
 	@media (min-width: calc(1440px + (var(--sp-2xs) * 2))) {
 		padding: var(--sp-s) 0;
