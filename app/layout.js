@@ -5,6 +5,7 @@ import GlobalStyles from '@/components/Styles/GlobalStyles';
 import StyledComponentsRegistry from 'lib/registry';
 
 import './globals.css';
+import PlausibleProvider from 'next-plausible';
 
 export async function generateMetadata() {
 	return {
@@ -30,6 +31,9 @@ export async function generateMetadata() {
 export default function RootLayout({ children }) {
 	return (
 		<html>
+			<head>
+				<PlausibleProvider domain="houseofgiants.com" />
+			</head>
 			<body>
 				<StyledComponentsRegistry>
 					<GlobalStyles />
