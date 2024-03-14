@@ -27,6 +27,7 @@
 		"rehype-stringify": "^10.0.0",
 		"remark": "^15.0.1",
 		"remark-html": "^16.0.1",
+		"remark-rehype": "^11.1.0",
 		"shiki": "^1.1.7",
 		"styled-components": "^6.1.0"
 	},
