@@ -2,11 +2,30 @@
 	@apply text-lg leading-relaxed;
 }
 
+.markdown pre {
+	overflow-x: auto;
+	padding: 1rem 0;
+}
+
+.markdown pre [data-line] {
+	padding: 0 1rem;
+}
+
 .markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
 	@apply my-6;
+}
+
+.markdown ul,
+.markdown ol {
+	@apply pl-12 list-disc;
+}
+
+.markdown li {
+	font-size: var(--fs-base);
+	@apply mb-4;
 }
 
 .markdown a {

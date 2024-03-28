@@ -1,4 +1,11 @@
 const nextConfig = {
+	pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+	experimental: {
+		mdxRs: false, // <- disabled
+		serverComponentsExternalPackages: ['shiki'],
+	},
+	reactStrictMode: true,
+
 	compiler: {
 		styledComponents: {
 			ssr: true,
@@ -21,4 +28,4 @@ const nextConfig = {
 	},
 };
 
-module.exports = nextConfig;
+export default nextConfig;

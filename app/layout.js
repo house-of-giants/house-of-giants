@@ -1,11 +1,11 @@
 import { Analytics } from '@vercel/analytics/react';
+import PlausibleProvider from 'next-plausible';
 
 import { Header } from '@/components/Header/Header';
 import GlobalStyles from '@/components/Styles/GlobalStyles';
 import StyledComponentsRegistry from 'lib/registry';
 
 import './globals.css';
-import PlausibleProvider from 'next-plausible';
 
 export async function generateMetadata() {
 	return {
