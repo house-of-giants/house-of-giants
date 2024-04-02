@@ -8,8 +8,6 @@ excerpt: 'Dive into the debate between traditional WordPress and the sleek realm
 date: '2024-04-02'
 ---
 
-# Rethinking WordPress: The Pros and Cons of Going Headless
-
 Ah yes, the first quarter of the year is done. Marketing budgets have been set, and for some, that means embarking on the journey of a website rebuild. You’re familiar with WordPress, but your experience with it in the past has been harrowing. Bloated, slow, a pain in the ass to update. You might have developers on one hand shouting from the rooftops to use anything other than WordPress. On the other you have some pushing pre-built templates in your direction as if they’ve crafted them from marble themselves. It’s a lot to process.
 
 I want to take the opportunity to write a few posts that provide some insight into considerations I make when choosing a technology stack for projects at House of Giants. Today, we’ll explore the differences between a traditional WordPress build and Headless.
