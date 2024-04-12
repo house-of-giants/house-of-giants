@@ -1,10 +1,10 @@
 ---
-title: ''
+title: 'The Authenticity Wars - SEO Strategies In The Age Of AI 🤖'
 image: '/images/blog/authenticity.webp'
 author:
   name: Dominic Magnifico
   picture: '/images/dom.jpeg'
-excerpt: ''
+excerpt: 'SEO was always one of those things that made me cringe every time I heard the phrase. I always envisioned cramming keywords into content just for the sake of their existence on the page. Endlessly looping phrases like “Denver web development” or “WordPress Development Denver web dev” are unnatural and meaningless. This practice inevitably left site visitors with information that didn’t convey anything useful.'
 date: '2024-04-12'
 ---
 
