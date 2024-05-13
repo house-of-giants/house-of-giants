@@ -185,7 +185,7 @@ export default function Page() {
 					</Grid>
 
 					<Grid cols="1fr 10fr" gap="var(--sp-m)" align="start">
-						<p className="-m0 -serif">02</p>
+						<p className="-m0 -serif">04</p>
 						<div>
 							<h4>AI in general 🤖</h4>
 							<p className="-m0">
