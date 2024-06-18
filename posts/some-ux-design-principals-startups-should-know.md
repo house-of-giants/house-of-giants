@@ -40,7 +40,7 @@ Accessibility needs to be top of mind at the outset of any project. Baking acces
 
 - **Alt Text for Images**: This is too easy not to be doing. Provide descriptive text for images to assist screen readers.
 - **Keyboard Navigation**: Not everyone browses the web with a mouse or a $130 Apple trackpad. Make considerations for those who navigate with a keyboard.
-- **Contrast Ratios**: I’m old and this one bothers me more and more. Do a quick check to make your text has _at least_ a AA contrast ratio. There [are](https://webaim.org/resources/contrastchecker/)[several](https://coolors.co/contrast-checker/112a46-acc8e5)[tools](https://colourcontrast.cc/)[for](https://accessibleweb.com/color-contrast-checker/)[this](https://contrastchecker.com/). Pick one.
+- **Contrast Ratios**: I’m old and this one bothers me more and more. Do a quick check to make your text has _at least_ a AA contrast ratio. There [are](https://webaim.org/resources/contrastchecker/) [several](https://coolors.co/contrast-checker/112a46-acc8e5) [tools](https://colourcontrast.cc/) [for](https://accessibleweb.com/color-contrast-checker/) [this](https://contrastchecker.com/). Pick one.
 
 ## Feedback and Responsiveness
 
