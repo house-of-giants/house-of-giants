@@ -5,20 +5,25 @@ import { useSection } from '../SectionContext/SectionContext';
 import { useInView } from 'react-intersection-observer';
 
 export const Section = ({ count, title, children }) => {
-	const { setActiveSection } = useSection();
-	const { ref, inView } = useInView({
-		threshold: 0.3, // Adjust as needed
-	});
+	try {
+		const { setActiveSection } = useSection();
+		const { ref, inView } = useInView({
+			threshold: 0.3, // Adjust as needed
+		});
 
-	useEffect(() => {
-		if (inView) {
-			setActiveSection({ count, title });
-		}
-	}, [inView, count, title, setActiveSection]);
+		useEffect(() => {
+			if (inView) {
+				setActiveSection({ count, title });
+			}
+		}, [inView, count, title, setActiveSection]);
 
-	return (
-		<section ref={ref} className="relative">
-			{children}
-		</section>
-	);
+		return (
+			<section ref={ref} className="relative">
+				{children}
+			</section>
+		);
+	} catch (error) {
+		// Fallback if context is not available
+		return <section className="relative">{children}</section>;
+	}
 };

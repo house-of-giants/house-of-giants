@@ -108,7 +108,7 @@ export const Services = () => {
 					pb="var(--section-spacing-bottom)"
 				>
 					<SectionHeader
-						title="Digital Toolbox"
+						title="Sacred Tools"
 						subtitle="We don't worship at the digital altar."
 						accent="Technology changes faster than we change our socks."
 						description="That's why we're tech agnostic. We choose technologies that grow with your business."
