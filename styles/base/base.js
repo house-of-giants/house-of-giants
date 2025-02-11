@@ -256,22 +256,6 @@ export const Base = css`
 		width: 100%;
 	}
 
-	.metric-card {
-		position: relative;
-		padding: var(--sp-xl);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: 12px;
-		transition: all 0.3s ease;
-		background: rgba(255, 255, 255, 0.03);
-		backdrop-filter: blur(10px);
-	}
-
-	.metric-card:hover {
-		transform: translateY(-4px);
-		border-color: rgba(255, 255, 255, 0.2);
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-	}
-
 	.highlight {
 		color: var(--c-white);
 	}
