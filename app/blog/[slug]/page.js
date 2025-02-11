@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
 	}
 	const ogImages = imageList.map(() => {
 		return {
-			url: `https://houseofgiants.com/api/og?title=${post.title}`,
+			url: `https://houseofgiants.com/api/og?title=${post.title}&image=${encodeURIComponent(post.image)}`,
 		};
 	});
 
