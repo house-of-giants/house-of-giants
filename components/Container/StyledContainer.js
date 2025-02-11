@@ -8,7 +8,7 @@ export const StyledContainer = styled.div`
 	padding-bottom: ${(props) => props.$pBottom || 'var(--sp-2xl)'};
 	padding-top: ${(props) => props.$pTop};
 	top: ${(props) => (props.$stick ? 'var(--sp-m)' : 0)};
-	z-index: ${(props) => (props.$stick ? 0 : 1)};
+	z-index: 0;
 
 	&.-m-nop {
 		& .wrap {
@@ -28,5 +28,7 @@ export const StyledContainer = styled.div`
 		margin: 0 auto;
 		max-width: var(--container-width);
 		padding: 0 var(--sp-xl);
+		position: relative;
+		z-index: 2;
 	}
 `;

@@ -1,29 +1,64 @@
 import { Analytics } from '@vercel/analytics/react';
 import PlausibleProvider from 'next-plausible';
+import AnimatedTitle from '@/components/AnimatedTitle/AnimatedTitle';
 
 import { Header } from '@/components/Header/Header';
 import GlobalStyles from '@/components/Styles/GlobalStyles';
 import StyledComponentsRegistry from 'lib/registry';
 
 import './globals.css';
+import siteMetadata from '@/data/siteMetadata';
 
 export async function generateMetadata() {
 	return {
-		metadataBase: new URL('https://houseofgiants.com'),
-		title: {
-			default: '🤘 House of Giants | A Digital Interactive Studio',
-			tempalte: '%s | House of Giants',
+		...siteMetadata,
+		icons: {
+			icon: [
+				{ url: '/favicon.svg', type: 'image/svg+xml' },
+				{ url: '/favicon.ico', sizes: 'any' },
+			],
+			shortcut: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+			apple: [{ url: '/apple-touch-icon.png' }],
 		},
+		metadataBase: new URL(siteMetadata.siteUrl),
+		title: {
+			default: siteMetadata.title,
+			template: `%s | ${siteMetadata.title}`,
+		},
+		description: siteMetadata.description,
 		openGraph: {
-			title: '🤘 House of Giants | A Digital Interactive Studio',
-			description:
-				'Dreaming of innovation. Experimenting with passion. Creating with purpose. We are a digital interactive studio focused on creating beautiful, bold, thoughtfully crafted websites.',
+			title: siteMetadata.title,
+			description: siteMetadata.description,
+			url: './',
+			siteName: siteMetadata.title,
+			locale: siteMetadata.locale,
+			type: 'website',
+			images: [
+				{
+					url: siteMetadata.socialBanner,
+					width: 1200,
+					height: 630,
+					alt: siteMetadata.title,
+				},
+			],
 		},
 		twitter: {
-			title: '🤘 House of Giants | A Digital Interactive Studio',
-			description:
-				'Dreaming of innovation. Experimenting with passion. Creating with purpose. We are a digital interactive studio focused on creating beautiful, bold, thoughtfully crafted websites.',
-			creator: '@_houseofgiants',
+			card: 'summary_large_image',
+			title: siteMetadata.title,
+			description: siteMetadata.description,
+			images: [siteMetadata.socialBanner],
+			creator: siteMetadata.twitter,
+		},
+		robots: {
+			index: true,
+			follow: true,
+			googleBot: {
+				index: true,
+				follow: true,
+				'max-video-preview': -1,
+				'max-image-preview': 'large',
+				'max-snippet': -1,
+			},
 		},
 	};
 }
@@ -38,6 +73,7 @@ export default function RootLayout({ children }) {
 				<StyledComponentsRegistry>
 					<GlobalStyles />
 					<Header />
+					<AnimatedTitle />
 					{children}
 				</StyledComponentsRegistry>
 				<Analytics />

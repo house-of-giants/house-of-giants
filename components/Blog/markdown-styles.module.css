@@ -15,7 +15,7 @@
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
-	@apply my-6;
+	@apply my-8;
 }
 
 .markdown ul,
@@ -37,9 +37,9 @@
 }
 
 .markdown h2 {
-	@apply text-5xl mt-12 mb-4 leading-snug;
+	@apply text-5xl mt-16 mb-8 leading-snug;
 }
 
 .markdown h3 {
-	@apply text-4xl mt-8 mb-4 leading-snug not-italic font-sans font-black;
+	@apply text-4xl mt-12 mb-6 leading-snug not-italic font-sans font-black;
 }
