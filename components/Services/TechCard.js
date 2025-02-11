@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 export const TechCard = ({ title, category, description, features, icon: Icon, index }) => {
 	return (
 		<div className="tech-feature-card group">

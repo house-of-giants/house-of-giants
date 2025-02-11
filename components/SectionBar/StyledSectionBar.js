@@ -189,4 +189,45 @@ export const StyledSectionBar = styled.div`
 	.tech-term {
 		opacity: 0.6;
 	}
+
+	&.mobile {
+		padding: 4px 8px;
+		height: 28px;
+		font-size: 10px;
+
+		.section-info {
+			min-width: auto;
+			gap: 4px;
+		}
+
+		.marquee-container {
+			margin: 0 8px;
+
+			.marquee-content {
+				animation-duration: 20s;
+			}
+		}
+
+		.section-title {
+			margin-right: 4px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.marquee-container {
+			margin: 0 8px;
+		}
+
+		.section-info {
+			min-width: auto;
+		}
+	}
+
+	@media (max-width: 640px) {
+		padding: 4px 8px;
+
+		.marquee-content {
+			animation-duration: 15s;
+		}
+	}
 `;

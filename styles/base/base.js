@@ -86,8 +86,8 @@ export const Base = css`
 		--sp-l-xl: calc(((var(--fc-l-min) / 16) * 1rem) + (var(--fc-xl-max) - var(--fc-l-min)) * var(--fluid-bp));
 		--sp-xl-2xl: calc(((var(--fc-xl-min) / 16) * 1rem) + (var(--fc-2xl-max) - var(--fc-xl-min)) * var(--fluid-bp));
 
-		--section-spacing-top: calc(var(--sp-2xl) * 2);
-		--section-spacing-bottom: calc(var(--sp-2xl) * 4);
+		--section-spacing-top: calc(var(--sp-xl) * 2);
+		--section-spacing-bottom: calc(var(--sp-xl) * 2);
 		--header-spacing: clamp(3rem, 8vw, 8rem);
 		--title-spacing: clamp(2rem, 4vw, 4rem);
 		--content-spacing: clamp(2rem, 6vw, 6rem);
@@ -235,7 +235,7 @@ export const Base = css`
 		}
 	}
 
-	. label {
+	label {
 		font-weight: 700;
 		font-size: var(--fs-base);
 		margin-bottom: var(--sp-xs);
@@ -589,6 +589,12 @@ export const Base = css`
 		font-weight: 900;
 		line-height: 0.85;
 		letter-spacing: -0.02em;
+		padding-right: clamp(1rem, 4vw, 4rem);
+		max-width: 95vw;
+
+		@media (min-width: 768px) {
+			max-width: 85vw;
+		}
 
 		&.-stagger {
 			padding-left: clamp(1rem, 8vw, 8rem);

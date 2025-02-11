@@ -3,8 +3,9 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import Arrow from '../SVG/Arrow';
-
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 const Testimonials = () => {
+	const isMobile = useMediaQuery('(max-width: 1024px)');
 	return (
 		<div className="testimonials-section mt-32">
 			<h3 className="text-center mb-16">
@@ -17,8 +18,8 @@ const Testimonials = () => {
 			<Carousel
 				infiniteLoop
 				showIndicators={true}
-				centerMode={true}
-				centerSlidePercentage={50}
+				centerMode={isMobile ? false : true}
+				centerSlidePercentage={isMobile ? 100 : 50}
 				swipeable={true}
 				showStatus={false}
 				showThumbs={false}

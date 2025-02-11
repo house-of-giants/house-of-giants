@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import { StyledSectionBar } from './StyledSectionBar';
 import { useSection } from '../SectionContext/SectionContext';
 import { TextScramble } from './TextScramble';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 const TECH_JARGON = [
 	'SYS_MALLOC 0xDEADBEEF',
@@ -36,6 +37,9 @@ export const SectionBar = () => {
 	const [statusText, setStatusText] = useState(TECH_JARGON[0]);
 	const barRef = useRef(null);
 	const heroRef = useRef(null);
+
+	const isMobile = useMediaQuery('(max-width: 640px)');
+	const isTablet = useMediaQuery('(max-width: 1024px)');
 
 	useEffect(() => {
 		const updateTechTerms = () => {
@@ -93,42 +97,63 @@ export const SectionBar = () => {
 		setStatusText(TECH_JARGON[Math.floor(Math.random() * TECH_JARGON.length)]);
 	}, []);
 
+	const renderSectionInfo = () => (
+		<div className="section-info">
+			{!isMobile && <span className="section-label">PROCESS_ID</span>}
+			<span className="section-number">[{activeSection.count}]</span>
+			<div className="separator" />
+			<span className="timestamp">T+{currentTime}</span>
+			{!isTablet && (
+				<>
+					<div className="separator" />
+					<span className="coordinates text-[10px] text-cyber-green/50">39.769940°N 104.943737°W</span>
+				</>
+			)}
+		</div>
+	);
+
+	const renderMarquee = () => (
+		<div className="marquee-container">
+			<div className="marquee">
+				<div className="marquee-content">
+					{Array.from({ length: isMobile ? 2 : 3 }).map((_, i) => (
+						<span key={i} className="text">
+							<span className="section-title">
+								// [ <TextScramble text={activeSection.title.toUpperCase()} /> ]
+							</span>{' '}
+							{techTerms.slice(0, isMobile ? 2 : isTablet ? 3 : 4).map((term, i) => (
+								<span key={term} className="tech-term">
+									// <TextScramble text={term} />
+								</span>
+							))}
+						</span>
+					))}
+				</div>
+			</div>
+		</div>
+	);
+
+	const renderStatusInfo = () => (
+		<div className="status-info">
+			<div className="status-dot" />
+			<span className="status-text">{statusText}</span>
+		</div>
+	);
+
 	return (
 		<>
 			<div style={{ height: isSticky ? '32px' : '0' }} />
-			<StyledSectionBar ref={barRef} className={isSticky ? 'sticky' : ''}>
-				<div className="section-info">
-					<span className="section-label">PROCESS_ID</span>
-					<span className="section-number">[{activeSection.count}]</span>
-					<div className="separator" />
-					<span className="timestamp">T+{currentTime}</span>
-					<div className="separator" />
-					<span className="coordinates text-[10px] text-cyber-green/50">39.769940°N 104.943737°W</span>
-				</div>
-
-				<div className="marquee-container">
-					<div className="marquee">
-						<div className="marquee-content">
-							{Array.from({ length: 3 }).map((_, i) => (
-								<span key={i} className="text">
-									<span className="section-title">
-										// [ <TextScramble text={activeSection.title.toUpperCase()} /> ]
-									</span>{' '}
-									{techTerms.map((term, i) => (
-										<span key={term} className="tech-term">
-											// <TextScramble text={term} />
-										</span>
-									))}
-								</span>
-							))}
-						</div>
-					</div>
-				</div>
-
-				<div className="status-info">
-					<div className="status-dot" />
-					<span className="status-text">{statusText}</span>
-				</div>
+			<StyledSectionBar
+				ref={barRef}
+				className={`
+					${isSticky ? 'sticky' : ''} 
+					${isMobile ? 'mobile' : ''} 
+					${isTablet ? 'tablet' : ''}
+				`}
+			>
+				{renderSectionInfo()}
+				{renderMarquee()}
+				{renderStatusInfo()}
 			</StyledSectionBar>
 		</>
 	);

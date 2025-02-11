@@ -11,12 +11,14 @@ export const Hero = () => {
 		<Section count="1.0" title="House of Giants">
 			<SectionBar />
 			<Container
-				className="-has-background relative overflow-hidden"
+				className="-has-background relative overflow-hidden min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center px-4 md:px-8"
 				background="var(--c-primary-dark)"
-				pt="var(--section-spacing-top)"
-				pb="var(--section-spacing-bottom)"
+				pt="clamp(var(--sp-xl), 10vh, var(--section-spacing-top))"
+				pb="clamp(var(--sp-xl), 10vh, var(--section-spacing-bottom))"
 			>
-				<HeroContent />
+				<div className="max-w-[1440px] mx-auto w-full">
+					<HeroContent />
+				</div>
 			</Container>
 		</Section>
 	);

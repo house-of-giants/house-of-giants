@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 export const ServiceCard = ({ id, title, description, features }) => {
 	return (
 		<div className="service-card group relative p-8 rounded-lg border border-wolf-gray/10 hover:border-transparent transition-all duration-500">

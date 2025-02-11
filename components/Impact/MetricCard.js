@@ -14,7 +14,7 @@ export const MetricCard = ({ number, symbol, title, description }) => {
 			{/* Content */}
 			<div className="relative">
 				<div className="flex items-baseline gap-4">
-					<span className="text-[clamp(5rem,10vw,8rem)] font-black leading-none -grad-header">{number}</span>
+					<span className="text-[clamp(5rem,8vw,8rem)] font-black leading-none -grad-header">{number}</span>
 					<span className="text-[clamp(3rem,6vw,5rem)] font-black leading-none -grad-header">{symbol}</span>
 				</div>
 				<h3 className="font-serif text-[1.75rem] text-white mt-8">{title}</h3>

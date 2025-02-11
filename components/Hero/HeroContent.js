@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { GradientButton } from '../UI/GradientButton';
 import { ArrowLink } from '../UI/ArrowLink';
-import { TimeDisplay } from '../TimeDisplay/TimeDisplay';
 
 export const HeroContent = () => {
 	return (
@@ -46,7 +45,7 @@ export const HeroContent = () => {
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
-					className="mb-8"
+					className="mb-8 "
 				>
 					<div className="inline-block font-serif italic text-wolf-gray text-xl">
 						<div className="inline-block w-12 h-[1px] bg-gradient-to-r from-[#00ffe0] to-[#c1ff1d] mr-4 align-middle" />
@@ -55,19 +54,19 @@ export const HeroContent = () => {
 				</motion.div>
 
 				{/* Main Title Stack */}
-				<div className="space-y-4 mb-12">
+				<div className="space-y-4 mb-12 max-w-[1440px] mx-auto">
 					<motion.h1
-						className="text-[clamp(3rem,15vw,12rem)] font-black leading-[0.85] tracking-tight relative"
+						className="text-[clamp(3rem,12vw,12rem)] font-black leading-[0.85] tracking-tight relative"
 						initial={{ opacity: 0, x: -50 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}
 					>
-						<span className="block -grad-header relative">
+						<span className="block -grad-header relative max-w-[90vw] md:max-w-[95vw]">
 							Digital
 							<div className="absolute -right-4 top-1/2 w-8 h-[1px] bg-cyber-green/30" />
 						</span>
 						<motion.span
-							className="block text-white relative"
+							className="block text-white relative max-w-[90vw] md:max-w-[95vw]"
 							initial={{ opacity: 0, x: 50 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.8, delay: 0.4 }}
@@ -75,7 +74,7 @@ export const HeroContent = () => {
 							Interactive
 						</motion.span>
 						<motion.span
-							className="block -grad-header relative"
+							className="block -grad-header relative max-w-[90vw] md:max-w-[95vw]"
 							initial={{ opacity: 0, x: -50 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.8, delay: 0.6 }}
