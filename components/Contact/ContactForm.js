@@ -12,6 +12,8 @@ import { ContactSection } from './ContactSection';
 import fetchJson from '@/utils/fetchJson';
 import { StyledSocial } from '../Social/StyledSocial';
 import { Container } from '../Container/Container';
+import { Section } from '../Section/Section';
+import { SectionBar } from '../SectionBar/SectionBar';
 
 const ContactForm = () => {
 	const [showForm, setShowForm] = useState(false);
@@ -55,23 +57,23 @@ const ContactForm = () => {
 	};
 
 	return (
-		<>
+		<Section count="7.0" title="Contact">
 			<ContactSection
 				id="contact"
 				className={showForm ? '-active' : ''}
 				background="linear-gradient(-270deg, var(--c-neon-sky) 0%, var(--c-cyber-green) 80%, var(--c-white) 80% 100%)"
-				pt="var(--sp-2xl)"
-				pb="var(--sp-2xl)"
+				pt="var(--section-spacing-top)"
+				pb="var(--section-spacing-bottom)"
 			>
 				<Grid
 					cols="2fr 1fr"
-					gap="var(--sp-m)"
-					pBottom="var(--sp-2xl)"
+					gap="var(--content-spacing)"
+					pBottom="var(--content-spacing)"
 					onClick={() => (showForm ? setShowForm(false) : null)}
 				>
 					<Dots opacity="0.1">
-						<h2 className="-lh-1 -fw-700">Let&apos;s build something amazing together</h2>
-						<p>
+						<h2 className="-lh-1 -fw-700 mb-[var(--title-spacing)]">Let&apos;s build something amazing together</h2>
+						<p className="mb-[var(--content-spacing)]">
 							Whether you have a fully fleshed out idea, or just want to talk through options, we'd love to chat with
 							you. Give us some quick information that will help us better understand your needs, and we'll let you know
 							the options.
@@ -166,7 +168,7 @@ const ContactForm = () => {
 					<p className="-fw-500 -m0">&copy;{new Date().getFullYear()} House of Giants</p>
 				</Container>
 			</StyledSocial>
-		</>
+		</Section>
 	);
 };
 
