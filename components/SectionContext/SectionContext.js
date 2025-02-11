@@ -7,7 +7,7 @@ const SectionContext = createContext();
 export function SectionProvider({ children }) {
 	const [activeSection, setActiveSection] = useState({
 		count: '1.0',
-		title: 'Digital Interactive',
+		title: 'House of Giants',
 	});
 
 	return <SectionContext.Provider value={{ activeSection, setActiveSection }}>{children}</SectionContext.Provider>;

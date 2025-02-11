@@ -33,7 +33,7 @@ export const SectionBar = () => {
 	const [isSticky, setIsSticky] = useState(false);
 	const [currentTime, setCurrentTime] = useState('');
 	const [techTerms, setTechTerms] = useState(TECH_JARGON.slice(0, 4));
-	const [statusText] = useState(TECH_JARGON[Math.floor(Math.random() * TECH_JARGON.length)]);
+	const [statusText, setStatusText] = useState(TECH_JARGON[0]);
 	const barRef = useRef(null);
 	const heroRef = useRef(null);
 
@@ -86,6 +86,11 @@ export const SectionBar = () => {
 			window.removeEventListener('scroll', handleScroll);
 			clearInterval(timeInterval);
 		};
+	}, []);
+
+	useEffect(() => {
+		// Set random status text after initial render
+		setStatusText(TECH_JARGON[Math.floor(Math.random() * TECH_JARGON.length)]);
 	}, []);
 
 	return (

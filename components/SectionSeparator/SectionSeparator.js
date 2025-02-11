@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 export const SectionSeparator = () => {
 	const [binaryCount, setBinaryCount] = useState(48);
+	const [binaryValues, setBinaryValues] = useState([]);
 
 	useEffect(() => {
 		// Calculate how many binary digits we need based on window width
@@ -12,6 +13,12 @@ export const SectionSeparator = () => {
 			// Each binary digit takes up roughly 10px (8px + 2px gap)
 			const count = Math.ceil(window.innerWidth / 10);
 			setBinaryCount(count);
+			// Generate initial binary values
+			setBinaryValues(
+				Array(count)
+					.fill(0)
+					.map(() => Math.round(Math.random()))
+			);
 		};
 
 		// Initial calculation
@@ -28,7 +35,7 @@ export const SectionSeparator = () => {
 		<div className="relative w-full h-8 py-16 bg-[--c-primary-dark] overflow-hidden font-mono">
 			{/* Binary pattern container */}
 			<div className="absolute inset-0 flex items-center justify-center gap-[2px] opacity-30">
-				{[...Array(binaryCount)].map((_, i) => (
+				{binaryValues.map((value, i) => (
 					<motion.div
 						key={i}
 						className={`w-2 h-2 text-[8px] ${i < binaryCount / 2 ? 'text-[#ff2a6d]' : 'text-[#9b4dff]'}`}
@@ -41,7 +48,7 @@ export const SectionSeparator = () => {
 							ease: 'easeInOut',
 						}}
 					>
-						{Math.round(Math.random())}
+						{value}
 					</motion.div>
 				))}
 			</div>

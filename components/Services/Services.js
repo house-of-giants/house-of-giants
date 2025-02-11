@@ -99,8 +99,8 @@ export const Services = () => {
 				</Container>
 			</Section>
 
-			{/* Digital Toolbox Section */}
-			<Section count="3.0" title="Digital Toolbox">
+			{/* Sacred Tools Section */}
+			<Section count="3.0" title="Sacred Tools">
 				<Container
 					className="-has-background"
 					background="var(--c-primary-dark)"

@@ -133,7 +133,7 @@ export const HeroContent = () => {
 					transition={{ duration: 0.6, delay: 1 }}
 				>
 					<GradientButton href="#contact">Start Your Project</GradientButton>
-					<ArrowLink href="/work">View Our Work</ArrowLink>
+					<ArrowLink href="#work">View Our Work</ArrowLink>
 				</motion.div>
 			</div>
 		</div>
