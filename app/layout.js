@@ -4,6 +4,7 @@ import AnimatedTitle from '@/components/AnimatedTitle/AnimatedTitle';
 
 import { Header } from '@/components/Header/Header';
 import GlobalStyles from '@/components/Styles/GlobalStyles';
+import { ContactFooter } from '@/components/Contact/ContactFooter';
 import StyledComponentsRegistry from 'lib/registry';
 
 import './globals.css';
@@ -75,6 +76,7 @@ export default function RootLayout({ children }) {
 					<Header />
 					<AnimatedTitle />
 					{children}
+					<ContactFooter />
 				</StyledComponentsRegistry>
 				<Analytics />
 			</body>
