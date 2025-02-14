@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const StyledButton = styled.button`
 	align-items: center;
 	background-color: transparent;
-	border: none;
 	box-shadow: 0 0 0 1px var(--c-primary-dark) inset;
 	cursor: pointer;
 	display: inline-flex;
