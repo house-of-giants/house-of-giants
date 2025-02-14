@@ -44,7 +44,7 @@ export const Impact = () => {
 				/>
 
 				{/* Metrics Grid */}
-				<div className="grid grid-cols-[repeat(auto-fill,minmax(370px,1fr))] gap-[var(--content-spacing)] mt-[var(--header-spacing)]">
+				<div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(370px,1fr))] gap-[var(--content-spacing)] mt-[var(--header-spacing)]">
 					<MetricCard
 						number="285"
 						symbol="%"

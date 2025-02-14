@@ -10,6 +10,7 @@ import { Clients } from '@/components/Clients/Clients';
 import { Impact } from '@/components/Impact/Impact';
 import ContactForm from '@/components/Contact/ContactForm';
 import { SectionSeparator } from '@/components/SectionSeparator/SectionSeparator';
+import { SectionBar } from '@/components/SectionBar/SectionBar';
 
 const work = [
 	{
@@ -38,6 +39,7 @@ export default function Page() {
 			<SectionProvider>
 				<FloatingGradients />
 				<Reel />
+				<SectionBar />
 				<Hero />
 				<SectionSeparator />
 				<Services />

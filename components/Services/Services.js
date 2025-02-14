@@ -91,7 +91,7 @@ export const Services = () => {
 						description="We build digital solutions that solve real business problems and drive measurable results."
 					/>
 
-					<div className="grid grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-[var(--content-spacing)]">
+					<div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-[var(--content-spacing)]">
 						{services.map((service) => (
 							<ServiceCard key={service.id} {...service} />
 						))}
@@ -114,7 +114,7 @@ export const Services = () => {
 						description="That's why we're tech agnostic. We choose technologies that grow with your business."
 					/>
 
-					<div className="grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-[var(--content-spacing)]">
+					<div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-[var(--content-spacing)]">
 						{techStack.map((tech, index) => (
 							<TechCard key={tech.title} {...tech} index={index} />
 						))}

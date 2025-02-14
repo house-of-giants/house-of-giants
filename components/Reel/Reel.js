@@ -24,7 +24,13 @@ const Reel = () => {
 	};
 
 	return (
-		<Container ref={mouseEl} onMouseEnter={() => setCursor(true)} onMouseLeave={() => setCursor(false)} stick={true}>
+		<Container
+			pt="var(--sp-xl)"
+			ref={mouseEl}
+			onMouseEnter={() => setCursor(true)}
+			onMouseLeave={() => setCursor(false)}
+			stick={true}
+		>
 			<AnimatePresence>
 				{cursor && <Cursor el={mouseEl} video={videoEl} setPlaying={setPlaying} isPlaying={isPlaying} />}
 			</AnimatePresence>

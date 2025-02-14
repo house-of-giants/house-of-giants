@@ -2,17 +2,22 @@ import styled from 'styled-components';
 import { StyledButton } from '../Button/StyledButton';
 import { StyledContainer } from '../Container/StyledContainer';
 
-export const StyledHeader = styled.nav`
+export const StyledHeader = styled.header`
 	align-items: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	max-width: var(--container-width);
 	margin: 0 auto;
-	padding: var(--sp-s) var(--sp-2xs);
+	padding: 0.825rem var(--sp-xs);
+	position: sticky;
+	top: 0;
+	background: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(10px);
+	z-index: 50;
 
-	@media (min-width: 1024px) {
+	@media (min-width: 1100px) {
 		flex-direction: row;
+		padding: var(--sp-s) var(--sp-2xs);
 	}
 
 	@media (min-width: calc(1440px + (var(--sp-2xs) * 2))) {

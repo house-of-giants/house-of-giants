@@ -50,13 +50,12 @@ const ContactForm = () => {
 	};
 
 	return (
-		<Section count="7.0" title="Contact">
+		<Section count="7.0" title="Contact" id="contact">
 			<Container
 				className="-has-background"
 				background="var(--c-primary-dark)"
 				pt="var(--section-spacing-top)"
 				pb="var(--section-spacing-bottom)"
-				id="contact"
 			>
 				<ContactHeader />
 

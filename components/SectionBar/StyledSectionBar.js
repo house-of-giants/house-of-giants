@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 
 export const StyledSectionBar = styled.div`
-	background: rgba(16, 19, 23, 0.98);
-	border-bottom: 1px solid rgba(0, 255, 224, 0.3);
-	border-top: 1px solid rgba(0, 255, 224, 0.1);
-	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	font-family: 'IBM Plex Mono', monospace;
-	font-size: 11px;
-	letter-spacing: 0.5px;
-	padding: 8px 16px;
+	background: var(--c-primary-dark);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	display: flex;
+	font-family: var(--f-mono);
+	font-size: 12px;
+	gap: var(--sp-xs);
 	height: 32px;
-	backdrop-filter: blur(10px);
+	justify-content: space-between;
+	padding: 0 var(--sp-xs);
+	position: sticky;
 	width: 100%;
-	box-shadow: 0 0 20px rgba(0, 255, 224, 0.1);
+	z-index: 40;
+	top: var(--header-height);
 
 	.section-info {
 		display: flex;
@@ -73,12 +73,12 @@ export const StyledSectionBar = styled.div`
 
 		&::before {
 			left: 0;
-			background: linear-gradient(to right, rgba(16, 19, 23, 0.98), transparent);
+			background: linear-gradient(to right, rgba(26, 31, 36, 0.98), transparent);
 		}
 
 		&::after {
 			right: 0;
-			background: linear-gradient(to left, rgba(16, 19, 23, 0.98), transparent);
+			background: linear-gradient(to left, rgba(26, 31, 36, 0.98), transparent);
 		}
 	}
 
@@ -157,11 +157,6 @@ export const StyledSectionBar = styled.div`
 	}
 
 	&.sticky {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 100;
 	}
 
 	.scramble-text {

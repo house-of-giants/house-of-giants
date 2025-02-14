@@ -10,7 +10,11 @@ export const WorkCard = ({ title, type, img, url, featured = false }) => {
 			href={url}
 			className="group relative block border border-wolf-gray hover:border-wolf-gray/20  rounded-lg transition-all duration-300"
 		>
-			<div className={`relative rounded-lg overflow-hidden ${featured ? 'aspect-[21/9]' : 'aspect-[16/9]'}`}>
+			<div
+				className={`relative rounded-lg aspect-[16/9] overflow-hidden ${
+					featured ? 'md:aspect-[21/9]' : 'md:aspect-[16/9]'
+				}`}
+			>
 				<Image
 					src={img}
 					alt={title}

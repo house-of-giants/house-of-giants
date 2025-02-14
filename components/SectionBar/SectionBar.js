@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { StyledSectionBar } from './StyledSectionBar';
 import { useSection } from '../SectionContext/SectionContext';
 import { TextScramble } from './TextScramble';
@@ -31,12 +31,9 @@ const TECH_JARGON = [
 
 export const SectionBar = () => {
 	const { activeSection } = useSection();
-	const [isSticky, setIsSticky] = useState(false);
 	const [currentTime, setCurrentTime] = useState('');
 	const [techTerms, setTechTerms] = useState(TECH_JARGON.slice(0, 4));
 	const [statusText, setStatusText] = useState(TECH_JARGON[0]);
-	const barRef = useRef(null);
-	const heroRef = useRef(null);
 
 	const isMobile = useMediaQuery('(max-width: 640px)');
 	const isTablet = useMediaQuery('(max-width: 1024px)');
@@ -52,21 +49,6 @@ export const SectionBar = () => {
 	}, []);
 
 	useEffect(() => {
-		const handleScroll = () => {
-			if (barRef.current && heroRef.current) {
-				const barRect = barRef.current.getBoundingClientRect();
-				const heroRect = heroRef.current.getBoundingClientRect();
-
-				if (heroRect.top >= 0) {
-					// When scrolling back up to hero
-					setIsSticky(false);
-				} else if (heroRect.bottom > 0) {
-					// When within hero section
-					setIsSticky(barRect.top <= 0);
-				}
-			}
-		};
-
 		const updateTime = () => {
 			const now = new Date();
 			setCurrentTime(
@@ -79,17 +61,7 @@ export const SectionBar = () => {
 			);
 		};
 
-		// Find hero section
-		heroRef.current = barRef.current?.closest('section');
-
-		window.addEventListener('scroll', handleScroll);
-		const timeInterval = setInterval(updateTime, 1000);
 		updateTime();
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-			clearInterval(timeInterval);
-		};
 	}, []);
 
 	useEffect(() => {
@@ -142,15 +114,7 @@ export const SectionBar = () => {
 
 	return (
 		<>
-			<div style={{ height: isSticky ? '32px' : '0' }} />
-			<StyledSectionBar
-				ref={barRef}
-				className={`
-					${isSticky ? 'sticky' : ''} 
-					${isMobile ? 'mobile' : ''} 
-					${isTablet ? 'tablet' : ''}
-				`}
-			>
+			<StyledSectionBar>
 				{renderSectionInfo()}
 				{renderMarquee()}
 				{renderStatusInfo()}
