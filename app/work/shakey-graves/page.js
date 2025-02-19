@@ -80,7 +80,7 @@ export default function ShakeyGraves() {
 				stats: [
 					{ value: '91', unit: '%', description: 'Increase in new users within the first week' },
 					{ value: '285', unit: '%', description: 'Growth in page views post-launch' },
-					{ value: '', unit: '↑', description: 'Increase in album sales' },
+					{ value: '1', unit: 'b+', description: 'Over 1 billion unique album possibilities' },
 				],
 			}}
 		/>
