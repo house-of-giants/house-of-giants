@@ -13,7 +13,7 @@ export const ContactHeader = () => (
 				viewport={{ once: true }}
 				transition={{ duration: 0.5, delay: 0.2 }}
 			>
-				<p className="text-wolf-gray/80">
+				<p className="text-moon-rock/80">
 					Whether it's a mind-bending digital experience or a brand that breaks the internet, we're here to turn your
 					wildest ideas into reality. No boundaries, no bullshit.
 				</p>

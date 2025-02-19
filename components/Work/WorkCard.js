@@ -8,7 +8,7 @@ export const WorkCard = ({ title, type, img, url, featured = false }) => {
 	return (
 		<Link
 			href={url}
-			className="group relative block border border-wolf-gray hover:border-wolf-gray/20  rounded-lg transition-all duration-300"
+			className="group relative block border border-moon-rock hover:border-moon-rock/20  rounded-lg transition-all duration-300"
 		>
 			<div
 				className={`relative rounded-lg aspect-[16/9] overflow-hidden ${
@@ -35,7 +35,7 @@ export const WorkCard = ({ title, type, img, url, featured = false }) => {
 						{type.map((t) => (
 							<span
 								key={t}
-								className="text-wolf-gray text-sm px-3 py-1 rounded-full border border-wolf-gray/20 
+								className="text-moon-rock text-sm px-3 py-1 rounded-full border border-moon-rock/20 
                                  transition-colors duration-300 group-hover:border-cyber-green/20 group-hover:text-cyber-green"
 							>
 								{t}

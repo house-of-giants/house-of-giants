@@ -13,6 +13,11 @@ module.exports = {
 				serif: 'var(--f-serif)',
 				display: 'var(--f-display)',
 			},
+			colors: {
+				'cyber-green': '#c1ff1d',
+				'wolf-gray': '#1a1a1a',
+				'moon-rock': '#ececec',
+			},
 		},
 	},
 	plugins: [],

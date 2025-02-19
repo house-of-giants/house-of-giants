@@ -15,13 +15,16 @@ export const TechCard = ({ title, category, description, features, icon: Icon, i
 
 				<div className="space-y-6">
 					<div className="space-y-1">
-						<span className="text-sm uppercase tracking-widest text-wolf-gray/70">{category}</span>
+						<span className="text-sm uppercase tracking-widest text-moon-rock/70">{category}</span>
 						<h3 className="text-[2.5rem] font-black leading-none tracking-tight group-hover:-grad-header transition-colors duration-300">
 							{title}
 						</h3>
 					</div>
-					<p className="text-wolf-gray text-[clamp(1rem,2vw,1.25rem)] leading-relaxed">{description}</p>
-					<ul className="space-y-4 text-wolf-gray">
+					<p
+						className="text-moon-rock text-[clamp(1rem,2vw,1.25rem)] leading-relaxed"
+						dangerouslySetInnerHTML={{ __html: description }}
+					/>
+					<ul className="space-y-4 text-moon-rock">
 						{features.map((feature, index) => (
 							<li key={index} className="flex items-center gap-3 transition-all duration-300 hover:translate-x-2">
 								<span className="text-cyber-green">→</span>

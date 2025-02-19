@@ -9,6 +9,8 @@ import StyledComponentsRegistry from 'lib/registry';
 
 import './globals.css';
 import siteMetadata from '@/data/siteMetadata';
+import { SectionProvider } from '@/components/SectionContext/SectionContext';
+import { SectionBar } from '@/components/SectionBar/SectionBar';
 
 export async function generateMetadata() {
 	return {
@@ -66,7 +68,7 @@ export async function generateMetadata() {
 
 export default function RootLayout({ children }) {
 	return (
-		<html>
+		<html lang="en">
 			<head>
 				<PlausibleProvider domain="houseofgiants.com" />
 			</head>
@@ -75,7 +77,10 @@ export default function RootLayout({ children }) {
 					<GlobalStyles />
 					<Header />
 					<AnimatedTitle />
-					{children}
+					<SectionProvider>
+						<SectionBar />
+						{children}
+					</SectionProvider>
 					<ContactFooter />
 				</StyledComponentsRegistry>
 				<Analytics />

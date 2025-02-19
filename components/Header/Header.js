@@ -38,10 +38,10 @@ export const Header = () => {
 						/>
 					</div>
 					<span className="flex flex-col">
-						<span className="font-sans text-[var(--c-primary-dark)] text-md md:text-4xl">
+						<span className="font-sans text-moon-rock text-md md:text-4xl">
 							House of Giants <span className="text-[#ff2a6d] text-sm font-mono">v2.4</span>
 						</span>
-						<span className="text-xs md:text-sm font-mono text-wolf-gray hidden sm:block">
+						<span className="text-xs md:text-sm font-mono text-moon-rock hidden sm:block">
 							<span className="text-[#ff2a6d]">// </span>
 							Digital Experiences • Web Apps • Strategy
 						</span>
@@ -55,20 +55,20 @@ export const Header = () => {
 				<nav className="hidden md:flex items-center gap-8">
 					<Link
 						href="/#work"
-						className="text-[var(--c-primary-dark)] font-serif font-bold italic hover:text-[#ff2a6d] transition-colors duration-300 text-2xl"
+						className="text-white font-serif font-bold italic hover:text-[#00ffe0] transition-colors duration-300 text-2xl"
 					>
 						Work
 					</Link>
 					<Link
 						href="/blog"
-						className="text-[var(--c-primary-dark)] font-serif font-bold italic hover:text-[#ff2a6d] transition-colors duration-300 text-2xl"
+						className="text-white font-serif font-bold italic hover:text-[#00ffe0] transition-colors duration-300 text-2xl"
 					>
 						Blog
 					</Link>
 				</nav>
 
 				{/* Social Links - Desktop Only */}
-				<div className="hidden md:block border-l border-wolf-gray/20 pl-8">
+				<div className="hidden md:block border-l border-moon-rock/20 pl-8">
 					<Socials theme="dark" />
 				</div>
 

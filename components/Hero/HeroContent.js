@@ -47,7 +47,7 @@ export const HeroContent = () => {
 					transition={{ duration: 0.6 }}
 					className="mb-8 "
 				>
-					<div className="inline-block font-serif italic text-wolf-gray text-xl">
+					<div className="inline-block font-serif italic text-moon-rock text-xl">
 						<div className="inline-block w-12 h-[1px] bg-gradient-to-r from-[#00ffe0] to-[#c1ff1d] mr-4 align-middle" />
 						Denver's Premier Digital Interactive Studio
 					</div>
@@ -91,13 +91,13 @@ export const HeroContent = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8, delay: 0.8 }}
 				>
-					<div className="text-[clamp(1.5rem,3vw,2.5rem)] text-wolf-gray leading-tight">
+					<div className="text-[clamp(1.5rem,3vw,2.5rem)] text-moon-rock leading-tight">
 						Dreaming of innovation. <span className="text-white">Experimenting with passion.</span> Creating with
 						purpose.
 					</div>
 
 					<div className="space-y-6">
-						<div className="text-xl text-wolf-gray/80 leading-relaxed">
+						<div className="text-xl text-moon-rock/80 leading-relaxed">
 							We craft award-winning interactive websites and web applications that transform brands into digital
 							powerhouses through{' '}
 							<motion.span
@@ -116,7 +116,7 @@ export const HeroContent = () => {
 							, bold, thoughtful experiences.
 						</div>
 
-						<div className="text-xl text-wolf-gray/80 leading-relaxed">
+						<div className="text-xl text-moon-rock/80 leading-relaxed">
 							Based in Denver, Colorado, we're a digital studio that pushes boundaries and breaks rules. From enterprise
 							WordPress development to cutting-edge 3D experiences, we build digital solutions that make your
 							competition irrelevant and your users say "holy shit."

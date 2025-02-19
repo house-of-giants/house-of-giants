@@ -39,7 +39,6 @@ export default function Page() {
 			<SectionProvider>
 				<FloatingGradients />
 				<Reel />
-				<SectionBar />
 				<Hero />
 				<SectionSeparator />
 				<Services />

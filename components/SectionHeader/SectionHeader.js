@@ -24,12 +24,12 @@ export const SectionHeader = ({ title, subtitle, accent, description }) => (
 			viewport={{ once: true }}
 			transition={{ duration: 0.5, delay: 0.2 }}
 		>
-			<span className="block font-serif text-[clamp(1.25rem,2.5vw,2.5rem)] text-wolf-gray italic mb-4 md:mb-6">
+			<span className="block font-serif text-[clamp(1.25rem,2.5vw,2.5rem)] text-moon-rock italic mb-4 md:mb-6">
 				{accent}
 			</span>
 
 			{description && (
-				<div className="text-[clamp(1rem,1.5vw,1.5rem)] leading-relaxed text-wolf-gray/80 max-w-[90vw] md:max-w-none">
+				<div className="text-[clamp(1rem,1.5vw,1.5rem)] leading-relaxed text-moon-rock/80 max-w-[90vw] md:max-w-none">
 					{description}
 				</div>
 			)}

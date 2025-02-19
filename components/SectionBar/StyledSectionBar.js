@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const StyledSectionBar = styled.div`
 	align-items: center;
-	background: var(--c-primary-dark);
+	background: linear-gradient(to bottom, rgba(26, 31, 36, 0.95), rgba(26, 31, 36, 0.85));
+	backdrop-filter: blur(10px);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	display: flex;
 	font-family: var(--f-mono);
@@ -58,27 +59,26 @@ export const StyledSectionBar = styled.div`
 		flex: 1;
 		overflow: hidden;
 		opacity: 0.6;
-		padding: 0 20px;
 		position: relative;
 
 		&::before,
 		&::after {
+			background: var(--grad);
 			content: '';
 			position: absolute;
+			opacity: 0.5;
 			top: 0;
 			bottom: 0;
-			width: 40px;
+			width: 1px;
 			z-index: 1;
 		}
 
 		&::before {
 			left: 0;
-			background: linear-gradient(to right, rgba(26, 31, 36, 0.98), transparent);
 		}
 
 		&::after {
 			right: 0;
-			background: linear-gradient(to left, rgba(26, 31, 36, 0.98), transparent);
 		}
 	}
 

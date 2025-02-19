@@ -32,7 +32,7 @@ export const SectionSeparator = () => {
 	}, []);
 
 	return (
-		<div className="relative w-full h-8 py-16 bg-[--c-primary-dark] overflow-hidden font-mono">
+		<div className="relative w-full h-8 py-8 bg-[--c-primary-dark] overflow-hidden font-mono">
 			{/* Binary pattern container */}
 			<div className="absolute inset-0 flex items-center justify-center gap-[2px] opacity-30">
 				{binaryValues.map((value, i) => (

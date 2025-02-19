@@ -53,6 +53,17 @@ const Testimonials = () => {
 				</div>
 				<div>
 					<blockquote>
+						Our website looks fantastic and we are getting more business off of it than we previously were. HoG did a
+						great job listening to our needs and designing a website that looks and runs fantastic.
+					</blockquote>
+					<figcaption>
+						Kathleen Lannes
+						<br />
+						Sales Manager, Longero
+					</figcaption>
+				</div>
+				<div>
+					<blockquote>
 						I was most impressed with how seriously they took my ideas and incorporated them into their awesome design
 						ability.
 					</blockquote>

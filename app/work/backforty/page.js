@@ -1,215 +1,193 @@
 'use client';
 
-import Image from 'next/image';
+import Link from 'next/link';
+import { CaseStudy } from '@/components/CaseStudy/CaseStudy';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
-import { Button } from '@/components/Button/Button';
-import { Container } from '@/components/Container/Container';
-import ContactForm from '@/components/Contact/ContactForm';
-import { CircleGrad } from '@/components/Cursor/StyledCursor';
-import Mark from '@/components/SVG/Mark';
-import Love from '@/components/SVG/Love';
-
-export default function B40() {
+export default function BackForty() {
 	return (
-		<>
-			<Container as="article">
-				<header className="flex flex-col items-center justify-center">
-					<h1 className="text-center mb-0">
-						BackForty
-						<br />
-						Management
-					</h1>
-					<h4 className="font-bold text-center mb-4">Design + Development</h4>
-					<Button href="https://backfortymgmt.com" target="_blank" rel="noopener" className="-link">
-						Visit live site
-					</Button>
-				</header>
-
-				<motion.div
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
-					viewport={{ once: true, margin: '200px' }}
-					className="aspect-[27/13] relative my-12"
-				>
-					<Image
-						src="/images/backfortycase1.jpg"
-						fill
-						loading="lazy"
-						alt="Wide shot of BackForty Movie of The Week album cover."
-					/>
-				</motion.div>
-				<p className="my-32 max-w-5xl mx-auto text-3xl lh-3 leading-[3rem]">
-					BackForty is a pioneering artist management and music supervision firm with a profound commitment to placing
-					art at the forefront of their endeavors. With two distinct facets - artist management and music supervision -
-					the company boasts over two decades of experience in the music industry and creative supervision landscape.
-				</p>
-				<motion.figure
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
-					viewport={{ once: true, margin: '200px' }}
-				>
-					<div className="aspect-[27/13] relative my-12">
-						<Image src="/images/backfortycase2.jpg" fill alt="" />
-					</div>
-					<figcaption className="text-lg font-serif leading-10 italic">01 - BackForty - homepage</figcaption>
-				</motion.figure>
-				<p className="my-32 max-w-5xl mx-auto text-3xl lh-3 leading-[3rem]">
-					The challenge was to unveil the dual identities of BackForty - artist management and music supervision - in a
-					manner that exuded coolness and allure. The aim was to define what artist management means and highlight the
-					diversity of projects undertaken in the realm of music supervision. These two facets, while distinct, were to
-					be portrayed as integral parts of one remarkable company.
-				</p>
-				<motion.figure
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
-					viewport={{ once: true, margin: '200px' }}
-					className="grid lg:grid-cols-2 gap-4 lg:gap-y-0 gap-x-6"
-				>
-					<div className="aspect-square relative">
-						<Image
-							src="/images/backfortycase3.jpg"
-							loading="lazy"
-							className="aspect-square"
-							height={652}
-							width={659}
-							alt=""
-						/>
-					</div>
-					<div className="aspect-square relative">
-						<Image
-							src="/images/backfortycase4.jpg"
-							loading="lazy"
-							className="aspect-square"
-							height={652}
-							width={659}
-							alt=""
-						/>
-					</div>
-					<figcaption className="text-lg font-serif leading-10 italic">02 - BackForty - services</figcaption>
-				</motion.figure>
-				<p className="my-32 max-w-5xl mx-auto text-3xl lh-3 leading-[3rem]">
-					Our creative concept aimed to craft an engaging and enjoyable experience that seamlessly merged both worlds
-					within BackForty.
-				</p>
-				<p className="my-32 max-w-5xl mx-auto text-3xl lh-3 leading-[3rem]">
-					Music Supervision: To entice those seeking music supervision services, the approach was to appeal to outdoor
-					clients, showcase videos with music, exhibit the client list, and drive individuals to connect with Bodie,
-					ensuring they worked on the coolest projects imaginable.
-				</p>
-				<motion.figure
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
-					viewport={{ once: true, margin: '200px' }}
-				>
-					<div className="aspect-[27/13] relative">
-						<Image src="/images/backfortycase5.jpg" loading="lazy" fill alt="" />
-					</div>
-					<figcaption className="text-lg font-serif leading-10 italic">03 - BackForty - artist management</figcaption>
-				</motion.figure>
-				<p className="my-32 max-w-5xl mx-auto text-3xl lh-3 leading-[3rem]">
-					Artist Management: The artist management side needed to establish a strong presence and credibility. It
-					provided an opportunity for established artists to conduct reference checks, greet the team, and peruse a list
-					of artists they had previously worked with.
-				</p>
-				<motion.figure
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
-					viewport={{ once: true, margin: '200px' }}
-					className="grid lg:grid-cols-2 gap-4 lg:gap-y-0 gap-x-6"
-				>
-					<div className="aspect-square relative">
-						<Image
-							src="/images/backfortycase6.jpg"
-							loading="lazy"
-							className="aspect-square"
-							height={652}
-							width={659}
-							alt=""
-						/>
-					</div>
-					<div className="aspect-square relative">
-						<Image
-							src="/images/backfortycase7.jpg"
-							loading="lazy"
-							className="aspect-square"
-							height={652}
-							width={659}
-							alt=""
-						/>
-					</div>
-					<figcaption className="text-lg font-serif leading-10 italic">04 - BackForty - about</figcaption>
-				</motion.figure>
-				<p className="my-32 max-w-5xl mx-auto text-3xl lh-3 leading-[3rem]">
-					To showcase both sides of the company, we harnessed the wealth of captivating content inherent to each
-					division. Photos and videos took center stage, infusing excitement and credibility into each service.
-					Micro-interactions within the site injected distinct creative personalities into each page, making the user
-					experience not only informative but also a playful and engaging journey.
-				</p>
-				<div className="text-3xl lg:text-4xl text-white leading-tight bg-gray-950 p-12 lg:py-24 lg:px-48 relative">
-					<blockquote className="font-semibold max-w-[39ch]">
-						<svg
-							className="mb-8"
-							xmlns="http://www.w3.org/2000/svg"
-							width="73"
-							height="65"
-							viewBox="0 0 73 65"
-							fill="none"
+		<CaseStudy
+			title="BackForty Management"
+			subtitle="Digital Experience + Web Development"
+			liveUrl="https://backfortymgmt.com"
+			heroImage="/images/backfortycase1.jpg"
+			variant="default"
+			intro="BackForty isn't your typical artist management firm, and they're sure as hell not a run-of-the-mill music supervision crew either. They've broken the mold for 20+ years, so naturally, they needed a digital presence that does the same—pushing creative limits while staying rooted in a professional edge."
+			challenge="How do you show off two distinct sides—artist management and music supervision—without watering down either? BackForty needed a custom web solution that could highlight both ventures in a cohesive, powerful way. They wanted the energy and authenticity that's fueled their success from day one, but also a seamless user journey for potential partners, artists, and corporate clients."
+			solution="We built a responsive web application that merges modern frontend development with immersive UI, speaking directly to two different audiences—creative professionals and corporate brands. With custom animations and an innovative design, their digital presence captures the electricity of the music world and the credibility of a seasoned industry leader."
+			images={{
+				intro: '/images/backfortycase2.jpg',
+				process: [
+					'/images/backfortycase3.jpg',
+					'/images/backfortycase4.jpg',
+					'/images/backfortycase5.jpg',
+					'/images/backfortycase6.jpg',
+					'/images/backfortycase7.jpg',
+				],
+			}}
+			impact={{
+				blurb: (
+					<>
+						Through innovative web development and user-centric design, we transformed BackForty's digital presence into
+						a powerful platform that <span className="text-cyber-green">drives engagement</span> and converts visitors
+						into partners.
+					</>
+				),
+			}}
+			testimonial={{
+				quote:
+					"I can't thank you enough for never halting, diminishing or deflecting our vision. Instead, you threw gas on the fire and guided us to make it OUR collective reality. You led us professionally to a site I can't imagine anyone has envisioned before.",
+				author: 'Bodie Johnson',
+				role: 'BackForty Manager, BackForty Management',
+			}}
+			process={{
+				title: '04 - The Process',
+				subtitle: 'Crafting Digital Harmony',
+				description: "An exploration of how we transformed BackForty's vision into a reality.",
+				steps: [
+					{
+						phase: 'Discovery',
+						title: 'Understanding the Duality',
+						description:
+							"BackForty's story is part grit, part innovation—two qualities we wanted front and center. We kicked off by digging deep into their dual business model, identifying how best to convey the excitement of artist management while highlighting the strategic nature of music supervision. We hammered out core objectives, user paths, and brand essence long before any code was written.",
+						details: [
+							'Stakeholder interviews & vision alignment',
+							'Industry & competitor analysis',
+							'User journey mapping',
+							'Information architecture',
+						],
+						image: '/images/backfortycase3.jpg',
+						color: '#00FFE0',
+					},
+					{
+						phase: 'Design & User Experience',
+						title: 'Visual Symphony',
+						description:
+							'Our design team mapped out a dynamic layout that shapes itself around two primary user journeys—one for artist management, one for music supervision. The big challenge: keep them separate enough for clarity, yet cohesive enough so the brand still feels like one unstoppable force.',
+						details: [
+							'Brand evolution & design system',
+							'Interactive prototyping',
+							'Design concepts',
+							'Iterative collaboration',
+						],
+						image: '/images/backfortycase4.jpg',
+						color: '#8FFF5D',
+					},
+					{
+						phase: 'Development',
+						title: 'Technical Orchestration',
+						description:
+							"The real magic happens in the frontend development. By leveraging modern frameworks like barba.js, and GSAP, we built out fully customizable 'divisions' within the same website, and paired it with unique and engaging page transitions, ensuring each branch of the business could evolve without stepping on the other's toes.",
+						details: [
+							'Frontend architecture & optimization',
+							'Animation & page transitions',
+							'Performance optimization',
+						],
+						image: '/images/backfortycase5.jpg',
+						color: '#C1FF1D',
+					},
+					{
+						phase: 'Launch',
+						title: 'Harmonious Deployment',
+						description:
+							"Finally, we tied everything together with a nod to BackForty's real-world music vibes—featuring a sweet track by Shakey Graves, <em>&ldquo;Family and Genus,&rdquo;</em> woven right into the user experience. It's the perfect testament to how music supervision and artist management can fuse into one seamless digital brand presence.",
+						details: [
+							'Quality assurance & testing',
+							'Analytics implementation',
+							'Performance monitoring',
+							'Team training & handoff',
+						],
+						image: '/images/backfortycase6.jpg',
+						color: '#E2FF1D',
+					},
+				],
+			}}
+			additionalSections={[
+				{
+					type: 'split-content',
+					content: (
+						<div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+							<div className="lg:col-span-5 space-y-8">
+								<h4 className="text-2xl text-cyber-green mb-4">Music Supervision</h4>
+								<p className="text-moon-rock leading-relaxed">
+									Through innovative web development and UX design, we created an engaging platform that showcases
+									BackForty's music supervision portfolio. The interface appeals to outdoor and adventure brands while
+									highlighting their impressive client roster, driving meaningful connections with potential partners.
+								</p>
+							</div>
+							<div className="lg:col-span-7">
+								<motion.div className="relative aspect-[4/3] overflow-hidden">
+									<Image
+										src="/images/backfortycase4.jpg"
+										alt="BackForty music supervision showcase"
+										fill
+										className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+									/>
+								</motion.div>
+							</div>
+						</div>
+					),
+				},
+				{
+					type: 'split-content-reverse',
+					content: (
+						<div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+							<div className="lg:col-span-7">
+								<motion.div className="relative aspect-[4/3] overflow-hidden">
+									<Image
+										src="/images/backfortycase3.jpg"
+										alt="BackForty artist management showcase"
+										fill
+										className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+									/>
+								</motion.div>
+							</div>
+							<div className="lg:col-span-5 space-y-8">
+								<h4 className="text-2xl text-cyber-green mb-4">Artist Management</h4>
+								<p className="text-moon-rock leading-relaxed">
+									The artist management portal leverages cutting-edge frontend development to create an authentic
+									digital space where established artists can connect with the team. Our custom web application
+									seamlessly presents BackForty's track record while maintaining the cool factor that artists expect.
+								</p>
+							</div>
+						</div>
+					),
+				},
+				{
+					type: 'centered-text',
+					content: (
+						<motion.p className="max-w-5xl mx-auto text-3xl leading-[3rem] text-center text-moon-rock">
+							By pushing the boundaries of modern web development, we created a digital experience that breaks the
+							conventional mold. The site features some musical love from our good buddy{' '}
+							<Link href="/work/shakey-graves" className="text-cyber-green hover:opacity-80 transition-opacity">
+								Shakey Graves
+							</Link>{' '}
+							and his phenomenal song "Family and Genus" — seamlessly integrated into the user experience, showcasing
+							the synergy between BackForty's artist management and digital presence.
+						</motion.p>
+					),
+				},
+				{
+					type: 'full-width-image',
+					content: (
+						<motion.div
+							className="aspect-[4/3] relative"
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+							viewport={{ once: true, margin: '-20%' }}
+							transition={{ duration: 0.8 }}
 						>
-							<path
-								d="M0 40.4268C0 28.4485 1.67512 19.8171 5.02536 14.5325C8.3756 9.07182 14.4589 4.22764 23.2754 0L33.3261 15.061C26.8019 18.7602 23.0109 21.8428 21.9529 24.3089C21.0713 26.5989 20.6304 28.7127 20.6304 30.6504H33.0616V65H0V40.4268ZM39.6739 40.4268C39.6739 28.4485 41.2609 19.8171 44.4348 14.5325C47.785 9.07182 53.9565 4.22764 62.9493 0L73 15.061C66.4758 18.7602 62.6848 21.8428 61.6268 24.3089C60.5688 26.5989 60.0399 28.7127 60.0399 30.6504H72.7355V65H39.6739V40.4268Z"
-								fill="url(#paint0_linear_45_105)"
+							<Image
+								src="/images/backfortycase7.jpg"
+								alt="BackForty final showcase"
+								fill
+								className="w-full h-full object-cover"
 							/>
-							<defs>
-								<linearGradient id="paint0_linear_45_105" x1="73" y1="65" x2="0" y2="65" gradientUnits="userSpaceOnUse">
-									<stop stopColor="#C1FF1D" />
-									<stop offset="1" stopColor="#00FFE0" />
-								</linearGradient>
-							</defs>
-						</svg>
-						I can&apos;t thank you enough for never halting, diminishing or deflecting our vision. Instead, you threw
-						gas on the fire and guided us to make it OUR collective reality. You led us professionally to a site I
-						can&apos;t imagine anyone has envisioned before.
-						<svg
-							className="rotate-180 inline h-4 w-auto -mt-5"
-							xmlns="http://www.w3.org/2000/svg"
-							width="73"
-							height="65"
-							viewBox="0 0 73 65"
-							fill="none"
-						>
-							<path
-								d="M0 40.4268C0 28.4485 1.67512 19.8171 5.02536 14.5325C8.3756 9.07182 14.4589 4.22764 23.2754 0L33.3261 15.061C26.8019 18.7602 23.0109 21.8428 21.9529 24.3089C21.0713 26.5989 20.6304 28.7127 20.6304 30.6504H33.0616V65H0V40.4268ZM39.6739 40.4268C39.6739 28.4485 41.2609 19.8171 44.4348 14.5325C47.785 9.07182 53.9565 4.22764 62.9493 0L73 15.061C66.4758 18.7602 62.6848 21.8428 61.6268 24.3089C60.5688 26.5989 60.0399 28.7127 60.0399 30.6504H72.7355V65H39.6739V40.4268Z"
-								fill="url(#paint0_linear_45_105)"
-							/>
-							<defs>
-								<linearGradient id="paint0_linear_45_105" x1="73" y1="65" x2="0" y2="65" gradientUnits="userSpaceOnUse">
-									<stop stopColor="#C1FF1D" />
-									<stop offset="1" stopColor="#00FFE0" />
-								</linearGradient>
-							</defs>
-						</svg>
-					</blockquote>
-					<figcaption className="pt-8">
-						Bodie Johnson
-						<br />
-						<span className="text-gray-600">BackForty Manager, BackForty Management</span>
-					</figcaption>
-
-					<div className="absolute hidden lg:block lg:right-0 lg:bottom-0 opacity-40">
-						<CircleGrad className="contact-circ cursor-auto absolute flex" $transparent>
-							<Love className="spin" fill="var(--c-wolf-gray)" />
-							<Mark fill="var(--c-wolf-gray)" width={72} className="absolute" />
-						</CircleGrad>
-					</div>
-				</div>
-			</Container>
-			<ContactForm />
-		</>
+						</motion.div>
+					),
+				},
+			]}
+		/>
 	);
 }

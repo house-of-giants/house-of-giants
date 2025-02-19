@@ -38,6 +38,9 @@ export const SectionBar = () => {
 	const isMobile = useMediaQuery('(max-width: 640px)');
 	const isTablet = useMediaQuery('(max-width: 1024px)');
 
+	// Add default section if none is active
+	const section = activeSection || { count: '0.0', title: 'SYSTEM_IDLE' };
+
 	useEffect(() => {
 		const updateTechTerms = () => {
 			const shuffled = [...TECH_JARGON].sort(() => Math.random() - 0.5);
@@ -61,7 +64,10 @@ export const SectionBar = () => {
 			);
 		};
 
-		updateTime();
+		updateTime(); // Initial update
+		const timeInterval = setInterval(updateTime, 1000); // Update every second
+
+		return () => clearInterval(timeInterval); // Cleanup interval on unmount
 	}, []);
 
 	useEffect(() => {
@@ -72,7 +78,7 @@ export const SectionBar = () => {
 	const renderSectionInfo = () => (
 		<div className="section-info">
 			{!isMobile && <span className="section-label">PROCESS_ID</span>}
-			<span className="section-number">[{activeSection.count}]</span>
+			<span className="section-number">[{section.count}]</span>
 			<div className="separator" />
 			<span className="timestamp">T+{currentTime}</span>
 			{!isTablet && (
@@ -91,7 +97,7 @@ export const SectionBar = () => {
 					{Array.from({ length: isMobile ? 2 : 3 }).map((_, i) => (
 						<span key={i} className="text">
 							<span className="section-title">
-								// [ <TextScramble text={activeSection.title.toUpperCase()} /> ]
+								// [ <TextScramble text={section.title.toUpperCase()} /> ]
 							</span>{' '}
 							{techTerms.slice(0, isMobile ? 2 : isTablet ? 3 : 4).map((term, i) => (
 								<span key={term} className="tech-term">

@@ -2,7 +2,12 @@
 
 import { motion } from 'framer-motion';
 
-export const FloatingGradients = () => {
+export const FloatingGradients = ({ variant }) => {
+	const gradientVariants = {
+		green: 'from-[#c1ff1d] to-[#00ffe0]',
+		purple: 'from-[#9b4dff] to-[#ff2a6d]',
+	};
+
 	return (
 		<div className="fixed inset-0 pointer-events-none z-[1] overflow-hidden">
 			<motion.div
@@ -18,7 +23,7 @@ export const FloatingGradients = () => {
 					repeat: Infinity,
 					ease: 'easeInOut',
 				}}
-				className="absolute top-20 right-20 w-[20vw] h-[20vw] rounded-full bg-gradient-to-r from-[#ff2a6d] to-[#9b4dff] blur-[100px]"
+				className={`absolute top-20 right-20 w-[20vw] h-[20vw] rounded-full bg-gradient-to-r ${gradientVariants[variant]} blur-[100px]`}
 			/>
 			<motion.div
 				initial={{ opacity: 0 }}
@@ -34,7 +39,7 @@ export const FloatingGradients = () => {
 					ease: 'easeInOut',
 					delay: 1,
 				}}
-				className="absolute bottom-40 left-20 w-[25vw] h-[25vw] rounded-full bg-gradient-to-r from-[#9b4dff] to-[#ff2a6d] blur-[120px]"
+				className={`absolute bottom-40 left-20 w-[25vw] h-[25vw] rounded-full bg-gradient-to-r ${gradientVariants[variant]} blur-[120px]`}
 			/>
 			<motion.div
 				initial={{ opacity: 0 }}
@@ -50,7 +55,7 @@ export const FloatingGradients = () => {
 					ease: 'easeInOut',
 					delay: 2,
 				}}
-				className="absolute top-[40vh] left-[30vw] w-[30vw] h-[30vw] rounded-full bg-gradient-to-r from-[#ff2a6d] via-[#c431ff] to-[#9b4dff] blur-[140px]"
+				className={`absolute top-[40vh] left-[30vw] w-[30vw] h-[30vw] rounded-full bg-gradient-to-r ${gradientVariants[variant]} blur-[140px]`}
 			/>
 		</div>
 	);
