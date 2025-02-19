@@ -47,8 +47,7 @@ export const SectionBar = () => {
 			setTechTerms(shuffled.slice(0, 4));
 		};
 
-		const termInterval = setInterval(updateTechTerms, 10000);
-		return () => clearInterval(termInterval);
+		updateTechTerms();
 	}, []);
 
 	useEffect(() => {
@@ -101,7 +100,7 @@ export const SectionBar = () => {
 							</span>{' '}
 							{techTerms.slice(0, isMobile ? 2 : isTablet ? 3 : 4).map((term, i) => (
 								<span key={term} className="tech-term">
-									// <TextScramble text={term} />
+									// <span>{term}</span>
 								</span>
 							))}
 						</span>

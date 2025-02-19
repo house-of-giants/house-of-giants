@@ -36,13 +36,7 @@ export default function ShakeyGraves() {
 						description:
 							'Inspired by the album artwork, we built an intuitive retro TV-wall UI. This layout speaks to the album’s “vintage meets new wave” vibe, guiding fans to the “Movie of the Week” generator page. We focused on clarity, visual intrigue, and minimal friction, ensuring each user could explore track variations without getting lost.',
 						color: '#c1ff1d',
-						details: [
-							'Retro Web Design',
-							'User Journey Mapping',
-							'Immersive UI',
-							'Interactive Elements',
-							'Brand-Aligned UX',
-						],
+						details: ['Web Design', 'User Journey Mapping', 'Immersive UI', 'Interactive Elements', 'Brand-Aligned UX'],
 						image: '/images/shakeycase4.jpg',
 					},
 					{
@@ -53,10 +47,10 @@ export default function ShakeyGraves() {
 						color: '#ff2a6d',
 						details: [
 							'Custom Front-end Development',
-							'AI-Powered Features',
+							'AI / LLM Integration',
 							'Dynamic Content Integration',
 							'Randomized Album Generation',
-							'Modular Code Architecture',
+							'Modular Code Structure',
 						],
 						image: '/images/shakeycase5.jpg',
 					},
@@ -65,13 +59,12 @@ export default function ShakeyGraves() {
 						title: 'Launch & Optimization',
 						description:
 							'Post-deployment, we monitored site performance to handle the surge of curious fans. The results were instant: a 91% jump in new user visits and a 285% spike in page views. More importantly, album sales climbed steadily as fans enjoyed the creative freedom to craft their own unique “Movie of the Week.”',
-						color: '#c1ff1d',
+						color: '#9b4dff',
 						details: [
 							'Performance Optimization',
 							'Global Fan Engagement',
 							'Analytics & Monitoring',
 							'Scalable Infrastructure',
-							'Continuous Deployment',
 						],
 						image: '/images/shakeycase6.jpg',
 					},

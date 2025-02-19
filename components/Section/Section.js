@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useSection } from '../SectionContext/SectionContext';
 import { useInView } from 'react-intersection-observer';
 
@@ -8,7 +8,7 @@ export const Section = ({ count, title, children, id }) => {
 	try {
 		const { setActiveSection } = useSection();
 		const { ref, inView } = useInView({
-			threshold: 0.3, // Adjust as needed
+			threshold: 0.3,
 		});
 
 		useEffect(() => {

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-const chars = '!<>-_\\/[]{}—=+*^?#________';
+const chars = ['!', '<', '>', '-', '_', '\\', '/', '[', ']', '{', '}', '—', '=', '+', '*', '^', '?', '#'];
 
 export const TextScramble = ({ text }) => {
 	const [displayText, setDisplayText] = useState(text);
@@ -16,7 +16,7 @@ export const TextScramble = ({ text }) => {
 			setIsScrambling(true);
 
 			let iteration = 0;
-			const maxIterations = 20;
+			const maxIterations = 5;
 			let currentText = text;
 
 			const update = () => {
@@ -29,7 +29,7 @@ export const TextScramble = ({ text }) => {
 				const scrambled = currentText
 					.split('')
 					.map((char, idx) => {
-						if (idx < iteration) {
+						if (idx >= iteration) {
 							return text[idx];
 						}
 						return chars[Math.floor(Math.random() * chars.length)];
@@ -38,7 +38,9 @@ export const TextScramble = ({ text }) => {
 
 				setDisplayText(scrambled);
 				iteration += 1;
-				frame = requestAnimationFrame(update);
+				setTimeout(() => {
+					frame = requestAnimationFrame(update);
+				}, 100);
 			};
 
 			update();

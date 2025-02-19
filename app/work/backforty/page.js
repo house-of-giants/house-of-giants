@@ -11,13 +11,13 @@ export default function BackForty() {
 			title="BackForty Management"
 			subtitle="Digital Experience + Web Development"
 			liveUrl="https://backfortymgmt.com"
-			heroImage="/images/backfortycase1.jpg"
+			heroImage="/images/backfortytransitions.gif"
 			variant="default"
 			intro="BackForty isn't your typical artist management firm, and they're sure as hell not a run-of-the-mill music supervision crew either. They've broken the mold for 20+ years, so naturally, they needed a digital presence that does the same—pushing creative limits while staying rooted in a professional edge."
 			challenge="How do you show off two distinct sides—artist management and music supervision—without watering down either? BackForty needed a custom web solution that could highlight both ventures in a cohesive, powerful way. They wanted the energy and authenticity that's fueled their success from day one, but also a seamless user journey for potential partners, artists, and corporate clients."
 			solution="We built a responsive web application that merges modern frontend development with immersive UI, speaking directly to two different audiences—creative professionals and corporate brands. With custom animations and an innovative design, their digital presence captures the electricity of the music world and the credibility of a seasoned industry leader."
 			images={{
-				intro: '/images/backfortycase2.jpg',
+				intro: '/images/backfortycard.jpg',
 				process: [
 					'/images/backfortycase3.jpg',
 					'/images/backfortycase4.jpg',
