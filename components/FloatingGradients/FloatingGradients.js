@@ -6,6 +6,7 @@ export const FloatingGradients = ({ variant }) => {
 	const gradientVariants = {
 		green: 'from-[#c1ff1d] to-[#00ffe0]',
 		purple: 'from-[#9b4dff] to-[#ff2a6d]',
+		gold: 'from-[#ffd700] to-[#ffa500]',
 	};
 
 	return (
