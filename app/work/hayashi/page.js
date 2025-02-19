@@ -1,9 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { CaseStudy } from '@/components/CaseStudy/CaseStudy';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 export default function Hayashi() {
 	return (

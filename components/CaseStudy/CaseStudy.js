@@ -13,6 +13,7 @@ import { ScrollProgress } from '@/components/ScrollProgress/ScrollProgress';
 import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
 import { SectionSeparator } from '../SectionSeparator/SectionSeparator';
 import { Section } from '../Section/Section';
+import { NextCaseStudies } from './NextCaseStudies';
 
 export const CaseStudy = ({
 	title,
@@ -428,6 +429,35 @@ export const CaseStudy = ({
 				)}
 			</div>
 			<SectionSeparator />
+			<NextCaseStudies
+				currentCase={title}
+				nextCases={[
+					{
+						title: 'Shakey Graves',
+						description:
+							'A case study for Shakey Graves "Movie of the Week" project. Featuring a custom web design and development, AI integration, and a unique user experience.',
+						image: '/images/shakeycard.jpg',
+						tags: ['Web Design', 'Web Development', 'AI'],
+						url: '/work/shakey-graves',
+					},
+					{
+						title: 'Hayashi Whisky',
+						description:
+							'A case study for Hayashi Whisky web design and development. Featuring a luxurious web design, immersive UI, and unique product storytelling.',
+						image: '/images/hayashicard.jpg',
+						tags: ['Web Design', 'Web Development', 'Luxury'],
+						url: '/work/hayashi',
+					},
+					{
+						title: 'BackForty Management',
+						description:
+							'A case study for BackForty Management. Featuring a custom web development, brand evolution, and unique page transitions.',
+						image: '/images/backfortycard.jpg',
+						tags: ['Web Design', 'Web Development', 'Brand Evolution'],
+						url: '/work/backforty',
+					},
+				]}
+			/>
 			<ContactForm />
 		</div>
 	);
