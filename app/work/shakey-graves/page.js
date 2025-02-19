@@ -80,7 +80,11 @@ export default function ShakeyGraves() {
 				stats: [
 					{ value: '91', unit: '%', description: 'Increase in new users within the first week' },
 					{ value: '285', unit: '%', description: 'Growth in page views post-launch' },
-					{ value: '1', unit: 'b+', description: 'Over 1 billion unique album possibilities' },
+					{
+						value: '1',
+						unit: 'billion+',
+						description: 'Over 1 billion (yes billion) unique album combinations created with the soundtrack generator',
+					},
 				],
 			}}
 		/>
