@@ -28,17 +28,13 @@ export default function Hayashi() {
 			impact={{
 				blurb: (
 					<>
-						Through innovative web development and user-centric design, we transformed BackForty's digital presence into
-						a powerful platform that <span className="text-cyber-green">drives engagement</span> and converts visitors
-						into partners.
+						By blending subtle mystique, premium visuals, and a user-centric approach, House of Giants created a digital
+						experience that embodies Hayashi's ethos: part traditional Japanese heritage, part{' '}
+						<span className="text-cyber-green">innovative frontier</span>. The final result? A captivating online
+						presence that stands as proudly on the web as Hayashi does on the top shelf of any discerning whisky
+						connoisseur's collection.
 					</>
 				),
-			}}
-			testimonial={{
-				quote:
-					"I can't thank you enough for never halting, diminishing or deflecting our vision. Instead, you threw gas on the fire and guided us to make it OUR collective reality. You led us professionally to a site I can't imagine anyone has envisioned before.",
-				author: 'Bodie Johnson',
-				role: 'BackForty Manager, BackForty Management',
 			}}
 			process={{
 				title: '04 - The Process',

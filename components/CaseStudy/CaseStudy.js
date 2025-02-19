@@ -64,7 +64,10 @@ export const CaseStudy = ({
 				</motion.div>
 
 				{/* Hero Header */}
-				<motion.header className="h-screen flex flex-col items-center justify-center relative" style={{ y: headerY }}>
+				<motion.header
+					className="h-screen flex flex-col max-w-[var(--container-width)] mx-auto px-4 md:px-8 items-center justify-center relative"
+					style={{ y: headerY }}
+				>
 					<div className="px-4 py-2 border border-cyber-green/20 rounded-lg">
 						<span className="text-cyber-green">01</span>
 						<span className="text-white ml-2">Case Study</span>
@@ -178,19 +181,17 @@ export const CaseStudy = ({
 				{/* Process Section */}
 				{process?.steps && (
 					<Section count="4.0" title="The Process">
-						<div className="relative py-32">
-							<div className="min-h-[80vh] flex items-center overflow-hidden">
-								<div className="grid grid-cols-12 gap-8 items-start">
+						<div className="relative py-32 max-w-[var(--container-width)] mx-auto px-4 md:px-8">
+							<div className=" flex items-center overflow-hidden">
+								<div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 items-start">
 									{/* Left Timeline */}
-									<div className="col-span-1">
-										<motion.div
-											className="h-full w-px bg-gradient-to-b from-[#00ffe0] to-[#c1ff1d]"
-											initial={{ height: 0 }}
-											whileInView={{ height: '100%' }}
-											viewport={{ once: true }}
-											transition={{ duration: 1.2 }}
-										/>
-									</div>
+									<motion.div
+										className="col-span-1  h-full w-0.5 bg-gradient-to-b from-[#00ffe0] to-[#c1ff1d]"
+										initial={{ height: 0 }}
+										whileInView={{ height: '100%' }}
+										viewport={{ once: true }}
+										transition={{ duration: 1.2 }}
+									/>
 
 									{/* Main Content Area */}
 									<div className="col-span-10">
@@ -217,7 +218,7 @@ export const CaseStudy = ({
 											{process.steps.map((step, index) => (
 												<motion.div
 													key={index}
-													className="grid grid-cols-12 gap-8 items-center"
+													className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
 													initial={{ opacity: 0, y: 50 }}
 													whileInView={{ opacity: 1, y: 0 }}
 													viewport={{ once: true, margin: '-10%' }}
