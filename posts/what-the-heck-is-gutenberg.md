@@ -3,12 +3,10 @@ title: 'What the Heck Is Gutenberg?'
 author:
   name: Dominic Magnifico
   picture: '/images/dom.jpeg'
-image: '/images/posts/what-the-heck-is-gutenberg.png'
+image: '/images/blog/what-the-heck-is-gutenberg.jpg'
 excerpt: 'We’re pretty immersed in the world of web development. Because of that, sometimes we slip words like [“Gutenberg”](https://wordpress.org/documentation/article/wordpress-editor/) into casual conversation, without explanation. Let’s clear the air. Gutenberg uses a **block-based structure** that’s more like stacking LEGO bricks: each block (text, images, videos, etc.) can be moved, edited, or replaced in a snap. At House of Giants, we’re fans of anything that improves **user-friendly design**, streamlines **performance optimization**, and opens the door to **scalable architecture**—and Gutenberg checks all three boxes.'
 date: '2025-02-21'
 ---
-
-# What the Heck Is Gutenberg?
 
 ### The Ultimate Guide to WordPress’s Block-Based Editor
 
