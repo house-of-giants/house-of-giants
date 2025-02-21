@@ -18,11 +18,13 @@ export async function generateMetadata({ params }) {
 	if (post.images) {
 		imageList = typeof post.images === 'string' ? [post.images] : post.images;
 	}
-	const ogImages = imageList.map(() => {
-		return {
-			url: `https://houseofgiants.com/api/og?title=${post.title}&image=${encodeURIComponent(post.image)}`,
-		};
-	});
+	const ogImages = [
+		{
+			url: `${siteMetadata.siteUrl}/api/og?title=${encodeURIComponent(post.title)}&image=${encodeURIComponent(
+				post.image.startsWith('http') ? post.image : `${siteMetadata.siteUrl}${post.image}`
+			)}`,
+		},
+	];
 
 	return {
 		title: `${post.title} | ${siteMetadata.title}`,
@@ -35,14 +37,14 @@ export async function generateMetadata({ params }) {
 			type: 'article',
 			publishedTime: publishedAt,
 			modifiedTime: modifiedAt,
-			url: './',
+			url: `${siteMetadata.siteUrl}/blog/${params.slug}`,
 			images: ogImages,
 		},
 		twitter: {
 			card: 'summary_large_image',
 			title: post.title,
 			description: post.summary,
-			images: imageList,
+			images: ogImages,
 		},
 	};
 }
