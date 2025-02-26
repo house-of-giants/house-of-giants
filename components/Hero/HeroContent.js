@@ -49,7 +49,7 @@ export const HeroContent = () => {
 				>
 					<div className="inline-block font-serif italic text-moon-rock text-xl">
 						<div className="inline-block w-12 h-[1px] bg-gradient-to-r from-[#00ffe0] to-[#c1ff1d] mr-4 align-middle" />
-						Denver's Premier Digital Interactive Studio
+						Denver's Premier
 					</div>
 				</motion.div>
 
@@ -62,7 +62,7 @@ export const HeroContent = () => {
 						transition={{ duration: 0.8, delay: 0.2 }}
 					>
 						<span className="block -grad-header relative max-w-[90vw] md:max-w-[95vw]">
-							Digital
+							Web
 							<div className="absolute -right-4 top-1/2 w-8 h-[1px] bg-cyber-green/30" />
 						</span>
 						<motion.span
@@ -71,7 +71,7 @@ export const HeroContent = () => {
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.8, delay: 0.4 }}
 						>
-							Interactive
+							Development
 						</motion.span>
 						<motion.span
 							className="block -grad-header relative max-w-[90vw] md:max-w-[95vw]"
@@ -117,9 +117,9 @@ export const HeroContent = () => {
 						</div>
 
 						<div className="text-xl text-moon-rock/80 leading-relaxed">
-							Based in Denver, Colorado, we're a digital studio that pushes boundaries and breaks rules. From enterprise
-							WordPress development to cutting-edge 3D experiences, we build digital solutions that make your
-							competition irrelevant and your users say "holy shit."
+							Based in Denver, Colorado, we're a web development studio that pushes boundaries and breaks rules. From
+							enterprise WordPress development to reactive web applications, to 3D experiences, we build digital
+							solutions that make your competition irrelevant and your users say "holy shit."
 						</div>
 					</div>
 				</motion.div>

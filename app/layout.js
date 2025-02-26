@@ -11,6 +11,7 @@ import './globals.css';
 import siteMetadata from '@/data/siteMetadata';
 import { SectionProvider } from '@/components/SectionContext/SectionContext';
 import { SectionBar } from '@/components/SectionBar/SectionBar';
+import { LocalBusinessSchema } from '@/components/Schema/LocalBusinessSchema';
 
 export async function generateMetadata() {
 	return {
@@ -74,6 +75,7 @@ export default function RootLayout({ children }) {
 			</head>
 			<body>
 				<StyledComponentsRegistry>
+					<LocalBusinessSchema />
 					<GlobalStyles />
 					<Header />
 					<AnimatedTitle />

@@ -1,5 +1,5 @@
 const siteMetadata = {
-	title: '🤘 House of Giants | Denver Based Web Development Studio',
+	title: '🤘 House of Giants | Denver Web Development Studio',
 	author: 'Dominic Magnifico',
 	headerTitle: 'House of Giants',
 	description:

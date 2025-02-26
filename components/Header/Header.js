@@ -8,7 +8,6 @@ import { StyledHeader } from './StyledHeader';
 import { Socials } from '../Social/Socials';
 import { useElementHeight } from '../../hooks/useElementHeight';
 import { useEffect, useRef } from 'react';
-
 export const Header = () => {
 	const headerRef = useRef(null);
 	const headerHeight = useElementHeight(headerRef);

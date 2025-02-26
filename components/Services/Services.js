@@ -11,17 +11,21 @@ export const Services = () => {
 	const services = [
 		{
 			id: '01',
-			title: 'Enterprise Web Development',
+			title: 'Scalable Web Development',
 			description:
-				'Custom web development that turns business challenges into digital victories. From headless WordPress to full-stack Next.js applications, we architect scalable solutions that make your competition irrelevant. Denver&apos;s most ambitious brands trust us to build their digital foundations.',
-			features: ['Enterprise WordPress Development', 'Full-Stack Application Architecture', 'API & System Integration'],
+				'We&apos;re here to make users say &ldquo;holy shit&rdquo; when they land on your site, no matter if you&apos;re a startup or a national brand. Our scalable approach means you get a platform that evolves with your growth—so you&apos;re never stuck rebuilding from scratch when the next big opportunity (or challenge) hits.',
+			features: ['WordPress Development', 'Full-Stack Application Architecture', 'API & System Integration'],
 		},
 		{
 			id: '02',
-			title: 'Interactive Design',
+			title: 'Immersive Web Experiences',
 			description:
-				'Where cutting-edge technology meets unforgettable user experiences. Our WebGL and Three.js powered interfaces don&apos;t just look stunning – they perform. Every interaction, animation, and transition is engineered to keep users coming back for more.',
-			features: ['3D Web Experiences', 'Motion Design & Animation', 'Interactive Data Visualization'],
+				'Most &ldquo;interactive design&rdquo; talk ends at fancy visuals, but we go deeper—building true web applications designed for speed, engagement, and next-level user flows. Whether it&apos;s a sleek dashboard, a real-time data platform, or a highly interactive marketing funnel, we fuse our web development wizardry with user-centered design to deliver experiences people want to use.',
+			features: [
+				'Advanced Front-End Engineering',
+				'Responsive & Intuitive UI/UX',
+				'Real-Time Data & Dynamic Interfaces',
+			],
 		},
 		{
 			id: '03',
@@ -34,7 +38,7 @@ export const Services = () => {
 			id: '04',
 			title: 'Digital Innovation',
 			description:
-				"We're problem solvers first, coders second. Our superpower? Asking better questions that lead to breakthrough solutions. We dive deep into your challenges, emerging with innovative approaches that transform complex problems into elegant solutions. No buzzwords, just results.",
+				'We&apos;re problem solvers first, coders second. Our superpower? Asking better questions that lead to breakthrough solutions. We dive deep into your challenges, emerging with innovative approaches that transform complex problems into elegant solutions. No buzzwords, just results.',
 			features: ['Strategic Problem Solving', 'Technical Discovery', 'Solution Architecture'],
 		},
 	];
@@ -52,7 +56,7 @@ export const Services = () => {
 			title: 'Next.js',
 			category: 'Full-Stack Platform',
 			description:
-				"Blazing-fast full-stack applications that make dial-up look like a joke. We harness Next.js's server-side rendering and edge computing to build enterprise-grade platforms that scale faster than your AWS bill.",
+				'Blazing-fast full-stack applications that make dial-up look like a joke. We harness Next.js&apos;s server-side rendering and edge computing to build enterprise-grade platforms that outpace your old setup. Smooth, scalable, and downright unstoppable. Just how we like it.',
 			features: ['React Server Components & Streaming', 'Edge & Lambda Architecture', 'Advanced SEO & Meta Generation'],
 			icon: <NextJsIcon />,
 		},
@@ -68,7 +72,7 @@ export const Services = () => {
 			title: 'AI Integration',
 			category: 'Machine Learning',
 			description:
-				"Skip the AI buzzwords – we're here to make machines work for you. We integrate cutting-edge machine learning models that transform your data into business intelligence. From NLP to computer vision, we're building AI solutions that actually solve problems, not just create them.",
+				'Skip the AI buzzwords – we&apos;re here to make machines work for you. We integrate cutting-edge machine learning models that transform your data into business intelligence. From NLP to computer vision, we&apos;re building AI solutions that actually solve problems, not just create them.',
 			features: ['Custom ML Model Development', 'Intelligent Content Analysis', 'Predictive User Experience'],
 			icon: <AIIcon />,
 		},
