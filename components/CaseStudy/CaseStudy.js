@@ -44,7 +44,7 @@ export const CaseStudy = ({
 	return (
 		<div ref={containerRef} className="bg-[--c-primary-dark] min-h-screen">
 			<ScrollProgress progress={scrollYProgress} />
-			<FloatingGradients variant={variant} />
+			<FloatingGradients variant={variant} intensity="low" />
 
 			{/* Hero Section */}
 			<Section count="1.0" title="Project Overview">

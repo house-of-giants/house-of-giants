@@ -34,7 +34,7 @@ const work = [
 export default function Page() {
 	return (
 		<main className="relative">
-			<FloatingGradients />
+			<FloatingGradients intensity="high" />
 			<Reel />
 			<Hero />
 			<SectionSeparator />

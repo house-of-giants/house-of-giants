@@ -11,7 +11,7 @@ export const StyledHeader = styled.header`
 	padding: 0.825rem var(--sp-xs);
 	position: sticky;
 	top: 0;
-	background: linear-gradient(to bottom, rgba(26, 31, 36, 0.95), rgba(26, 31, 36, 0.85));
+	background: rgba(26, 31, 36, 0.95);
 	backdrop-filter: blur(10px);
 	border-bottom: 1px solid rgba(0, 255, 224, 0.1);
 	z-index: 50;

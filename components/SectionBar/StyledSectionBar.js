@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledSectionBar = styled.div`
 	align-items: center;
-	background: linear-gradient(to bottom, rgba(26, 31, 36, 0.95), rgba(26, 31, 36, 0.85));
+	background: rgba(26, 31, 36, 0.95);
 	backdrop-filter: blur(10px);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	display: flex;
