@@ -5,7 +5,7 @@ author:
   name: Dominic Magnifico
   picture: '/images/dom.jpeg'
 excerpt: 'Carousels might look flashy, but the data says otherwise—low engagement, slow load times, and a hit to your SEO. If your most important message is buried in slide three, it might as well not exist. Instead of forcing users to wait for a rotating banner, give them what they need now with clear, structured content and high-impact hero sections. Let’s build digital experiences that convert, not just spin.'
-date: '2024-03-28'
+date: '2025-03-11'
 ---
 
 Ah, the **website carousel**.
