@@ -42,7 +42,8 @@ export const FloatingGradients = ({ variant, intensity = 'medium' }) => {
 					repeat: Infinity,
 					ease: 'easeInOut',
 				}}
-				className={`absolute top-20 right-20 w-[30vw] h-[30vw] rounded-full bg-gradient-to-r ${gradientVariants[variant]} blur-[${selectedIntensity.blur}]`}
+				className={`absolute top-20 right-20 w-[30vw] h-[30vw] rounded-full bg-gradient-to-r ${gradientVariants[variant]}`}
+				style={{ filter: `blur(${selectedIntensity.blur})` }}
 			/>
 			<motion.div
 				initial={{ opacity: 0 }}
@@ -58,7 +59,8 @@ export const FloatingGradients = ({ variant, intensity = 'medium' }) => {
 					ease: 'easeInOut',
 					delay: 1,
 				}}
-				className={`absolute bottom-40 left-20 w-[35vw] h-[35vw] rounded-full bg-gradient-to-r ${gradientVariants[variant]} blur-[${selectedIntensity.blur}]`}
+				className={`absolute bottom-40 left-20 w-[35vw] h-[35vw] rounded-full bg-gradient-to-r ${gradientVariants[variant]}`}
+				style={{ filter: `blur(${selectedIntensity.blur})` }}
 			/>
 			<motion.div
 				initial={{ opacity: 0 }}
@@ -74,7 +76,8 @@ export const FloatingGradients = ({ variant, intensity = 'medium' }) => {
 					ease: 'easeInOut',
 					delay: 2,
 				}}
-				className={`absolute top-[40vh] left-[30vw] w-[40vw] h-[40vw] rounded-full bg-gradient-to-r ${gradientVariants[variant]} blur-[${selectedIntensity.blur}]`}
+				className={`absolute top-[40vh] left-[30vw] w-[40vw] h-[40vw] rounded-full bg-gradient-to-r ${gradientVariants[variant]}`}
+				style={{ filter: `blur(${selectedIntensity.blur})` }}
 			/>
 		</div>
 	);
