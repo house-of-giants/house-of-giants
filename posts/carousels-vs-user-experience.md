@@ -1,6 +1,6 @@
 ---
 title: 'Carousels & Sliders: Eye Candy or Page Bloat?'
-image: '/images/blog/carousel.webp'
+image: '/images/blog/carousel.jpg'
 author:
   name: Dominic Magnifico
   picture: '/images/dom.jpeg'
