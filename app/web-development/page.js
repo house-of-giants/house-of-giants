@@ -222,7 +222,7 @@ export default function WebDevelopment() {
 	return (
 		<main className="relative bg-[#1a1f24] text-gray-100">
 			<ServiceSchema service="web-development" />
-			<FloatingGradients intensity="low" />
+			<FloatingGradients variant="green" intensity="low" />
 
 			{/* Hero Section */}
 			<Section count="0.0" title="Digital Experiences">

@@ -127,7 +127,7 @@ const ContactInfoItem = ({ icon, label, value, link, newTab = false }) => (
 			{icon}
 		</div>
 		<div>
-			<div className="text-sm text-moon-rock">{label}</div>
+			<p className="text-sm text-moon-rock">{label}</p>
 			{link ? (
 				<a
 					href={link}
@@ -138,7 +138,7 @@ const ContactInfoItem = ({ icon, label, value, link, newTab = false }) => (
 					{value}
 				</a>
 			) : (
-				<div className="font-bold">{value}</div>
+				<p className="font-bold">{value}</p>
 			)}
 		</div>
 	</motion.div>
@@ -310,7 +310,7 @@ export default function ContactPage() {
 	return (
 		<main className="relative">
 			<ContactSchema />
-			<FloatingGradients intensity="medium" />
+			<FloatingGradients variant="green" intensity="low" />
 
 			{/* Hero Section with Split Layout and Form */}
 			<Section count="0.0" title="Contact">
@@ -348,11 +348,11 @@ export default function ContactPage() {
 							<div className="lg:hidden mt-6 grid grid-cols-2 gap-4">
 								<div className="bg-black bg-opacity-20 p-4 rounded-lg border border-gray-800">
 									<div className="text-2xl font-bold text-[var(--c-accent)]">94%</div>
-									<div className="text-sm text-moon-rock">Client satisfaction rate</div>
+									<p className="text-sm text-moon-rock">Client satisfaction rate</p>
 								</div>
 								<div className="bg-black bg-opacity-20 p-4 rounded-lg border border-gray-800">
 									<div className="text-2xl font-bold text-[var(--c-accent)]">100+</div>
-									<div className="text-sm text-moon-rock">Projects delivered</div>
+									<p className="text-sm text-moon-rock">Projects delivered</p>
 								</div>
 							</div>
 
@@ -469,7 +469,7 @@ export default function ContactPage() {
 								</Link>
 
 								<div className="text-center">
-									<span className="text-sm text-moon-rock">or</span>
+									<p className="text-sm text-moon-rock">or</p>
 								</div>
 
 								<a

@@ -78,7 +78,7 @@ export default function WebDesign() {
 	return (
 		<main className="relative bg-[#1a1f24] text-gray-100">
 			<ServiceSchema service="web-design" />
-			<FloatingGradients intensity="low" />
+			<FloatingGradients variant="purple" intensity="low" />
 
 			{/* Hero Section */}
 			<Section count="0.0" title="Digital Experiences">

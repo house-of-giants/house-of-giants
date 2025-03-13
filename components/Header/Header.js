@@ -67,12 +67,7 @@ export const Header = () => {
 		<StyledHeader ref={headerRef}>
 			{/* Left Side - Brand Identity */}
 			<Link href="/" className="group flex-shrink-0">
-				<motion.h1
-					className="flex items-center gap-2 md:gap-4"
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}
-				>
+				<motion.h1 className="flex items-center gap-2 md:gap-4">
 					<div className="relative">
 						<Mark width="40" height="40" className="relative z-10 md:w-[50px] md:h-[50px]" />
 						<motion.div
@@ -100,27 +95,20 @@ export const Header = () => {
 				<nav className="hidden md:flex items-center gap-8">
 					<Link
 						href="/#work"
-						className={`text-white font-serif font-bold italic hover:text-[#00ffe0] transition-colors duration-300 text-2xl ${
-							isActive('/#work') ? '-grad-link' : ''
+						className={`font-serif font-bold italic transition-colors duration-300 text-2xl ${
+							isActive('/#work') ? 'text-[#00ffe0]' : 'text-white hover:text-[#00ffe0]'
 						}`}
 					>
 						Work
 					</Link>
 					<div className="relative" onMouseEnter={handleDropdownMouseEnter} onMouseLeave={handleDropdownMouseLeave}>
 						<button
-							className={`text-white font-serif font-bold italic hover:text-[#00ffe0] transition-colors duration-300 text-2xl flex items-center gap-1 ${
-								isActive('/services') ? '-grad-link' : ''
+							className={`font-serif font-bold italic transition-colors duration-300 text-2xl flex items-center gap-1 ${
+								isActive('/services') ? 'text-[#00ffe0]' : 'text-white hover:text-[#00ffe0]'
 							}`}
 							onClick={() => setServicesOpen(!servicesOpen)}
 						>
 							Services
-							<span
-								className={`text-[var(--c-accent)] transition-transform duration-300 ${
-									servicesOpen ? 'rotate-180' : ''
-								}`}
-							>
-								↓
-							</span>
 						</button>
 
 						{/* Invisible bridge element to prevent hover gap issues */}
@@ -173,26 +161,32 @@ export const Header = () => {
 					</div>
 					<Link
 						href="/blog"
-						className={`text-white font-serif font-bold italic hover:text-[#00ffe0] transition-colors duration-300 text-2xl ${
-							isActive('/blog') ? '-grad-link' : ''
+						className={`font-serif font-bold italic transition-colors duration-300 text-2xl ${
+							isActive('/blog') ? 'text-[#00ffe0]' : 'text-white hover:text-[#00ffe0]'
 						}`}
 					>
 						Blog
 					</Link>
 				</nav>
 
-				{/* Social Links - Desktop Only */}
-				<div className="hidden md:block border-l border-moon-rock/20 pl-8">
-					<Socials theme="dark" />
+				<div className="relative h-10 w-px mx-6 hidden md:block">
+					<div className="absolute inset-0 w-[1px] h-full bg-gradient-to-b from-[rgba(255,42,109,0.6)] via-[rgba(155,77,255,0.6)] to-[rgba(0,255,224,0.6)]"></div>
+					<div className="absolute inset-0 w-[3px] h-full blur-sm bg-gradient-to-b from-[rgba(255,42,109,0.3)] via-[rgba(155,77,255,0.3)] to-[rgba(0,255,224,0.3)]"></div>
+				</div>
+
+				{/* Social Links with Gradient Border Separator - Desktop Only */}
+				<div className="hidden md:flex items-center">
+					<div className="flex items-center">
+						<Socials theme="dark" compact={true} />
+					</div>
 				</div>
 
 				{/* CTA Button */}
 				<Button
 					href="/contact"
-					className="grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:scale-105 transition-transform duration-300 text-sm md:text-base px-4 py-2 md:px-6"
+					className="max-w-[180px] grad-border bg-[var(--c-primary-dark)] text-white font-serif italic font-bold text-lg md:text-xl px-4 py-2.5 md:px-6 md:py-3 transition-all duration-300 hover:scale-105 hover:shadow-glow"
 				>
 					Start Project
-					<span className="text-[rgba(0,255,224,1)] ml-2">→</span>
 				</Button>
 
 				{/* Mobile Menu Toggle Button */}
@@ -237,8 +231,8 @@ export const Header = () => {
 									href="/#work"
 									className={`block py-4 px-3 text-xl rounded-lg transition-all ${
 										isActive('/#work')
-											? '-grad-link bg-black bg-opacity-40'
-											: 'text-white hover:bg-black hover:bg-opacity-20'
+											? 'text-[#00ffe0] bg-black bg-opacity-40'
+											: 'text-white hover:bg-black hover:bg-opacity-20 hover:text-[#00ffe0]'
 									}`}
 									onClick={() => setMobileMenuOpen(false)}
 								>
@@ -251,8 +245,8 @@ export const Header = () => {
 								<button
 									className={`flex justify-between items-center w-full py-4 px-3 text-xl rounded-lg transition-all ${
 										isActive('/services')
-											? '-grad-link bg-black bg-opacity-40'
-											: 'text-white hover:bg-black hover:bg-opacity-20'
+											? 'text-[#00ffe0] bg-black bg-opacity-40'
+											: 'text-white hover:bg-black hover:bg-opacity-20 hover:text-[#00ffe0]'
 									}`}
 									onClick={() => setServicesOpen(!servicesOpen)}
 								>
@@ -274,8 +268,8 @@ export const Header = () => {
 													href="/web-development"
 													className={`block py-3 px-3 rounded-lg transition-colors ${
 														pathname === '/web-development'
-															? '-grad-link bg-black bg-opacity-40'
-															: 'text-white hover:bg-black hover:bg-opacity-20'
+															? 'text-[#00ffe0] bg-black bg-opacity-40'
+															: 'text-white hover:bg-black hover:bg-opacity-20 hover:text-[#00ffe0]'
 													}`}
 													onClick={() => setMobileMenuOpen(false)}
 												>
@@ -285,8 +279,8 @@ export const Header = () => {
 													href="/web-design"
 													className={`block py-3 px-3 rounded-lg transition-colors ${
 														pathname === '/web-design'
-															? '-grad-link bg-black bg-opacity-40'
-															: 'text-white hover:bg-black hover:bg-opacity-20'
+															? 'text-[#00ffe0] bg-black bg-opacity-40'
+															: 'text-white hover:bg-black hover:bg-opacity-20 hover:text-[#00ffe0]'
 													}`}
 													onClick={() => setMobileMenuOpen(false)}
 												>
@@ -296,8 +290,8 @@ export const Header = () => {
 													href="/ux-architecture"
 													className={`block py-3 px-3 rounded-lg transition-colors ${
 														pathname === '/ux-architecture'
-															? '-grad-link bg-black bg-opacity-40'
-															: 'text-white hover:bg-black hover:bg-opacity-20'
+															? 'text-[#00ffe0] bg-black bg-opacity-40'
+															: 'text-white hover:bg-black hover:bg-opacity-20 hover:text-[#00ffe0]'
 													}`}
 													onClick={() => setMobileMenuOpen(false)}
 												>
@@ -307,8 +301,8 @@ export const Header = () => {
 													href="/digital-innovation"
 													className={`block py-3 px-3 rounded-lg transition-colors ${
 														pathname === '/digital-innovation'
-															? '-grad-link bg-black bg-opacity-40'
-															: 'text-white hover:bg-black hover:bg-opacity-20'
+															? 'text-[#00ffe0] bg-black bg-opacity-40'
+															: 'text-white hover:bg-black hover:bg-opacity-20 hover:text-[#00ffe0]'
 													}`}
 													onClick={() => setMobileMenuOpen(false)}
 												>
@@ -325,8 +319,8 @@ export const Header = () => {
 									href="/blog"
 									className={`block py-4 px-3 text-xl rounded-lg transition-all ${
 										isActive('/blog')
-											? '-grad-link bg-black bg-opacity-40'
-											: 'text-white hover:bg-black hover:bg-opacity-20'
+											? 'text-[#00ffe0] bg-black bg-opacity-40'
+											: 'text-white hover:bg-black hover:bg-opacity-20 hover:text-[#00ffe0]'
 									}`}
 									onClick={() => setMobileMenuOpen(false)}
 								>
@@ -336,8 +330,8 @@ export const Header = () => {
 									href="/contact"
 									className={`block py-4 px-3 text-xl rounded-lg transition-all ${
 										isActive('/contact')
-											? '-grad-link bg-black bg-opacity-40'
-											: 'text-white hover:bg-black hover:bg-opacity-20'
+											? 'text-[#00ffe0] bg-black bg-opacity-40'
+											: 'text-white hover:bg-black hover:bg-opacity-20 hover:text-[#00ffe0]'
 									}`}
 									onClick={() => setMobileMenuOpen(false)}
 								>
@@ -346,19 +340,25 @@ export const Header = () => {
 							</div>
 
 							{/* CTA in Mobile Menu */}
-							<div className="mt-6 pt-6 border-t border-gray-800">
-								<Button
-									href="/contact"
-									className="w-full grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:bg-black hover:bg-opacity-20 transition-all duration-300 text-base px-4 py-3 rounded-lg flex items-center justify-center"
-									onClick={() => setMobileMenuOpen(false)}
-								>
-									Start Your Project
-									<span className="text-[rgba(0,255,224,1)] ml-2">→</span>
-								</Button>
+							<div className="mt-6 relative">
+								{/* Gradient separator for mobile */}
+								<div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-[rgba(255,42,109,0.5)] via-[rgba(155,77,255,0.5)] to-[rgba(0,255,224,0.5)]"></div>
+								<div className="absolute top-0 left-0 w-full h-[2px] blur-sm bg-gradient-to-r from-[rgba(255,42,109,0.3)] via-[rgba(155,77,255,0.3)] to-[rgba(0,255,224,0.3)]"></div>
+
+								<div className="pt-6">
+									<Button
+										href="/contact"
+										className="w-full grad-border bg-[var(--c-primary-dark)] text-white font-serif italic font-bold text-lg md:text-xl px-4 py-3 rounded-lg flex items-center justify-center hover:bg-black hover:bg-opacity-20 transition-all duration-300 hover:shadow-glow"
+										onClick={() => setMobileMenuOpen(false)}
+									>
+										Start Your Project
+									</Button>
+								</div>
 							</div>
 
-							<div className="mt-8 pt-6 border-t border-gray-800">
-								<div className="text-sm text-moon-rock mb-3">Follow Us</div>
+							<div className="mt-8 mb-6">
+								<h4 className="text-md font-bold mb-4">Connect With Us</h4>
+								<p className="text-sm text-moon-rock mb-3">Follow Us</p>
 								<Socials theme="dark" />
 							</div>
 						</div>

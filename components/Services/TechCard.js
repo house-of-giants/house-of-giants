@@ -6,7 +6,7 @@ export const TechCard = ({ title, category, description, features, icon: Icon, i
 			<div className="flex flex-col items-start gap-8">
 				<div className="w-full flex justify-between items-center pb-6 relative">
 					{Icon}
-					<span className="font-serif text-2xl italic -grad-header">{String(index + 1).padStart(2, '0')}</span>
+					<p className="font-serif text-2xl italic -grad-header">{String(index + 1).padStart(2, '0')}</p>
 					<div
 						className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-[#00ffe0] via-[#7dff5d] to-[#c1ff1d] 
                         transition-opacity duration-300 group-hover:opacity-100"
@@ -15,7 +15,7 @@ export const TechCard = ({ title, category, description, features, icon: Icon, i
 
 				<div className="space-y-6">
 					<div className="space-y-1">
-						<span className="text-sm uppercase tracking-widest text-moon-rock/70">{category}</span>
+						<p className="text-sm uppercase tracking-widest text-moon-rock/70">{category}</p>
 						<h3 className="text-[2.5rem] font-black leading-none tracking-tight group-hover:-grad-header transition-colors duration-300">
 							{title}
 						</h3>

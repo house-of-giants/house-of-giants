@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { StyledButton } from '../Button/StyledButton';
 import { StyledContainer } from '../Container/StyledContainer';
 
 export const StyledHeader = styled.header`
@@ -36,11 +35,6 @@ export const StyledHeader = styled.header`
 		& svg {
 			margin-right: var(--sp-2xs);
 		}
-	}
-
-	${StyledButton} {
-		margin-left: auto;
-		white-space: nowrap;
 	}
 
 	& + ${StyledContainer} {

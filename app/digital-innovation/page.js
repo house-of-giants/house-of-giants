@@ -207,7 +207,7 @@ export default function DigitalInnovation() {
 	return (
 		<main className="relative bg-[#1a1f24] text-gray-100">
 			<ServiceSchema service="digital-innovation" />
-			<FloatingGradients intensity="low" />
+			<FloatingGradients variant="purple" intensity="low" />
 
 			{/* Hero Section */}
 			<Section count="0.0" title="Digital Experiences">
@@ -273,7 +273,7 @@ export default function DigitalInnovation() {
 										transition={{ duration: 0.5, delay: 0.4 }}
 										whileHover={{ scale: 1.05, borderColor: 'var(--c-accent)' }}
 									>
-										<span className="text-sm">ThreeJS</span>
+										<p className="text-sm">ThreeJS</p>
 									</motion.div>
 									<motion.div
 										className="absolute top-[30%] right-[20%] bg-black bg-opacity-40 p-3 rounded-lg border border-purple-500"
@@ -282,7 +282,7 @@ export default function DigitalInnovation() {
 										transition={{ duration: 0.5, delay: 0.5 }}
 										whileHover={{ scale: 1.05, borderColor: 'var(--c-accent)' }}
 									>
-										<span className="text-sm">Machine Learning</span>
+										<p className="text-sm">Machine Learning</p>
 									</motion.div>
 									<motion.div
 										className="absolute bottom-[25%] left-[25%] bg-black bg-opacity-40 p-3 rounded-lg border border-indigo-500"
@@ -291,7 +291,7 @@ export default function DigitalInnovation() {
 										transition={{ duration: 0.5, delay: 0.6 }}
 										whileHover={{ scale: 1.05, borderColor: 'var(--c-accent)' }}
 									>
-										<span className="text-sm">Data Visualization</span>
+										<p className="text-sm">Data Visualization</p>
 									</motion.div>
 									<motion.div
 										className="absolute bottom-[35%] right-[15%] bg-black bg-opacity-40 p-3 rounded-lg border border-purple-500"
@@ -300,7 +300,7 @@ export default function DigitalInnovation() {
 										transition={{ duration: 0.5, delay: 0.7 }}
 										whileHover={{ scale: 1.05, borderColor: 'var(--c-accent)' }}
 									>
-										<span className="text-sm">AR/VR</span>
+										<p className="text-sm">AR/VR</p>
 									</motion.div>
 								</motion.div>
 							</div>
