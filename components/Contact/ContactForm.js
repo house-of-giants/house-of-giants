@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import { Container } from '../Container/Container';
 import { Section } from '../Section/Section';
 import { ContactHeader } from './ContactHeader';
-import { ContactFormFields } from './ContactFormFields';
 import { SuccessMessage } from './SuccessMessage';
 import fetchJson from '@/utils/fetchJson';
 import Link from 'next/link';

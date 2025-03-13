@@ -260,11 +260,6 @@ export default function ContactPage() {
 			answer:
 				"Absolutely! We offer comprehensive support and maintenance packages to ensure your digital product continues to perform at its best. From regular updates and performance optimizations to content changes and feature additions, we're here to support your digital growth.",
 		},
-		{
-			question: 'What industries do you specialize in?',
-			answer:
-				"While we've worked across many industries, we have particular expertise in technology, healthcare, real estate, e-commerce, and professional services. Our diverse experience allows us to bring fresh perspectives and cross-industry insights to your project.",
-		},
 	];
 
 	// Benefits data
