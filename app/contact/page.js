@@ -126,8 +126,8 @@ const ContactInfoItem = ({ icon, label, value, link, newTab = false }) => (
 		<div className="w-12 h-12 rounded-full bg-black bg-opacity-50 flex items-center justify-center text-[var(--c-accent)] text-2xl">
 			{icon}
 		</div>
-		<div>
-			<p className="text-sm text-moon-rock">{label}</p>
+		<div className="flex flex-col justify-center">
+			<p className="text-sm text-moon-rock mb-0">{label}</p>
 			{link ? (
 				<a
 					href={link}
@@ -138,7 +138,7 @@ const ContactInfoItem = ({ icon, label, value, link, newTab = false }) => (
 					{value}
 				</a>
 			) : (
-				<p className="font-bold">{value}</p>
+				<p className="font-bold text-base mb-0">{value}</p>
 			)}
 		</div>
 	</motion.div>
@@ -340,7 +340,7 @@ export default function ContactPage() {
 									value="hello@houseofgiants.com"
 									link="mailto:hello@houseofgiants.com"
 								/>
-								<ContactInfoItem icon="📞" label="Call us at" value="+1 (303) 219-0697" link="tel:+13035551234" />
+								<ContactInfoItem icon="📞" label="Call us at" value="+1 (303) 219-0697" link="tel:+13032190697" />
 								<ContactInfoItem icon="📍" label="Based in" value="Denver, Colorado" />
 							</div>
 
@@ -348,11 +348,11 @@ export default function ContactPage() {
 							<div className="lg:hidden mt-6 grid grid-cols-2 gap-4">
 								<div className="bg-black bg-opacity-20 p-4 rounded-lg border border-gray-800">
 									<div className="text-2xl font-bold text-[var(--c-accent)]">94%</div>
-									<p className="text-sm text-moon-rock">Client satisfaction rate</p>
+									<p className="text-sm text-moon-rock mb-0">Client satisfaction rate</p>
 								</div>
 								<div className="bg-black bg-opacity-20 p-4 rounded-lg border border-gray-800">
 									<div className="text-2xl font-bold text-[var(--c-accent)]">100+</div>
-									<p className="text-sm text-moon-rock">Projects delivered</p>
+									<p className="text-sm text-moon-rock mb-0">Projects delivered</p>
 								</div>
 							</div>
 
@@ -469,7 +469,7 @@ export default function ContactPage() {
 								</Link>
 
 								<div className="text-center">
-									<p className="text-sm text-moon-rock">or</p>
+									<p className="text-sm text-moon-rock mb-0">or</p>
 								</div>
 
 								<a
@@ -623,8 +623,6 @@ export default function ContactPage() {
 					</div>
 				</Container>
 			</Section>
-
-			<SectionSeparator />
 		</main>
 	);
 }
