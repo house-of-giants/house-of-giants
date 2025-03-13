@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { TechCard } from '@/components/Services/TechCard';
 import PhilosophyCard from '@/components/Philosophy/PhilosophyCard';
 import StatCard from '@/components/Impact/StatCard';
+import { ServiceSchema } from '@/components/Schema/ServiceSchema';
 
 // Process Step Component
 const ProcessStep = ({ number, title, description, features }) => (
@@ -234,8 +235,9 @@ export default function UXArchitecture() {
 	];
 
 	return (
-		<main className="relative">
-			<FloatingGradients intensity="high" />
+		<main className="relative bg-[#1a1f24] text-gray-100">
+			<ServiceSchema service="ux-architecture" />
+			<FloatingGradients intensity="low" />
 
 			{/* Hero Section */}
 			<Section count="0.0" title="Digital Experiences">

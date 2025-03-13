@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 import { TechCard } from '@/components/Services/TechCard';
 import Image from 'next/image';
 import StatCard from '@/components/Impact/StatCard';
+import { ServiceSchema } from '@/components/Schema/ServiceSchema';
 
 // Process Step Component
 const ProcessStep = ({ number, title, description, features }) => (
@@ -219,8 +220,9 @@ export default function WebDevelopment() {
 	];
 
 	return (
-		<main className="relative">
-			<FloatingGradients intensity="medium" />
+		<main className="relative bg-[#1a1f24] text-gray-100">
+			<ServiceSchema service="web-development" />
+			<FloatingGradients intensity="low" />
 
 			{/* Hero Section */}
 			<Section count="0.0" title="Digital Experiences">

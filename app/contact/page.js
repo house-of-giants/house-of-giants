@@ -14,6 +14,7 @@ import { Socials } from '@/components/Social/Socials';
 import Link from 'next/link';
 import fetchJson from '@/utils/fetchJson';
 import Testimonials from '@/components/Testimonials/Testimonials';
+import { ContactSchema } from '@/components/Schema/ContactSchema';
 
 // Simple Contact Form Component optimized for the hero section
 const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting }) => (
@@ -308,6 +309,7 @@ export default function ContactPage() {
 
 	return (
 		<main className="relative">
+			<ContactSchema />
 			<FloatingGradients intensity="medium" />
 
 			{/* Hero Section with Split Layout and Form */}
