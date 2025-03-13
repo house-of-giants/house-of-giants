@@ -184,7 +184,7 @@ export const Header = () => {
 				{/* CTA Button */}
 				<Button
 					href="/contact"
-					className="max-w-[135px] grad-border bg-[var(--c-primary-dark)] text-white font-serif italic font-bold text-lg md:text-xl px-4 py-2.5 md:px-6 md:py-3 transition-all duration-300 hover:scale-105 hover:shadow-glow"
+					className="max-w-[137px] grad-border bg-[var(--c-primary-dark)] text-white font-serif italic font-bold text-lg md:text-xl px-4 py-2.5 md:px-6 md:py-3 transition-all duration-300 hover:scale-105 hover:shadow-glow"
 				>
 					Start Project
 				</Button>
