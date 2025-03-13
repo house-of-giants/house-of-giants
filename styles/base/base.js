@@ -27,7 +27,7 @@ export const Base = css`
 			'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 		--f-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
 			'Segoe UI Emoji', 'Segoe UI Symbol';
-		--f-serif: Nikolai, serif;
+		--f-serif: var(--font-nikolai), serif;
 
 		--fs-xs: clamp(0.6rem, 0.52rem + 0.39vw, 0.8rem);
 		--fs-s: clamp(0.82rem, 0.72rem + 0.54vw, 1.1rem);

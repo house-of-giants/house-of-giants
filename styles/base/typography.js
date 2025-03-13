@@ -1,22 +1,7 @@
 import { css } from 'styled-components';
 
 export const Typography = css`
-	@font-face {
-		font-family: 'Nikolai';
-		src:
-			url('/fonts/Nikolai/italic/Nikolai-Italic.woff2') format('woff2'),
-			url('/fonts/Nikolai/italic/Nikolai-Italic.woff') format('woff');
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Nikolai';
-		src:
-			url('/fonts/Nikolai/regular/Nikolai-Regular.woff2') format('woff2'),
-			url('/fonts/Nikolai/regular/Nikolai-Regular.woff') format('woff');
-		font-display: swap;
-	}
+	/* Remove the old @font-face declarations since they're now handled by Next.js font optimization */
 
 	p {
 		font-size: var(--fs-base);

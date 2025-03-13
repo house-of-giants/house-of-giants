@@ -6,6 +6,7 @@ import { Header } from '@/components/Header/Header';
 import GlobalStyles from '@/components/Styles/GlobalStyles';
 import { ContactFooter } from '@/components/Contact/ContactFooter';
 import StyledComponentsRegistry from 'lib/registry';
+import { nikolai } from '@/styles/fonts';
 
 import './globals.css';
 import siteMetadata from '@/data/siteMetadata';
@@ -69,7 +70,7 @@ export async function generateMetadata() {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en">
+		<html lang="en" className={`${nikolai.variable}`}>
 			<head>
 				<PlausibleProvider domain="houseofgiants.com" />
 			</head>

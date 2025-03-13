@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const Button = ({ children, href, onClick, style, className, variant = 'primary', ...rest }) => {
-	const baseStyles = 'inline-flex items-center font-serif text-base leading-none m-0';
+	const baseStyles = ' font-serif text-base leading-none m-0';
 
 	const variantStyles = {
 		primary: 'bg-transparent border border-[var(--c-primary-dark)] cursor-pointer',
