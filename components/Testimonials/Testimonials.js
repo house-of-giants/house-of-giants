@@ -4,16 +4,18 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import Arrow from '../SVG/Arrow';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
-const Testimonials = () => {
+const Testimonials = ({ noHeader = false }) => {
 	const isMobile = useMediaQuery('(max-width: 1024px)');
 	return (
 		<div className="testimonials-section mt-32">
-			<h3 className="text-center mb-16">
-				<span className="block text-[clamp(3rem,8vw,6rem)] font-black leading-[0.85] -grad-header">Don't take</span>
-				<span className="block text-[clamp(3rem,8vw,6rem)] text-white leading-[0.85] font-bold mt-4">
-					our word for it.
-				</span>
-			</h3>
+			{!noHeader && (
+				<h3 className="text-center mb-16">
+					<span className="block text-[clamp(3rem,8vw,6rem)] font-black leading-[0.85] -grad-header">Don't take</span>
+					<span className="block text-[clamp(3rem,8vw,6rem)] text-white leading-[0.85] font-bold mt-4">
+						our word for it.
+					</span>
+				</h3>
+			)}
 
 			<Carousel
 				infiniteLoop

@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { GradientButton } from '../UI/GradientButton';
 import { ArrowLink } from '../UI/ArrowLink';
+import { Button } from '@/components/Button/Button';
 
 export const HeroContent = () => {
 	return (
@@ -131,8 +131,18 @@ export const HeroContent = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 1 }}
 				>
-					<GradientButton href="#contact">Start Your Project</GradientButton>
-					<ArrowLink href="#work">View Our Work</ArrowLink>
+					<Button
+						href="#contact"
+						className="grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:scale-105 transition-transform duration-300 text-base md:text-lg px-6 py-3 rounded-lg"
+					>
+						Start Your Project
+					</Button>
+					<Button
+						href="#work"
+						className="bg-black bg-opacity-30 text-white hover:bg-opacity-50 font-mono transition-all duration-300 text-base md:text-lg px-6 py-3 rounded-lg"
+					>
+						View Our Work &rarr;
+					</Button>
 				</motion.div>
 			</div>
 		</div>

@@ -2,7 +2,7 @@
 
 export const TechCard = ({ title, category, description, features, icon: Icon, index }) => {
 	return (
-		<div className="tech-feature-card group">
+		<div className="tech-feature-card group" key={index}>
 			<div className="flex flex-col items-start gap-8">
 				<div className="w-full flex justify-between items-center pb-6 relative">
 					{Icon}

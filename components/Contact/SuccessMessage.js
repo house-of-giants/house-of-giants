@@ -11,6 +11,6 @@ export const SuccessMessage = () => (
 			⚡️
 		</motion.div>
 		<h3 className="text-4xl font-bold text-white mb-4">We got you</h3>
-		<p className="text-wolf-gray/80 text-xl">We'll be in touch within 24 hours 🤘.</p>
+		<p className="text-moon-rock text-xl">We'll be in touch within 24 hours 🤘.</p>
 	</motion.div>
 );
