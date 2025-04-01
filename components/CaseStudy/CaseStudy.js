@@ -93,7 +93,7 @@ export const CaseStudy = ({
 								<Button
 									href={liveUrl}
 									target="_blank"
-									className="grad-border text-white hover:scale-110 transition-transform duration-300"
+									className="grad-border text-white px-4 py-2 hover:scale-110 transition-transform duration-300"
 								>
 									Visit live site
 									<span className="text-cyber-green ml-2">→</span>
