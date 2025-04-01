@@ -249,60 +249,40 @@ export default function DigitalInnovation() {
 							animate={{ opacity: 1, scale: 1 }}
 							transition={{ duration: 0.5, delay: 0.2 }}
 						>
-							<div className="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-800 opacity-80"></div>
-							<div className="absolute inset-0 flex items-center justify-center">
-								<motion.div className="relative w-full h-full">
-									<motion.div
-										className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[150px] h-[150px] md:w-[200px] md:h-[200px]"
-										initial={{ scale: 0.8, opacity: 0 }}
-										animate={{ scale: 1, opacity: 1 }}
-										transition={{ duration: 0.7, delay: 0.3 }}
-									>
-										<div className="absolute inset-0 bg-[var(--c-accent)] rounded-full opacity-20 animate-ping"></div>
-										<div className="absolute inset-0 bg-[var(--c-accent)] rounded-full opacity-40 animate-pulse"></div>
-										<div className="absolute inset-[20%] bg-black bg-opacity-50 rounded-full flex items-center justify-center">
-											<span className="text-3xl md:text-4xl font-bold text-[var(--c-accent)]">AI</span>
-										</div>
-									</motion.div>
+							<div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-purple-800/20 opacity-90"></div>
+							<div className="absolute inset-0">
+								{/* Animated gradient mesh background */}
+								<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.1),rgba(0,0,0,0)_50%)] animate-pulse"></div>
 
-									{/* Floating elements */}
+								{/* Content container */}
+								<div className="relative h-full flex items-center justify-center">
 									<motion.div
-										className="absolute top-[20%] left-[15%] bg-black bg-opacity-40 p-3 rounded-lg border border-indigo-500"
-										initial={{ y: 20, opacity: 0 }}
-										animate={{ y: 0, opacity: 1 }}
-										transition={{ duration: 0.5, delay: 0.4 }}
-										whileHover={{ scale: 1.05, borderColor: 'var(--c-accent)' }}
+										className="grid grid-cols-2 gap-8 max-w-lg mx-auto p-8"
+										initial={{ opacity: 0 }}
+										animate={{ opacity: 1 }}
+										transition={{ duration: 0.8 }}
 									>
-										<p className="text-sm">ThreeJS</p>
+										{/* Technology Cards */}
+										{[
+											{ icon: <ThreeJsIcon />, label: 'ThreeJS' },
+											{ icon: <AIIcon />, label: 'AI & ML' },
+											{ icon: '📊', label: 'Data Viz' },
+											{ icon: '🥽', label: 'AR/VR' },
+										].map((tech, index) => (
+											<motion.div
+												key={index}
+												className="flex flex-col items-center justify-center p-6 bg-black/40 backdrop-blur-sm rounded-xl border border-indigo-500/20 hover:border-indigo-500/50 transition-all duration-300"
+												initial={{ opacity: 0, y: 20 }}
+												animate={{ opacity: 1, y: 0 }}
+												transition={{ delay: index * 0.1, duration: 0.5 }}
+												whileHover={{ y: -5, transition: { duration: 0.2 } }}
+											>
+												<div className="text-4xl mb-3">{typeof tech.icon === 'string' ? tech.icon : tech.icon}</div>
+												<div className="text-sm font-medium text-indigo-200">{tech.label}</div>
+											</motion.div>
+										))}
 									</motion.div>
-									<motion.div
-										className="absolute top-[30%] right-[20%] bg-black bg-opacity-40 p-3 rounded-lg border border-purple-500"
-										initial={{ y: 20, opacity: 0 }}
-										animate={{ y: 0, opacity: 1 }}
-										transition={{ duration: 0.5, delay: 0.5 }}
-										whileHover={{ scale: 1.05, borderColor: 'var(--c-accent)' }}
-									>
-										<p className="text-sm">Machine Learning</p>
-									</motion.div>
-									<motion.div
-										className="absolute bottom-[25%] left-[25%] bg-black bg-opacity-40 p-3 rounded-lg border border-indigo-500"
-										initial={{ y: 20, opacity: 0 }}
-										animate={{ y: 0, opacity: 1 }}
-										transition={{ duration: 0.5, delay: 0.6 }}
-										whileHover={{ scale: 1.05, borderColor: 'var(--c-accent)' }}
-									>
-										<p className="text-sm">Data Visualization</p>
-									</motion.div>
-									<motion.div
-										className="absolute bottom-[35%] right-[15%] bg-black bg-opacity-40 p-3 rounded-lg border border-purple-500"
-										initial={{ y: 20, opacity: 0 }}
-										animate={{ y: 0, opacity: 1 }}
-										transition={{ duration: 0.5, delay: 0.7 }}
-										whileHover={{ scale: 1.05, borderColor: 'var(--c-accent)' }}
-									>
-										<p className="text-sm">AR/VR</p>
-									</motion.div>
-								</motion.div>
+								</div>
 							</div>
 						</motion.div>
 					</div>

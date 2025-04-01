@@ -17,5 +17,3 @@ export const nikolai = localFont({
 	display: 'swap',
 	variable: '--font-nikolai', // CSS variable for use in stylesheets
 });
-
-// You can add other fonts here too if needed
