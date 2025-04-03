@@ -67,7 +67,7 @@ export const Header = () => {
 		<StyledHeader ref={headerRef}>
 			{/* Left Side - Brand Identity */}
 			<Link href="/" className="group flex-shrink-0">
-				<motion.h1 className="flex items-center gap-2 md:gap-4">
+				<motion.div className="flex uppercase font-black items-center gap-2 md:gap-4">
 					<div className="relative">
 						<Mark width="40" height="40" className="relative z-10 md:w-[50px] md:h-[50px]" />
 						<motion.div
@@ -86,7 +86,7 @@ export const Header = () => {
 							Digital Experiences • Web Apps • Strategy
 						</span>
 					</span>
-				</motion.h1>
+				</motion.div>
 			</Link>
 
 			{/* Right Side - Navigation & Actions */}

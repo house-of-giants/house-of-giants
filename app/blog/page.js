@@ -6,11 +6,7 @@ import siteMetadata from '@/data/siteMetadata';
 const POSTS_PER_PAGE = 99;
 
 export const metadata = {
-	title: 'The Archives | House of Giants',
-	description: 'Explore our collection of arcane knowledge, industry insights, and design philosophy.',
 	openGraph: {
-		title: 'The Archives | House of Giants',
-		description: 'Explore our collection of arcane knowledge, industry insights, and design philosophy.',
 		url: `${siteMetadata.siteUrl}/blog`,
 		type: 'website',
 		images: [
@@ -24,7 +20,6 @@ export const metadata = {
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'The Archives | House of Giants',
 		description: 'Explore our collection of arcane knowledge, industry insights, and design philosophy.',
 		images: ['https://houseofgiants.com/api/og?title=The%20Archives'],
 	},

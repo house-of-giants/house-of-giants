@@ -1,9 +1,12 @@
 export const metadata = {
-	title: 'Denver UX Architecture | User-Centered Design | House of Giants',
+	title: "User Experience That Works Like Magic (Because It's Engineered That Way)",
 	description:
-		"Denver's leading UX architecture firm creating intuitive digital experiences that solve real business problems and delight users.",
+		'Strategic UX that helps users buy, book, order, or explore with ease—cutting friction and increasing conversions at every step.',
 	keywords:
 		'UX architecture Denver, user experience design, UX design Denver, information architecture, interaction design Denver',
+	alternates: {
+		canonical: '/ux-architecture',
+	},
 };
 
 export default function UXArchitectureLayout({ children }) {

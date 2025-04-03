@@ -1,8 +1,11 @@
 export const metadata = {
-	title: 'Denver Web Design | Creative & User-Focused | House of Giants',
+	title: 'Web Design That Gets Clicks, Orders, and Results',
 	description:
-		"Denver's forward-thinking web design agency crafting immersive digital experiences that engage users and drive business results.",
+		"We design digital experiences that drive engagement - whether you're launching a new product or streamlining online ordering.",
 	keywords: 'Denver web design, Denver web designer, UX design Denver, UI design, interactive web design Denver',
+	alternates: {
+		canonical: '/web-design',
+	},
 };
 
 export default function WebDesignLayout({ children }) {

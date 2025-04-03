@@ -3,7 +3,6 @@
 import { Hero } from '@/components/Hero/Hero';
 import { Services } from '@/components/Services/Services';
 import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
-import Reel from '@/components/Reel/Reel';
 import { Work } from '@/components/Work/Work';
 import { Clients } from '@/components/Clients/Clients';
 import { Impact } from '@/components/Impact/Impact';
@@ -15,8 +14,9 @@ export default function Page() {
 	return (
 		<main className="relative">
 			<FloatingGradients intensity="high" />
-			<Reel />
-			<Hero />
+			<div className="-mt-36">
+				<Hero />
+			</div>
 			<SectionSeparator />
 			<Services />
 			<SectionSeparator />

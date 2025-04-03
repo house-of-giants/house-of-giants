@@ -13,68 +13,80 @@ export const Services = () => {
 			id: '01',
 			title: 'Scalable Web Development',
 			description:
-				'We&apos;re here to make users say &ldquo;holy shit&rdquo; when they land on your site, no matter if you&apos;re a startup or a national brand. Our scalable approach means you get a platform that evolves with your growth—so you&apos;re never stuck rebuilding from scratch when the next big opportunity (or challenge) hits.',
-			features: ['WordPress Development', 'Full-Stack Application Architecture', 'API & System Integration'],
+				'We build digital infrastructure that grows with you. Whether you&apos;re launching your first MVP or modernizing a legacy site, we deliver scalable web development solutions that support your next stage of growth.',
+			features: [
+				'Custom WordPress Development',
+				'Full-Stack Web Application Architecture',
+				'API & Platform Integration',
+			],
 		},
 		{
 			id: '02',
 			title: 'Immersive Web Experiences',
 			description:
-				'Most &ldquo;interactive design&rdquo; talk ends at fancy visuals, but we go deeper—building true web applications designed for speed, engagement, and next-level user flows. Whether it&apos;s a sleek dashboard, a real-time data platform, or a highly interactive marketing funnel, we fuse our web development wizardry with user-centered design to deliver experiences people want to use.',
-			features: [
-				'Advanced Front-End Engineering',
-				'Responsive & Intuitive UI/UX',
-				'Real-Time Data & Dynamic Interfaces',
-			],
+				'Your website should work as hard as your team does. From lightning-fast dashboards to highly interactive digital tools, we build web applications that feel intuitive, powerful, and built just for you.',
+			features: ['Advanced Front-End Engineering', 'UI/UX Design for Web Applications', 'Real-Time Data Interfaces'],
 		},
 		{
 			id: '03',
-			title: 'UX Architecture',
+			title: 'UX Architecture & Strategy',
 			description:
-				'We don&apos;t just build interfaces – we architect digital experiences that users actually want to use. Our deep-dive research and user-centered approach ensures every pixel serves a purpose. From user flows to interaction patterns, we create experiences that feel like magic.',
-			features: ['User Research & Personas', 'Information Architecture', 'Interaction Design Systems'],
+				'Great design isn&apost just about looks—it&apos;s about how users feel. We create architecture systems that reduce friction, improve navigation, and drive clarity across every user journey.',
+			features: ['UX Research & Behavioral Insights', 'Information Architecture', 'Interaction Design Systems'],
 		},
 		{
 			id: '04',
-			title: 'Digital Innovation',
+			title: 'Digital Innovation & Problem Solving',
 			description:
-				'We&apos;re problem solvers first, coders second. Our superpower? Asking better questions that lead to breakthrough solutions. We dive deep into your challenges, emerging with innovative approaches that transform complex problems into elegant solutions. No buzzwords, just results.',
-			features: ['Strategic Problem Solving', 'Technical Discovery', 'Solution Architecture'],
+				'You don&apos;t need more tech—just the right solution. We help brands simplify complexity with technical discovery, lean architecture, and thoughtful experimentation that actually moves the needle.',
+			features: ['Technical Discovery', 'Custom Solution Architecture', 'End-to-End Strategy & Execution'],
 		},
 	];
 
 	const techStack = [
 		{
-			title: 'WordPress',
-			category: 'Content Management',
+			title: 'Custom Content Platforms',
+			category: 'Built for teams who want control without complexity.',
 			description:
-				'WordPress solutions built the right way. Yeah, we said it. While others slap together plugins like a kid with LEGOs, we leverage native WordPress features and the Gutenberg editor to create powerful, maintainable digital platforms that scale with your business.',
-			features: ['Custom Gutenberg Blocks & Patterns', 'Block Theme Development', 'Core-Focused Architecture'],
-			icon: <WordPressIcon />,
+				'We craft scalable content systems that are easy to manage and quick to update. No bloated plugins, no fragile page builders—just fast, flexible tools your team can actually use.',
+			features: [
+				'Modular, maintainable components',
+				'Built-in performance optimization',
+				'Easy editing without developer hand-holding',
+			],
 		},
 		{
-			title: 'Next.js',
-			category: 'Full-Stack Platform',
+			title: 'Dynamic Web Experiences',
+			category: 'Everything your site needs to scale with your business.',
 			description:
-				'Blazing-fast full-stack applications that make dial-up look like a joke. We harness Next.js&apos;s server-side rendering and edge computing to build enterprise-grade platforms that outpace your old setup. Smooth, scalable, and downright unstoppable. Just how we like it.',
-			features: ['React Server Components & Streaming', 'Edge & Lambda Architecture', 'Advanced SEO & Meta Generation'],
-			icon: <NextJsIcon />,
+				'From online ordering flows to internal dashboards, we build fast, responsive experiences that solve real problems. Custom-built to fit your operations—not the other way around.',
+			features: [
+				'Mobile-first, responsive layouts',
+				'User flows that drive action',
+				'Built to grow as your needs shift',
+			],
 		},
 		{
-			title: 'Three.js',
-			category: '3D Graphics Engine',
+			title: 'Interactive Experiences',
+			category: 'Bring your brand to life with scroll, movement, and story.',
 			description:
-				'Turn your 2D website into a mind-bending digital playground. We craft WebGL-powered 3D experiences that make your users forget they&apos;re on a browser. From product configurators to data visualizations, we&apos;re pushing pixels until your metrics go vertical.',
-			features: ['Performance-Optimized 3D Scenes', 'Interactive Product Experiences', 'Real-time Data Visualization'],
-			icon: <ThreeJsIcon />,
+				'Need to stand out? We design immersive digital experiences that keep users engaged. From scroll-driven storytelling to clickable 3D visuals, we blend performance with visual impact.',
+			features: [
+				'Custom 3D and interactive moments',
+				'Story-driven product showcases',
+				"Optimized animations that don't kill speed",
+			],
 		},
 		{
-			title: 'AI Integration',
-			category: 'Machine Learning',
+			title: 'Smarter Systems & Automation',
+			category: 'Workflows that save time and reduce chaos.',
 			description:
-				'Skip the AI buzzwords – we&apos;re here to make machines work for you. We integrate cutting-edge machine learning models that transform your data into business intelligence. From NLP to computer vision, we&apos;re building AI solutions that actually solve problems, not just create them.',
-			features: ['Custom ML Model Development', 'Intelligent Content Analysis', 'Predictive User Experience'],
-			icon: <AIIcon />,
+				'We don&apos;t slap AI on a landing page and call it innovation. We build intelligent tools that streamline how your team works—from better search to auto-tagging to predictive content. It&apos;s the kind of smart that actually matters.',
+			features: [
+				'Search that finds what users need. Fast.',
+				'Content tagging & personalization',
+				'Custom automation to reduce manual work',
+			],
 		},
 	];
 
@@ -90,9 +102,8 @@ export const Services = () => {
 				>
 					<SectionHeader
 						title="Services"
-						subtitle="that deliver results."
-						accent="We don't just make it pretty."
-						description="We build digital solutions that solve real business problems and drive measurable results."
+						subtitle="Built to perform. Designed to scale."
+						description="We help ambitious brands solve real business problems with custom web development, scalable applications, and UX strategies built to drive results."
 					/>
 
 					<div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-[var(--content-spacing)]">
@@ -112,10 +123,9 @@ export const Services = () => {
 					pb="var(--section-spacing-bottom)"
 				>
 					<SectionHeader
-						title="Sacred Tools"
-						subtitle="We don't worship at the digital altar."
-						accent="Technology changes faster than we change our socks."
-						description="That's why we're tech agnostic. We choose technologies that grow with your business."
+						title="No tool is sacred"
+						subtitle="We don’t care what’s trending."
+						description="We care what works. Everything we use is chosen to scale, flex, and stay out of your way."
 					/>
 
 					<div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-[var(--content-spacing)]">

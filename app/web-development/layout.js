@@ -1,9 +1,12 @@
 export const metadata = {
-	title: 'Denver Web Development | Scalable & Immersive | House of Giants',
+	title: 'Custom Web Development That Scales with Demand',
 	description:
-		"Denver's premier web development agency crafting scalable, performance-optimized websites and applications that deliver real business results.",
+		'From growing tech startups to national brands — we build fast, flexible web platforms that evolve with your business.',
 	keywords:
 		'Denver web development, Denver web developer, WordPress development Denver, Next.js development, full-stack development Denver',
+	alternates: {
+		canonical: '/web-development',
+	},
 };
 
 export default function WebDevelopmentLayout({ children }) {

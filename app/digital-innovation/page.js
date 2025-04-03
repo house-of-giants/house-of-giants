@@ -12,6 +12,7 @@ import { TechCard } from '@/components/Services/TechCard';
 import Image from 'next/image';
 import StatCard from '@/components/Impact/StatCard';
 import { ServiceSchema } from '@/components/Schema/ServiceSchema';
+import CanonicalLink from '@/components/SEO/CanonicalLink';
 
 // Process Step Component
 const ProcessStep = ({ number, title, description, features }) => (
@@ -27,14 +28,14 @@ const ProcessStep = ({ number, title, description, features }) => (
 			<div className="mt-2 text-xl font-bold">{title}</div>
 		</div>
 		<div>
-			<h3 className="text-2xl font-bold mb-4">{description}</h3>
+			<h2 className="text-2xl font-bold mb-4">{description}</h2>
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
 				{features.map((feature, index) => (
 					<div
 						key={index}
 						className="bg-black bg-opacity-30 p-5 rounded-lg border border-gray-800 hover:border-[var(--c-accent)] transition-all duration-300"
 					>
-						<h4 className="font-bold mb-2">{feature.title}</h4>
+						<h3 className="text-2xl not-italic font-bold mb-2">{feature.title}</h3>
 						<p className="text-sm text-moon-rock leading-relaxed">{feature.description}</p>
 					</div>
 				))}
@@ -206,6 +207,9 @@ export default function DigitalInnovation() {
 
 	return (
 		<main className="relative bg-[#1a1f24] text-gray-100">
+			<head>
+				<CanonicalLink path="/digital-innovation" />
+			</head>
 			<ServiceSchema service="digital-innovation" />
 			<FloatingGradients variant="purple" intensity="low" />
 

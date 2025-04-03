@@ -10,8 +10,8 @@ export const Hero = () => {
 			<Container
 				className="-has-background relative overflow-hidden min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center px-4 md:px-8"
 				background="var(--c-primary-dark)"
-				pt="clamp(var(--sp-xl), 10vh, var(--section-spacing-top))"
-				pb="clamp(var(--sp-xl), 10vh, var(--section-spacing-bottom))"
+				pt="clamp(var(--sp-xl), 15vh, 9rem)"
+				pb="clamp(var(--sp-xl), 15vh, 9rem)"
 			>
 				<div className="max-w-[1440px] mx-auto w-full">
 					<HeroContent />

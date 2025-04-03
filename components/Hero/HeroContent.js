@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowLink } from '../UI/ArrowLink';
 import { Button } from '@/components/Button/Button';
 
 export const HeroContent = () => {
@@ -40,19 +39,6 @@ export const HeroContent = () => {
 
 			{/* Main Content */}
 			<div className="relative z-10">
-				{/* Top Small Text */}
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-					className="mb-8 "
-				>
-					<div className="inline-block font-serif italic text-moon-rock text-xl">
-						<div className="inline-block w-12 h-[1px] bg-gradient-to-r from-[#00ffe0] to-[#c1ff1d] mr-4 align-middle" />
-						Denver's Premier
-					</div>
-				</motion.div>
-
 				{/* Main Title Stack */}
 				<div className="space-y-4 mb-12 max-w-[1440px] mx-auto">
 					<motion.h1
@@ -62,7 +48,7 @@ export const HeroContent = () => {
 						transition={{ duration: 0.8, delay: 0.2 }}
 					>
 						<span className="block -grad-header relative max-w-[90vw] md:max-w-[95vw]">
-							Web
+							Custom Web
 							<div className="absolute -right-4 top-1/2 w-8 h-[1px] bg-cyber-green/30" />
 						</span>
 						<motion.span
@@ -92,34 +78,19 @@ export const HeroContent = () => {
 					transition={{ duration: 0.8, delay: 0.8 }}
 				>
 					<div className="text-[clamp(1.5rem,3vw,2.5rem)] text-moon-rock leading-tight">
-						Dreaming of innovation. <span className="text-white">Experimenting with passion.</span> Creating with
-						purpose.
+						Dreaming big. <span className="text-cyber-green">Engineering bold.</span> Always built with purpose.
 					</div>
 
 					<div className="space-y-6">
 						<div className="text-xl text-moon-rock/80 leading-relaxed">
-							We craft award-winning interactive websites and web applications that transform brands into digital
-							powerhouses through{' '}
-							<motion.span
-								className="relative inline-block"
-								whileHover={{ scale: 1.05 }}
-								transition={{ duration: 0.2 }}
-							>
-								<span className="relative z-10 text-cyber-green">beautiful</span>
-								<motion.div
-									className="absolute inset-0 bg-cyber-green/10 -z-10 rounded-lg"
-									initial={{ scale: 0.8, opacity: 0 }}
-									animate={{ scale: 1, opacity: 1 }}
-									transition={{ duration: 0.3 }}
-								/>
-							</motion.span>
-							, bold, thoughtful experiences.
+							We design and build custom websites and web applications that drive business results—fast, scalable, and
+							uniquely yours.{' '}
 						</div>
 
 						<div className="text-xl text-moon-rock/80 leading-relaxed">
-							Based in Denver, Colorado, we're a web development studio that pushes boundaries and breaks rules. From
-							enterprise WordPress development to reactive web applications, to 3D experiences, we build digital
-							solutions that make your competition irrelevant and your users say "holy shit."
+							Based in Denver, we’re a digital studio that thinks like strategists, codes like engineers, and designs
+							like we mean it. From enterprise WordPress builds to reactive app experiences, we don&apos;t do
+							cookie-cutter &mdash; we build what works.
 						</div>
 					</div>
 				</motion.div>

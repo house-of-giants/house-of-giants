@@ -26,14 +26,14 @@ const ProcessStep = ({ number, title, description, features }) => (
 			<div className="mt-2 text-xl font-bold">{title}</div>
 		</div>
 		<div>
-			<h3 className="text-2xl font-bold mb-4">{description}</h3>
+			<h2 className="text-2xl font-bold mb-4">{description}</h2>
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
 				{features.map((feature, index) => (
 					<div
 						key={index}
 						className="bg-black bg-opacity-30 p-5 rounded-lg border border-gray-800 hover:border-[var(--c-accent)] transition-all duration-300"
 					>
-						<h4 className="font-bold mb-2">{feature.title}</h4>
+						<h3 className="text-2xl not-italic font-bold mb-2">{feature.title}</h3>
 						<p className="text-sm text-moon-rock leading-relaxed">{feature.description}</p>
 					</div>
 				))}
@@ -48,92 +48,92 @@ export default function WebDevelopment() {
 	const techServices = [
 		{
 			id: '01',
-			title: 'CMS Development',
-			category: 'Content Management',
-			icon: <div className="text-4xl font-bold text-white">📝</div>,
+			title: 'Technical Discovery & Planning',
+			category: 'Creative Problem Solving',
+			icon: <div className="text-4xl font-bold text-white">🧭</div>,
 			description:
-				'We build powerful, scalable content management systems that give you complete control over your digital presence without sacrificing performance or user experience.',
+				"Whether you're building from scratch or reworking a legacy system, we help you plan smarter. From product audits to technical scoping, we ask better questions so you launch faster—with fewer regrets.",
 			features: [
-				'Custom Admin Interfaces',
-				'Content Modeling & Architecture',
-				'Multi-user Workflows',
-				'Headless CMS Integration',
-				'Enterprise-grade Security',
+				'Product & Platform Discovery',
+				'Technical Scoping & Roadmapping',
+				'Feature Prioritization',
+				'Architecture Planning',
+				'Creative Ideation & Feasibility',
 			],
 		},
 		{
 			id: '02',
-			title: 'Web App Development',
-			category: 'Full-Stack Solutions',
-			icon: <div className="text-4xl font-bold text-white">💻</div>,
+			title: 'Custom CMS Solutions',
+			category: 'Manage content without the chaos.',
+			icon: <div className="text-4xl font-bold text-white">📝</div>,
 			description:
-				'From simple dashboards to complex interactive platforms, we build web applications that solve real business problems with blazing-fast performance and intuitive user experiences.',
+				'Update your site in minutes, not hours. We build custom content management tools that are easy to use, flexible for your team, and powerful enough to grow with your brand.',
 			features: [
-				'Modern Front-end Frameworks',
-				'Server-side Rendering & Static Generation',
-				'API Development & Integration',
-				'Real-time Data Processing',
-				'Scalable Cloud Architecture',
+				'Simple content editing for non-technical teams',
+				'Tools tailored to your workflow',
+				'Multi-user access & permissions',
+				'Custom content types and structures',
+				'Secure, scalable, and easy to maintain',
 			],
 		},
 		{
 			id: '03',
-			title: 'HTML & CSS',
-			category: 'Frontend Fundamentals',
-			icon: <div className="text-4xl font-bold text-white">🎨</div>,
+			title: 'Web Applications That Scale',
+			category: 'Built for teams, customers, and growth.',
+			icon: <div className="text-4xl font-bold text-white">💻</div>,
 			description:
-				'Rock-solid fundamentals are at the core of every successful project. Our semantic HTML and modern CSS approaches create accessible, maintainable, and visually stunning websites.',
+				"Whether you're launching a new service or simplifying how your team works, our custom-built web apps handle complex needs with simple interfaces that actually make sense.",
 			features: [
-				'Semantic HTML5 Structure',
-				'CSS Grid & Flexbox Layouts',
-				'Modern CSS Variables & Functions',
-				'Responsive Design & Mobile-first',
-				'Optimized Performance & Load Times',
+				'Real-time dashboards and internal tools',
+				'Fast-loading pages that perform under pressure',
+				'Seamless integrations with tools you already use',
+				'Flexible features that grow with your business',
+				'Mobile-ready and future-friendly',
 			],
 		},
 		{
 			id: '04',
-			title: 'JavaScript',
-			category: 'Interactive Development',
-			icon: <div className="text-4xl font-bold text-white">🔍</div>,
+			title: 'Interactive Experiences',
+			category: 'Make your site do more than just sit there.',
+			icon: <div className="text-4xl font-bold text-white">🧠</div>,
 			description:
-				'From lightweight enhancements to complex interactive applications, our JavaScript expertise brings your digital experiences to life with smooth animations and intuitive interfaces.',
+				"We build features that invite interaction—sliders, animations, calculators, configurators—without slowing things down. It's the kind of experience users remember (and share).",
 			features: [
-				'Modern ES6+ Development',
-				'Interactive UI Components',
-				'Progressive Web Apps (PWAs)',
-				'Performance Optimization',
-				'Advanced DOM Manipulation',
+				'Custom UI elements that guide users',
+				"Smooth animations that don't drag down performance",
+				'Lightweight interactions that work on all devices',
+				'Functionality that enhances—not distracts',
+				'Built to spark engagement and action',
 			],
 		},
 		{
 			id: '05',
-			title: 'Accessibility',
-			category: 'Inclusive Design',
+			title: 'Built-In Accessibility',
+			category: 'Web for everyone, the way it should be.',
 			icon: <div className="text-4xl font-bold text-white">🦾</div>,
 			description:
-				'We build for everyone. Our accessibility first approach ensures your website is usable by all visitors, regardless of abilities or disabilities, while meeting WCAG standards.',
+				"We make sure your site works for everyone—including users with disabilities. That's not just a good idea—it's good business. Inclusive design means more visitors, more trust, and fewer barriers.",
 			features: [
-				'WCAG 2.1 AA Compliance',
-				'Screen Reader Optimization',
-				'Keyboard Navigation Support',
-				'Color Contrast & Readability',
-				'Semantic HTML Structure',
+				'Meets WCAG accessibility standards',
+				'Keyboard- and screen-reader friendly',
+				'High-contrast, legible design',
+				'Logical structure and flow',
+				'Tested with real users and tools',
 			],
 		},
 		{
 			id: '06',
-			title: 'E-commerce Development',
-			category: 'Digital Commerce',
-			icon: <div className="text-4xl font-bold text-white">🛒</div>,
+			title: 'Ordering & Commerce Systems',
+			category: 'Transactions Made Simple',
+			icon: <div className="text-4xl font-bold text-white">🍔</div>,
 			description:
-				'Convert browsers to buyers with our tailored e-commerce solutions. We build shopping experiences that drive sales, streamline operations, and scale with your growing business.',
+				"We don't just build online stores—we architect transaction flows that convert. Whether you're slinging merch, serving tacos, or launching a loyalty program, we craft custom commerce experiences that drive sales and streamline operations.",
 			features: [
-				'Custom Shopping Experiences',
-				'Secure Payment Integration',
-				'Inventory Management',
-				'Order Fulfillment Automation',
-				'Customer Retention Strategies',
+				'Custom Ordering Interfaces',
+				'Menu & Product Architecture',
+				'Loyalty Program Integration',
+				'Secure Payments & Fulfillment Flows',
+				'Mobile-First Checkout Design',
 			],
 		},
 	];

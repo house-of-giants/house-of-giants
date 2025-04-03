@@ -17,6 +17,10 @@ module.exports = {
 				'cyber-green': '#c1ff1d',
 				'wolf-gray': '#1a1a1a',
 				'moon-rock': '#ececec',
+				'cyber-blue': '#00f0ff',
+				'cyber-purple': '#9b4dff',
+				'cyber-red': '#ff0000',
+				'cyber-pink': '#ff2a6d',
 			},
 			boxShadow: {
 				glow: '0 0 15px rgba(0, 255, 224, 0.3), 0 0 30px rgba(0, 255, 224, 0.1)',

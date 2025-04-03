@@ -5,6 +5,7 @@ import Avatar from './Avatar';
 import CoverImage from './CoverImage';
 import { motion } from 'framer-motion';
 import siteMetadata from '@/data/siteMetadata';
+import LazyImage from '../Image/LazyImage';
 
 export function PostHeader({ title, coverImage, date, author, slug }) {
 	// Split the title into words for the animation
@@ -164,7 +165,7 @@ export function PostHeader({ title, coverImage, date, author, slug }) {
 					<div className="lg:col-span-1 flex justify-center items-center">
 						<div className="relative w-full max-w-md overflow-hidden rounded-lg shadow-2xl transform lg:translate-y-[-20px] h-[300px] lg:h-[350px]">
 							<div className="w-full h-full">
-								<img src={coverImage} alt={title} className="w-full h-full object-contain bg-[#121417]" />
+								<LazyImage src={coverImage} alt={title} className="w-full h-full object-contain bg-[#121417]" />
 							</div>
 						</div>
 					</div>

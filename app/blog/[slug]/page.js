@@ -5,6 +5,7 @@ import markdownToHtml from '@/lib/markdownToHtml';
 
 import PostLayout from '@/layouts/PostLayout';
 import siteMetadata from '@/data/siteMetadata';
+import BlogPostSchema from '@/components/Schema/BlogPostSchema';
 
 export async function generateMetadata({ params }) {
 	const post = getPostBySlug(params.slug);
@@ -29,6 +30,9 @@ export async function generateMetadata({ params }) {
 	return {
 		title: `${post.title} | ${siteMetadata.title}`,
 		description: post.summary,
+		alternates: {
+			canonical: `/blog/${params.slug}`,
+		},
 		openGraph: {
 			title: post.title,
 			description: post.summary,
@@ -59,6 +63,7 @@ export default async function Post({ params }) {
 	const content = await markdownToHtml(post.content || '');
 	return (
 		<>
+			<BlogPostSchema post={post} />
 			<PostLayout post={post} content={content} />
 		</>
 	);

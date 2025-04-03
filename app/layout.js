@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
 import PlausibleProvider from 'next-plausible';
 import AnimatedTitle from '@/components/AnimatedTitle/AnimatedTitle';
+import JsonLd from '@/components/Schema/JsonLd';
 
 import { Header } from '@/components/Header/Header';
 import GlobalStyles from '@/components/Styles/GlobalStyles';
@@ -13,10 +14,21 @@ import siteMetadata from '@/data/siteMetadata';
 import { SectionProvider } from '@/components/SectionContext/SectionContext';
 import { SectionBar } from '@/components/SectionBar/SectionBar';
 import { LocalBusinessSchema } from '@/components/Schema/LocalBusinessSchema';
+import { Inter } from 'next/font/google';
+import CanonicalLink from '@/components/SEO/CanonicalLink';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export async function generateMetadata() {
 	return {
 		...siteMetadata,
+		title: siteMetadata.title,
+		description: siteMetadata.description,
+		metadataBase: new URL('https://houseofgiants.com'),
+		alternates: {
+			canonical: '/',
+		},
+		viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 		icons: {
 			icon: [
 				{ url: '/favicon.svg', type: 'image/svg+xml' },
@@ -25,12 +37,6 @@ export async function generateMetadata() {
 			shortcut: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
 			apple: [{ url: '/apple-touch-icon.png' }],
 		},
-		metadataBase: new URL(siteMetadata.siteUrl),
-		title: {
-			default: siteMetadata.title,
-			template: `%s | ${siteMetadata.title}`,
-		},
-		description: siteMetadata.description,
 		openGraph: {
 			title: siteMetadata.title,
 			description: siteMetadata.description,
@@ -70,9 +76,11 @@ export async function generateMetadata() {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en" className={`${nikolai.variable}`}>
+		<html lang="en" className={`${nikolai.variable} ${inter.className}`}>
 			<head>
 				<PlausibleProvider domain="houseofgiants.com" />
+				<JsonLd />
+				<CanonicalLink path="/" />
 			</head>
 			<body>
 				<StyledComponentsRegistry>

@@ -7,11 +7,11 @@ export default async function sitemap() {
 	const blogEntries = posts.map((post) => ({
 		url: `${siteMetadata.siteUrl}/blog/${post.slug}`,
 		lastModified: post.lastmod || post.date,
-		changeFrequency: 'monthly',
+		changeFrequency: 'weekly',
 		priority: 0.7,
 	}));
 
-	// Define case study routes
+	// Define case study routes with more specific metadata
 	const caseStudies = ['shakey-graves', 'hayashi', 'backforty'].map((slug) => ({
 		url: `${siteMetadata.siteUrl}/work/${slug}`,
 		lastModified: new Date().toISOString(),
@@ -19,21 +19,32 @@ export default async function sitemap() {
 		priority: 0.8,
 	}));
 
-	// Define service page routes
-	const servicePages = ['web-development', 'web-design', 'ux-architecture', 'digital-innovation'].map((slug) => ({
-		url: `${siteMetadata.siteUrl}/${slug}`,
-		lastModified: new Date().toISOString(),
-		changeFrequency: 'monthly',
-		priority: 0.9, // Higher priority for service pages for SEO
-	}));
+	// Define service page routes with higher priority
+	const servicePages = ['web-development', 'web-design', 'ux-architecture', 'digital-innovation', 'contact'].map(
+		(slug) => ({
+			url: `${siteMetadata.siteUrl}/${slug}`,
+			lastModified: new Date().toISOString(),
+			changeFrequency: 'weekly',
+			priority: 0.9,
+		})
+	);
 
-	// Define static routes
-	const routes = ['', '/blog', '/work'].map((route) => ({
+	// Define static routes with highest priority
+	const routes = ['', '/blog'].map((route) => ({
 		url: `${siteMetadata.siteUrl}${route}`,
 		lastModified: new Date().toISOString(),
 		changeFrequency: 'daily',
-		priority: 1,
+		priority: 1.0,
 	}));
 
-	return [...routes, ...servicePages, ...caseStudies, ...blogEntries];
+	// Combine all routes and sort by priority
+	const allRoutes = [...routes, ...servicePages, ...caseStudies, ...blogEntries];
+
+	// Sort by priority (highest first) and then by lastModified (newest first)
+	return allRoutes.sort((a, b) => {
+		if (b.priority !== a.priority) {
+			return b.priority - a.priority;
+		}
+		return new Date(b.lastModified) - new Date(a.lastModified);
+	});
 }

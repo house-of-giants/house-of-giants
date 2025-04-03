@@ -1,9 +1,9 @@
 const siteMetadata = {
-	title: '🤘 House of Giants | Denver Web Development Studio',
+	title: 'Smarter Websites for Brands That Move Fast',
 	author: 'Dominic Magnifico',
 	headerTitle: 'House of Giants',
 	description:
-		'At House of Giants, we craft bold and thoughtfully designed digital experiences to push creative boundaries. We specialize in custom website and web app development that merges innovative design with powerful functionality. From artist platforms to business solutions, we turn digital visions into reality without ever compromising on quality or creativity.',
+		'House of Giants builds scalable, high-performance websites and web apps for startups and fast-moving brands like yours.',
 	language: 'en-us',
 	theme: 'system', // system, dark or light
 	siteUrl: 'https://houseofgiants.com',

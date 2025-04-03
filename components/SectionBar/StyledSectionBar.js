@@ -2,42 +2,49 @@ import styled from 'styled-components';
 
 export const StyledSectionBar = styled.div`
 	align-items: center;
-	background: rgba(26, 31, 36, 0.95);
+	background: var(--c-primary-dark);
 	backdrop-filter: blur(10px);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	display: flex;
-	font-family: var(--f-mono);
-	font-size: 12px;
+	font-family: var(--f-sans);
+	font-size: 13px;
 	gap: var(--sp-xs);
-	height: 32px;
+	height: 40px;
 	justify-content: space-between;
-	padding: 0 var(--sp-xs);
+	padding: 0 var(--sp-sm);
 	position: sticky;
 	width: 100%;
 	z-index: 40;
 	top: var(--header-height);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
 	.section-info {
 		display: flex;
 		align-items: center;
-		gap: 8px;
-		color: #00ffe0;
-		min-width: 260px;
+		gap: 12px;
+		color: #ffffff;
+		min-width: 280px;
 		font-weight: 500;
 
 		.section-label {
-			color: rgba(0, 255, 224, 0.5);
-			font-size: 10px;
+			color: #00ffe0;
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
 		}
 
 		.section-number {
-			color: #00ffe0;
+			color: #ffffff;
 			font-weight: 600;
+			background: rgba(0, 255, 224, 0.1);
+			padding: 2px 6px;
+			border-radius: 4px;
+			border: 1px solid rgba(0, 255, 224, 0.2);
 		}
 
 		.separator {
 			width: 1px;
-			height: 14px;
+			height: 16px;
 			background: linear-gradient(
 				180deg,
 				rgba(0, 255, 224, 0.05) 0%,
@@ -47,29 +54,33 @@ export const StyledSectionBar = styled.div`
 		}
 
 		.timestamp {
-			color: rgba(125, 255, 93, 0.9);
-			font-weight: 600;
-			letter-spacing: 1px;
-			font-size: 10px;
+			color: rgba(255, 255, 255, 0.8);
+			font-weight: 500;
+			font-size: 11px;
 			font-variant-numeric: tabular-nums;
+		}
+
+		.coordinates {
+			color: #00ffe0;
+			font-size: 10px;
+			opacity: 0.8;
 		}
 	}
 
 	.marquee-container {
 		flex: 1;
 		overflow: hidden;
-		opacity: 0.6;
 		position: relative;
+		margin: 0 var(--sp-sm);
 
 		&::before,
 		&::after {
-			background: var(--grad);
+			background: linear-gradient(to right, var(--c-primary-dark), rgba(0, 0, 0, 0));
 			content: '';
 			position: absolute;
-			opacity: 0.5;
 			top: 0;
 			bottom: 0;
-			width: 1px;
+			width: 40px;
 			z-index: 1;
 		}
 
@@ -79,6 +90,7 @@ export const StyledSectionBar = styled.div`
 
 		&::after {
 			right: 0;
+			transform: rotate(180deg);
 		}
 	}
 
@@ -91,15 +103,13 @@ export const StyledSectionBar = styled.div`
 
 	.marquee-content {
 		display: flex;
-		animation: marquee 30s linear infinite;
+		animation: marquee 40s linear infinite;
 		white-space: nowrap;
 
 		.text {
-			color: rgba(0, 255, 224, 0.8);
-			font-size: 10px;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-			padding-right: 24px;
+			color: rgba(255, 255, 255, 0.9);
+			font-size: 12px;
+			padding-right: 32px;
 			font-weight: 500;
 		}
 	}
@@ -108,30 +118,20 @@ export const StyledSectionBar = styled.div`
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		min-width: 140px;
+		min-width: 160px;
 
 		.status-dot {
 			width: 8px;
 			height: 8px;
-			background: linear-gradient(to right, #ff2a6d 0%, #9b4dff 100%);
+			background: #00ffe0;
 			border-radius: 50%;
-			box-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
-			animation: pulse 2s infinite;
+			box-shadow: 0 0 8px rgba(0, 255, 224, 0.5);
 		}
 
 		.status-text {
-			background: linear-gradient(to right, #ff2a6d 0%, #9b4dff 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-			font-weight: 600;
-			letter-spacing: 1px;
-			font-size: 10px;
-
-			&::before,
-			&::after {
-				color: rgba(255, 42, 109, 0.5);
-			}
+			color: rgba(255, 255, 255, 0.9);
+			font-weight: 500;
+			font-size: 12px;
 		}
 	}
 
@@ -144,73 +144,43 @@ export const StyledSectionBar = styled.div`
 		}
 	}
 
-	@keyframes pulse {
-		0% {
-			opacity: 0.7;
-		}
-		50% {
-			opacity: 1;
-		}
-		100% {
-			opacity: 0.7;
-		}
-	}
-
-	&.sticky {
-	}
-
-	.scramble-text {
-		display: inline-block;
-		color: inherit;
-		font-family: inherit;
-
-		&.scrambling {
-			color: #7dff5d;
-			text-shadow: 0 0 8px rgba(125, 255, 93, 0.5);
-		}
-	}
-
 	.section-title {
-		background: linear-gradient(to right, #ff2a6d 0%, #9b4dff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+		color: #00ffe0;
 		font-weight: 600;
-		text-shadow: 0 0 8px rgba(255, 42, 109, 0.3);
 		margin-right: 8px;
-		position: relative;
+		text-shadow: 0 0 8px rgba(0, 255, 224, 0.3);
 	}
 
 	.tech-term {
-		opacity: 0.6;
+		opacity: 0.9;
 	}
 
 	&.mobile {
-		padding: 4px 8px;
-		height: 28px;
-		font-size: 10px;
+		padding: 8px 12px;
+		height: 36px;
+		font-size: 12px;
 
 		.section-info {
 			min-width: auto;
-			gap: 4px;
+			gap: 6px;
 		}
 
 		.marquee-container {
-			margin: 0 8px;
+			margin: 0 12px;
 
 			.marquee-content {
-				animation-duration: 20s;
+				animation-duration: 30s;
 			}
 		}
 
 		.section-title {
-			margin-right: 4px;
+			margin-right: 6px;
 		}
 	}
 
 	@media (max-width: 768px) {
 		.marquee-container {
-			margin: 0 8px;
+			margin: 0 12px;
 		}
 
 		.section-info {
@@ -219,10 +189,10 @@ export const StyledSectionBar = styled.div`
 	}
 
 	@media (max-width: 640px) {
-		padding: 4px 8px;
+		padding: 8px 12px;
 
 		.marquee-content {
-			animation-duration: 15s;
+			animation-duration: 25s;
 		}
 	}
 `;
