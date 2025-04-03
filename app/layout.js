@@ -37,9 +37,6 @@ export async function generateMetadata() {
 		title: siteMetadata.title,
 		description: siteMetadata.description,
 		metadataBase: new URL('https://houseofgiants.com'),
-		alternates: {
-			canonical: '/',
-		},
 		icons: {
 			icon: [
 				{ url: '/favicon.svg', type: 'image/svg+xml' },
@@ -91,7 +88,6 @@ export default function RootLayout({ children }) {
 			<head>
 				<PlausibleProvider domain="houseofgiants.com" />
 				<JsonLd />
-				<CanonicalLink path="/" />
 			</head>
 			<body>
 				<StyledComponentsRegistry>

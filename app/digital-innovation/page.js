@@ -207,9 +207,6 @@ export default function DigitalInnovation() {
 
 	return (
 		<main className="relative bg-[#1a1f24] text-gray-100">
-			<head>
-				<CanonicalLink path="/digital-innovation" />
-			</head>
 			<ServiceSchema service="digital-innovation" />
 			<FloatingGradients variant="purple" intensity="low" />
 

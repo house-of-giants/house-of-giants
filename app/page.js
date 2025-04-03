@@ -9,11 +9,13 @@ import { Impact } from '@/components/Impact/Impact';
 import ContactForm from '@/components/Contact/ContactForm';
 import { SectionSeparator } from '@/components/SectionSeparator/SectionSeparator';
 import { work } from '@/data/work';
+import CanonicalLink from '@/components/SEO/CanonicalLink';
 
 export default function Page() {
 	return (
 		<main className="relative">
 			<FloatingGradients intensity="high" />
+			<CanonicalLink path="/" />
 			<div className="-mt-36">
 				<Hero />
 			</div>
