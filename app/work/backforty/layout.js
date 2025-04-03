@@ -1,7 +1,7 @@
 export const metadata = {
-	title: 'BackForty Management',
+	title: 'BackForty Management – Custom Web Development & Artist Platform',
 	description:
-		'A case study for BackForty Management digital experience and web development. Featuring a custom web development, brand evolution, and unique page transitions.',
+		'Explore how House of Giants built a high-performance digital platform for BackForty Management—combining strategy, scalability, and artist-first UX.',
 	alternates: {
 		canonical: '/work/backforty',
 	},

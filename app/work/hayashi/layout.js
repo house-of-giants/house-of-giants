@@ -1,7 +1,7 @@
 export const metadata = {
-	title: 'Hayashi Whisky',
+	title: 'Hayashi Whisky – Luxury Web Design & Story-Driven UI',
 	description:
-		'A case study for Hayashi Whisky web design and development. Featuring a luxurious web design, immersive UI, and unique product storytelling.',
+		'Dive into our elegant digital launch for Hayashi Whisky. Crafted to balance premium aesthetics, cultural storytelling, and a smooth user journey.',
 	alternates: {
 		canonical: '/work/hayashi',
 	},

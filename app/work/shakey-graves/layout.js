@@ -1,7 +1,7 @@
 export const metadata = {
-	title: 'Shakey Graves',
+	title: 'Shakey Graves – Interactive Web Experience with AI & Fan Tools',
 	description:
-		'A case study for Shakey Graves "Movie of the Week" project. Featuring a custom web design and development, AI integration, and a unique user experience.',
+		'See how House of Giants built an immersive experience for Shakey Graves’ “Movie of the Week”—with AI features, dynamic user paths, and creative interaction design.',
 	alternates: {
 		canonical: '/work/shakey-graves',
 	},

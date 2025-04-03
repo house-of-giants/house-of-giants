@@ -29,13 +29,13 @@ export async function generateMetadata({ params }) {
 
 	return {
 		title: `${post.title} | ${siteMetadata.title}`,
-		description: post.summary,
+		description: post.excerpt,
 		alternates: {
 			canonical: `/blog/${params.slug}`,
 		},
 		openGraph: {
 			title: post.title,
-			description: post.summary,
+			description: post.excerpt,
 			siteName: siteMetadata.title,
 			locale: 'en_US',
 			type: 'article',
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }) {
 		twitter: {
 			card: 'summary_large_image',
 			title: post.title,
-			description: post.summary,
+			description: post.excerpt,
 			images: ogImages,
 		},
 	};
