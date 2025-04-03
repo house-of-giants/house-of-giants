@@ -25,13 +25,13 @@ export const StyledContainer = styled.div`
 	}
 
 	& .wrap {
-		margin: 0 auto;
 		max-width: var(--container-width);
 		padding: 0 var(--sp-m);
 		position: relative;
 		z-index: 2;
 
 		@media (min-width: 768px) {
+			margin: 0 auto;
 			padding: 0 var(--sp-xl);
 		}
 	}

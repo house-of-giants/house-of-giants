@@ -16,7 +16,7 @@ export default function Page() {
 		<main className="relative">
 			<FloatingGradients intensity="high" />
 			<CanonicalLink path="/" />
-			<div className="-mt-36">
+			<div className="-mt-18 lg:-mt-36">
 				<Hero />
 			</div>
 			<SectionSeparator />

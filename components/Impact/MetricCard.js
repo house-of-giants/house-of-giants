@@ -14,10 +14,10 @@ export const MetricCard = ({ number, symbol, title, description }) => {
 			{/* Content */}
 			<div className="text-center">
 				<div className="flex items-baseline gap-4 justify-center">
-					<span className="text-[clamp(5rem,8vw,8rem)] font-black leading-none -grad-header">{number}</span>
-					<span className="text-[clamp(3rem,6vw,5rem)] font-black leading-none -grad-header">{symbol}</span>
+					<span className="text-[clamp(3rem,8vw,8rem)] font-black leading-none -grad-header">{number}</span>
+					<span className="text-[clamp(1.5rem,6vw,5rem)] font-black leading-none -grad-header">{symbol}</span>
 				</div>
-				<h3 className="font-serif text-[1.75rem] text-white mt-8">{title}</h3>
+				<h3 className="font-serif text-[clamp(1.5rem, 4vw, 1.75rem)] text-white mt-4 lg:mt-8">{title}</h3>
 				<p className="text-moon-rock/80 text-lg mt-4 leading-relaxed">{description}</p>
 			</div>
 		</motion.div>

@@ -12,7 +12,7 @@ export const ServiceCard = ({ id, title, description, features }) => {
 				</div>
 
 				<div className="space-y-6">
-					<h3 className="text-[3.5rem] font-normal not-italic leading-none tracking-tight group-hover:-grad-header transition-colors duration-300">
+					<h3 className="text-[clamp(2rem, 4vw, 3.5rem)] font-normal not-italic leading-none tracking-tight group-hover:-grad-header transition-colors duration-300">
 						{title}
 					</h3>
 					<p className="text-moon-rock text-xl leading-relaxed" dangerouslySetInnerHTML={{ __html: description }} />
