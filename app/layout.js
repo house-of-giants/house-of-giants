@@ -19,6 +19,18 @@ import CanonicalLink from '@/components/SEO/CanonicalLink';
 
 const inter = Inter({ subsets: ['latin'] });
 
+export const viewport = {
+	width: 'device-width',
+	initialScale: 1,
+	maximumScale: 1,
+	userScalable: false,
+	themeColor: [
+		{ media: '(prefers-color-scheme: light)', color: '#ececec' },
+		{ media: '(prefers-color-scheme: dark)', color: '#1a1f24' },
+	],
+	colorScheme: 'dark',
+};
+
 export async function generateMetadata() {
 	return {
 		...siteMetadata,
@@ -28,7 +40,6 @@ export async function generateMetadata() {
 		alternates: {
 			canonical: '/',
 		},
-		viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 		icons: {
 			icon: [
 				{ url: '/favicon.svg', type: 'image/svg+xml' },
