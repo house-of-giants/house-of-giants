@@ -1,6 +1,7 @@
 'use client';
 
 import { CaseStudy } from '@/components/CaseStudy/CaseStudy';
+import CaseStudySchema from '@/components/Schema/CaseStudySchema';
 import { motion } from 'framer-motion';
 
 export default function Hayashi() {
