@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/react';
 import PlausibleProvider from 'next-plausible';
 import AnimatedTitle from '@/components/AnimatedTitle/AnimatedTitle';
 import JsonLd from '@/components/Schema/JsonLd';
@@ -15,7 +14,6 @@ import { SectionProvider } from '@/components/SectionContext/SectionContext';
 import { SectionBar } from '@/components/SectionBar/SectionBar';
 import { LocalBusinessSchema } from '@/components/Schema/LocalBusinessSchema';
 import { Inter } from 'next/font/google';
-import CanonicalLink from '@/components/SEO/CanonicalLink';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -86,22 +84,22 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className={`${nikolai.variable} ${inter.className}`}>
 			<head>
-				<PlausibleProvider domain="houseofgiants.com" />
 				<JsonLd />
 			</head>
 			<body>
-				<StyledComponentsRegistry>
-					<LocalBusinessSchema />
-					<GlobalStyles />
-					<Header />
-					<AnimatedTitle />
-					<SectionProvider>
-						<SectionBar />
-						{children}
-					</SectionProvider>
-					<ContactFooter />
-				</StyledComponentsRegistry>
-				<Analytics />
+				<PlausibleProvider domain="houseofgiants.com">
+					<StyledComponentsRegistry>
+						<LocalBusinessSchema />
+						<GlobalStyles />
+						<Header />
+						<AnimatedTitle />
+						<SectionProvider>
+							<SectionBar />
+							{children}
+						</SectionProvider>
+						<ContactFooter />
+					</StyledComponentsRegistry>
+				</PlausibleProvider>
 			</body>
 		</html>
 	);
