@@ -1,4 +1,3 @@
-import PlausibleProvider from 'next-plausible';
 import AnimatedTitle from '@/components/AnimatedTitle/AnimatedTitle';
 import JsonLd from '@/components/Schema/JsonLd';
 
@@ -85,21 +84,20 @@ export default function RootLayout({ children }) {
 		<html lang="en" className={`${nikolai.variable} ${inter.className}`}>
 			<head>
 				<JsonLd />
+				<script defer data-domain="houseofgiants.com" src="https://plausible.io/js/script.js"></script>
 			</head>
 			<body>
-				<PlausibleProvider domain="houseofgiants.com" enabled={true}>
-					<StyledComponentsRegistry>
-						<LocalBusinessSchema />
-						<GlobalStyles />
-						<Header />
-						<AnimatedTitle />
-						<SectionProvider>
-							<SectionBar />
-							{children}
-						</SectionProvider>
-						<ContactFooter />
-					</StyledComponentsRegistry>
-				</PlausibleProvider>
+				<StyledComponentsRegistry>
+					<LocalBusinessSchema />
+					<GlobalStyles />
+					<Header />
+					<AnimatedTitle />
+					<SectionProvider>
+						<SectionBar />
+						{children}
+					</SectionProvider>
+					<ContactFooter />
+				</StyledComponentsRegistry>
 			</body>
 		</html>
 	);
