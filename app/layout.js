@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
 				<JsonLd />
 			</head>
 			<body>
-				<PlausibleProvider domain="houseofgiants.com">
+				<PlausibleProvider domain="houseofgiants.com" enabled={true}>
 					<StyledComponentsRegistry>
 						<LocalBusinessSchema />
 						<GlobalStyles />
