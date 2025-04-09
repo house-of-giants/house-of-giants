@@ -40,9 +40,6 @@ export const Header = () => {
 
 	// Check if a path is active or a child of an active path
 	const isActive = (path) => {
-		// Home page work section
-		if (path === '/#work' && pathname === '/') return true;
-
 		// Services pages
 		if (path === '/services') {
 			return (
@@ -125,35 +122,55 @@ export const Header = () => {
 								>
 									<Link
 										href="/web-development"
-										className={`block px-4 py-3 hover:bg-[var(--c-accent)] hover:bg-opacity-20 rounded text-white transition-all ${
-											pathname === '/web-development' ? 'bg-[var(--c-accent)] bg-opacity-20 font-bold' : ''
+										className={`block px-4 py-3 rounded text-white transition-all hover:text-white relative group ${
+											pathname === '/web-development' ? 'font-bold' : ''
 										}`}
 									>
 										Web Development
+										<span
+											className={`absolute bottom-2 left-4 right-4 h-[1px] bg-gradient-to-r from-[#00ffe0] to-[#c1ff1d] transform transition-transform duration-300 origin-left ${
+												pathname === '/web-development' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+											}`}
+										></span>
 									</Link>
 									<Link
 										href="/web-design"
-										className={`block px-4 py-3 hover:bg-[var(--c-accent)] hover:bg-opacity-20 rounded text-white transition-all ${
-											pathname === '/web-design' ? 'bg-[var(--c-accent)] bg-opacity-20 font-bold' : ''
+										className={`block px-4 py-3 rounded text-white transition-all hover:text-white relative group ${
+											pathname === '/web-design' ? 'font-bold' : ''
 										}`}
 									>
 										Web Design
+										<span
+											className={`absolute bottom-2 left-4 right-4 h-[1px] bg-gradient-to-r from-[#00ffe0] to-[#c1ff1d] transform transition-transform duration-300 origin-left ${
+												pathname === '/web-design' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+											}`}
+										></span>
 									</Link>
 									<Link
 										href="/ux-architecture"
-										className={`block px-4 py-3 hover:bg-[var(--c-accent)] hover:bg-opacity-20 rounded text-white transition-all ${
-											pathname === '/ux-architecture' ? 'bg-[var(--c-accent)] bg-opacity-20 font-bold' : ''
+										className={`block px-4 py-3 rounded text-white transition-all hover:text-white relative group ${
+											pathname === '/ux-architecture' ? 'font-bold' : ''
 										}`}
 									>
 										UX Architecture
+										<span
+											className={`absolute bottom-2 left-4 right-4 h-[1px] bg-gradient-to-r from-[#00ffe0] to-[#c1ff1d] transform transition-transform duration-300 origin-left ${
+												pathname === '/ux-architecture' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+											}`}
+										></span>
 									</Link>
 									<Link
 										href="/digital-innovation"
-										className={`block px-4 py-3 hover:bg-[var(--c-accent)] hover:bg-opacity-20 rounded text-white transition-all ${
-											pathname === '/digital-innovation' ? 'bg-[var(--c-accent)] bg-opacity-20 font-bold' : ''
+										className={`block px-4 py-3 rounded text-white transition-all hover:text-white relative group ${
+											pathname === '/digital-innovation' ? 'font-bold' : ''
 										}`}
 									>
 										Digital Innovation
+										<span
+											className={`absolute bottom-2 left-4 right-4 h-[1px] bg-gradient-to-r from-[#00ffe0] to-[#c1ff1d] transform transition-transform duration-300 origin-left ${
+												pathname === '/digital-innovation' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+											}`}
+										></span>
 									</Link>
 								</motion.div>
 							)}

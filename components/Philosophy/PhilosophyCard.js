@@ -12,10 +12,6 @@ const PhilosophyCard = ({ title, description, delay = 0 }) => (
 		transition={{ duration: 0.5, delay }}
 		whileHover={{ y: -5 }}
 	>
-		{/* Decorative elements */}
-		<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--c-accent)] to-transparent opacity-50"></div>
-		<div className="absolute -top-20 -right-20 w-40 h-40 bg-[var(--c-accent)] opacity-10 rounded-full blur-3xl group-hover:opacity-20 transition-opacity duration-300"></div>
-
 		{/* Content with staggered animation */}
 		<motion.div
 			initial={{ opacity: 0, y: 10 }}
@@ -33,7 +29,6 @@ const PhilosophyCard = ({ title, description, delay = 0 }) => (
 				>
 					{title}
 				</motion.h4>
-				<div className="w-12 h-1 bg-gradient-to-r from-transparent via-[var(--c-accent)] to-transparent mb-3 group-hover:w-20 transition-all duration-300"></div>
 				<p className="text-lg text-moon-rock leading-relaxed relative z-10 mb-0">{description}</p>
 			</div>
 		</motion.div>

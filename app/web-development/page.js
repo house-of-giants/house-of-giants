@@ -11,6 +11,7 @@ import { TechCard } from '@/components/Services/TechCard';
 import Image from 'next/image';
 import StatCard from '@/components/Impact/StatCard';
 import { ServiceSchema } from '@/components/Schema/ServiceSchema';
+import Link from 'next/link';
 
 // Process Step Component
 const ProcessStep = ({ number, title, description, features }) => (
@@ -382,10 +383,17 @@ export default function WebDevelopment() {
 								transition={{ duration: 0.5 }}
 							>
 								<h3 className="text-4xl font-bold -grad-header mb-4 text-white">Our Development Philosophy</h3>
-								<p className="text-lg text-moon-rock leading-relaxed mb-0">
+								<p className="text-lg text-moon-rock leading-relaxed mb-4">
 									Our development approach focuses on three key pillars: performance, scalability, and user experience.
 									We believe that a great website should not only look good but also perform exceptionally well and
 									drive business results.
+								</p>
+								<p className="text-lg text-moon-rock leading-relaxed mb-0">
+									We specialize in scalable builds for startups, media brands, and fast-paced industries like{' '}
+									<Link href="/restaurant-websites" className="text-[var(--c-accent)] hover:underline">
+										restaurants
+									</Link>
+									.
 								</p>
 							</motion.div>
 

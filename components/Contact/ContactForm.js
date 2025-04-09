@@ -74,7 +74,7 @@ const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, i
 	</form>
 );
 
-const ContactForm = () => {
+const ContactForm = ({ title, subtitle, accent, description }) => {
 	const [contactSuccess, setContactSuccess] = useState(null);
 	const formEl = useRef(null);
 
@@ -118,7 +118,7 @@ const ContactForm = () => {
 				pt="var(--section-spacing-top)"
 				pb="var(--section-spacing-bottom)"
 			>
-				<ContactHeader />
+				<ContactHeader title={title} subtitle={subtitle} accent={accent} description={description} />
 
 				<div className="max-w-3xl mx-auto">
 					<AnimatePresence mode="wait">

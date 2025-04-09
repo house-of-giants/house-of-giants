@@ -13,6 +13,7 @@ import PhilosophyCard from '@/components/Philosophy/PhilosophyCard';
 import { WorkCard } from '@/components/Work/WorkCard';
 import { work } from '@/data/work';
 import { ServiceSchema } from '@/components/Schema/ServiceSchema';
+import Link from 'next/link';
 
 // Main Page Component
 export default function WebDesign() {
@@ -271,10 +272,18 @@ export default function WebDesign() {
 								<h3 className="text-4xl font-bold -grad-header mb-4 text-white">
 									Denver Web Design <span className="text-[var(--c-accent)]">That Stands Out</span>
 								</h3>
-								<p className="text-lg text-moon-rock leading-relaxed mb-0">
+								<p className="text-lg text-moon-rock leading-relaxed">
 									The Denver market is unique, with its blend of outdoor lifestyle, tech innovation, and creative
 									energy. At House of Giants, we live and breathe the Denver ethos, creating designs that resonate with
 									the local market.
+								</p>
+
+								<p className="text-lg text-moon-rock leading-relaxed mb-0">
+									From sleek startup platforms to{' '}
+									<Link href="/restaurant-websites" className="text-[var(--c-accent)] hover:underline">
+										restaurant websites
+									</Link>{' '}
+									that move burgers and boost brand love—we build digital experiences that convert.
 								</p>
 							</motion.div>
 

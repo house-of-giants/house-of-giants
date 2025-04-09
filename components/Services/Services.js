@@ -5,7 +5,8 @@ import { Section } from '../Section/Section';
 import { ServiceCard } from './ServiceCard';
 import { TechCard } from './TechCard';
 import { SectionHeader } from '../SectionHeader/SectionHeader';
-import { WordPressIcon, NextJsIcon, ThreeJsIcon, AIIcon } from '../Icons/TechIcons';
+import { motion } from 'framer-motion';
+import { Button } from '../Button/Button';
 
 export const Services = () => {
 	const services = [
@@ -114,6 +115,45 @@ export const Services = () => {
 				</Container>
 			</Section>
 
+			{/* Restaurant Websites CTA */}
+			<Section count="4.0" title="Restaurant Solutions">
+				<Container
+					className="-has-background"
+					background="var(--c-primary-dark)"
+					pt="var(--section-spacing-top)"
+					pb="var(--section-spacing-bottom)"
+				>
+					<motion.div
+						className="relative bg-black bg-opacity-30 p-8 md:p-12 rounded-xl border border-gray-800 overflow-hidden"
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.5 }}
+					>
+						<div className="absolute top-0 right-0 w-64 h-64 bg-[var(--c-accent)] opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+						<div className="absolute bottom-0 left-0 w-64 h-64 bg-green-500 opacity-10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+						<div className="text-center max-w-3xl mx-auto relative z-10">
+							<h2 className="text-4xl md:text-5xl font-bold mb-6">
+								In the <span className="text-[var(--c-accent)]">food service</span> world?
+							</h2>
+							<p className="text-lg text-moon-rock leading-relaxed mb-8">
+								We build websites for restaurants that actually work—fast, scalable, and made for multi-location growth.
+							</p>
+							<div className="mt-8">
+								<Button
+									href="/restaurant-websites"
+									className="grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:scale-105 transition-transform duration-300 text-lg px-10 py-4 rounded-lg"
+								>
+									Got a menu? Make it sell itself.
+									<span className="text-[var(--c-accent)] ml-2">→</span>
+								</Button>
+							</div>
+						</div>
+					</motion.div>
+				</Container>
+			</Section>
+
 			{/* Sacred Tools Section */}
 			<Section count="3.0" title="Sacred Tools">
 				<Container
@@ -124,7 +164,7 @@ export const Services = () => {
 				>
 					<SectionHeader
 						title="No tool is sacred"
-						subtitle="We don’t care what’s trending."
+						subtitle="We don't care what's trending."
 						description="We care what works. Everything we use is chosen to scale, flex, and stay out of your way."
 					/>
 

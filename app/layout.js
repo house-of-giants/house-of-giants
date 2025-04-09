@@ -1,11 +1,11 @@
 import AnimatedTitle from '@/components/AnimatedTitle/AnimatedTitle';
 import JsonLd from '@/components/Schema/JsonLd';
-
 import { Header } from '@/components/Header/Header';
 import GlobalStyles from '@/components/Styles/GlobalStyles';
 import { ContactFooter } from '@/components/Contact/ContactFooter';
 import StyledComponentsRegistry from 'lib/registry';
 import { nikolai } from '@/styles/fonts';
+import ScrollToTop from '@/components/ScrollToTop/ScrollToTop';
 
 import './globals.css';
 import siteMetadata from '@/data/siteMetadata';
@@ -90,6 +90,7 @@ export default function RootLayout({ children }) {
 				<StyledComponentsRegistry>
 					<LocalBusinessSchema />
 					<GlobalStyles />
+					<ScrollToTop />
 					<Header />
 					<AnimatedTitle />
 					<SectionProvider>
