@@ -21,6 +21,8 @@ module.exports = {
 				'cyber-purple': '#9b4dff',
 				'cyber-red': '#ff0000',
 				'cyber-pink': '#ff2a6d',
+				'neon-sky': '#00ffe0',
+				'primary-dark': '#1a1f24',
 			},
 			boxShadow: {
 				glow: '0 0 15px rgba(0, 255, 224, 0.3), 0 0 30px rgba(0, 255, 224, 0.1)',

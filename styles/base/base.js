@@ -20,6 +20,7 @@ export const Base = css`
 		--c-neon-sky: #00ffe0;
 		--c-cyber-green: #c1ff1d;
 		--c-white: #fefefe;
+		--c-accent: var(--c-cyber-green);
 
 		--grad: linear-gradient(270deg, var(--c-cyber-green) 0%, var(--c-neon-sky) 100%);
 
