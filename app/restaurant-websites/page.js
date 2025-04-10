@@ -117,12 +117,10 @@ export default function RestaurantPage() {
 
 	return (
 		<>
-			<CanonicalLink path="/restaurant-websites" />
 			<IndustryPage
 				industry="Restaurant"
 				gradientVariant="purple"
 				intensityLevel="low"
-				canonicalPath="/restaurant-websites"
 				heroProps={{
 					headline: 'Custom Restaurant Websites & Online Ordering',
 					subheadline: 'Built for Speed, Multi-Location Growth, and Conversion',

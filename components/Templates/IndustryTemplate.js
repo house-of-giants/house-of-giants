@@ -355,12 +355,10 @@ export const IndustryPage = ({
 	contactProps,
 	gradientVariant = 'green',
 	intensityLevel = 'medium',
-	canonicalPath,
 }) => {
 	return (
 		<main className="relative">
 			<FloatingGradients variant={gradientVariant} intensity={intensityLevel} />
-			<CanonicalLink path={canonicalPath || `/${industry.toLowerCase()}`} />
 			<div className="-mt-18 lg:-mt-24 2xl:-mt-36">
 				<IndustryHero {...heroProps} industry={industry} variant={gradientVariant} />
 			</div>
