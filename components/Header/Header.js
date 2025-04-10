@@ -75,12 +75,10 @@ export const Header = () => {
 						/>
 					</div>
 					<span className="flex flex-col">
-						<span className="font-sans text-moon-rock text-md md:text-4xl">
-							House of Giants <span className="text-[#ff2a6d] text-sm font-mono">v2.4</span>
-						</span>
+						<span className="font-sans text-moon-rock text-md md:text-4xl">House of Giants</span>
 						<span className="text-xs md:text-sm font-mono text-moon-rock hidden sm:block">
 							<span className="text-[#ff2a6d]">// </span>
-							Digital Experiences • Web Apps • Strategy
+							Digital Experiences • Web • Strategy
 						</span>
 					</span>
 				</motion.div>

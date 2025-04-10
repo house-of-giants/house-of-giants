@@ -188,10 +188,10 @@ export async function GET(request) {
 							<div
 								style={{
 									alignItems: 'center',
-									justifyContent: 'center',
 									display: 'flex',
 									position: 'relative',
 									width: blogImage ? '60%' : '100%',
+									height: '100%',
 								}}
 							>
 								<div
@@ -207,13 +207,11 @@ export async function GET(request) {
 										flexDirection: 'column',
 									}}
 								>
-									<span style={{ color: '#00ffe0' }}>{title}</span>
 									<span
 										style={{
-											position: 'absolute',
 											color: '#c1ff1d',
-											opacity: 0.5,
 											mixBlendMode: 'screen',
+											textTransform: 'uppercase',
 										}}
 									>
 										{title}
