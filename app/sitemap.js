@@ -20,14 +20,19 @@ export default async function sitemap() {
 	}));
 
 	// Define service page routes with higher priority
-	const servicePages = ['web-development', 'web-design', 'ux-architecture', 'digital-innovation', 'contact'].map(
-		(slug) => ({
-			url: `${siteMetadata.siteUrl}/${slug}`,
-			lastModified: new Date().toISOString(),
-			changeFrequency: 'weekly',
-			priority: 0.9,
-		})
-	);
+	const servicePages = [
+		'web-development',
+		'web-design',
+		'ux-architecture',
+		'digital-innovation',
+		'restaurant-websites',
+		'contact',
+	].map((slug) => ({
+		url: `${siteMetadata.siteUrl}/${slug}`,
+		lastModified: new Date().toISOString(),
+		changeFrequency: 'weekly',
+		priority: 0.9,
+	}));
 
 	// Define static routes with highest priority
 	const routes = ['', '/blog'].map((route) => ({
