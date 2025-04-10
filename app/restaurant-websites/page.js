@@ -2,6 +2,12 @@
 
 import { IndustryPage } from '@/components/Templates/IndustryTemplate';
 import CanonicalLink from '@/components/SEO/CanonicalLink';
+import { getGifPlaceholder } from '@/utils/imageUtils';
+
+// Pre-generate blur placeholders for performance
+const BURGER_GIF_PLACEHOLDER = getGifPlaceholder('/images/burgerfinal.gif');
+const SAMMY_GIF_PLACEHOLDER = getGifPlaceholder('/images/sammy.gif');
+const CAKES_GIF_PLACEHOLDER = getGifPlaceholder('/images/cakes.gif');
 
 export default function RestaurantPage() {
 	// Restaurant-specific services
@@ -57,6 +63,7 @@ export default function RestaurantPage() {
 				'Optimized for mobile first ordering',
 			],
 			imageUrl: '/images/sammy.gif',
+			blurDataUrl: SAMMY_GIF_PLACEHOLDER,
 		},
 		{
 			id: '02',
@@ -70,6 +77,7 @@ export default function RestaurantPage() {
 				'Custom online ordering systems',
 			],
 			imageUrl: '/images/burgerfinal.gif',
+			blurDataUrl: BURGER_GIF_PLACEHOLDER,
 		},
 		{
 			id: '03',
@@ -82,6 +90,7 @@ export default function RestaurantPage() {
 				'Restaurant storytelling through UX',
 			],
 			imageUrl: '/images/cakes.gif',
+			blurDataUrl: CAKES_GIF_PLACEHOLDER,
 		},
 	];
 
@@ -120,6 +129,7 @@ export default function RestaurantPage() {
 					description:
 						'We build fast, branded restaurant websites and direct ordering systems that drive more online orders, support multi-location growth, and make your digital experience feel as seamless as your service.',
 					heroImage: '/images/burgerfinal.gif',
+					blurDataUrl: BURGER_GIF_PLACEHOLDER,
 				}}
 				servicesProps={{
 					title: 'Custom Web Solutions for Restaurants',
@@ -141,7 +151,7 @@ export default function RestaurantPage() {
 					subtitle: 'From restaurant websites optimized for performance',
 					accent: 'Benchmarks from top-performing QSR and multi-location brands',
 					description:
-						'We help QSR and restaurant groups drive more direct orders, increase revenue per customer, and reduce their dependence on third-party delivery apps. Here’s what a smart digital experience can unlock.',
+						"We help QSR and restaurant groups drive more direct orders, increase revenue per customer, and reduce their dependence on third-party delivery apps. Here's what a smart digital experience can unlock.",
 					metrics: metrics,
 				}}
 				contactProps={{

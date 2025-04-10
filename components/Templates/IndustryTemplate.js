@@ -11,9 +11,12 @@ import { SectionSeparator } from '@/components/SectionSeparator/SectionSeparator
 import ContactForm from '@/components/Contact/ContactForm';
 import CanonicalLink from '@/components/SEO/CanonicalLink';
 import Image from 'next/image';
+import BlurGifImage from '@/components/Image/BlurGifImage';
 
 // Hero section template
-export const IndustryHero = ({ industry, headline, subheadline, description, heroImage }) => {
+export const IndustryHero = ({ industry, headline, subheadline, description, heroImage, blurDataUrl }) => {
+	const isGif = heroImage?.toLowerCase().endsWith('.gif');
+
 	return (
 		<Section count="1.0" title={`${industry} Web Solutions`}>
 			<Container
@@ -63,13 +66,23 @@ export const IndustryHero = ({ industry, headline, subheadline, description, her
 							transition={{ duration: 0.7, delay: 0.2 }}
 							className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden"
 						>
-							<Image
-								src={heroImage || '/images/default-hero.jpg'}
-								alt={`${industry} website showcase`}
-								fill
-								className="object-contain"
-								priority
-							/>
+							{isGif ? (
+								<BlurGifImage
+									src={heroImage || '/images/default-hero.jpg'}
+									alt={`${industry} website showcase`}
+									className="h-full w-full"
+									priority
+									blurDataURL={blurDataUrl}
+								/>
+							) : (
+								<Image
+									src={heroImage || '/images/default-hero.jpg'}
+									alt={`${industry} website showcase`}
+									fill
+									className="object-contain"
+									priority
+								/>
+							)}
 						</motion.div>
 					</div>
 				</div>
@@ -233,41 +246,54 @@ export const IndustryProcess = ({
 				/>
 
 				<div className="mt-[var(--header-spacing)] space-y-16">
-					{processSteps.map((step, index) => (
-						<motion.div
-							key={step.id}
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.5, delay: index * 0.1 }}
-							className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
-						>
-							<div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
-								<div className="relative aspect-video rounded-lg overflow-hidden">
-									<Image src={step.imageUrl} alt={step.title} fill className="object-contain" />
-								</div>
-							</div>
+					{processSteps.map((step, index) => {
+						const isGif = step.imageUrl?.toLowerCase().endsWith('.gif');
 
-							<div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
-								<div className="mb-2">
-									<span className={`text-sm uppercase font-mono ${accentColorClass}`}>{`Step ${step.id}`}</span>
+						return (
+							<motion.div
+								key={step.id}
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ duration: 0.5, delay: index * 0.1 }}
+								className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+							>
+								<div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
+									<div className="relative aspect-video rounded-lg overflow-hidden">
+										{isGif ? (
+											<BlurGifImage
+												src={step.imageUrl}
+												alt={step.title}
+												className="h-full w-full"
+												blurDataURL={step.blurDataUrl}
+											/>
+										) : (
+											<Image src={step.imageUrl} alt={step.title} fill className="object-contain" />
+										)}
+									</div>
 								</div>
-								<h3 className="text-2xl md:text-3xl font-bold mb-4">{step.title}</h3>
-								<p className="text-moon-rock/90 text-base md:text-lg mb-6">{step.description}</p>
 
-								{step.features && (
-									<ul className="space-y-3">
-										{step.features.map((feature, idx) => (
-											<li key={idx} className="flex items-start">
-												<span className={`${accentColorClass} mr-2`}>✓</span>
-												<span className="text-moon-rock/80">{feature}</span>
-											</li>
-										))}
-									</ul>
-								)}
-							</div>
-						</motion.div>
-					))}
+								<div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
+									<div className="mb-2">
+										<span className={`text-sm uppercase font-mono ${accentColorClass}`}>{`Step ${step.id}`}</span>
+									</div>
+									<h3 className="text-2xl md:text-3xl font-bold mb-4">{step.title}</h3>
+									<p className="text-moon-rock/90 text-base md:text-lg mb-6">{step.description}</p>
+
+									{step.features && (
+										<ul className="space-y-3">
+											{step.features.map((feature, idx) => (
+												<li key={idx} className="flex items-start">
+													<span className={`${accentColorClass} mr-2`}>✓</span>
+													<span className="text-moon-rock/80">{feature}</span>
+												</li>
+											))}
+										</ul>
+									)}
+								</div>
+							</motion.div>
+						);
+					})}
 				</div>
 			</Container>
 		</Section>
