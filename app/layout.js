@@ -13,6 +13,7 @@ import { SectionProvider } from '@/components/SectionContext/SectionContext';
 import { SectionBar } from '@/components/SectionBar/SectionBar';
 import { LocalBusinessSchema } from '@/components/Schema/LocalBusinessSchema';
 import { Inter } from 'next/font/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -100,6 +101,7 @@ export default function RootLayout({ children }) {
 					<ContactFooter />
 				</StyledComponentsRegistry>
 			</body>
+			<GoogleTagManager gtmId="AW-16993681812" />
 		</html>
 	);
 }
