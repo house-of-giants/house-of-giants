@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { GradientButton } from '../UI/GradientButton';
 import { FormField } from './FormField';
 
-export const ContactFormFields = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting }) => {
+export const ContactFormFields = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting, formSource }) => {
 	const [focusedField, setFocusedField] = useState(null);
 
 	return (
@@ -12,7 +12,12 @@ export const ContactFormFields = ({ formEl, register, handleSubmit, onSubmit, er
 			animate={{ opacity: 1, y: 0 }}
 			exit={{ opacity: 0, y: -20 }}
 			className="space-y-8"
-			onSubmit={handleSubmit(onSubmit)}
+			onSubmit={handleSubmit(onSubmit, () => {
+				sendGTMEvent('contact_form_submission', {
+					form_type: 'quick_contact',
+					form_source: formSource,
+				});
+			})}
 			ref={formEl}
 		>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">

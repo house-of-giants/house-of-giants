@@ -8,9 +8,10 @@ import { SuccessMessage } from './SuccessMessage';
 import fetchJson from '@/utils/fetchJson';
 import Link from 'next/link';
 import { Button } from '../Button/Button';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 // Simple Contact Form Component for homepage
-const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting }) => (
+const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting, formSource }) => (
 	<form ref={formEl} onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 		<div>
 			<input
@@ -104,6 +105,10 @@ const ContactForm = ({ title, subtitle, accent, description }) => {
 			if (status === 200) {
 				formEl.current.reset();
 				setContactSuccess(true);
+				sendGTMEvent('contact_form_submission', {
+					form_type: 'quick_contact',
+					form_source: formSource,
+				});
 			}
 		} catch (error) {
 			console.error('Error submitting form:', error);

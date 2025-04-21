@@ -17,8 +17,17 @@ import Testimonials from '@/components/Testimonials/Testimonials';
 import { ContactSchema } from '@/components/Schema/ContactSchema';
 
 // Simple Contact Form Component optimized for the hero section
-const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting }) => (
-	<form ref={formEl} onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting, formSource }) => (
+	<form
+		ref={formEl}
+		onSubmit={handleSubmit(onSubmit, () => {
+			sendGTMEvent('contact_form_submission', {
+				form_type: 'quick_contact',
+				form_source: formSource,
+			});
+		})}
+		className="space-y-4"
+	>
 		<div>
 			<input
 				type="text"
@@ -387,6 +396,7 @@ export default function ContactPage() {
 													onSubmit={onSubmit}
 													errors={errors}
 													isSubmitting={isSubmitting}
+													formSource="Contact Page"
 												/>
 												<p className="text-center text-sm text-moon-rock mt-4">We'll respond within 24 hours</p>
 												<p className="text-center text-moon-rock leading-relaxed mb-4 text-sm">
@@ -545,6 +555,7 @@ export default function ContactPage() {
 											onSubmit={onSubmitDetailed}
 											errors={errorsDetailed}
 											isSubmitting={isSubmittingDetailed}
+											formSource="Contact Page"
 										/>
 									) : (
 										<SuccessMessage />
