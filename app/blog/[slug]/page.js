@@ -8,7 +8,8 @@ import siteMetadata from '@/data/siteMetadata';
 import BlogPostSchema from '@/components/Schema/BlogPostSchema';
 
 export async function generateMetadata({ params }) {
-	const post = getPostBySlug(params.slug);
+	const { slug } = await params;
+	const post = getPostBySlug(slug);
 	if (!post) {
 		return;
 	}
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }) {
 		title: `${post.title} | ${siteMetadata.title}`,
 		description: post.excerpt,
 		alternates: {
-			canonical: `/blog/${params.slug}`,
+			canonical: `/blog/${slug}`,
 		},
 		openGraph: {
 			title: post.title,
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }) {
 			type: 'article',
 			publishedTime: publishedAt,
 			modifiedTime: modifiedAt,
-			url: `${siteMetadata.siteUrl}/blog/${params.slug}`,
+			url: `${siteMetadata.siteUrl}/blog/${slug}`,
 			images: ogImages,
 		},
 		twitter: {
@@ -54,7 +55,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Post({ params }) {
-	const post = getPostBySlug(params.slug);
+	const { slug } = await params;
+	const post = getPostBySlug(slug);
 
 	if (!post) {
 		return notFound();
