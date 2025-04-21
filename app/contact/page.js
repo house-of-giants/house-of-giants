@@ -479,7 +479,7 @@ export default function ContactPage() {
 
 								<a
 									href="tel:+13032190697"
-									className="block w-full text-center bg-[var(--c-accent)] bg-opacity-10 hover:bg-opacity-20 border border-[var(--c-accent)] text-[var(--c-accent)] font-mono transition-all duration-300 text-base px-6 py-3 rounded-lg mt-4"
+									className="block w-full text-center bg-[var(--c-primary-dark)] bg-opacity-10 hover:bg-opacity-20 border border-[var(--c-accent)] text-[var(--c-accent)] font-mono transition-all duration-300 text-base px-6 py-3 rounded-lg mt-4"
 								>
 									Call +1 (303) 219-0697
 								</a>
