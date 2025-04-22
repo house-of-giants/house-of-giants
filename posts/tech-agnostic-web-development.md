@@ -5,7 +5,7 @@ author:
   name: Dominic Magnifico
   picture: '/images/dom.jpeg'
 excerpt: "Some web agencies are Shopify-only. Or WordPress-only. Or obsessed with that one JS framework they use on *every single project.* House of Giants isn't like that. We don't believe in the one size fits all approach, because the brands we partner with? They're not one size fits all either."
-date: '2024-04-12'
+date: '2025-04-22'
 ---
 
 You’ve probably seen it on our site. Maybe in an email. Maybe we even said it on a call.
