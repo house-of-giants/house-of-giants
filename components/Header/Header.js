@@ -53,6 +53,9 @@ export const Header = () => {
 		// Blog page and nested blog posts
 		if (path === '/blog' && pathname.startsWith('/blog')) return true;
 
+		// Pricing page
+		if (path === '/pricing' && pathname.startsWith('/pricing')) return true;
+
 		// Contact page
 		if (path === '/contact' && pathname.startsWith('/contact')) return true;
 
@@ -181,6 +184,14 @@ export const Header = () => {
 						}`}
 					>
 						Blog
+					</Link>
+					<Link
+						href="/pricing"
+						className={`font-serif font-bold italic transition-colors duration-300 text-2xl ${
+							isActive('/pricing') ? 'text-[#00ffe0]' : 'text-white hover:text-[#00ffe0]'
+						}`}
+					>
+						Pricing
 					</Link>
 				</nav>
 
@@ -342,6 +353,17 @@ export const Header = () => {
 									Blog
 								</Link>
 								<Link
+									href="/pricing"
+									className={`block py-4 px-3 text-xl rounded-lg transition-all ${
+										isActive('/pricing')
+											? 'text-[#00ffe0] bg-black bg-opacity-40'
+											: 'text-white hover:bg-black hover:bg-opacity-20 hover:text-[#00ffe0]'
+									}`}
+									onClick={() => setMobileMenuOpen(false)}
+								>
+									Pricing
+								</Link>
+								<Link
 									href="/contact"
 									className={`block py-4 px-3 text-xl rounded-lg transition-all ${
 										isActive('/contact')
@@ -361,11 +383,7 @@ export const Header = () => {
 								<div className="absolute top-0 left-0 w-full h-[2px] blur-sm bg-gradient-to-r from-[rgba(255,42,109,0.3)] via-[rgba(155,77,255,0.3)] to-[rgba(0,255,224,0.3)]"></div>
 
 								<div className="pt-6">
-									<Button
-										href="/contact"
-										className="w-full grad-border bg-[var(--c-primary-dark)] text-white font-serif italic font-bold text-lg md:text-xl px-4 py-3 rounded-lg flex items-center justify-center hover:bg-black hover:bg-opacity-20 transition-all duration-300 hover:shadow-glow"
-										onClick={() => setMobileMenuOpen(false)}
-									>
+									<Button href="/contact" variant="primary" onClick={() => setMobileMenuOpen(false)}>
 										Start Your Project
 									</Button>
 								</div>

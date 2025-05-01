@@ -88,7 +88,7 @@ export const HeroContent = () => {
 						</div>
 
 						<div className="text-xl text-moon-rock/80 leading-relaxed">
-							Based in Denver, we’re a digital studio that thinks like strategists, codes like engineers, and designs
+							Based in Denver, we're a digital studio that thinks like strategists, codes like engineers, and designs
 							like we mean it. From enterprise WordPress builds to reactive app experiences, we don&apos;t do
 							cookie-cutter &mdash; we build what works.
 						</div>
@@ -102,16 +102,10 @@ export const HeroContent = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 1 }}
 				>
-					<Button
-						href="#contact"
-						className="grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:scale-105 transition-transform duration-300 text-base md:text-lg px-6 py-3 rounded-lg"
-					>
+					<Button href="#contact" variant="primary">
 						Start Your Project
 					</Button>
-					<Button
-						href="#work"
-						className="bg-black bg-opacity-30 text-white hover:bg-opacity-50 font-mono transition-all duration-300 text-base md:text-lg px-6 py-3 rounded-lg"
-					>
+					<Button href="#work" variant="secondary">
 						View Our Work &rarr;
 					</Button>
 				</motion.div>

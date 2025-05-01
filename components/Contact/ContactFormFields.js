@@ -2,9 +2,23 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { GradientButton } from '../UI/GradientButton';
 import { FormField } from './FormField';
+import { sendGTMEvent } from '@next/third-parties/google';
+import { Button } from '../Button/Button';
 
 export const ContactFormFields = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting, formSource }) => {
 	const [focusedField, setFocusedField] = useState(null);
+
+	// Create a wrapper for the onSubmit function that handles form tracking
+	const handleFormSubmit = (formData) => {
+		// Track the event with sendGAEvent for Google Analytics
+		sendGTMEvent('event', 'contact_form_submission', {
+			form_type: 'quick_contact',
+			form_source: formSource,
+		});
+
+		// Call the original onSubmit function
+		return onSubmit(formData);
+	};
 
 	return (
 		<motion.form
@@ -12,12 +26,7 @@ export const ContactFormFields = ({ formEl, register, handleSubmit, onSubmit, er
 			animate={{ opacity: 1, y: 0 }}
 			exit={{ opacity: 0, y: -20 }}
 			className="space-y-8"
-			onSubmit={handleSubmit(onSubmit, () => {
-				sendGTMEvent('contact_form_submission', {
-					form_type: 'quick_contact',
-					form_source: formSource,
-				});
-			})}
+			onSubmit={handleSubmit(handleFormSubmit)}
 			ref={formEl}
 		>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -118,20 +127,14 @@ export const ContactFormFields = ({ formEl, register, handleSubmit, onSubmit, er
 					initial={{ opacity: 0, y: -10 }}
 					animate={{ opacity: 1, y: 0 }}
 				>
-					<span className="text-[#ff2a6d]">[ERROR]</span> Make sure you fill out all required fields to proceed with the
-					mission.
+					<span className="text-[#ff2a6d]">[ERROR]</span> Make sure you fill out all required fields to proceed.
 				</motion.div>
 			)}
 
 			<motion.div className="pt-4 font-mono">
-				<GradientButton type="submit" disabled={isSubmitting}>
-					{isSubmitting ? (
-						<span className="tracking-wider">EXECUTING_MISSION()...</span>
-					) : (
-						<span className="tracking-wider">EXECUTE_MISSION()</span>
-					)}{' '}
-					🚀
-				</GradientButton>
+				<Button type="submit" disabled={isSubmitting} className="w-full">
+					{isSubmitting ? <span className="animate-pulse">Submitting...</span> : <span>Submit</span>}
+				</Button>
 			</motion.div>
 		</motion.form>
 	);

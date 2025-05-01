@@ -244,17 +244,11 @@ export default function WebDevelopment() {
 								No unnecessary fluff. Just fast, scalable, and strategic digital solutions.
 							</p>
 							<div className="flex flex-wrap gap-4">
-								<Button
-									href="/contact"
-									className="grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:scale-105 transition-transform duration-300 text-base md:text-lg px-6 py-3 rounded-lg"
-								>
+								<Button href="/contact" variant="primary">
 									Start Your Project
 									<span className="text-[var(--c-accent)] ml-2">→</span>
 								</Button>
-								<Button
-									href="#services"
-									className="bg-black bg-opacity-30 text-white hover:bg-opacity-50 font-mono transition-all duration-300 text-base md:text-lg px-6 py-3 rounded-lg"
-								>
+								<Button href="#services" variant="secondary">
 									Explore Services
 								</Button>
 							</div>
@@ -690,10 +684,7 @@ export default function WebDevelopment() {
 							your vision to life.
 						</p>
 						<div className="mt-8">
-							<Button
-								href="/contact"
-								className="grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:scale-105 transition-transform duration-300 text-lg px-10 py-4 rounded-lg"
-							>
+							<Button href="/contact" variant="primary">
 								Get in Touch
 								<span className="text-[var(--c-accent)] ml-2">→</span>
 							</Button>

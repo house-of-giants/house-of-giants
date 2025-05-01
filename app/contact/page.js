@@ -15,80 +15,79 @@ import Link from 'next/link';
 import fetchJson from '@/utils/fetchJson';
 import Testimonials from '@/components/Testimonials/Testimonials';
 import { ContactSchema } from '@/components/Schema/ContactSchema';
+import { Button } from '@/components/Button/Button';
+import { sendGTMEvent } from '@next/third-parties/google';
 
-// Simple Contact Form Component optimized for the hero section
-const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting, formSource }) => (
-	<form
-		ref={formEl}
-		onSubmit={handleSubmit(onSubmit, () => {
-			sendGTMEvent('contact_form_submission', {
-				form_type: 'quick_contact',
-				form_source: formSource,
-			});
-		})}
-		className="space-y-4"
-	>
-		<div>
-			<input
-				type="text"
-				id="name"
-				placeholder="Your Name"
-				className={`w-full p-4 bg-black bg-opacity-50 border ${
-					errors.name ? 'border-red-500' : 'border-gray-800'
-				} rounded-lg focus:border-[var(--c-accent)] transition-all`}
-				{...register('name', { required: 'Name is required' })}
-			/>
-			{errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
-		</div>
+const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting, formSource }) => {
+	const handleFormSubmit = (formData) => {
+		sendGTMEvent('event', 'contact_form_submission', {
+			form_type: 'quick_contact',
+			form_source: formSource,
+		});
 
-		<div>
-			<input
-				type="email"
-				id="email"
-				placeholder="Your Email"
-				className={`w-full p-4 bg-black bg-opacity-50 border ${
-					errors.email ? 'border-red-500' : 'border-gray-800'
-				} rounded-lg focus:border-[var(--c-accent)] transition-all`}
-				{...register('email', {
-					required: 'Email is required',
-					pattern: {
-						value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-						message: 'Invalid email address',
-					},
-				})}
-			/>
-			{errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
-		</div>
+		return onSubmit(formData);
+	};
 
-		<div>
-			<textarea
-				id="desc"
-				placeholder="Tell us about your project..."
-				rows="3"
-				className={`w-full p-4 bg-black bg-opacity-50 border ${
-					errors.desc ? 'border-red-500' : 'border-gray-800'
-				} rounded-lg focus:border-[var(--c-accent)] transition-all`}
-				{...register('desc', { required: 'Project description is required' })}
-			></textarea>
-			{errors.desc && <p className="text-red-500 text-sm mt-1">{errors.desc.message}</p>}
-		</div>
+	return (
+		<form ref={formEl} onSubmit={handleSubmit(handleFormSubmit)} className="space-y-4">
+			<div>
+				<input
+					type="text"
+					id="name"
+					placeholder="Your Name"
+					className={`w-full p-4 bg-black bg-opacity-50 border ${
+						errors.name ? 'border-red-500' : 'border-gray-800'
+					} rounded-lg focus:border-[var(--c-accent)] transition-all`}
+					{...register('name', { required: 'Name is required' })}
+				/>
+				{errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+			</div>
 
-		<button
-			type="submit"
-			disabled={isSubmitting}
-			className="w-full grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:scale-105 transition-transform duration-300 text-base px-6 py-4 rounded-lg flex items-center justify-center"
-		>
-			{isSubmitting ? (
-				<span className="animate-pulse">Sending...</span>
-			) : (
-				<>
-					Let's Talk About Your Project
-					<span className="text-[var(--c-accent)] ml-2">→</span>
-				</>
-			)}
-		</button>
-	</form>
-);
+			<div>
+				<input
+					type="email"
+					id="email"
+					placeholder="Your Email"
+					className={`w-full p-4 bg-black bg-opacity-50 border ${
+						errors.email ? 'border-red-500' : 'border-gray-800'
+					} rounded-lg focus:border-[var(--c-accent)] transition-all`}
+					{...register('email', {
+						required: 'Email is required',
+						pattern: {
+							value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+							message: 'Invalid email address',
+						},
+					})}
+				/>
+				{errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+			</div>
+
+			<div>
+				<textarea
+					id="desc"
+					placeholder="Tell us about your project..."
+					rows="3"
+					className={`w-full p-4 bg-black bg-opacity-50 border ${
+						errors.desc ? 'border-red-500' : 'border-gray-800'
+					} rounded-lg focus:border-[var(--c-accent)] transition-all`}
+					{...register('desc', { required: 'Project description is required' })}
+				></textarea>
+				{errors.desc && <p className="text-red-500 text-sm mt-1">{errors.desc.message}</p>}
+			</div>
+
+			<Button type="submit" disabled={isSubmitting} variant="primary" className="w-full">
+				{isSubmitting ? (
+					<span className="animate-pulse">Sending...</span>
+				) : (
+					<>
+						Let's Talk About Your Project
+						<span className="text-[var(--c-accent)] ml-2">→</span>
+					</>
+				)}
+			</Button>
+		</form>
+	);
+};
 
 // FAQ Item Component
 const FaqItem = ({ question, answer, index }) => {
@@ -102,12 +101,16 @@ const FaqItem = ({ question, answer, index }) => {
 			viewport={{ once: true }}
 			transition={{ duration: 0.3, delay: index * 0.1 }}
 		>
-			<button className="w-full py-5 flex justify-between items-center text-left" onClick={() => setIsOpen(!isOpen)}>
+			<Button
+				variant="text"
+				className="w-full py-5 flex justify-between items-center text-left"
+				onClick={() => setIsOpen(!isOpen)}
+			>
 				<h3 className="text-xl font-bold">{question}</h3>
 				<div className={`text-[var(--c-accent)] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
 					↓
 				</div>
-			</button>
+			</Button>
 			<AnimatePresence>
 				{isOpen && (
 					<motion.div
@@ -449,53 +452,82 @@ export default function ContactPage() {
 
 						<div className="space-y-6">
 							<motion.div
-								className="bg-black bg-opacity-30 p-6 rounded-xl border border-gray-800 sticky top-8"
+								className="bg-black bg-opacity-30 p-6 rounded-xl border border-gray-800 "
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ duration: 0.5 }}
 							>
-								<h3 className="text-xl font-bold mb-4">Need Immediate Help?</h3>
+								<h3 className="font-serif text-2xl font-bold mb-4 relative">
+									<span className="-grad-header">Need Immediate Help?</span>
+								</h3>
 								<div className="space-y-4 mb-6">
 									<div className="flex items-center gap-3">
-										<div className="text-[var(--c-accent)]">⏱️</div>
-										<span className="text-moon-rock">Mon-Fri: 9am-6pm MT</span>
+										<div className="w-8 h-8 grad-border rounded-lg flex items-center justify-center">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												className="h-4 w-4 text-[var(--c-neon-sky)]"
+												viewBox="0 0 20 20"
+												fill="currentColor"
+											>
+												<path
+													fillRule="evenodd"
+													d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+													clipRule="evenodd"
+												/>
+											</svg>
+										</div>
+										<span className="font-serif text-[var(--c-moon-rock)]">Mon-Fri: 9am-6pm MT</span>
 									</div>
 									<div className="flex items-center gap-3">
-										<div className="text-[var(--c-accent)]">⚡</div>
-										<span className="text-moon-rock">Average response time: 4 hours</span>
+										<div className="w-8 h-8 grad-border rounded-lg flex items-center justify-center">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												className="h-4 w-4 text-[var(--c-neon-sky)]"
+												viewBox="0 0 20 20"
+												fill="currentColor"
+											>
+												<path
+													fillRule="evenodd"
+													d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+													clipRule="evenodd"
+												/>
+											</svg>
+										</div>
+										<span className="font-serif text-[var(--c-moon-rock)]">Average response time: 4 hours</span>
 									</div>
 								</div>
 
-								<Link href="#contact-detailed" className="block">
-									<button className="w-full bg-black bg-opacity-50 text-white hover:bg-opacity-70 font-mono transition-all duration-300 text-base px-6 py-3 rounded-lg mb-4">
+								<Link href="#contact-detailed">
+									<Button variant="secondary" className="w-full mb-4">
 										Schedule a Consultation
-									</button>
+									</Button>
 								</Link>
 
 								<div className="text-center">
-									<p className="text-sm text-moon-rock mb-0">or</p>
+									<p className="font-serif text-sm text-[var(--c-moon-rock)] mb-0">or</p>
 								</div>
 
-								<a
+								<Button
 									href="tel:+13032190697"
-									className="block w-full text-center bg-[var(--c-primary-dark)] bg-opacity-10 hover:bg-opacity-20 border border-[var(--c-accent)] text-[var(--c-accent)] font-mono transition-all duration-300 text-base px-6 py-3 rounded-lg mt-4"
+									variant="text"
+									className="block w-full text-center border border-[var(--c-neon-sky)] text-[var(--c-white)] hover:text-[var(--c-neon-sky)] py-3 mt-4 font-mono"
 								>
 									Call +1 (303) 219-0697
-								</a>
+								</Button>
 							</motion.div>
 
 							<motion.div
-								className="bg-gradient-to-br from-purple-900 to-indigo-900 p-6 rounded-xl border border-indigo-800 relative overflow-hidden"
+								className="grad-border p-8 rounded-xl relative overflow-hidden"
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ duration: 0.5, delay: 0.1 }}
 							>
-								<div className="absolute top-0 right-0 w-32 h-32 bg-[var(--c-accent)] opacity-20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
-
 								<div className="relative z-10">
-									<h3 className="text-xl font-bold mb-4">Follow Us</h3>
+									<h3 className="font-serif text-2xl font-bold mb-6 relative">
+										<span className="-grad-header">Follow Us</span>
+									</h3>
 									<Socials theme="dark" />
 								</div>
 							</motion.div>
@@ -566,62 +598,75 @@ export default function ContactPage() {
 
 						<div className="flex flex-col space-y-8">
 							<motion.div
-								className="bg-black bg-opacity-30 p-6 rounded-xl border border-gray-800"
+								className="bg-black bg-opacity-30 p-8 rounded-xl border border-gray-800"
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ duration: 0.5 }}
 							>
-								<h3 className="text-xl font-bold mb-4">Why Work With Us</h3>
-								<div className="space-y-3">
-									{benefits.slice(0, 3).map((benefit, index) => (
-										<div key={index} className="flex items-start gap-3">
-											<div className="text-2xl text-[var(--c-accent)]">{benefit.icon}</div>
-											<div>
-												<h4 className="font-bold">{benefit.title}</h4>
-												<p className="text-sm text-moon-rock">{benefit.description}</p>
-											</div>
+								<h3 className="font-serif text-2xl font-bold mb-6 relative">
+									<span className="-grad-header">Our Process</span>
+								</h3>
+								<div className="space-y-5">
+									<div className="flex items-start pb-4">
+										<div className="flex-shrink-0 w-12 h-12 grad-border rounded-lg flex items-center justify-center mr-4 font-mono text-lg font-bold text-[var(--c-white)]">
+											01
 										</div>
-									))}
+										<div>
+											<p className="font-serif text-base text-[var(--c-white)] mb-0">
+												Initial consultation & discovery
+											</p>
+										</div>
+									</div>
+									<div className="flex items-start pb-4">
+										<div className="flex-shrink-0 w-12 h-12 grad-border rounded-lg flex items-center justify-center mr-4 font-mono text-lg font-bold text-[var(--c-white)]">
+											02
+										</div>
+										<div>
+											<p className="font-serif text-base text-[var(--c-white)] mb-0">Strategic planning & proposal</p>
+										</div>
+									</div>
+									<div className="flex items-start pb-4">
+										<div className="flex-shrink-0 w-12 h-12 grad-border rounded-lg flex items-center justify-center mr-4 font-mono text-lg font-bold text-[var(--c-white)]">
+											03
+										</div>
+										<div>
+											<p className="font-serif text-base text-[var(--c-white)] mb-0">Collaborative development</p>
+										</div>
+									</div>
+									<div className="flex items-start">
+										<div className="flex-shrink-0 w-12 h-12 grad-border rounded-lg flex items-center justify-center mr-4 font-mono text-lg font-bold text-[var(--c-white)]">
+											04
+										</div>
+										<div>
+											<p className="font-serif text-base text-[var(--c-white)] mb-0">Launch & ongoing support</p>
+										</div>
+									</div>
 								</div>
 							</motion.div>
 
 							<motion.div
-								className="bg-gradient-to-r from-purple-900 to-indigo-900 p-6 rounded-xl border border-indigo-800 relative overflow-hidden"
+								className="grad-border p-8 rounded-xl relative overflow-hidden"
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ duration: 0.5, delay: 0.1 }}
 							>
-								<div className="absolute top-0 right-0 w-32 h-32 bg-[var(--c-accent)] opacity-20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+								<div className="absolute top-0 right-0 w-40 h-40 bg-[var(--c-neon-sky)] opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
 								<div className="relative z-10">
-									<h3 className="text-xl font-bold mb-4">Our Process</h3>
-									<div className="space-y-3">
-										<div className="flex items-center gap-3">
-											<div className="w-6 h-6 rounded-full bg-[var(--c-accent)] bg-opacity-20 flex items-center justify-center text-[var(--c-accent)] text-xs font-bold">
-												1
+									<h3 className="font-serif text-2xl font-bold mb-6 relative">
+										<span className="-grad-header">Why Work With Us</span>
+									</h3>
+									<div className="space-y-6">
+										{benefits.slice(0, 3).map((benefit, index) => (
+											<div key={index} className="relative pl-6 border-l-2 border-[var(--c-neon-sky)]">
+												<h4 className="font-mono text-lg font-bold text-[var(--c-white)] mb-1">{benefit.title}</h4>
+												<p className="font-serif text-sm text-[var(--c-moon-rock)] leading-relaxed">
+													{benefit.description}
+												</p>
 											</div>
-											<span>Initial consultation & discovery</span>
-										</div>
-										<div className="flex items-center gap-3">
-											<div className="w-6 h-6 rounded-full bg-[var(--c-accent)] bg-opacity-20 flex items-center justify-center text-[var(--c-accent)] text-xs font-bold">
-												2
-											</div>
-											<span>Strategic planning & proposal</span>
-										</div>
-										<div className="flex items-center gap-3">
-											<div className="w-6 h-6 rounded-full bg-[var(--c-accent)] bg-opacity-20 flex items-center justify-center text-[var(--c-accent)] text-xs font-bold">
-												3
-											</div>
-											<span>Collaborative development</span>
-										</div>
-										<div className="flex items-center gap-3">
-											<div className="w-6 h-6 rounded-full bg-[var(--c-accent)] bg-opacity-20 flex items-center justify-center text-[var(--c-accent)] text-xs font-bold">
-												4
-											</div>
-											<span>Launch & ongoing support</span>
-										</div>
+										))}
 									</div>
 								</div>
 							</motion.div>

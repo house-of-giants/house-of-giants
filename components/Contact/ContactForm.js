@@ -11,69 +11,79 @@ import { Button } from '../Button/Button';
 import { sendGTMEvent } from '@next/third-parties/google';
 
 // Simple Contact Form Component for homepage
-const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting, formSource }) => (
-	<form ref={formEl} onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-		<div>
-			<input
-				type="text"
-				id="name"
-				placeholder="Your Name"
-				className={`w-full p-4 bg-black bg-opacity-50 border ${
-					errors.name ? 'border-red-500' : 'border-gray-800'
-				} rounded-lg focus:border-[var(--c-accent)] transition-all`}
-				{...register('name', { required: 'Name is required' })}
-			/>
-			{errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
-		</div>
+const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting, formSource }) => {
+	// Create a wrapper for the onSubmit function that handles form tracking
+	const handleFormSubmit = (formData) => {
+		// Track the event with sendGTMEvent
+		sendGTMEvent('event', 'contact_form_submission', {
+			form_type: 'quick_contact',
+			form_source: formSource || 'homepage',
+		});
 
-		<div>
-			<input
-				type="email"
-				id="email"
-				placeholder="Your Email"
-				className={`w-full p-4 bg-black bg-opacity-50 border ${
-					errors.email ? 'border-red-500' : 'border-gray-800'
-				} rounded-lg focus:border-[var(--c-accent)] transition-all`}
-				{...register('email', {
-					required: 'Email is required',
-					pattern: {
-						value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-						message: 'Invalid email address',
-					},
-				})}
-			/>
-			{errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
-		</div>
+		// Call the original onSubmit function
+		return onSubmit(formData);
+	};
 
-		<div>
-			<textarea
-				id="desc"
-				placeholder="Tell us about your project..."
-				rows="3"
-				className={`w-full p-4 bg-black bg-opacity-50 border ${
-					errors.desc ? 'border-red-500' : 'border-gray-800'
-				} rounded-lg focus:border-[var(--c-accent)] transition-all`}
-				{...register('desc', { required: 'Project description is required' })}
-			></textarea>
-			{errors.desc && <p className="text-red-500 text-sm mt-1">{errors.desc.message}</p>}
-		</div>
+	return (
+		<form ref={formEl} onSubmit={handleSubmit(handleFormSubmit)} className="space-y-4">
+			<div>
+				<input
+					type="text"
+					id="name"
+					placeholder="Your Name"
+					className={`w-full p-4 bg-black bg-opacity-50 border ${
+						errors.name ? 'border-red-500' : 'border-gray-800'
+					} rounded-lg focus:border-[var(--c-accent)] transition-all`}
+					{...register('name', { required: 'Name is required' })}
+				/>
+				{errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+			</div>
 
-		<button
-			type="submit"
-			disabled={isSubmitting}
-			className="w-full grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:scale-105 transition-transform duration-300 text-base px-6 py-4 rounded-lg flex items-center justify-center"
-		>
-			{isSubmitting ? (
-				<span className="animate-pulse">Sending...</span>
-			) : (
-				<>
-					Let's Talk About Your Project
-					<span className="text-[var(--c-accent)] ml-2">→</span>
-				</>
-			)}
-		</button>
-	</form>
-);
+			<div>
+				<input
+					type="email"
+					id="email"
+					placeholder="Your Email"
+					className={`w-full p-4 bg-black bg-opacity-50 border ${
+						errors.email ? 'border-red-500' : 'border-gray-800'
+					} rounded-lg focus:border-[var(--c-accent)] transition-all`}
+					{...register('email', {
+						required: 'Email is required',
+						pattern: {
+							value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+							message: 'Invalid email address',
+						},
+					})}
+				/>
+				{errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+			</div>
+
+			<div>
+				<textarea
+					id="desc"
+					placeholder="Tell us about your project..."
+					rows="3"
+					className={`w-full p-4 bg-black bg-opacity-50 border ${
+						errors.desc ? 'border-red-500' : 'border-gray-800'
+					} rounded-lg focus:border-[var(--c-accent)] transition-all`}
+					{...register('desc', { required: 'Project description is required' })}
+				></textarea>
+				{errors.desc && <p className="text-red-500 text-sm mt-1">{errors.desc.message}</p>}
+			</div>
+
+			<Button type="submit" disabled={isSubmitting} variant="primary" className="w-full">
+				{isSubmitting ? (
+					<span className="animate-pulse">Sending...</span>
+				) : (
+					<>
+						Let's Talk About Your Project
+						<span className="text-[var(--c-accent)] ml-2">→</span>
+					</>
+				)}
+			</Button>
+		</form>
+	);
+};
 
 const ContactForm = ({ title, subtitle, accent, description }) => {
 	const [contactSuccess, setContactSuccess] = useState(null);
@@ -105,10 +115,6 @@ const ContactForm = ({ title, subtitle, accent, description }) => {
 			if (status === 200) {
 				formEl.current.reset();
 				setContactSuccess(true);
-				sendGTMEvent('contact_form_submission', {
-					form_type: 'quick_contact',
-					form_source: formSource,
-				});
 			}
 		} catch (error) {
 			console.error('Error submitting form:', error);
@@ -147,15 +153,14 @@ const ContactForm = ({ title, subtitle, accent, description }) => {
 										onSubmit={onSubmit}
 										errors={errors}
 										isSubmitting={isSubmitting}
+										formSource="homepage"
 									/>
 									<div className="mt-6 pt-6 border-t border-gray-800 text-center">
 										<p className="text-moon-rock mb-4">Need to share more details about your project?</p>
-										<Link href="/contact#contact-detailed" passHref>
-											<Button className="inline-block bg-black bg-opacity-40 text-white hover:bg-opacity-60 font-mono transition-all duration-300 text-base px-6 py-3 rounded-lg">
-												Go to Detailed Project Form
-												<span className="text-[var(--c-accent)] ml-2">→</span>
-											</Button>
-										</Link>
+										<Button href="/contact#contact-detailed" variant="secondary" className="w-full">
+											Go to Detailed Project Form
+											<span className="text-[var(--c-accent)] ml-2">→</span>
+										</Button>
 									</div>
 								</div>
 							</motion.div>
@@ -168,12 +173,10 @@ const ContactForm = ({ title, subtitle, accent, description }) => {
 							>
 								<SuccessMessage />
 								<div className="mt-8 text-center">
-									<Link href="/contact" passHref>
-										<Button className="inline-block grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:scale-105 transition-transform duration-300 text-base px-6 py-3 rounded-lg">
-											View All Contact Options
-											<span className="text-[var(--c-accent)] ml-2">→</span>
-										</Button>
-									</Link>
+									<Button href="/contact" variant="primary">
+										View All Contact Options
+										<span className="text-[var(--c-accent)] ml-2">→</span>
+									</Button>
 								</div>
 							</motion.div>
 						)}

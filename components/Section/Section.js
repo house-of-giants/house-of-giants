@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useSection } from '../SectionContext/SectionContext';
 import { useInView } from 'react-intersection-observer';
 
-export const Section = ({ count, title, children, id }) => {
+export const Section = ({ count, title, children, id, className }) => {
 	try {
 		const { setActiveSection } = useSection();
 		const { ref, inView } = useInView({
@@ -21,7 +21,7 @@ export const Section = ({ count, title, children, id }) => {
 			<section
 				id={id}
 				ref={ref}
-				className="relative"
+				className={`relative ${className}`}
 				style={{
 					scrollMarginTop: 'calc( var(--header-height) + 32px)', // 32px is the section bar height
 				}}

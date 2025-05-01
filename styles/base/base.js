@@ -19,6 +19,8 @@ export const Base = css`
 		--c-moon-rock: #ececec;
 		--c-neon-sky: #00ffe0;
 		--c-cyber-green: #c1ff1d;
+		--c-cyber-purple: #9b4dff;
+		--c-cyber-pink: #ff2a6d;
 		--c-white: #fefefe;
 		--c-accent: var(--c-cyber-green);
 

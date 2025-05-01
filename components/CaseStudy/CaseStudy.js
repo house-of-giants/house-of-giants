@@ -90,11 +90,7 @@ export const CaseStudy = ({
 						<h2 className="text-[clamp(2rem,6vw,6rem)] text-white text-center font-serif">{subtitle}</h2>
 						{liveUrl && (
 							<div className="flex gap-4">
-								<Button
-									href={liveUrl}
-									target="_blank"
-									className="grad-border text-white px-4 py-2 hover:scale-110 transition-transform duration-300"
-								>
+								<Button href={liveUrl} target="_blank" variant="primary">
 									Visit live site
 									<span className="text-cyber-green ml-2">→</span>
 								</Button>

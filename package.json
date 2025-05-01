@@ -8,6 +8,7 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"@heroicons/react": "^2.2.0",
 		"@next/third-parties": "^15.3.1",
 		"@react-three/drei": "^9.121.5",
 		"@react-three/fiber": "^8.17.14",

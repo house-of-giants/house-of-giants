@@ -9,7 +9,6 @@ import { ServiceCard } from '@/components/Services/ServiceCard';
 import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
 import { SectionSeparator } from '@/components/SectionSeparator/SectionSeparator';
 import ContactForm from '@/components/Contact/ContactForm';
-import CanonicalLink from '@/components/SEO/CanonicalLink';
 import Image from 'next/image';
 import BlurGifImage from '@/components/Image/BlurGifImage';
 
@@ -45,17 +44,11 @@ export const IndustryHero = ({ industry, headline, subheadline, description, her
 							</h1>
 							<p className="text-lg md:text-xl text-moon-rock leading-relaxed mb-8 max-w-xl">{description}</p>
 							<div className="flex flex-wrap gap-4">
-								<Button
-									href="/contact"
-									className="grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:scale-105 transition-transform duration-300 text-base md:text-lg px-6 py-3 rounded-lg"
-								>
+								<Button href="/contact" variant="primary">
 									Start Your Project
 									<span className={`ml-2`}>→</span>
 								</Button>
-								<Button
-									href="#services"
-									className="bg-black bg-opacity-30 text-white hover:bg-opacity-50 font-mono transition-all duration-300 text-base md:text-lg px-6 py-3 rounded-lg"
-								>
+								<Button href="#services" variant="secondary">
 									Explore Services
 								</Button>
 							</div>
@@ -165,10 +158,7 @@ export const IndustryCaseStudies = ({ industry, title, subtitle, accent, caseStu
 									</span>
 									<h3 className="text-2xl md:text-4xl font-bold mt-2 mb-3">{caseStudies[0].title}</h3>
 									<p className="text-moon-rock/90 text-base md:text-lg max-w-2xl mb-4">{caseStudies[0].description}</p>
-									<Button
-										href={caseStudies[0].slug}
-										className="grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:scale-105 transition-transform duration-300 text-base px-6 py-3 rounded-lg mt-4"
-									>
+									<Button href={caseStudies[0].slug} variant="primary">
 										View Case Study
 									</Button>
 								</div>
@@ -202,7 +192,7 @@ export const IndustryCaseStudies = ({ industry, title, subtitle, accent, caseStu
 											</span>
 											<h3 className="text-xl md:text-2xl font-bold mt-2 mb-2">{item.title}</h3>
 											<p className="text-moon-rock/90 text-base max-w-md mb-3">{item.description}</p>
-											<Button href={item.slug} className={`${accentColorClass} hover:underline text-sm font-mono`}>
+											<Button href={item.slug} variant="text" className={`${accentColorClass}`}>
 												View Details →
 											</Button>
 										</div>

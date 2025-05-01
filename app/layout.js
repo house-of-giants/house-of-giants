@@ -101,7 +101,7 @@ export default function RootLayout({ children }) {
 					<ContactFooter />
 				</StyledComponentsRegistry>
 			</body>
-			<GoogleTagManager gtmId="AW-16993681812" />
+			<GoogleTagManager gtmId="GTM-PQCFTVXH" />
 		</html>
 	);
 }

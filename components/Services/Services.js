@@ -141,10 +141,7 @@ export const Services = () => {
 								We build websites for restaurants that actually work—fast, scalable, and made for multi-location growth.
 							</p>
 							<div className="mt-8">
-								<Button
-									href="/restaurant-websites"
-									className="grad-border bg-[var(--c-primary-dark)] text-white font-mono hover:scale-105 transition-transform duration-300 text-lg px-10 py-4 rounded-lg"
-								>
+								<Button href="/restaurant-websites" variant="primary">
 									Got a menu? Make it sell itself.
 									<span className="text-[var(--c-accent)] ml-2">→</span>
 								</Button>
