@@ -1,9 +1,32 @@
 import { PricingPage } from '@/components/Templates/PricingTemplate';
+import siteMetadata from '@/data/siteMetadata';
 
 export const metadata = {
-	title: 'House of Giants | Agency Pricing',
+	title: 'Website & Web App Pricing | House of Giants',
 	description:
-		'Design forward, tech-agnostic websites built to convert, scale, and look like you actually give a s**t.',
+		'Transparent pricing for custom websites and web applications. No templates, no fluff—just fast, scalable, design-forward builds made to grow with you.',
+	openGraph: {
+		title: 'Website & Web App Pricing | House of Giants',
+		description:
+			'See pricing for House of Giants’ custom websites and web applications. Built for growth, performance, and conversion—without bloated agency overhead.',
+		url: `${siteMetadata.siteUrl}/pricing`,
+		type: 'website',
+		images: [
+			{
+				url: `${siteMetadata.siteUrl}/api/og?title=${encodeURIComponent('Website & Web App Pricing')}`,
+				width: 1200,
+				height: 630,
+				alt: 'House of Giants Website and Web App Pricing',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Website & Web App Pricing | House of Giants',
+		description:
+			'Transparent pricing for custom websites and scalable web apps. Design-first, performance-ready, and built to last.',
+		images: [`${siteMetadata.siteUrl}/api/og?title=${encodeURIComponent('Website & Web App Pricing')}`],
+	},
 };
 
 export default function Page() {
