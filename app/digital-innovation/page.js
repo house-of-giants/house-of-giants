@@ -317,7 +317,7 @@ export default function DigitalInnovation() {
 
 					<div className="mt-16">
 						<motion.div
-							className="bg-gradient-to-r from-purple-900 to-indigo-900 rounded-xl border border-indigo-800 relative overflow-hidden"
+							className="relative py-14 px-10 rounded-2xl bg-gradient-to-br from-deep-plum/60 to-primary-dark overflow-hidden"
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
@@ -329,11 +329,11 @@ export default function DigitalInnovation() {
 
 							{/* Header */}
 							<div className="p-10 pb-6 relative z-10">
-								<h3 className="text-3xl font-bold mb-4 relative z-10">Our Innovation Approach</h3>
+								<h3 className="text-3xl font-bold mb-4 relative z-10">Innovation That Actually Solves Something</h3>
 								<div className="w-24 h-1 bg-[var(--c-accent)] mb-6"></div>
 								<p className="mb-8 text-lg text-moon-rock leading-relaxed max-w-4xl">
-									We don't chase technology for its own sake. Our strategic approach ensures we're solving real business
-									challenges with the right tools, not just implementing the latest shiny tech.
+									We don&apos;t chase tech trends. We solve real business problems with strategic tools, modular
+									thinking, and flexible systems designed to grow with you.
 								</p>
 							</div>
 
@@ -343,8 +343,7 @@ export default function DigitalInnovation() {
 								<div className="bg-black bg-opacity-20 p-6 rounded-xl border border-gray-800">
 									<h4 className="text-2xl font-bold mb-4 text-[var(--c-accent)]">Problem-First Thinking</h4>
 									<p className="text-base text-moon-rock leading-relaxed mb-6">
-										We don't start with technology – we start with your business problem. Our strategic approach ensures
-										we're solving real challenges, not just implementing the latest shiny tech.
+										We start with your challenge—not the tech stack.
 									</p>
 
 									<div className="space-y-4">
@@ -355,9 +354,9 @@ export default function DigitalInnovation() {
 											viewport={{ once: true }}
 											transition={{ duration: 0.3, delay: 0.1 }}
 										>
-											<h5 className="font-bold text-lg mb-2">Strategic Problem Analysis</h5>
+											<h5 className="font-bold text-lg mb-2">Strategic Analysis</h5>
 											<p className="text-sm text-moon-rock leading-relaxed">
-												Deep-diving into your business challenge to identify core issues
+												Dig into the core of the business issue before touching code.
 											</p>
 										</motion.div>
 
@@ -368,9 +367,9 @@ export default function DigitalInnovation() {
 											viewport={{ once: true }}
 											transition={{ duration: 0.3, delay: 0.2 }}
 										>
-											<h5 className="font-bold text-lg mb-2">Multi-Solution Exploration</h5>
+											<h5 className="font-bold text-lg mb-2">The Many Paths Strategy</h5>
 											<p className="text-sm text-moon-rock leading-relaxed">
-												Considering all possible approaches before committing to a path
+												Consider multiple directions before choosing the smartest build.
 											</p>
 										</motion.div>
 
@@ -393,8 +392,7 @@ export default function DigitalInnovation() {
 								<div className="bg-black bg-opacity-20 p-6 rounded-xl border border-gray-800">
 									<h4 className="text-2xl font-bold mb-4 text-[var(--c-accent)]">Future-Proof Implementation</h4>
 									<p className="text-base text-moon-rock leading-relaxed mb-6">
-										We build with tomorrow in mind. Our innovative solutions are designed to evolve with your business,
-										preventing the need for complete rebuilds when technology changes.
+										We build excellent architecture so you&apos;re not rebuilding a year from now.
 									</p>
 
 									<div className="space-y-4">
@@ -407,7 +405,7 @@ export default function DigitalInnovation() {
 										>
 											<h5 className="font-bold text-lg mb-2">Modular Architecture</h5>
 											<p className="text-sm text-moon-rock leading-relaxed">
-												Components that can be updated independently to adapt to changing needs
+												Update what matters without breaking what doesn&apos;t.
 											</p>
 										</motion.div>
 
@@ -420,7 +418,7 @@ export default function DigitalInnovation() {
 										>
 											<h5 className="font-bold text-lg mb-2">API-First Approach</h5>
 											<p className="text-sm text-moon-rock leading-relaxed">
-												Flexible interfaces designed for future integration and expansion
+												Integrations built to flex as your ecosystem grows.
 											</p>
 										</motion.div>
 
@@ -431,9 +429,9 @@ export default function DigitalInnovation() {
 											viewport={{ once: true }}
 											transition={{ duration: 0.3, delay: 0.3 }}
 										>
-											<h5 className="font-bold text-lg mb-2">Continuous Innovation Pipeline</h5>
+											<h5 className="font-bold text-lg mb-2">Iterative Delivery</h5>
 											<p className="text-sm text-moon-rock leading-relaxed">
-												Ongoing improvement and iteration based on real-world usage
+												Launch, learn, and improve without blowing up the foundation.
 											</p>
 										</motion.div>
 									</div>

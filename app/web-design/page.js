@@ -187,14 +187,12 @@ export default function WebDesign() {
 					{/* Web Design Philosophy - Updated to match web development philosophy layout */}
 					<div className="mt-16">
 						<motion.div
-							className="bg-gradient-to-r from-purple-900 to-indigo-900 p-8 rounded-xl border border-indigo-800 relative overflow-hidden"
+							className="relative py-14 px-10 rounded-2xl bg-gradient-to-br from-deep-plum/60 to-primary-dark overflow-hidden"
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.5 }}
 						>
-							<div className="absolute top-0 right-0 w-64 h-64 bg-[var(--c-accent)] opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-
 							<h3 className="text-3xl font-bold mb-6 relative z-10">Our Design Philosophy</h3>
 							<p className="mb-8 text-lg text-moon-rock leading-relaxed max-w-4xl relative z-10">
 								At House of Giants, we believe design is more than aesthetics—it's a strategic tool that solves real

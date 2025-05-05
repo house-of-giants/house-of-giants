@@ -7,7 +7,7 @@ export const SectionSeparator = () => {
 		<div className="relative w-full h-8 py-8 bg-[--c-primary-dark] overflow-hidden">
 			<div className="absolute inset-0 flex items-center justify-center">
 				<motion.div
-					className="w-full h-[1px] bg-gradient-to-r  from-[#ff2a6d] via-[#9b4dff] to-[#00ffe0] opacity-20"
+					className="w-full h-[1px] bg-gradient-to-r  from-cyber-pink via-cyber-purple to-cyber-blue opacity-20"
 					animate={{
 						backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
 					}}

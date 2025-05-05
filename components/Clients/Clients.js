@@ -52,9 +52,7 @@ export const Clients = () => {
 					))}
 				</div>
 
-				<div className="mt-[var(--section-spacing-top)]">
-					<Testimonials />
-				</div>
+				<Testimonials noHeader />
 			</Container>
 		</Section>
 	);

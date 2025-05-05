@@ -10,10 +10,7 @@ import ContactForm from '@/components/Contact/ContactForm';
 import { SectionSeparator } from '@/components/SectionSeparator/SectionSeparator';
 import { work } from '@/data/work';
 import CanonicalLink from '@/components/SEO/CanonicalLink';
-import { Section } from '@/components/Section/Section';
-import { Container } from '@/components/Container/Container';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/Button/Button';
+import { PricingCTA } from '@/components/PricingCTA/PricingCTA';
 
 export default function Page() {
 	return (
@@ -25,13 +22,15 @@ export default function Page() {
 			</div>
 			<SectionSeparator />
 			<Services />
-
 			<SectionSeparator />
 			<Work items={work} />
 			<SectionSeparator />
 			<Clients />
 			<SectionSeparator />
 			<Impact />
+			<SectionSeparator />
+			<PricingCTA />
+			<SectionSeparator />
 			<ContactForm formSource="Homepage" />
 		</main>
 	);

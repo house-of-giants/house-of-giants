@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 // Philosophy Card Component
 const PhilosophyCard = ({ title, description, delay = 0 }) => (
 	<motion.div
-		className="relative p-6 bg-gradient-to-br from-[rgba(22,22,22,0.5)] to-[rgba(58,41,86,0.7)] rounded-xl border border-gray-800 hover:border-[var(--c-accent)] overflow-hidden group transition-all duration-300"
+		className="relative p-6 rounded-xl border border-gray-800 hover:border-[var(--c-accent)] overflow-hidden group transition-all duration-300"
 		initial={{ opacity: 0, scale: 0.95 }}
 		whileInView={{ opacity: 1, scale: 1 }}
 		viewport={{ once: true }}

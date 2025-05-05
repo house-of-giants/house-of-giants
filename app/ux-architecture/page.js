@@ -465,7 +465,7 @@ export default function UXArchitecture() {
 					{/* UX Philosophy */}
 					<div className="mt-16">
 						<motion.div
-							className="bg-gradient-to-r from-purple-900 to-indigo-900 p-8 rounded-xl border border-indigo-800 relative overflow-hidden"
+							className="relative py-14 px-10 rounded-2xl bg-gradient-to-br from-deep-plum/60 to-primary-dark overflow-hidden"
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
@@ -526,7 +526,7 @@ export default function UXArchitecture() {
 
 					<div className="mt-24">
 						<motion.div
-							className="bg-gradient-to-br from-indigo-900 to-purple-900 p-8 rounded-xl border border-indigo-800 relative overflow-hidden"
+							className="relative py-14 px-10 rounded-2xl bg-gradient-to-br from-deep-plum/60 to-primary-dark overflow-hidden"
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
@@ -537,7 +537,7 @@ export default function UXArchitecture() {
 							<h3 className="text-3xl font-bold mb-6 relative z-10">The Impact of Good UX</h3>
 
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 relative z-10">
-								<div className="bg-black bg-opacity-40 rounded-lg p-6 border border-gray-800">
+								<div className="bg-black bg-opacity-40 rounded-lg p-6 border border-ui-border/20">
 									<h4 className="font-bold mb-4 text-xl">Before UX Architecture</h4>
 									<ul className="space-y-3 text-lg text-moon-rock leading-relaxed">
 										<li className="flex items-start">
@@ -562,7 +562,7 @@ export default function UXArchitecture() {
 										</li>
 									</ul>
 								</div>
-								<div className="bg-black bg-opacity-40 rounded-lg p-6 border border-indigo-800">
+								<div className="bg-black bg-opacity-40 rounded-lg p-6 border border-ui-border/20">
 									<h4 className="font-bold mb-4 text-xl">After UX Architecture</h4>
 									<ul className="space-y-3 text-lg text-moon-rock leading-relaxed">
 										<li className="flex items-start">

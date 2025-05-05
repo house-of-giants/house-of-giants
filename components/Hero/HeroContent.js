@@ -102,10 +102,10 @@ export const HeroContent = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 1 }}
 				>
-					<Button href="#contact" variant="primary">
+					<Button href="#contact" variant="primary" size="xl">
 						Start Your Project
 					</Button>
-					<Button href="#work" variant="secondary">
+					<Button href="#work" variant="secondary" size="xl">
 						View Our Work &rarr;
 					</Button>
 				</motion.div>

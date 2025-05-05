@@ -7,6 +7,7 @@ import { TechCard } from './TechCard';
 import { SectionHeader } from '../SectionHeader/SectionHeader';
 import { motion } from 'framer-motion';
 import { Button } from '../Button/Button';
+import Link from 'next/link';
 
 export const Services = () => {
 	const services = [
@@ -124,26 +125,109 @@ export const Services = () => {
 					pb="var(--section-spacing-bottom)"
 				>
 					<motion.div
-						className="relative bg-black bg-opacity-30 p-8 md:p-12 rounded-xl border border-gray-800 overflow-hidden"
+						className="relative bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden"
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.5 }}
 					>
-						<div className="absolute top-0 right-0 w-64 h-64 bg-[var(--c-accent)] opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-						<div className="absolute bottom-0 left-0 w-64 h-64 bg-green-500 opacity-10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+						{/* Background accent elements */}
+						<div className="absolute top-0 right-0 w-64 h-64 bg-cyber-green/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+						<div className="absolute bottom-0 left-0 w-64 h-64 bg-cyber-blue/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+						<div className="p-8 md:p-12">
+							<div className="md:col-span-3 relative z-10 flex flex-col md:pl-8">
+								<div className="mb-2">
+									<span className="inline-block py-1 px-3 rounded-full bg-white/10 text-white/80 text-xs font-medium">
+										SPECIALTY SOLUTION
+									</span>
+								</div>
 
-						<div className="text-center max-w-3xl mx-auto relative z-10">
-							<h2 className="text-4xl md:text-5xl font-bold mb-6">
-								In the <span className="text-[var(--c-accent)]">food service</span> world?
-							</h2>
-							<p className="text-lg text-moon-rock leading-relaxed mb-8">
-								We build websites for restaurants that actually work—fast, scalable, and made for multi-location growth.
-							</p>
-							<div className="mt-8">
-								<Button href="/restaurant-websites" variant="primary">
-									Got a menu? Make it sell itself.
-									<span className="text-[var(--c-accent)] ml-2">→</span>
+								<h2 className="text-3xl md:text-4xl font-black mb-4 text-white">
+									Restaurant websites that actually
+									<span className="block bg-clip-text text-transparent bg-gradient-to-r from-cyber-green to-neon-sky">
+										deliver results
+									</span>
+								</h2>
+
+								<p className="text-lg text-white/70 mb-6">
+									Fast, scalable, and designed specifically for food service businesses. No generic templates — just
+									websites that drive reservations and orders.
+								</p>
+
+								<div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+									<div className="flex items-center gap-2">
+										<svg
+											className="w-5 h-5 text-cyber-green"
+											viewBox="0 0 24 24"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M20 6L9 17L4 12"
+												stroke="currentColor"
+												strokeWidth="2"
+												strokeLinecap="round"
+												strokeLinejoin="round"
+											/>
+										</svg>
+										<span className="text-white/80">Mobile ordering</span>
+									</div>
+									<div className="flex items-center gap-2">
+										<svg
+											className="w-5 h-5 text-cyber-green"
+											viewBox="0 0 24 24"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M20 6L9 17L4 12"
+												stroke="currentColor"
+												strokeWidth="2"
+												strokeLinecap="round"
+												strokeLinejoin="round"
+											/>
+										</svg>
+										<span className="text-white/80">Menu management</span>
+									</div>
+									<div className="flex items-center gap-2">
+										<svg
+											className="w-5 h-5 text-cyber-green"
+											viewBox="0 0 24 24"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M20 6L9 17L4 12"
+												stroke="currentColor"
+												strokeWidth="2"
+												strokeLinecap="round"
+												strokeLinejoin="round"
+											/>
+										</svg>
+										<span className="text-white/80">Reservation systems</span>
+									</div>
+									<div className="flex items-center gap-2">
+										<svg
+											className="w-5 h-5 text-cyber-green"
+											viewBox="0 0 24 24"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M20 6L9 17L4 12"
+												stroke="currentColor"
+												strokeWidth="2"
+												strokeLinecap="round"
+												strokeLinejoin="round"
+											/>
+										</svg>
+										<span className="text-white/80">Multi-location ready</span>
+									</div>
+								</div>
+							</div>
+							<div className="flex pl-8">
+								<Button href="/restaurant-websites" size="lg" className=" text-center">
+									See restaurant solutions &rarr;
 								</Button>
 							</div>
 						</div>

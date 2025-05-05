@@ -325,26 +325,33 @@ export default function WebDevelopment() {
 
 					<div className="mt-16">
 						<motion.div
-							className="bg-gradient-to-r from-purple-900 to-indigo-900 p-8 rounded-xl border border-indigo-800 relative overflow-hidden"
+							className="relative py-14 px-10 rounded-2xl bg-gradient-to-br from-deep-plum to-primary-dark overflow-hidden"
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
-							transition={{ duration: 0.5 }}
+							transition={{ duration: 0.5, ease: 'easeOut' }}
 						>
-							<div className="absolute top-0 right-0 w-64 h-64 bg-[var(--c-accent)] opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+							{/* Abstract background elements */}
+							<div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[var(--c-accent)]/5 blur-[120px] rounded-full -translate-y-1/2"></div>
+							<div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-[var(--c-cyber-green)]/5 blur-[80px] rounded-full translate-y-1/2"></div>
 
-							<h3 className="text-3xl font-bold mb-6 relative z-10">Why Denver Businesses Choose House of Giants</h3>
-							<p className="mb-8 text-lg text-moon-rock leading-relaxed max-w-4xl relative z-10">
-								We're not just another web development agency. We're problem solvers, code architects, and digital
-								strategists who build websites that work as hard as you do. Our team blends technical firepower with
-								strategic insight to craft high performance web solutions that don't just look good — they drive real
-								business results.
-							</p>
+							<div className="relative z-10">
+								<h3 className="text-4xl font-bold mb-3 relative inline-block">
+									Why Denver Businesses Choose House of Giants
+									<span className="absolute bottom-0 left-0 w-1/2 h-[3px] bg-[var(--c-accent)]"></span>
+								</h3>
+								<p className="mb-12 text-lg text-[var(--c-moon-rock)] leading-relaxed max-w-4xl">
+									We're not just another web development agency. We're problem solvers, code architects, and digital
+									strategists who build websites that work as hard as you do. Our team blends technical firepower with
+									strategic insight to craft high performance web solutions that don't just look good — they drive real
+									business results.
+								</p>
 
-							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 relative z-10">
-								{stats.map((stat, index) => (
-									<StatCard key={index} value={stat.value} description={stat.description} />
-								))}
+								<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+									{stats.map((stat, index) => (
+										<StatCard key={index} value={stat.value} description={stat.description} />
+									))}
+								</div>
 							</div>
 						</motion.div>
 					</div>
