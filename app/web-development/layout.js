@@ -1,9 +1,9 @@
 export const metadata = {
-	title: 'Custom Web Development That Scales with Demand',
+	title: 'Expert Web Development for Startups & QSR | House of Giants',
 	description:
-		'From growing tech startups to national brands — we build fast, flexible web platforms that evolve with your business.',
+		"Denver's top-rated web development team specializing in Next.js, WordPress, and custom solutions for startups and restaurants. Fast, scalable websites that convert.",
 	keywords:
-		'Denver web development, Denver web developer, WordPress development Denver, Next.js development, full-stack development Denver',
+		'Denver web development, custom restaurant website, QSR website development, Next.js development, startup web development, web development for startups',
 	alternates: {
 		canonical: '/web-development',
 	},

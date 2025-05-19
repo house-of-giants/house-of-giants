@@ -26,6 +26,29 @@ export const ServiceSchema = ({ service }) => {
 				},
 			],
 		},
+		'restaurant-websites': {
+			name: 'Custom Restaurant Website Services',
+			description:
+				'Specialized web development for restaurants, QSRs, and fast-casual chains with online ordering integration, location management, and mobile-optimized menus.',
+			image: `${siteMetadata.siteUrl}/images/restaurant-websites.jpg`,
+			offers: [
+				{
+					name: 'Custom Restaurant Website Development',
+					description:
+						'Fully custom restaurant website development with branded design, online ordering systems, and seamless third-party delivery integration.',
+				},
+				{
+					name: 'QSR Website Solutions',
+					description:
+						'High-performance websites for quick-service restaurants with location finders, integrated loyalty programs, and mobile ordering capabilities.',
+				},
+				{
+					name: 'Restaurant Chain Web Development',
+					description:
+						'Scalable multi-location restaurant website solutions with centralized content management, franchisee portals, and location-specific content.',
+				},
+			],
+		},
 		'web-design': {
 			name: 'Web Design Services',
 			description:

@@ -1,9 +1,9 @@
 export const metadata = {
-	title: 'Custom Restaurant Websites That Actually Work | House of Giants',
+	title: 'Custom Restaurant Websites | QSR & Fast Casual Web Design Experts',
 	description:
-		'Ditch the drag-and-drop template. We build fast, branded restaurant websites that boost orders, improve loyalty, and scale with your locations.',
+		'Specialized Denver web agency for restaurant chains. Boost online orders, increase table bookings, and improve customer loyalty with high-performance custom restaurant websites.',
 	keywords:
-		'restaurant websites, custom restaurant websites, restaurant website design, restaurant website development, restaurant website builder, restaurant website builder Denver',
+		'custom restaurant website, restaurant website design, QSR website development, restaurant website development, restaurant web design Denver, restaurant website builder',
 	alternates: {
 		canonical: '/restaurant-websites',
 	},

@@ -3,7 +3,7 @@ const siteMetadata = {
 	author: 'Dominic Magnifico',
 	headerTitle: 'House of Giants',
 	description:
-		'House of Giants builds scalable, high-performance websites and web apps for startups and fast-moving brands like yours.',
+		'Award-winning custom web development for startups and restaurants. Our Denver team builds high-performance websites that drive conversions and scale with your business.',
 	language: 'en-us',
 	theme: 'system', // system, dark or light
 	siteUrl: 'https://houseofgiants.com',
