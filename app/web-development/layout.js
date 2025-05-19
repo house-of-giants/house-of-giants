@@ -1,33 +1,35 @@
 export const metadata = {
-	title: 'Expert Web Development for Startups & QSR | House of Giants',
+	title: 'Custom Web Development for Startups & QSR Brands | House of Giants',
 	description:
-		"Denver's top-rated web development team specializing in Next.js, WordPress, and custom solutions for startups and restaurants. Fast, scalable websites that convert.",
+		"We build fast, scalable websites and web apps that don't break when your business grows. Custom web development for startups and multi-location restaurants. No templates. No bloat.",
 	keywords:
-		'Denver web development, custom restaurant website, QSR website development, Next.js development, startup web development, web development for startups',
+		'custom web development, startup websites, restaurant website design, QSR web development, scalable websites, Next.js agency, WordPress developer Denver, UX-focused development, MVP development, headless CMS builds',
 	alternates: {
 		canonical: '/web-development',
 	},
 	openGraph: {
-		title: 'Custom Web Development That Scales with Demand',
+		title: 'Custom Web Development for Startups & QSR Brands | House of Giants',
 		description:
-			'From growing tech startups to national brands — we build fast, flexible web platforms that evolve with your business.',
+			"We build fast, scalable websites and web apps that don't break when your business grows. Custom web development for startups and multi-location restaurants. No templates. No bloat.",
 		url: 'https://houseofgiants.com/web-development',
 		type: 'website',
 		images: [
 			{
-				url: 'https://houseofgiants.com/api/og?title=Custom%20Web%20Development%20That%20Scales%20with%20Demand',
+				url: 'https://houseofgiants.com/api/og?title=Custom%20Web%20Development%20for%20Startups%20%26%20QSR%20Brands%20%7C%20House%20of%20Giants',
 				width: 1200,
 				height: 630,
-				alt: 'Custom Web Development That Scales with Demand | House of Giants',
+				alt: 'Custom Web Development for Startups & QSR Brands | House of Giants',
 			},
 		],
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'Custom Web Development That Scales with Demand',
+		title: 'Custom Web Development for Startups & QSR Brands | House of Giants',
 		description:
-			'From growing tech startups to national brands — we build fast, flexible web platforms that evolve with your business.',
-		images: ['https://houseofgiants.com/api/og?title=Custom%20Web%20Development%20That%20Scales%20with%20Demand'],
+			"We build fast, scalable websites and web apps that don't break when your business grows. Custom web development for startups and multi-location restaurants. No templates. No bloat.",
+		images: [
+			'https://houseofgiants.com/api/og?title=Custom%20Web%20Development%20for%20Startups%20%26%20QSR%20Brands%20%7C%20House%20of%20Giants',
+		],
 	},
 };
 

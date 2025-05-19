@@ -2,30 +2,30 @@ import { PricingPage } from '@/components/Templates/PricingTemplate';
 import siteMetadata from '@/data/siteMetadata';
 
 export const metadata = {
-	title: 'Website & Web App Pricing | House of Giants',
+	title: 'Custom Website & Web App Pricing | House of Giants',
 	description:
-		'Transparent pricing for custom websites and web applications. No templates, no fluff—just fast, scalable, design-forward builds made to grow with you.',
+		'Clear, upfront pricing for custom websites and web apps—built to scale, convert, and look damn good doing it. No templates. No agency bloat. Just high-impact builds that actually work.',
 	openGraph: {
-		title: 'Website & Web App Pricing | House of Giants',
+		title: 'Custom Website & Web App Pricing | House of Giants',
 		description:
-			'See pricing for House of Giants’ custom websites and web applications. Built for growth, performance, and conversion—without bloated agency overhead.',
+			'Clear, upfront pricing for custom websites and web apps—built to scale, convert, and look damn good doing it. No templates. No agency bloat. Just high-impact builds that actually work.',
 		url: `${siteMetadata.siteUrl}/pricing`,
 		type: 'website',
 		images: [
 			{
-				url: `${siteMetadata.siteUrl}/api/og?title=${encodeURIComponent('Website & Web App Pricing')}`,
+				url: `${siteMetadata.siteUrl}/api/og?title=${encodeURIComponent('Custom Website & Web App Pricing')}`,
 				width: 1200,
 				height: 630,
-				alt: 'House of Giants Website and Web App Pricing',
+				alt: 'Custom Website and Web App Pricing | House of Giants',
 			},
 		],
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'Website & Web App Pricing | House of Giants',
+		title: 'Custom Website & Web App Pricing | House of Giants',
 		description:
-			'Transparent pricing for custom websites and scalable web apps. Design-first, performance-ready, and built to last.',
-		images: [`${siteMetadata.siteUrl}/api/og?title=${encodeURIComponent('Website & Web App Pricing')}`],
+			'Clear, upfront pricing for custom websites and web apps—built to scale, convert, and look damn good doing it. No templates. No agency bloat. Just high-impact builds that actually work.',
+		images: [`${siteMetadata.siteUrl}/api/og?title=${encodeURIComponent('Custom Website & Web App Pricing')}`],
 	},
 };
 

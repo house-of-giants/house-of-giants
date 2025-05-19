@@ -1,11 +1,11 @@
 const siteMetadata = {
-	title: 'Smarter Websites for Brands That Move Fast',
+	title: 'Custom Web Development & Scalable Websites | House of Giants',
 	author: 'Dominic Magnifico',
 	headerTitle: 'House of Giants',
 	description:
-		'Award-winning custom web development for startups and restaurants. Our Denver team builds high-performance websites that drive conversions and scale with your business.',
+		'We build high-performance websites and web apps for ambitious startups, QSR brands, and creative teams. No templates. No bloat. Just custom code, smart UX, and strategy that scales.',
 	language: 'en-us',
-	theme: 'system', // system, dark or light
+	theme: 'system',
 	siteUrl: 'https://houseofgiants.com',
 	siteLogo: '/images/logo.png',
 	socialBanner: 'https://houseofgiants.com/api/og',

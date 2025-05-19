@@ -1,33 +1,35 @@
 export const metadata = {
-	title: 'Custom Restaurant Websites | QSR & Fast Casual Web Design Experts',
+	title: 'Custom Restaurant Websites That Convert | QSR & Multi-Location Specialists',
 	description:
-		'Specialized Denver web agency for restaurant chains. Boost online orders, increase table bookings, and improve customer loyalty with high-performance custom restaurant websites.',
+		'We build fast, scalable restaurant websites that increase online orders, improve mobile UX, and break you out of your POS builder nightmare. Custom sites for QSR and fast casual chains—built with purpose, not templates.',
 	keywords:
-		'custom restaurant website, restaurant website design, QSR website development, restaurant website development, restaurant web design Denver, restaurant website builder',
+		'custom restaurant website, QSR website development, fast casual restaurant web design, online ordering UX, restaurant website builder alternative, multi-location restaurant website, restaurant web agency',
 	alternates: {
 		canonical: '/restaurant-websites',
 	},
 	openGraph: {
-		title: 'Custom Restaurant Websites That Actually Work | House of Giants',
+		title: 'Custom Restaurant Websites That Convert | QSR & Multi-Location Specialists',
 		description:
-			'Ditch the drag-and-drop template. We build fast, branded restaurant websites that boost orders, improve loyalty, and scale with your locations.',
+			'We build fast, scalable restaurant websites that increase online orders, improve mobile UX, and break you out of your POS builder nightmare. Custom sites for QSR and fast casual chains—built with purpose, not templates.',
 		url: 'https://houseofgiants.com/restaurant-websites',
 		type: 'website',
 		images: [
 			{
-				url: 'https://houseofgiants.com/api/og?title=Custom%20Restaurant%20Websites%20That%20Actually%20Work',
+				url: 'https://houseofgiants.com/api/og?title=Custom%20Restaurant%20Websites%20That%20Convert%20%7C%20QSR%20%26%20Multi-Location%20Specialists',
 				width: 1200,
 				height: 630,
-				alt: 'Custom Restaurant Websites That Actually Work | House of Giants',
+				alt: 'Custom Restaurant Websites That Convert | QSR & Multi-Location Specialists',
 			},
 		],
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'Custom Restaurant Websites That Actually Work | House of Giants',
+		title: 'Custom Restaurant Websites That Convert | QSR & Multi-Location Specialists',
 		description:
-			'Ditch the drag-and-drop template. We build fast, branded restaurant websites that boost orders, improve loyalty, and scale with your locations.',
-		images: ['https://houseofgiants.com/api/og?title=Custom%20Restaurant%20Websites%20That%20Actually%20Work'],
+			'We build fast, scalable restaurant websites that increase online orders, improve mobile UX, and break you out of your POS builder nightmare. Custom sites for QSR and fast casual chains—built with purpose, not templates.',
+		images: [
+			'https://houseofgiants.com/api/og?title=Custom%20Restaurant%20Websites%20That%20Convert%20%7C%20QSR%20%26%20Multi-Location%20Specialists',
+		],
 	},
 };
 
