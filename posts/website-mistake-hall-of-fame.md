@@ -3,7 +3,7 @@ title: 'Oops, We Built a Website and Now It’s a Hot Mess'
 author:
   name: Dominic Magnifico
   picture: '/images/dom.jpeg'
-image: '/images/blog/website-mistake-hall-of-fame.png'
+image: '/images/blog/website-mistake-hall-of-fame.jpg'
 excerpt: 'That “quick launch” site you spun up last year? It’s starting to crack. In this post, we walk through the most common mistakes businesses make when building websites fast—and how House of Giants helps clean them up (without judgment).'
 date: '2025-05-21'
 ---
