@@ -1,10 +1,10 @@
 import cn from 'classnames';
 import Link from 'next/link';
-import Image from 'next/image';
+import LazyImage from '@/components/Image/LazyImage';
 
 const CoverImage = ({ title, src, slug }) => {
 	const image = (
-		<Image
+		<LazyImage
 			src={src}
 			alt={`Cover Image for ${title}`}
 			className={cn('shadow-sm 2xl:w-2/3 mx-auto object-cover lg:rounded-r-2xl', {

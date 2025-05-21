@@ -7,11 +7,11 @@ import { Button } from '@/components/Button/Button';
 import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
 import { SectionSeparator } from '@/components/SectionSeparator/SectionSeparator';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { TechCard } from '@/components/Services/TechCard';
 import PhilosophyCard from '@/components/Philosophy/PhilosophyCard';
 import StatCard from '@/components/Impact/StatCard';
 import { ServiceSchema } from '@/components/Schema/ServiceSchema';
+import LazyImage from '@/components/Image/LazyImage';
 
 // Process Step Component
 const ProcessStep = ({ number, title, description, features }) => (
@@ -258,11 +258,11 @@ export default function UXArchitecture() {
 								strategy, driven by intuition, and backed by deep research into how people interact with technology.
 							</p>
 							<div className="flex flex-wrap gap-4">
-								<Button href="/contact" variant="primary">
+								<Button href="/contact" size="lg" variant="primary">
 									Start Your Project
 									<span className="text-[var(--c-accent)] ml-2">→</span>
 								</Button>
-								<Button href="#services" variant="secondary">
+								<Button href="#services" size="lg" variant="secondary">
 									Explore Services
 								</Button>
 							</div>
@@ -688,12 +688,11 @@ export default function UXArchitecture() {
 							transition={{ duration: 0.5 }}
 						>
 							<div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
-							<Image
+							<LazyImage
 								src="/images/domux.jpg"
 								alt="UX Architecture planning session"
+								fill
 								className="object-cover h-full w-full"
-								width={1035}
-								height={800}
 							/>
 						</motion.div>
 					</div>
@@ -724,7 +723,7 @@ export default function UXArchitecture() {
 							Let's create digital experiences that your users love and that drive real business results.
 						</p>
 						<div className="mt-8">
-							<Button href="/contact" variant="primary">
+							<Button href="/contact" size="lg" variant="primary">
 								Get in Touch
 								<span className="text-[var(--c-accent)] ml-2">→</span>
 							</Button>

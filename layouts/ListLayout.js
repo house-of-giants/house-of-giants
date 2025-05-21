@@ -1,15 +1,13 @@
 'use client';
 
 import Link from '@/components/Blog/Link';
-import Tag from '@/components/Blog/Tag';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '@/components/Container/Container';
 import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
-import Image from 'next/image';
+import LazyImage from '@/components/Image/LazyImage';
 
-// Occult-themed pagination with animated transitions
 function Pagination({ totalPages, currentPage }) {
 	const pathname = usePathname();
 	const basePath = pathname.split('/')[1];
@@ -197,13 +195,12 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 										<Link href={`/blog/${slug}`} aria-label={`Read "${title}"`} className="flex flex-col h-full">
 											{image && (
 												<div className="relative h-80 overflow-hidden">
-													<Image
+													<LazyImage
 														src={image}
 														alt={title}
-														width={640}
-														height={360}
+														fill
 														priority={index < 2}
-														className="transform group-hover:scale-105 transition-transform duration-500 ease-out"
+														className="transform object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
 													/>
 													<div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-plum/60 to-deep-plum"></div>
 
@@ -220,7 +217,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 														<div className="flex items-center justify-between mb-2">
 															{author && (
 																<div className="flex items-center space-x-2">
-																	<Image
+																	<LazyImage
 																		src={author.picture}
 																		alt={author.name}
 																		width={20}

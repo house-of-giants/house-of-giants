@@ -168,7 +168,7 @@ export const QuickContactForm = ({ selectedPackage }) => {
 											{errors.desc && <p className="text-red-500 text-sm mt-1">{errors.desc.message}</p>}
 										</div>
 
-										<Button type="submit" disabled={isSubmitting} variant="primary" className="w-full">
+										<Button type="submit" disabled={isSubmitting} variant="primary" size="lg" className="w-full">
 											{isSubmitting ? (
 												<span className="animate-pulse">Sending...</span>
 											) : (
@@ -206,7 +206,7 @@ export const QuickContactForm = ({ selectedPackage }) => {
 									<p className="text-moon-rock mb-6">
 										Thanks for reaching out. We'll review your project details and get back to you within 24 hours.
 									</p>
-									<Button href="/work" variant="primary">
+									<Button href="/work" variant="primary" size="xl">
 										View Our Work
 										<span className="text-cyber-green ml-2">→</span>
 									</Button>

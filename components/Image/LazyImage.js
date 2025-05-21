@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
@@ -19,8 +21,14 @@ export default function LazyImage({ src, alt, width, height, priority = false, c
 	}, []);
 
 	return (
-		<div id="lazy-image" className={className}>
-			<Image src={src} alt={alt} fill loading={priority || isAboveFold ? 'eager' : 'lazy'} {...props} />
-		</div>
+		<Image
+			src={src}
+			alt={alt}
+			width={width}
+			height={height}
+			className={className}
+			loading={priority || isAboveFold ? 'eager' : 'lazy'}
+			{...props}
+		/>
 	);
 }

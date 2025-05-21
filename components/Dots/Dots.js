@@ -1,8 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import styled from 'styled-components';
-
+import LazyImage from '@/components/Image/LazyImage';
 const StyledDots = styled.div`
 	padding: var(--sp-l);
 	position: relative;
@@ -37,7 +36,7 @@ const StyledDots = styled.div`
 
 export const Dots = ({ children, opacity }) => (
 	<StyledDots opacity={opacity}>
-		<Image
+		<LazyImage
 			className="dots"
 			alt=""
 			src="/images/dots.png"

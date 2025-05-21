@@ -5,8 +5,7 @@ import { useMedia } from '@/utils/useMedia';
 
 import { Grid } from '../Grid/Grid';
 import { StyledGridItem } from '../Grid/StyledGridItem';
-import Image from 'next/image';
-
+import LazyImage from '@/components/Image/LazyImage';
 const Team = () => {
 	const isBig = useMedia(['(min-width: 1024px)'], [1], 0);
 	const { scrollYProgress } = useScroll();
@@ -18,7 +17,7 @@ const Team = () => {
 			<motion.div style={{ y: domAnim, opacity: teamOpacityAnim }} className="-stagger">
 				<StyledGridItem>
 					<div className="team-img" style={{ display: 'flex', justifyContent: 'center' }}>
-						<Image
+						<LazyImage
 							src="/images/dom.jpeg"
 							alt=""
 							width="396"

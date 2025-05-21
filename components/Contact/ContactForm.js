@@ -38,7 +38,6 @@ const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, i
 				/>
 				{errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
 			</div>
-
 			<div>
 				<input
 					type="email"
@@ -57,7 +56,6 @@ const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, i
 				/>
 				{errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
 			</div>
-
 			<div>
 				<textarea
 					id="desc"
@@ -70,8 +68,7 @@ const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, i
 				></textarea>
 				{errors.desc && <p className="text-red-500 text-sm mt-1">{errors.desc.message}</p>}
 			</div>
-
-			<Button type="submit" disabled={isSubmitting} variant="primary" className="w-full">
+			<Button type="submit" disabled={isSubmitting} size="lg" variant="primary" className="w-full">
 				{isSubmitting ? (
 					<span className="animate-pulse">Sending...</span>
 				) : (
@@ -173,7 +170,7 @@ const ContactForm = ({ title, subtitle, accent, description }) => {
 							>
 								<SuccessMessage />
 								<div className="mt-8 text-center">
-									<Button href="/contact" variant="primary">
+									<Button href="/contact" size="lg" variant="primary">
 										View All Contact Options
 										<span className="text-[var(--c-accent)] ml-2">→</span>
 									</Button>

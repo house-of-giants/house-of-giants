@@ -1,11 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import { Container } from '../Container/Container';
 import { Section } from '../Section/Section';
-import { SectionBar } from '../SectionBar/SectionBar';
 import { SectionHeader } from '../SectionHeader/SectionHeader';
 import Testimonials from '../Testimonials/Testimonials';
+import LazyImage from '@/components/Image/LazyImage';
 
 export const Clients = () => {
 	const clientLogos = [
@@ -47,7 +46,7 @@ export const Clients = () => {
 				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[var(--content-spacing)] items-center justify-items-center mt-[var(--header-spacing)]">
 					{clientLogos.map((logo) => (
 						<div key={logo.name} className="client-logo">
-							<Image alt={logo.name} src={logo.src} width={logo.width} height={logo.height} />
+							<LazyImage alt={logo.name} src={logo.src} width={logo.width} height={logo.height} />
 						</div>
 					))}
 				</div>

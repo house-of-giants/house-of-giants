@@ -5,7 +5,7 @@ import siteMetadata from '@/data/siteMetadata';
 import Link from 'next/link';
 import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
 import { Section } from '@/components/Section/Section';
-import Image from 'next/image';
+import LazyImage from '@/components/Image/LazyImage';
 
 export default function PostLayout({ post, content }) {
 	const jsonLd = {
@@ -69,7 +69,7 @@ export default function PostLayout({ post, content }) {
 									>
 										<div className="relative h-48 overflow-hidden">
 											{relatedPost.image && (
-												<Image
+												<LazyImage
 													src={relatedPost.image}
 													alt={relatedPost.title}
 													fill

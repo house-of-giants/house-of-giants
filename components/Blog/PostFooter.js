@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import siteMetadata from '@/data/siteMetadata';
+import { Button } from '../Button/Button';
 
 export function PostFooter({ slug, title, tags }) {
 	const [email, setEmail] = useState('');
@@ -233,18 +234,12 @@ export function PostFooter({ slug, title, tags }) {
 					Like what you just read?
 				</motion.p>
 				<div className="flex flex-col md:flex-row justify-center gap-6 md:gap-8">
-					<Link
-						href="/blog"
-						className="inline-flex hover:underline font-serif italic py-4 px-6 text-xl md:text-3xl text-[#F4F3EC] border border-solid border-current hover:bg-white hover:bg-opacity-5 transition-colors"
-					>
-						Read Some More 👀
-					</Link>
-					<Link
-						href="/#contact"
-						className="inline-flex hover:underline font-serif italic py-4 px-6 bg-[#f4f3ec] text-[#1a1f24] text-xl md:text-3xl border border-solid border-current hover:bg-opacity-90 transition-colors"
-					>
-						Summon The Salespeople 🔥
-					</Link>
+					<Button href="/blog" variant="primary" size="xl">
+						Read Some More
+					</Button>
+					<Button href="/contact" variant="secondary" size="xl">
+						Summon The Salespeople
+					</Button>
 				</div>
 			</footer>
 		</>

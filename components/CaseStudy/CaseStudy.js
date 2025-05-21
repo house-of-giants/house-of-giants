@@ -1,9 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-
+import LazyImage from '@/components/Image/LazyImage';
 import { Button } from '@/components/Button/Button';
 import ContactForm from '@/components/Contact/ContactForm';
 import { CircleGrad } from '@/components/Cursor/StyledCursor';
@@ -59,7 +58,13 @@ export const CaseStudy = ({
 					{heroVideo ? (
 						<video src={heroVideo} poster={heroImage} autoPlay muted loop className="w-full h-full object-cover" />
 					) : (
-						<Image src={heroImage} fill priority className="object-cover brightness-50" alt={`${title} background`} />
+						<LazyImage
+							src={heroImage}
+							fill
+							priority
+							className="object-cover brightness-50"
+							alt={`${title} background`}
+						/>
 					)}
 					<div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black" />
 				</motion.div>
@@ -90,7 +95,7 @@ export const CaseStudy = ({
 						<h2 className="text-[clamp(2rem,6vw,6rem)] text-white text-center font-serif">{subtitle}</h2>
 						{liveUrl && (
 							<div className="flex gap-4">
-								<Button href={liveUrl} target="_blank" variant="primary">
+								<Button href={liveUrl} target="_blank" size="xl" variant="primary">
 									Visit live site
 									<span className="text-cyber-green ml-2">→</span>
 								</Button>
@@ -130,7 +135,7 @@ export const CaseStudy = ({
 										viewport={{ once: true }}
 										transition={{ duration: 0.8 }}
 									>
-										<Image src={images.intro} alt={`${title} intro`} fill className="w-full h-full object-cover" />
+										<LazyImage src={images.intro} alt={`${title} intro`} fill className="w-full h-full object-cover" />
 										<div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 									</motion.figure>
 								)}
@@ -267,7 +272,7 @@ export const CaseStudy = ({
 															viewport={{ once: true }}
 															transition={{ duration: 1.2, delay: 0.4 }}
 														>
-															<Image
+															<LazyImage
 																src={step.image}
 																alt={`${step.phase} phase visualization`}
 																fill
@@ -335,7 +340,7 @@ export const CaseStudy = ({
 									<h3 className="text-3xl font-bold text-cyber-green mb-8">The Impact</h3>
 									<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 										{impact?.stats?.map((stat) => (
-											<div className="space-y-4 flex flex-col ">
+											<div key={stat.value} className="space-y-4 flex flex-col ">
 												<p className="text-6xl font-bold text-moon-rock mb-0">
 													{stat.value}
 													<span className="text-cyber-green">{stat.unit}</span>

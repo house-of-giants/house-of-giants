@@ -1,7 +1,6 @@
 'use client';
 
 import { IndustryPage } from '@/components/Templates/IndustryTemplate';
-import CanonicalLink from '@/components/SEO/CanonicalLink';
 import { getGifPlaceholder } from '@/utils/imageUtils';
 
 // Pre-generate blur placeholders for performance

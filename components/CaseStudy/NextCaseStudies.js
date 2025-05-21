@@ -2,8 +2,8 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import LazyImage from '@/components/Image/LazyImage';
 
 export const NextCaseStudies = ({ nextCases, currentCase }) => {
 	const containerRef = useRef(null);
@@ -59,7 +59,7 @@ export const NextCaseStudies = ({ nextCases, currentCase }) => {
 								>
 									{/* Background Image */}
 									<div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
-										<Image
+										<LazyImage
 											src={caseStudy.image}
 											fill
 											className="object-cover brightness-50 transition-all duration-700 group-hover:brightness-75"

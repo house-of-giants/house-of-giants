@@ -7,13 +7,13 @@ import { Button } from '@/components/Button/Button';
 import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
 import { SectionSeparator } from '@/components/SectionSeparator/SectionSeparator';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { TechCard } from '@/components/Services/TechCard';
 import PhilosophyCard from '@/components/Philosophy/PhilosophyCard';
 import { WorkCard } from '@/components/Work/WorkCard';
 import { work } from '@/data/work';
 import { ServiceSchema } from '@/components/Schema/ServiceSchema';
 import Link from 'next/link';
+import LazyImage from '@/components/Image/LazyImage';
 
 // Main Page Component
 export default function WebDesign() {
@@ -100,11 +100,11 @@ export default function WebDesign() {
 								designed, strategically built, and engineered for businesses that refuse to blend in.
 							</p>
 							<div className="flex flex-wrap gap-4">
-								<Button href="/contact" variant="primary">
+								<Button href="/contact" size="lg" variant="primary">
 									Start Your Project
 									<span className="text-[var(--c-accent)] ml-2">→</span>
 								</Button>
-								<Button href="#services" variant="secondary">
+								<Button href="#services" size="lg" variant="secondary">
 									Explore Services
 								</Button>
 							</div>
@@ -346,12 +346,11 @@ export default function WebDesign() {
 							transition={{ duration: 0.5 }}
 						>
 							<div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
-							<Image
+							<LazyImage
 								src="/images/domdesign.jpg"
 								alt="Dominic designing a website"
+								fill
 								className="object-cover h-full w-full"
-								width={1035}
-								height={800}
 							/>
 						</motion.div>
 					</div>
@@ -382,7 +381,7 @@ export default function WebDesign() {
 							Let's create a digital experience that sets you apart in Denver's competitive market.
 						</p>
 						<div className="mt-8">
-							<Button href="/contact" variant="primary">
+							<Button href="/contact" size="lg" variant="primary">
 								Get in Touch
 								<span className="text-[var(--c-accent)] ml-2">→</span>
 							</Button>

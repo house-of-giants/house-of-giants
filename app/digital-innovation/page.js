@@ -9,10 +9,9 @@ import { SectionSeparator } from '@/components/SectionSeparator/SectionSeparator
 import { ThreeJsIcon, AIIcon } from '@/components/Icons/TechIcons';
 import { motion } from 'framer-motion';
 import { TechCard } from '@/components/Services/TechCard';
-import Image from 'next/image';
+import LazyImage from '@/components/Image/LazyImage';
 import StatCard from '@/components/Impact/StatCard';
 import { ServiceSchema } from '@/components/Schema/ServiceSchema';
-import CanonicalLink from '@/components/SEO/CanonicalLink';
 
 // Process Step Component
 const ProcessStep = ({ number, title, description, features }) => (
@@ -229,11 +228,11 @@ export default function DigitalInnovation() {
 								innovative technology that drives real business results.
 							</p>
 							<div className="flex flex-wrap gap-4">
-								<Button href="/contact" variant="primary">
+								<Button href="/contact" size="lg" variant="primary">
 									Start Your Project
 									<span className="text-[var(--c-accent)] ml-2">→</span>
 								</Button>
-								<Button href="#services" variant="secondary">
+								<Button href="#services" size="lg" variant="secondary">
 									Explore Services
 								</Button>
 							</div>
@@ -577,12 +576,11 @@ export default function DigitalInnovation() {
 							transition={{ duration: 0.5 }}
 						>
 							<div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
-							<Image
+							<LazyImage
 								src="/images/innovate.jpg"
 								alt="Dom and Mel Innovating"
 								className="object-cover h-full w-full"
-								width={800}
-								height={600}
+								fill
 							/>
 						</motion.div>
 					</div>
@@ -614,7 +612,7 @@ export default function DigitalInnovation() {
 							for growth and engagement.
 						</p>
 						<div className="mt-8">
-							<Button href="/contact" variant="primary">
+							<Button href="/contact" size="lg" variant="primary">
 								Start the Conversation
 								<span className="text-[var(--c-accent)] ml-2">→</span>
 							</Button>

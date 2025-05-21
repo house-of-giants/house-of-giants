@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { CaseStudy } from '@/components/CaseStudy/CaseStudy';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import CaseStudySchema from '@/components/Schema/CaseStudySchema';
+import LazyImage from '@/components/Image/LazyImage';
 
 export default function BackForty() {
 	const caseStudyData = {
@@ -132,7 +132,7 @@ export default function BackForty() {
 								</div>
 								<div className="lg:col-span-7">
 									<motion.div className="relative aspect-[4/3] overflow-hidden">
-										<Image
+										<LazyImage
 											src="/images/backfortycase4.jpg"
 											alt="BackForty music supervision showcase"
 											fill
@@ -149,7 +149,7 @@ export default function BackForty() {
 							<div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 								<div className="lg:col-span-7">
 									<motion.div className="relative aspect-[4/3] overflow-hidden">
-										<Image
+										<LazyImage
 											src="/images/backfortycase3.jpg"
 											alt="BackForty artist management showcase"
 											fill
@@ -192,7 +192,7 @@ export default function BackForty() {
 								viewport={{ once: true, margin: '-20%' }}
 								transition={{ duration: 0.8 }}
 							>
-								<Image
+								<LazyImage
 									src="/images/backfortycase7.jpg"
 									alt="BackForty final showcase"
 									fill

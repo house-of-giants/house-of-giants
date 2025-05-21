@@ -9,8 +9,8 @@ import { ServiceCard } from '@/components/Services/ServiceCard';
 import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
 import { SectionSeparator } from '@/components/SectionSeparator/SectionSeparator';
 import ContactForm from '@/components/Contact/ContactForm';
-import Image from 'next/image';
 import BlurGifImage from '@/components/Image/BlurGifImage';
+import LazyImage from '@/components/Image/LazyImage';
 
 // Hero section template
 export const IndustryHero = ({ industry, headline, subheadline, description, heroImage, blurDataUrl }) => {
@@ -44,11 +44,11 @@ export const IndustryHero = ({ industry, headline, subheadline, description, her
 							</h1>
 							<p className="text-lg md:text-xl text-moon-rock leading-relaxed mb-8 max-w-xl">{description}</p>
 							<div className="flex flex-wrap gap-4">
-								<Button href="/contact" variant="primary">
+								<Button href="/contact" variant="primary" size="lg">
 									Start Your Project
 									<span className={`ml-2`}>→</span>
 								</Button>
-								<Button href="#services" variant="secondary">
+								<Button href="#services" variant="secondary" size="lg">
 									Explore Services
 								</Button>
 							</div>
@@ -68,7 +68,7 @@ export const IndustryHero = ({ industry, headline, subheadline, description, her
 									blurDataURL={blurDataUrl}
 								/>
 							) : (
-								<Image
+								<LazyImage
 									src={heroImage || '/images/default-hero.jpg'}
 									alt={`${industry} website showcase`}
 									fill
@@ -144,7 +144,7 @@ export const IndustryCaseStudies = ({ industry, title, subtitle, accent, caseStu
 								className="relative rounded-lg overflow-hidden group"
 							>
 								<div className="relative aspect-video">
-									<Image
+									<LazyImage
 										src={caseStudies[0].imageUrl}
 										alt={caseStudies[0].title}
 										fill
@@ -158,7 +158,7 @@ export const IndustryCaseStudies = ({ industry, title, subtitle, accent, caseStu
 									</span>
 									<h3 className="text-2xl md:text-4xl font-bold mt-2 mb-3">{caseStudies[0].title}</h3>
 									<p className="text-moon-rock/90 text-base md:text-lg max-w-2xl mb-4">{caseStudies[0].description}</p>
-									<Button href={caseStudies[0].slug} variant="primary">
+									<Button href={caseStudies[0].slug} variant="primary" size="lg">
 										View Case Study
 									</Button>
 								</div>
@@ -178,7 +178,7 @@ export const IndustryCaseStudies = ({ industry, title, subtitle, accent, caseStu
 										className="relative rounded-lg overflow-hidden group"
 									>
 										<div className="relative aspect-video">
-											<Image
+											<LazyImage
 												src={item.imageUrl}
 												alt={item.title}
 												fill
@@ -258,7 +258,7 @@ export const IndustryProcess = ({
 												blurDataURL={step.blurDataUrl}
 											/>
 										) : (
-											<Image src={step.imageUrl} alt={step.title} fill className="object-contain" />
+											<LazyImage src={step.imageUrl} alt={step.title} fill className="object-contain" />
 										)}
 									</div>
 								</div>

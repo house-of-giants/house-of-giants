@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import LazyImage from '@/components/Image/LazyImage';
 import { getGifPlaceholder } from '@/utils/imageUtils';
 
 export default function BlurGifImage({ src, alt, className = '', blurDataURL, priority = false, ...props }) {
@@ -46,7 +46,7 @@ export default function BlurGifImage({ src, alt, className = '', blurDataURL, pr
 					}}
 				/>
 			)}
-			<Image
+			<LazyImage
 				src={src}
 				alt={alt}
 				fill

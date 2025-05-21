@@ -132,7 +132,7 @@ export const ContactFormFields = ({ formEl, register, handleSubmit, onSubmit, er
 			)}
 
 			<motion.div className="pt-4 font-mono">
-				<Button type="submit" disabled={isSubmitting} className="w-full">
+				<Button type="submit" disabled={isSubmitting} size="lg" className="w-full">
 					{isSubmitting ? <span className="animate-pulse">Submitting...</span> : <span>Submit</span>}
 				</Button>
 			</motion.div>

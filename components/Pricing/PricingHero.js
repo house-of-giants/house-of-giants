@@ -82,7 +82,7 @@ export const PricingHero = ({ title, subtitle, description }) => {
 						</div>
 
 						<div className="p-6 flex flex-col gap-4 justify-center mt-auto">
-							<Button href="#quick-contact" variant="cyberPink" className="w-full">
+							<Button href="#quick-contact" variant="cyberPink" size="lg" className="w-full">
 								Get Started
 							</Button>
 							<Button href="#baseline-brawler" variant="link" className="text-center text-cyber-pink ">
@@ -139,7 +139,7 @@ export const PricingHero = ({ title, subtitle, description }) => {
 						</div>
 
 						<div className="p-6 flex flex-col gap-4 justify-center mt-auto">
-							<Button href="#quick-contact" variant="cyberGreen" className="w-full">
+							<Button href="#quick-contact" variant="cyberGreen" size="lg" className="w-full">
 								Get Started
 							</Button>
 							<Button href="#growth-engine" variant="link" className="text-center text-cyber-green ">
@@ -191,7 +191,7 @@ export const PricingHero = ({ title, subtitle, description }) => {
 						</div>
 
 						<div className="p-6 flex flex-col gap-4 justify-center mt-auto">
-							<Button href="#quick-contact" variant="cyberPurple" className="w-full">
+							<Button href="#quick-contact" variant="cyberPurple" size="lg" className="w-full">
 								Get Started
 							</Button>
 							<Button href="#flagship-flex" variant="link" className="text-center text-cyber-purple">

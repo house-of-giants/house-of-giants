@@ -8,10 +8,10 @@ import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradie
 import { SectionSeparator } from '@/components/SectionSeparator/SectionSeparator';
 import { motion } from 'framer-motion';
 import { TechCard } from '@/components/Services/TechCard';
-import Image from 'next/image';
 import StatCard from '@/components/Impact/StatCard';
 import { ServiceSchema } from '@/components/Schema/ServiceSchema';
 import Link from 'next/link';
+import LazyImage from '@/components/Image/LazyImage';
 
 // Process Step Component
 const ProcessStep = ({ number, title, description, features }) => (
@@ -244,11 +244,11 @@ export default function WebDevelopment() {
 								No unnecessary fluff. Just fast, scalable, and strategic digital solutions.
 							</p>
 							<div className="flex flex-wrap gap-4">
-								<Button href="/contact" variant="primary">
+								<Button href="/contact" size="lg" variant="primary">
 									Start Your Project
 									<span className="text-[var(--c-accent)] ml-2">→</span>
 								</Button>
-								<Button href="#services" variant="secondary">
+								<Button href="#services" size="lg" variant="secondary">
 									Explore Services
 								</Button>
 							</div>
@@ -465,12 +465,11 @@ export default function WebDevelopment() {
 							transition={{ duration: 0.5 }}
 						>
 							<div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
-							<Image
+							<LazyImage
 								src="/images/domcodes.jpg"
 								alt="House of Giants Denver office"
+								fill
 								className="object-cover h-full w-full"
-								width={1000}
-								height={1000}
 							/>
 						</motion.div>
 					</div>
@@ -691,7 +690,7 @@ export default function WebDevelopment() {
 							your vision to life.
 						</p>
 						<div className="mt-8">
-							<Button href="/contact" variant="primary">
+							<Button href="/contact" size="lg" variant="primary">
 								Get in Touch
 								<span className="text-[var(--c-accent)] ml-2">→</span>
 							</Button>

@@ -85,8 +85,8 @@ export const AuditForm = () => {
 	}
 
 	return (
-		<form ref={formEl} onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-			<div>
+        <form ref={formEl} onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <div>
 				<input
 					type="text"
 					id="name"
@@ -98,8 +98,7 @@ export const AuditForm = () => {
 				/>
 				{errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
 			</div>
-
-			<div>
+            <div>
 				<input
 					type="email"
 					id="email"
@@ -117,8 +116,7 @@ export const AuditForm = () => {
 				/>
 				{errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
 			</div>
-
-			<div>
+            <div>
 				<input
 					type="text"
 					id="company"
@@ -130,8 +128,7 @@ export const AuditForm = () => {
 				/>
 				{errors.company && <p className="text-red-500 text-sm mt-1">{errors.company.message}</p>}
 			</div>
-
-			<div>
+            <div>
 				<input
 					type="url"
 					id="website"
@@ -149,8 +146,7 @@ export const AuditForm = () => {
 				/>
 				{errors.website && <p className="text-red-500 text-sm mt-1">{errors.website.message}</p>}
 			</div>
-
-			<div>
+            <div>
 				<select
 					id="feedback"
 					className={`w-full p-4 bg-black bg-opacity-50 border ${
@@ -168,15 +164,13 @@ export const AuditForm = () => {
 				</select>
 				{errors.feedback && <p className="text-red-500 text-sm mt-1">{errors.feedback.message}</p>}
 			</div>
-
-			<div className="flex items-center gap-3">
+            <div className="flex items-center gap-3">
 				<input type="checkbox" id="followup" className="mt-1.5" {...register('followup')} />
 				<label htmlFor="followup" className="text-moon-rock/80 text-sm mb-0">
 					I'm open to a follow-up conversation about implementing the recommendations
 				</label>
 			</div>
-
-			<Button type="submit" disabled={isSubmitting} variant="primary" size="xl" className="w-full">
+            <Button type="submit" disabled={isSubmitting} variant="primary" size="xl" className="w-full">
 				{isSubmitting ? (
 					<span className="animate-pulse">Sending...</span>
 				) : (
@@ -186,6 +180,6 @@ export const AuditForm = () => {
 					</>
 				)}
 			</Button>
-		</form>
-	);
+        </form>
+    );
 };

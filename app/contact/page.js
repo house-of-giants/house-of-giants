@@ -42,7 +42,6 @@ const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, i
 				/>
 				{errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
 			</div>
-
 			<div>
 				<input
 					type="email"
@@ -61,7 +60,6 @@ const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, i
 				/>
 				{errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
 			</div>
-
 			<div>
 				<textarea
 					id="desc"
@@ -74,8 +72,7 @@ const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, i
 				></textarea>
 				{errors.desc && <p className="text-red-500 text-sm mt-1">{errors.desc.message}</p>}
 			</div>
-
-			<Button type="submit" disabled={isSubmitting} variant="primary" className="w-full">
+			<Button type="submit" disabled={isSubmitting} variant="primary" size="lg" className="w-full">
 				{isSubmitting ? (
 					<span className="animate-pulse">Sending...</span>
 				) : (
@@ -499,7 +496,7 @@ export default function ContactPage() {
 								</div>
 
 								<Link href="#contact-detailed">
-									<Button variant="secondary" className="w-full mb-4">
+									<Button variant="secondary" size="lg" className="w-full mb-4">
 										Schedule a Consultation
 									</Button>
 								</Link>
@@ -511,6 +508,7 @@ export default function ContactPage() {
 								<Button
 									href="tel:+13032190697"
 									variant="text"
+									size="lg"
 									className="block w-full text-center border border-[var(--c-neon-sky)] text-[var(--c-white)] hover:text-[var(--c-neon-sky)] py-3 mt-4 font-mono"
 								>
 									Call +1 (303) 219-0697

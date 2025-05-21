@@ -1,9 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
+import LazyImage from '@/components/Image/LazyImage';
 export const WorkCard = ({ title, type, img, url, featured = false }) => {
 	return (
 		<Link
@@ -15,7 +14,7 @@ export const WorkCard = ({ title, type, img, url, featured = false }) => {
 					featured ? 'md:aspect-[21/9]' : 'md:aspect-[16/9]'
 				}`}
 			>
-				<Image
+				<LazyImage
 					src={img}
 					alt={title}
 					fill

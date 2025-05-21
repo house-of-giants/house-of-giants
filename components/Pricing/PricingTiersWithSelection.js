@@ -79,8 +79,8 @@ export const PricingTiersWithSelection = ({ tiers: propTiers, onSelectPackage })
 	const [highlightedFeature, setHighlightedFeature] = useState({ tier: null, index: null });
 
 	return (
-		<Section count="3.0" title="Pricing Tiers" id="pricing">
-			<Container
+        <Section count="3.0" title="Pricing Tiers" id="pricing">
+            <Container
 				className="-has-background"
 				background="var(--c-primary-dark)"
 				pt="var(--section-spacing-top)"
@@ -164,6 +164,6 @@ export const PricingTiersWithSelection = ({ tiers: propTiers, onSelectPackage })
 					))}
 				</div>
 			</Container>
-		</Section>
-	);
+        </Section>
+    );
 };
