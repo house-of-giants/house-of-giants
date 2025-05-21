@@ -173,11 +173,11 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 				</div>
 
 				<div className="py-12">
-					<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+					<div className="grid grid-cols-1 gap-8 md:grid-cols-2">
 						{!filteredBlogPosts.length && <p className="text-gray-300">No posts found.</p>}
 						<AnimatePresence>
 							{displayPosts.map((post, index) => {
-								const { slug, date, title, summary, tags, images } = post;
+								const { slug, date, title, excerpt, image, author } = post;
 								const formattedDate = new Date(date).toLocaleDateString('en-US', {
 									year: 'numeric',
 									month: 'long',
@@ -192,52 +192,69 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 										animate="visible"
 										whileHover="hover"
 										variants={cardVariants}
-										className="group relative bg-gradient-to-b from-gray-900 to-black rounded-lg overflow-hidden border border-gray-800 hover:border-purple-500 transition-all duration-300"
+										className="group relative bg-deep-plum rounded-xl overflow-hidden border border-gray-800 hover:border-purple-500 transition-all duration-300 flex flex-col h-full shadow-lg"
 									>
-										<Link href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
-											<div className="h-full flex flex-col">
-												{images && images[0] && (
-													<div className="relative h-48 overflow-hidden">
-														<Image
-															src={images[0]}
-															alt={title}
-															layout="fill"
-															objectFit="cover"
-															className="transform group-hover:scale-105 transition-transform duration-300"
-														/>
-														<div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-													</div>
-												)}
+										<Link href={`/blog/${slug}`} aria-label={`Read "${title}"`} className="flex flex-col h-full">
+											{image && (
+												<div className="relative h-80 overflow-hidden">
+													<Image
+														src={image}
+														alt={title}
+														width={640}
+														height={360}
+														priority={index < 2}
+														className="transform group-hover:scale-105 transition-transform duration-500 ease-out"
+													/>
+													<div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-plum/60 to-deep-plum"></div>
 
-												<div className="flex-1 p-6">
-													<div className="flex flex-col h-full">
-														<div className="flex justify-between items-center mb-3">
-															<time className="text-sm text-gray-400" dateTime={date}>
+													<div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+														<div className="mb-2 flex items-center justify-between">
+															<time
+																className="text-xs uppercase tracking-wider text-purple-300 font-semibold"
+																dateTime={date}
+															>
 																{formattedDate}
 															</time>
 														</div>
 
-														<h2 className="text-2xl font-bold leading-8 tracking-tight mb-3 text-gray-100">{title}</h2>
-
-														<p className="prose text-gray-400 max-w-none line-clamp-3 mb-3 flex-1">{summary}</p>
-
-														<div className="flex flex-wrap mt-auto">
-															{tags && tags.map((tag) => <Tag key={tag} text={tag} />)}
+														<div className="flex items-center justify-between mb-2">
+															{author && (
+																<div className="flex items-center space-x-2">
+																	<Image
+																		src={author.picture}
+																		alt={author.name}
+																		width={20}
+																		height={20}
+																		className="rounded-full"
+																	/>
+																	<span className="text-sm text-gray-300">{author.name}</span>
+																</div>
+															)}
 														</div>
 
-														<div className="mt-4 text-purple-400 font-medium flex items-center group-hover:translate-x-2 transition-transform duration-300">
-															Read more
-															<svg
-																xmlns="http://www.w3.org/2000/svg"
-																className="h-4 w-4 ml-1"
-																fill="none"
-																viewBox="0 0 24 24"
-																stroke="currentColor"
-															>
-																<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-															</svg>
-														</div>
+														<h2 className="text-2xl font-bold leading-tight tracking-tight mb-2 text-white group-hover:text-cyber-green transition-colors duration-300">
+															{title}
+														</h2>
 													</div>
+												</div>
+											)}
+
+											<div className="flex-1 p-6 flex flex-col">
+												<p className="prose text-gray-300 text-sm leading-relaxed max-w-none mb-4 flex-1">{excerpt}</p>
+
+												<div className="mt-auto pt-4 border-t border-gray-800">
+													<span className="inline-flex items-center text-sm font-medium text-purple-400 group-hover:text-purple-300 transition-colors duration-300">
+														Read article
+														<svg
+															xmlns="http://www.w3.org/2000/svg"
+															className="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+															fill="none"
+															viewBox="0 0 24 24"
+															stroke="currentColor"
+														>
+															<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+														</svg>
+													</span>
 												</div>
 											</div>
 										</Link>
