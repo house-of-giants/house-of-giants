@@ -121,8 +121,9 @@ export default function RestaurantPage() {
 				gradientVariant="purple"
 				intensityLevel="low"
 				heroProps={{
-					headline: 'Custom Restaurant Websites & Online Ordering',
-					subheadline: 'Built for Speed, Multi-Location Growth, and Conversion',
+					headline: 'Custom QSR Websites Built for Multi‑Location Growth & Direct Orders',
+					subheadline:
+						'End slow, insecure templates. Get a branded ordering system that scales, drives revenue, and cuts platform fees. Built mobile‑first.',
 					description:
 						'We build fast, branded restaurant websites and direct ordering systems that drive more online orders, support multi-location growth, and make your digital experience feel as seamless as your service.',
 					heroImage: '/images/burgerfinal.gif',
@@ -152,7 +153,7 @@ export default function RestaurantPage() {
 					metrics: metrics,
 				}}
 				contactProps={{
-					title: "Let's Fix Your Restaurant Website",
+					title: 'Talk to a QSR Web Strategist',
 					subtitle: 'Start fresh with a partner who knows food service.',
 					accent: 'Custom digital strategy for QSR & multi-location restaurants',
 					description:

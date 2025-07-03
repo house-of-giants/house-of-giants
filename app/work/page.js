@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Container } from '@/components/Container/Container';
 import { Section } from '@/components/Section/Section';
 import { SectionHeader } from '@/components/SectionHeader/SectionHeader';
-import { WorkCard } from '@/components/Work/WorkCard';
 import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
 import { SectionSeparator } from '@/components/SectionSeparator/SectionSeparator';
 import ContactForm from '@/components/Contact/ContactForm';
