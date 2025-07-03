@@ -121,7 +121,7 @@ export default function RestaurantPage() {
 				gradientVariant="purple"
 				intensityLevel="low"
 				heroProps={{
-					headline: 'Custom QSR Websites Built for Multi‑Location Growth & Direct Orders',
+					headline: 'Custom QSR Sites for Multi-Location Growth',
 					subheadline:
 						'End slow, insecure templates. Get a branded ordering system that scales, drives revenue, and cuts platform fees. Built mobile‑first.',
 					description:
