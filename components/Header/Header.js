@@ -88,7 +88,7 @@ export const Header = () => {
 			</Link>
 
 			{/* Right Side - Navigation & Actions */}
-			<div className="flex items-center gap-6 md:gap-8">
+			<div className="flex items-center gap-6 md:gap-8 pt-2 md:pt-0">
 				{/* Primary Navigation */}
 				<nav className="hidden md:flex items-center gap-8">
 					<Link
