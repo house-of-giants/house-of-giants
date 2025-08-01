@@ -77,7 +77,7 @@ export default function WebDesign() {
 	];
 
 	return (
-		<main className="relative bg-[#1a1f24] text-gray-100">
+		<main className="relative text-gray-100">
 			<ServiceSchema service="web-design" />
 			<FloatingGradients variant="purple" intensity="low" />
 

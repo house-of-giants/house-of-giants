@@ -344,7 +344,7 @@ export const IndustryPage = ({
 	impactProps,
 	contactProps,
 	gradientVariant = 'green',
-	intensityLevel = 'medium',
+	intensityLevel = 'low',
 }) => {
 	return (
 		<main className="relative">

@@ -197,13 +197,14 @@ export default function ContactPage() {
 	};
 
 	const onSubmitDetailed = async (data) => {
-		const { name, email, project, timeline, budget, inspiration, goals, desc } = data;
+		const { name, email, project, timeline, companySize, budget, inspiration, goals, desc } = data;
 		const emailBody = {
 			email,
 			subject: 'New Detailed Project Inquiry - House of Giants',
 			name,
 			project,
 			timeline,
+			companySize,
 			budget,
 			inspiration,
 			goals,
@@ -250,6 +251,11 @@ export default function ContactPage() {
 	// FAQ data
 	const faqs = [
 		{
+			question: 'Do you work with enterprise clients and large organizations?',
+			answer:
+				"Absolutely! We work with organizations of all sizes, from pre-seed startups to Fortune 500 companies. Our enterprise clients appreciate our strategic approach, technical expertise, and ability to handle complex, large-scale projects with security, compliance, and scalability requirements.",
+		},
+		{
 			question: 'What makes House of Giants different from other agencies?',
 			answer:
 				"We combine strategic thinking with cutting-edge technology to create digital experiences that don't just look good—they drive real business results. Our approach is collaborative, transparent, and focused on your long-term success, not just quick wins.",
@@ -257,12 +263,12 @@ export default function ContactPage() {
 		{
 			question: 'How long does a typical project take?',
 			answer:
-				"Project timelines vary based on scope and complexity. A typical website might take 8-12 weeks, while more complex digital platforms can take 3-6 months. We'll provide a detailed timeline during our initial consultation based on your specific needs.",
+				"Project timelines vary based on scope and complexity. A typical website might take 8-12 weeks, while more complex digital platforms can take 3-6 months. Enterprise projects may have longer timelines to accommodate stakeholder reviews and compliance requirements.",
 		},
 		{
 			question: "What's your pricing structure?",
 			answer:
-				"We provide custom quotes based on project scope, complexity, and timeline. Our projects typically start at $25,000, and we offer flexible payment schedules to align with project milestones. We're happy to provide a detailed estimate after understanding your specific requirements.",
+				"We provide custom quotes based on project scope, complexity, and timeline. Our projects typically start at $25,000, with enterprise solutions scaling based on requirements. We offer flexible payment schedules and can accommodate procurement processes for larger organizations.",
 		},
 		{
 			question: 'Do you offer ongoing support after launch?',

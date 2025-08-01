@@ -3,6 +3,7 @@ import JsonLd from '@/components/Schema/JsonLd';
 import { Header } from '@/components/Header/Header';
 import GlobalStyles from '@/components/Styles/GlobalStyles';
 import { ContactFooter } from '@/components/Contact/ContactFooter';
+import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
 import StyledComponentsRegistry from 'lib/registry';
 import { nikolai } from '@/styles/fonts';
 import ScrollToTop from '@/components/ScrollToTop/ScrollToTop';
@@ -14,6 +15,7 @@ import { SectionBar } from '@/components/SectionBar/SectionBar';
 import { LocalBusinessSchema } from '@/components/Schema/LocalBusinessSchema';
 import { Inter } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google';
+import PlausibleScript from '@/components/PlausibleScript/PlausibleScript';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -85,13 +87,13 @@ export default function RootLayout({ children }) {
 		<html lang="en" className={`${nikolai.variable} ${inter.className}`}>
 			<head>
 				<JsonLd />
-				<script defer data-domain="houseofgiants.com" src="https://plausible.io/js/script.js"></script>
 			</head>
-			<body>
+			<body className="bg-[var(--c-primary-dark)]">
 				<StyledComponentsRegistry>
 					<LocalBusinessSchema />
 					<GlobalStyles />
 					<ScrollToTop />
+					<FloatingGradients variant="cyber" intensity="low" />
 					<Header />
 					<AnimatedTitle />
 					<SectionProvider>
@@ -100,6 +102,7 @@ export default function RootLayout({ children }) {
 					</SectionProvider>
 					<ContactFooter />
 				</StyledComponentsRegistry>
+				<PlausibleScript />
 			</body>
 			<GoogleTagManager gtmId="GTM-PQCFTVXH" />
 		</html>

@@ -57,11 +57,14 @@ export const ContactFormFields = ({ formEl, register, handleSubmit, onSubmit, er
 				type="select"
 				label="Project Type"
 				options={[
-					'🌐 Custom Website Development',
-					'⚡ Interactive Web Application',
-					'🎮 3D Digital Experience',
-					'🔧 Enterprise WordPress Solution',
-					"💭 Not Sure Yet (Let's Talk)",
+					'🚀 Startup MVP/Web Application',
+					'🏢 Enterprise Marketing Website',
+					'🍔 Restaurant/QSR Website',
+					'🛒 E-commerce Platform',
+					'🎨 Creative/Portfolio Site',
+					'📱 Custom Web Application',
+					'🔧 CMS/WordPress Development',
+					'💭 Not Sure Yet (Let\'s Talk)',
 				]}
 				register={register}
 				focusedField={focusedField}
@@ -79,10 +82,20 @@ export const ContactFormFields = ({ formEl, register, handleSubmit, onSubmit, er
 			/>
 
 			<FormField
+				name="companySize"
+				type="select"
+				label="Company/Organization Size"
+				options={['👤 Solo founder/Individual', '👥 2-10 employees', '🏃 11-50 employees', '🏢 51-200 employees', '🏬 201-1000 employees', '🌆 1000+ employees', '🤷 Prefer not to say']}
+				register={register}
+				focusedField={focusedField}
+				setFocusedField={setFocusedField}
+			/>
+
+			<FormField
 				name="budget"
 				type="select"
 				label="Budget Range"
-				options={['💫 $10k - $25k', '🌟 $25k - $50k', '✨ $50k - $100k', '🌌 $100k+', '📊 Still determining budget']}
+				options={['💫 $10k - $25k', '🌟 $25k - $50k', '✨ $50k - $100k', '🌌 $100k - $250k', '🏢 $250k+ (Enterprise)', '📊 Still determining budget']}
 				register={register}
 				focusedField={focusedField}
 				setFocusedField={setFocusedField}

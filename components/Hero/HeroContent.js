@@ -1,114 +1,84 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/Button/Button';
 
 export const HeroContent = () => {
 	return (
-		<div className="relative z-10">
-			{/* Interface Elements */}
-			<div className="absolute inset-0 pointer-events-none">
-				{/* Right Side Interface Elements */}
-				<motion.div
-					className="absolute right-12 top-1/2 -translate-y-1/2 flex flex-col gap-4"
-					initial={{ opacity: 0, x: 20 }}
-					animate={{ opacity: 1, x: 0 }}
-					transition={{ duration: 1, delay: 1.1 }}
-				>
-					{[...Array(3)].map((_, i) => (
-						<motion.div
-							key={i}
-							className="flex items-center gap-2"
-							animate={{ x: [0, 4, 0] }}
-							transition={{ duration: 2, repeat: Infinity, delay: i * 0.3, ease: 'easeInOut' }}
-						>
-							<motion.div
-								className="w-1 h-1 bg-cyber-green/50"
-								animate={{ opacity: [0.3, 0.7, 0.3] }}
-								transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.2 }}
-							/>
-							<motion.div
-								className="w-12 h-[1px] bg-cyber-green/50"
-								animate={{ scaleX: [1, 1.2, 1] }}
-								transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
-							/>
-						</motion.div>
-					))}
-				</motion.div>
-			</div>
-
+		<div className="relative z-10 flex flex-col justify-center w-full">
 			{/* Main Content */}
-			<div className="relative z-10">
-				{/* Main Title Stack */}
-				<div className="space-y-4 mb-12 max-w-[1440px] mx-auto">
-					<motion.h1
-						className="text-[clamp(3rem,12vw,12rem)] font-black leading-[0.85] tracking-tight relative"
-						initial={{ opacity: 0, x: -50 }}
-						animate={{ opacity: 1, x: 0 }}
-						transition={{ duration: 0.8, delay: 0.2 }}
-					>
-						<span className="block -grad-header relative max-w-[90vw] md:max-w-[95vw]">
-							Custom Web
-							<div className="absolute -right-4 top-1/2 w-8 h-[1px] bg-cyber-green/30" />
-						</span>
-						<motion.span
-							className="block text-white relative max-w-[90vw] md:max-w-[95vw]"
-							initial={{ opacity: 0, x: 50 }}
-							animate={{ opacity: 1, x: 0 }}
-							transition={{ duration: 0.8, delay: 0.4 }}
-						>
-							Development
-						</motion.span>
-						<motion.span
-							className="block -grad-header relative max-w-[90vw] md:max-w-[95vw]"
-							initial={{ opacity: 0, x: -50 }}
-							animate={{ opacity: 1, x: 0 }}
-							transition={{ duration: 0.8, delay: 0.6 }}
-						>
-							Studio
-						</motion.span>
-					</motion.h1>
+			<div className="relative z-10 px-4 md:px-8">
+				{/* Connected Scale Typography Layout */}
+				<div className="relative mb-20 md:mb-32">
+					<div className="mx-auto">
+						{/* Tightened Typography Treatment */}
+						<div className="relative">
+							{/* HOUSE OF - Refined, Human Scale */}
+							<motion.div
+								className="text-[clamp(2rem,5vw,4rem)] text-moon-rock font-black tracking-tight mb-1 relative z-20 text-center leading-none"
+								initial={{ opacity: 0, y: 20 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+							>
+								HOUSE OF
+							</motion.div>
+
+							{/* GIANTS - Fluid Full-Width Scale */}
+							<motion.div
+								className="relative overflow-visible w-full giants-fluid-text-container"
+								initial={{ opacity: 0, y: 30 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 1, delay: 0.6, ease: 'easeOut' }}
+							>
+								<div className="giants-fluid-text text-moon-rock font-black leading-[0.75] text-left">GIANTS</div>
+							</motion.div>
+						</div>
+
+						{/* Content Grid */}
+						<div className="grid grid-cols-12 gap-8 mt-16">
+							{/* Left Column - Tagline */}
+							<div className="col-span-12 lg:col-span-7">
+								<motion.div
+									className="space-y-6 max-w-2xl"
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									transition={{ duration: 0.8, delay: 0.8 }}
+								>
+									<div className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold leading-tight text-moon-rock/90 tracking-tight text-left">
+										We craft digital experiences
+										<br />
+										that command attention
+									</div>
+
+									<div className="w-12 h-[2px] bg-cyber-green"></div>
+
+									<p className="text-[clamp(1rem,2vw,1.2rem)] text-moon-rock/70 leading-relaxed font-medium max-w-lg">
+										High-performance websites and web applications for ambitious startups, QSR brands, and creative
+										teams.
+									</p>
+
+									<div className="text-[clamp(0.9rem,1.5vw,1rem)] text-cyber-green font-black uppercase tracking-wider">
+										No templates → <span className="text-cyber-pink">No mercy</span>
+									</div>
+								</motion.div>
+							</div>
+
+							{/* Right Column - Supporting Elements */}
+							<div className="col-span-12 lg:col-span-5 flex flex-col justify-start space-y-8 lg:pt-8">
+								<motion.div
+									className="space-y-4 text-left lg:text-right"
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									transition={{ duration: 0.8, delay: 1.2 }}
+								>
+									<div className="text-moon-rock/50 text-sm uppercase tracking-wider font-medium">Est. 2017</div>
+									<div className="text-moon-rock/60 text-sm leading-relaxed max-w-xs lg:ml-auto">
+										Building digital experiences that exceed expectations for over a decade in the industry
+									</div>
+								</motion.div>
+							</div>
+						</div>
+					</div>
 				</div>
-
-				{/* Description Text */}
-				<motion.div
-					className="max-w-4xl space-y-8"
-					initial={{ opacity: 0, y: 30 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.8, delay: 0.8 }}
-				>
-					<div className="text-[clamp(1.5rem,3vw,2.5rem)] text-moon-rock leading-tight">
-						Dreaming big. <span className="text-cyber-green">Engineering bold.</span> Always built with purpose.
-					</div>
-
-					<div className="space-y-6">
-						<div className="text-xl text-moon-rock/80 leading-relaxed">
-							We design and build custom websites and web applications that drive business results—fast, scalable, and
-							uniquely yours.{' '}
-						</div>
-
-						<div className="text-xl text-moon-rock/80 leading-relaxed">
-							Based in Denver, we're a digital studio that thinks like strategists, codes like engineers, and designs
-							like we mean it. From enterprise WordPress builds to reactive app experiences, we don&apos;t do
-							cookie-cutter &mdash; we build what works.
-						</div>
-					</div>
-				</motion.div>
-
-				{/* CTA Section */}
-				<motion.div
-					className="mt-12 flex flex-col md:flex-row items-center gap-8"
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 1 }}
-				>
-					<Button href="#contact" variant="primary" size="xl">
-						Start Your Project
-					</Button>
-					<Button href="#work" variant="secondary" size="xl">
-						View Our Work &rarr;
-					</Button>
-				</motion.div>
 			</div>
 		</div>
 	);

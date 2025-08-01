@@ -9,9 +9,19 @@ import fetchJson from '@/utils/fetchJson';
 import Link from 'next/link';
 import { Button } from '../Button/Button';
 import { sendGTMEvent } from '@next/third-parties/google';
+import { usePlausible } from '@/hooks/usePlausible';
 
 // Simple Contact Form Component for homepage
-const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, isSubmitting, formSource }) => {
+const SimpleContactForm = ({
+	formEl,
+	register,
+	handleSubmit,
+	onSubmit,
+	errors,
+	isSubmitting,
+	formSource,
+	buttonText = "Let's Talk About Your Project",
+}) => {
 	// Create a wrapper for the onSubmit function that handles form tracking
 	const handleFormSubmit = (formData) => {
 		// Track the event with sendGTMEvent
@@ -73,7 +83,7 @@ const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, i
 					<span className="animate-pulse">Sending...</span>
 				) : (
 					<>
-						Let's Talk About Your Project
+						{buttonText}
 						<span className="text-[var(--c-accent)] ml-2">→</span>
 					</>
 				)}
@@ -82,9 +92,181 @@ const SimpleContactForm = ({ formEl, register, handleSubmit, onSubmit, errors, i
 	);
 };
 
-const ContactForm = ({ title, subtitle, accent, description }) => {
+// Simplified Contact Form for inline use (without Section/Container wrappers)
+export const ContactForm = ({ selectedAudience, audienceData }) => {
 	const [contactSuccess, setContactSuccess] = useState(null);
 	const formEl = useRef(null);
+	const { trackContactFormSubmission } = usePlausible();
+
+	// Audience-specific messaging - matching the full ContactForm exactly
+	const getAudienceContent = () => {
+		switch (selectedAudience) {
+			case 'startup':
+				return {
+					title: 'Ready to Scale Your Startup?',
+					subtitle: "Let's build your growth engine",
+					description:
+						'From MVP to Series A-ready platforms—we help startups build fast, scale smart, and get to market quickly.',
+					buttonText: 'Get Your Startup Quote',
+				};
+			case 'qsr':
+				return {
+					title: 'Ready to Drive More Orders?',
+					subtitle: 'Restaurant websites that deliver results',
+					description: 'Custom QSR websites and ordering systems that cut platform fees and boost direct revenue.',
+					buttonText: 'Calculate Revenue Impact',
+				};
+			case 'enterprise':
+				return {
+					title: 'Ready for Enterprise-Grade Digital?',
+					subtitle: 'Strategic solutions that scale',
+					description:
+						'Custom enterprise platforms and marketing websites built for security, compliance, and performance.',
+					buttonText: 'Schedule Strategic Consultation',
+				};
+			default:
+				return {
+					title: 'Ready to Transform Your Digital Presence?',
+					subtitle: "Let's build something amazing together",
+					description: "Tell us about your project, and we'll show you how we can help drive real business results.",
+					buttonText: "Let's Talk About Your Project",
+				};
+		}
+	};
+
+	const audienceContent = getAudienceContent();
+
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isSubmitting },
+	} = useForm();
+
+	const onSubmit = async (data) => {
+		const { name, email, desc } = data;
+		const emailBody = {
+			email,
+			subject: 'New Quick Contact Form Inquiry - House of Giants',
+			name,
+			desc,
+			audience: selectedAudience, // Include audience data
+		};
+
+		try {
+			const response = await fetchJson('/api/send-email', {
+				body: JSON.stringify(emailBody),
+				headers: { 'Content-Type': 'application/json' },
+				method: 'POST',
+			});
+
+			const { status } = JSON.parse(response);
+			if (status === 200) {
+				// Track successful form submission with Plausible
+				trackContactFormSubmission('audience_selector', selectedAudience);
+
+				formEl.current.reset();
+				setContactSuccess(true);
+			}
+		} catch (error) {
+			console.error('Error submitting form:', error);
+		}
+	};
+
+	return (
+		<AnimatePresence mode="wait">
+			{!contactSuccess ? (
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					className="bg-black/20 backdrop-blur-md p-8 rounded-xl border border-gray-800 relative overflow-hidden"
+				>
+					<div className="relative z-10">
+						<h2 className="text-2xl font-bold mb-6 text-moon-rock">Let's Start a Conversation</h2>
+						<SimpleContactForm
+							formEl={formEl}
+							register={register}
+							handleSubmit={handleSubmit}
+							onSubmit={onSubmit}
+							errors={errors}
+							isSubmitting={isSubmitting}
+							formSource="audience_selector"
+							buttonText={audienceContent.buttonText}
+						/>
+						<div className="mt-6 pt-6 border-t border-gray-800 text-center">
+							<p className="text-moon-rock mb-4">Need to share more details about your project?</p>
+							<Button href="/contact#contact-detailed" variant="secondary" className="w-full">
+								Go to Detailed Project Form
+								<span className="text-[var(--c-accent)] ml-2">→</span>
+							</Button>
+						</div>
+					</div>
+				</motion.div>
+			) : (
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					className="bg-black bg-opacity-30 p-8 rounded-xl border border-gray-800 relative overflow-hidden"
+				>
+					<SuccessMessage />
+					<div className="mt-8 text-center">
+						<Button href="/contact" size="lg" variant="primary">
+							View All Contact Options
+							<span className="text-[var(--c-accent)] ml-2">→</span>
+						</Button>
+					</div>
+				</motion.div>
+			)}
+		</AnimatePresence>
+	);
+};
+
+// Full Contact Form Component (existing functionality)
+const FullContactForm = ({ title, subtitle, accent, description, selectedAudience }) => {
+	const [contactSuccess, setContactSuccess] = useState(null);
+	const formEl = useRef(null);
+	const { trackContactFormSubmission } = usePlausible();
+
+	// Audience-specific messaging
+	const getAudienceContent = () => {
+		switch (selectedAudience) {
+			case 'startup':
+				return {
+					title: 'Ready to Scale Your Startup?',
+					subtitle: "Let's build your growth engine",
+					description:
+						'From MVP to Series A-ready platforms—we help startups build fast, scale smart, and get to market quickly.',
+					buttonText: 'Get Your Startup Quote',
+				};
+			case 'qsr':
+				return {
+					title: 'Ready to Drive More Orders?',
+					subtitle: 'Restaurant websites that deliver results',
+					description: 'Custom QSR websites and ordering systems that cut platform fees and boost direct revenue.',
+					buttonText: 'Calculate Revenue Impact',
+				};
+			case 'enterprise':
+				return {
+					title: 'Ready for Enterprise-Grade Digital?',
+					subtitle: 'Strategic solutions that scale',
+					description:
+						'Custom enterprise platforms and marketing websites built for security, compliance, and performance.',
+					buttonText: 'Schedule Strategic Consultation',
+				};
+			default:
+				return {
+					title: title || 'Ready to Transform Your Digital Presence?',
+					subtitle: subtitle || "Let's build something amazing together",
+					description:
+						description ||
+						"Tell us about your project, and we'll show you how we can help drive real business results.",
+					buttonText: "Let's Talk About Your Project",
+				};
+		}
+	};
+
+	const audienceContent = getAudienceContent();
 
 	const {
 		register,
@@ -110,6 +292,9 @@ const ContactForm = ({ title, subtitle, accent, description }) => {
 
 			const { status } = JSON.parse(response);
 			if (status === 200) {
+				// Track successful form submission with Plausible
+				trackContactFormSubmission('homepage', selectedAudience);
+
 				formEl.current.reset();
 				setContactSuccess(true);
 			}
@@ -126,7 +311,12 @@ const ContactForm = ({ title, subtitle, accent, description }) => {
 				pt="var(--section-spacing-top)"
 				pb="var(--section-spacing-bottom)"
 			>
-				<ContactHeader title={title} subtitle={subtitle} accent={accent} description={description} />
+				<ContactHeader
+					title={audienceContent.title}
+					subtitle={audienceContent.subtitle}
+					accent={accent}
+					description={audienceContent.description}
+				/>
 
 				<div className="max-w-3xl mx-auto">
 					<AnimatePresence mode="wait">
@@ -135,12 +325,8 @@ const ContactForm = ({ title, subtitle, accent, description }) => {
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
-								className="bg-black bg-opacity-30 p-8 rounded-xl border border-gray-800 relative overflow-hidden"
+								className="bg-black/20 backdrop-blur-md p-8 rounded-xl border border-gray-800 relative overflow-hidden"
 							>
-								{/* Decorative gradient blob */}
-								<div className="absolute top-0 right-0 w-64 h-64 bg-purple-600 opacity-20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-								<div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-600 opacity-10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-
 								<div className="relative z-10">
 									<h2 className="text-2xl font-bold mb-6">Let's Start a Conversation</h2>
 									<SimpleContactForm
@@ -151,6 +337,7 @@ const ContactForm = ({ title, subtitle, accent, description }) => {
 										errors={errors}
 										isSubmitting={isSubmitting}
 										formSource="homepage"
+										buttonText={audienceContent.buttonText}
 									/>
 									<div className="mt-6 pt-6 border-t border-gray-800 text-center">
 										<p className="text-moon-rock mb-4">Need to share more details about your project?</p>
@@ -184,4 +371,4 @@ const ContactForm = ({ title, subtitle, accent, description }) => {
 	);
 };
 
-export default ContactForm;
+export default FullContactForm;

@@ -36,7 +36,7 @@ export default function PostLayout({ post, content }) {
 	};
 
 	return (
-		<main className="relative bg-[#1a1f24] text-gray-100 min-h-screen">
+		<main className="relative text-gray-100 min-h-screen">
 			<FloatingGradients variant="purple" intensity="low" />
 			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 

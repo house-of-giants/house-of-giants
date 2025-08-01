@@ -135,9 +135,15 @@ export const PricingCTA = () => {
 						</div>
 
 						{/* Additional Note */}
-						<p className="mt-6 text-wolf-gray text-sm md:text-base italic">
-							Custom solutions and enterprise pricing also available
-						</p>
+						<div className="mt-8 space-y-3">
+							<p className="text-wolf-gray text-base">
+								<span className="font-medium text-white">Enterprise & Custom Solutions:</span> We work with organizations of all sizes, 
+								from pre-seed startups to Fortune 500 companies.
+							</p>
+							<p className="text-cyber-green text-sm">
+								Multi-year agreements • Volume pricing • Dedicated support • Security & compliance
+							</p>
+						</div>
 					</motion.div>
 				</div>
 			</Container>
