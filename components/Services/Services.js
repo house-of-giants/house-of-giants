@@ -7,7 +7,6 @@ import { TechCard } from './TechCard';
 import { SectionHeader } from '../SectionHeader/SectionHeader';
 import { motion } from 'framer-motion';
 import { Button } from '../Button/Button';
-import Link from 'next/link';
 
 export const Services = () => {
 	const services = [
@@ -15,33 +14,45 @@ export const Services = () => {
 			id: '01',
 			title: 'Scalable Web Development',
 			description:
-				'We build digital infrastructure that grows with you. Whether you&apos;re launching your first MVP or modernizing a legacy site, we deliver scalable web development solutions that support your next stage of growth.',
+				'We build digital infrastructure that grows with you. Whether you&apos;re launching your first MVP, modernizing an enterprise marketing site, or building a multi-location restaurant platform, we deliver scalable web development solutions that support your next stage of growth.',
 			features: [
-				'Custom WordPress Development',
+				'Custom WordPress & CMS Development',
 				'Full-Stack Web Application Architecture',
-				'API & Platform Integration',
+				'Enterprise-Grade API Integration',
 			],
 		},
 		{
 			id: '02',
 			title: 'Immersive Web Experiences',
 			description:
-				'Your website should work as hard as your team does. From lightning-fast dashboards to highly interactive digital tools, we build web applications that feel intuitive, powerful, and built just for you.',
-			features: ['Advanced Front-End Engineering', 'UI/UX Design for Web Applications', 'Real-Time Data Interfaces'],
+				'Your website should work as hard as your team does. From startup dashboards and enterprise marketing platforms to interactive restaurant ordering systems, we build web applications that feel intuitive, powerful, and built just for you.',
+			features: [
+				'Advanced Front-End Engineering',
+				'UI/UX Design for Web Applications',
+				'Real-Time Data & Analytics Interfaces',
+			],
 		},
 		{
 			id: '03',
 			title: 'UX Architecture & Strategy',
 			description:
-				'Great design isn&apost just about looks—it&apos;s about how users feel. We create architecture systems that reduce friction, improve navigation, and drive clarity across every user journey.',
-			features: ['UX Research & Behavioral Insights', 'Information Architecture', 'Interaction Design Systems'],
+				'Great design isn&apos;t just about looks—it&apos;s about how users feel and what they do next. From startup user onboarding and enterprise content strategy to restaurant ordering flows, we create architecture systems that reduce friction and drive results.',
+			features: [
+				'UX Research & Behavioral Insights',
+				'Information Architecture & Content Strategy',
+				'Conversion-Focused Design Systems',
+			],
 		},
 		{
 			id: '04',
 			title: 'Digital Innovation & Problem Solving',
 			description:
-				'You don&apos;t need more tech—just the right solution. We help brands simplify complexity with technical discovery, lean architecture, and thoughtful experimentation that actually moves the needle.',
-			features: ['Technical Discovery', 'Custom Solution Architecture', 'End-to-End Strategy & Execution'],
+				'You don&apos;t need more tech—just the right solution. Whether you&apos;re a startup optimizing for growth, an enterprise streamlining operations, or a restaurant chain improving customer experience, we help you simplify complexity with smart architecture and strategic execution.',
+			features: [
+				'Technical Discovery & Strategy',
+				'Custom Solution Architecture',
+				'Performance Optimization & Scaling',
+			],
 		},
 	];
 
@@ -105,7 +116,7 @@ export const Services = () => {
 					<SectionHeader
 						title="Services"
 						subtitle="Built to perform. Designed to scale."
-						description="We help ambitious brands solve real business problems with custom web development, scalable applications, and UX strategies built to drive results."
+						description="We help organizations of all sizes—from pre-seed startups to Fortune 500 companies—solve real business problems with custom web development, scalable applications, and UX strategies built to drive results."
 					/>
 
 					<div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-[var(--content-spacing)]">

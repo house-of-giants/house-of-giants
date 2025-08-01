@@ -158,6 +158,115 @@
 	padding-bottom: 1px;
 }
 
+.giants-fluid-text-container {
+	container-type: inline-size;
+}
+
+.giants-fluid-text {
+	font-size: 28cqw;
+	font-weight: 900;
+	letter-spacing: -0.04em;
+	line-height: 0.75;
+}
+
+.-grad-header {
+	background: linear-gradient(135deg, var(--c-cyber-green), var(--c-neon-sky));
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+/* Advanced Typography System */
+.hero-title {
+	font-weight: 900;
+	line-height: 0.8;
+	letter-spacing: -0.04em;
+	font-feature-settings:
+		'kern' 1,
+		'liga' 1;
+	transform-style: preserve-3d;
+}
+
+/* Clean Structured Typography */
+.hero-title-structured {
+	font-feature-settings:
+		'kern' 1,
+		'liga' 1,
+		'ss01' 1;
+	text-rendering: optimizeLegibility;
+}
+
+/* Extreme Perspective Typography System */
+.perspective-container {
+	perspective: 1200px;
+	perspective-origin: center top;
+	transform-style: preserve-3d;
+}
+
+.giants-perspective {
+	font-feature-settings:
+		'kern' 1,
+		'liga' 1,
+		'ss01' 1;
+	text-rendering: optimizeLegibility;
+	transform: skewY(-2deg) skewX(-5deg) rotateX(5deg) rotateY(-2deg) translateZ(50px) scale(1.1);
+	transform-origin: left center;
+	will-change: transform;
+	backface-visibility: hidden;
+	filter: drop-shadow(8px 12px 20px rgba(0, 0, 0, 0.4));
+}
+
+.giants-shadow {
+	transform: skewY(-2deg) skewX(-5deg) rotateX(5deg) rotateY(-2deg) translateZ(10px) translateX(6px) translateY(8px)
+		scale(1.1);
+	transform-origin: left center;
+	z-index: -1;
+	opacity: 0.6;
+	blur: 2px;
+}
+
+.transform-gpu {
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+}
+
+/* Enhanced mobile perspective */
+@media (max-width: 768px) {
+	.giants-perspective {
+		transform: skewY(-1deg) skewX(-3deg) rotateX(3deg) scale(1.05);
+	}
+
+	.giants-shadow {
+		transform: skewY(-1deg) skewX(-3deg) rotateX(3deg) translateX(4px) translateY(6px) scale(1.05);
+	}
+}
+
+.hero-text-clean {
+	text-shadow:
+		0 2px 4px rgba(0, 0, 0, 0.2),
+		0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.hero-text-clean:hover {
+	text-shadow:
+		0 2px 6px rgba(0, 0, 0, 0.3),
+		0 6px 12px rgba(0, 0, 0, 0.15);
+	transform: translateY(-1px);
+}
+
+.word-highlight {
+	position: relative;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.word-highlight:hover {
+	background: linear-gradient(135deg, var(--c-cyber-green), var(--c-neon-sky));
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
 .gradient-text-anim {
 	--bg-size: 400%;
 	--color-one: #c1ff1d;

@@ -21,7 +21,7 @@ export const Section = ({ count, title, children, id, className }) => {
 			<section
 				id={id}
 				ref={ref}
-				className={`relative ${className}`}
+				className={`relative ${className ? className : ''} z-10`}
 				style={{
 					scrollMarginTop: 'calc( var(--header-height) + 32px)', // 32px is the section bar height
 				}}

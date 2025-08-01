@@ -223,7 +223,7 @@ export function PostFooter({ slug, title, tags }) {
 			)}
 
 			{/* CTA footer */}
-			<footer className="flex flex-col items-center py-24 px-8 bg-[#1a1f24] text-white border-t border-white border-opacity-10">
+			<footer className="flex flex-col items-center py-24 px-8 text-white border-t border-white border-opacity-10">
 				<motion.p
 					className="text-6xl md:text-9xl font-serif -grad-header mb-12"
 					initial={{ opacity: 0, y: 20 }}

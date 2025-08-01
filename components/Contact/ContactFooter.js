@@ -8,7 +8,7 @@ export const ContactFooter = () => (
 		initial={{ opacity: 0 }}
 		animate={{ opacity: 1 }}
 		transition={{ delay: 0.2 }}
-		className="font-mono py-16 relative bg-[var(--c-primary-dark)]"
+		className="font-mono py-16 relative"
 	>
 		{/* Gradient Border Top */}
 		<div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgba(0,255,224,0.3)] to-transparent" />

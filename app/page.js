@@ -1,8 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import { Hero } from '@/components/Hero/Hero';
 import { Services } from '@/components/Services/Services';
-import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
 import { Work } from '@/components/Work/Work';
 import { Clients } from '@/components/Clients/Clients';
 import { Impact } from '@/components/Impact/Impact';
@@ -13,25 +13,25 @@ import CanonicalLink from '@/components/SEO/CanonicalLink';
 import { PricingCTA } from '@/components/PricingCTA/PricingCTA';
 
 export default function Page() {
+	const [selectedAudience, setSelectedAudience] = useState(null);
+
+	const handleAudienceSelect = (audience) => {
+		setSelectedAudience(audience);
+	};
+
 	return (
 		<main className="relative">
-			<FloatingGradients intensity="high" />
 			<CanonicalLink path="/" />
 			<div className="-mt-18 lg:-mt-24 2xl:-mt-36">
-				<Hero />
+				<Hero onAudienceSelect={handleAudienceSelect} />
 			</div>
-			<SectionSeparator />
-			<Services />
-			<SectionSeparator />
+			{/* Skip standalone AudienceSelector since it's now integrated in Hero */}
+			<Services selectedAudience={selectedAudience} />
 			<Work items={work} />
-			<SectionSeparator />
 			<Clients />
-			<SectionSeparator />
 			<Impact />
-			<SectionSeparator />
 			<PricingCTA />
-			<SectionSeparator />
-			<ContactForm formSource="Homepage" />
+			<ContactForm formSource="Homepage" selectedAudience={selectedAudience} />
 		</main>
 	);
 }

@@ -47,8 +47,8 @@ const workData = [
 
 export default function WorkPage() {
 	return (
-		<main className="relative bg-[#1a1f24] text-gray-100" id="work">
-			<FloatingGradients variant="green" intensity="medium" />
+		<main className="relative text-gray-100" id="work">
+			<FloatingGradients variant="green" intensity="low" />
 
 			{/* Hero Section */}
 			<Section count="1.0" title="Work Portfolio">
