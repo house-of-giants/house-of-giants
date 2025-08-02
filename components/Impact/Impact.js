@@ -98,12 +98,7 @@ const AnimatedCounter = ({ target, duration = 2, symbol }) => {
 export const Impact = () => {
 	return (
 		<Section count="6.0" title="Impact">
-			<Container
-				className="-has-background"
-				background="var(--c-primary-dark)"
-				pt="var(--section-spacing-top)"
-				pb="var(--section-spacing-bottom)"
-			>
+			<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}
 					animate={{ opacity: 1, y: 0 }}

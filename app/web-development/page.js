@@ -227,12 +227,7 @@ export default function WebDevelopment() {
 
 			{/* Hero Section */}
 			<Section count="0.0" title="Digital Experiences">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 						<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
 							<h1 className="text-5xl md:text-7xl font-900 mb-6 -grad-header">
@@ -296,12 +291,7 @@ export default function WebDevelopment() {
 
 			{/* Web Development Services */}
 			<Section count="1.0" title="Development Services" id="services">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<SectionHeader
 						title="Our Services"
 						subtitle="crafted for results."
@@ -361,12 +351,7 @@ export default function WebDevelopment() {
 			<SectionSeparator />
 
 			<Section count="1.5" title="Development Expertise">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<SectionHeader
 						title="Denver's Coolest"
 						subtitle="Web Development Agency"
@@ -480,12 +465,7 @@ export default function WebDevelopment() {
 
 			{/* Process Section */}
 			<Section count="2.0" title="Our Process">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<SectionHeader
 						title="Our Process"
 						subtitle="is methodical not magical."
@@ -568,12 +548,7 @@ export default function WebDevelopment() {
 
 			{/* Technologies Section */}
 			<Section count="3.0" title="Technologies">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<SectionHeader
 						title="Technologies"
 						subtitle="we've mastered."
@@ -669,12 +644,7 @@ export default function WebDevelopment() {
 
 			{/* CTA Section */}
 			<Section count="4.0" title="Ready to build something extraordinary?">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<motion.div
 						className="text-center max-w-3xl mx-auto"
 						initial={{ opacity: 0, y: 20 }}

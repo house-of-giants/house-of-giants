@@ -13,7 +13,6 @@ export const Hero = ({ onAudienceSelect }) => {
 			<Container
 				fullWidth
 				className="-has-background relative overflow-hidden flex flex-col justify-center px-4 md:px-8"
-				background="var(--c-primary-dark)"
 				pt="clamp(var(--sp-xl), 20vh, 12rem)"
 			>
 				<HeroContent />

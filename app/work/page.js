@@ -98,12 +98,7 @@ export default function WorkPage() {
 
 			{/* Portfolio Section */}
 			<Section count="2.0" title="Portfolio" id="portfolio">
-				<Container
-					className="-has-background relative z-10"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<SectionHeader
 						title="Featured Work"
 						subtitle="that speaks for itself."

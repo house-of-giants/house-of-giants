@@ -6,12 +6,7 @@ import { Section } from '@/components/Section/Section';
 export const PricingApproach = () => {
 	return (
 		<Section count="2.0" title="Our Billing Approach">
-			<Container
-				className="-has-background"
-				background="var(--c-primary-dark)"
-				pt="var(--section-spacing-top)"
-				pb="var(--section-spacing-bottom)"
-			>
+			<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 				<SectionHeader
 					title="How We Bill"
 					subtitle="So Nobody Gets Burned"

@@ -7,8 +7,7 @@ import { CubeTransparentIcon, RocketLaunchIcon, ServerStackIcon } from '@heroico
 export const PricingHero = ({ title, subtitle, description }) => {
 	return (
 		<Container
-			className="-has-background relative overflow-hidden min-h-[calc(100vh+var(--header-height))] flex flex-col justify-center px-4 md:px-8"
-			background="var(--c-primary-dark)"
+			className="relative overflow-hidden min-h-[calc(100vh+var(--header-height))] flex flex-col justify-center px-4 md:px-8"
 			pt="clamp(var(--sp-xl), 15vh, 4rem)"
 			pb="clamp(var(--sp-xl), 15vh, 4rem)"
 		>

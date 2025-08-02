@@ -107,12 +107,7 @@ export const Services = () => {
 		<>
 			{/* Services Section */}
 			<Section count="2.0" title="Services">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<SectionHeader
 						title="Services"
 						subtitle="Built to perform. Designed to scale."
@@ -129,12 +124,7 @@ export const Services = () => {
 
 			{/* Restaurant Websites CTA */}
 			<Section count="4.0" title="Restaurant Solutions">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<motion.div
 						className="relative bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden"
 						initial={{ opacity: 0, y: 20 }}
@@ -248,12 +238,7 @@ export const Services = () => {
 
 			{/* Sacred Tools Section */}
 			<Section count="3.0" title="Sacred Tools">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<SectionHeader
 						title="No tool is sacred"
 						subtitle="We don't care what's trending."

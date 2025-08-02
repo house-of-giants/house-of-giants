@@ -9,12 +9,7 @@ import { SectionHeader } from '../SectionHeader/SectionHeader';
 export const PricingCTA = () => {
 	return (
 		<Section count="7.0" title="Pricing">
-			<Container
-				className="-has-background"
-				background="var(--c-primary-dark)"
-				pt="var(--section-spacing-top)"
-				pb="var(--section-spacing-bottom)"
-			>
+			<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 				{/* Header with Vertical Gradient Line */}
 				<SectionHeader
 					title="Transparent Pricing"
@@ -137,8 +132,8 @@ export const PricingCTA = () => {
 						{/* Additional Note */}
 						<div className="mt-8 space-y-3">
 							<p className="text-wolf-gray text-base">
-								<span className="font-medium text-white">Enterprise & Custom Solutions:</span> We work with organizations of all sizes, 
-								from pre-seed startups to Fortune 500 companies.
+								<span className="font-medium text-white">Enterprise & Custom Solutions:</span> We work with
+								organizations of all sizes, from pre-seed startups to Fortune 500 companies.
 							</p>
 							<p className="text-cyber-green text-sm">
 								Multi-year agreements • Volume pricing • Dedicated support • Security & compliance
