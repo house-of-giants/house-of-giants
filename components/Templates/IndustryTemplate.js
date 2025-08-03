@@ -19,8 +19,7 @@ export const IndustryHero = ({ industry, headline, subheadline, description, her
 	return (
 		<Section count="1.0" title={`${industry} Web Solutions`}>
 			<Container
-				className="-has-background relative overflow-hidden min-h-[calc(60vh+var(--header-height))] flex flex-col justify-center px-4 md:px-8"
-				background="var(--c-primary-dark)"
+				className="relative overflow-hidden min-h-[calc(60vh+var(--header-height))] flex flex-col justify-center px-4 md:px-8"
 				pt="clamp(var(--sp-xl), 15vh, 9rem)"
 				pb="clamp(var(--sp-xl), 15vh, 9rem)"
 			>
@@ -88,12 +87,7 @@ export const IndustryHero = ({ industry, headline, subheadline, description, her
 export const IndustryServices = ({ industry, title, subtitle, description, services }) => {
 	return (
 		<Section count="2.0" title={`${industry} Services`} id="services">
-			<Container
-				className="-has-background"
-				background="var(--c-primary-dark)"
-				pt="var(--section-spacing-top)"
-				pb="var(--section-spacing-bottom)"
-			>
+			<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 				<SectionHeader
 					title={title || 'Digital Services'}
 					subtitle={subtitle || `for modern ${industry.toLowerCase()}.`}
@@ -120,12 +114,7 @@ export const IndustryCaseStudies = ({ industry, title, subtitle, accent, caseStu
 
 	return (
 		<Section count="3.0" title={`${industry} Case Studies`}>
-			<Container
-				className="-has-background relative z-10"
-				background="var(--c-primary-dark)"
-				pt="var(--section-spacing-top)"
-				pb="var(--section-spacing-bottom)"
-			>
+			<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 				<SectionHeader
 					title={title || `${industry} Success`}
 					subtitle={subtitle || 'stories that inspire.'}
@@ -222,12 +211,7 @@ export const IndustryProcess = ({
 
 	return (
 		<Section count="3.0" title={`${industry} Process`}>
-			<Container
-				className="-has-background"
-				background="var(--c-primary-dark)"
-				pt="var(--section-spacing-top)"
-				pb="var(--section-spacing-bottom)"
-			>
+			<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 				<SectionHeader
 					title={title || `Our ${industry} Approach`}
 					subtitle={subtitle || 'A proven methodology.'}
@@ -297,12 +281,7 @@ export const IndustryImpact = ({ industry, title, subtitle, accent, description,
 
 	return (
 		<Section count="4.0" title={`${industry} Impact`}>
-			<Container
-				className="-has-background"
-				background="var(--c-primary-dark)"
-				pt="var(--section-spacing-top)"
-				pb="var(--section-spacing-bottom)"
-			>
+			<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 				<SectionHeader
 					title={title || 'Real Results'}
 					subtitle={subtitle || `for ${industry.toLowerCase()} clients.`}

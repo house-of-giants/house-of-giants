@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Arrow from '../SVG/Arrow';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 const Testimonials = ({ noHeader = false }) => {

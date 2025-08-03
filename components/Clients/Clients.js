@@ -22,12 +22,7 @@ export const Clients = () => {
 
 	return (
 		<Section count="5.0" title="Clients">
-			<Container
-				className="-has-background"
-				background="var(--c-primary-dark)"
-				pt="var(--section-spacing-top)"
-				pb="var(--section-spacing-bottom)"
-			>
+			<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 				<SectionHeader
 					title="Partners"
 					subtitle="in digital excellence."

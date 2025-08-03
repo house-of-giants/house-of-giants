@@ -7,12 +7,7 @@ import { Section } from '@/components/Section/Section';
 export const PricingIncludes = ({ includes }) => {
 	return (
 		<Section count="3.1" title="What's Included" id="pricing-includes">
-			<Container
-				className="-has-background"
-				background="var(--c-primary-dark)"
-				pt="var(--section-spacing-top)"
-				pb="var(--section-spacing-bottom)"
-			>
+			<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 				<SectionHeader
 					title="What Every Package Includes"
 					subtitle="How we approach building digital platforms that evolve with your brand."

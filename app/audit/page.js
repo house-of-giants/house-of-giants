@@ -8,12 +8,7 @@ export default function AuditPage() {
 		<main>
 			<Section count="1.0" title="Website Audit" id="audit">
 				<FloatingGradients variant="purple" intensity="low" />
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<div className="max-w-7xl mx-auto">
 						{/* Hero Section */}
 						<div className="space-y-8 mb-16 text-center">

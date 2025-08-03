@@ -8,12 +8,7 @@ import { SectionHeader } from '../SectionHeader/SectionHeader';
 export const Work = ({ items }) => {
 	return (
 		<Section count="4.0" title="Work" id="work">
-			<Container
-				className="-has-background relative z-10"
-				background="var(--c-primary-dark)"
-				pt="var(--section-spacing-top)"
-				pb="var(--section-spacing-bottom)"
-			>
+			<Container className="relative z-10" pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 				<SectionHeader
 					title="Our Work"
 					subtitle="speaks for itself."

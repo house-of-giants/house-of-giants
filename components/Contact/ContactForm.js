@@ -305,12 +305,7 @@ const FullContactForm = ({ title, subtitle, accent, description, selectedAudienc
 
 	return (
 		<Section count="7.0" title="Contact" id="contact">
-			<Container
-				className="-has-background"
-				background="var(--c-primary-dark)"
-				pt="var(--section-spacing-top)"
-				pb="var(--section-spacing-bottom)"
-			>
+			<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 				<ContactHeader
 					title={audienceContent.title}
 					subtitle={audienceContent.subtitle}

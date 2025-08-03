@@ -211,12 +211,7 @@ export default function DigitalInnovation() {
 
 			{/* Hero Section */}
 			<Section count="0.0" title="Digital Experiences">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 						<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
 							<h1 className="text-5xl md:text-7xl font-900 mb-6 -grad-header">
@@ -287,12 +282,7 @@ export default function DigitalInnovation() {
 
 			{/* Digital Innovation Services */}
 			<Section count="1.0" title="Innovation Services" id="services">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<SectionHeader
 						title="Digital Innovation"
 						subtitle="that solves real problems."
@@ -454,12 +444,7 @@ export default function DigitalInnovation() {
 
 			{/* Process Section */}
 			<Section count="1.5" title="Our Process">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<SectionHeader
 						title="Our Innovation Process"
 						subtitle="is strategic not spontaneous."
@@ -485,12 +470,7 @@ export default function DigitalInnovation() {
 
 			{/* Denver Innovation */}
 			<Section count="2.0" title="Denver Innovation">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
 						<div className="flex flex-col space-y-8">
 							<motion.div
@@ -591,12 +571,7 @@ export default function DigitalInnovation() {
 
 			{/* CTA Section */}
 			<Section count="3.0" title="Ready to build something extraordinary?">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<motion.div
 						className="text-center max-w-3xl mx-auto"
 						initial={{ opacity: 0, y: 20 }}

@@ -92,9 +92,9 @@ export const Header = () => {
 				{/* Primary Navigation */}
 				<nav className="hidden md:flex items-center gap-8">
 					<Link
-						href="/#work"
+						href="/work"
 						className={`font-serif font-bold italic transition-colors duration-300 text-2xl ${
-							isActive('/#work') ? 'text-[#00ffe0]' : 'text-white hover:text-[#00ffe0]'
+							isActive('/work') ? 'text-[#00ffe0]' : 'text-white hover:text-[#00ffe0]'
 						}`}
 					>
 						Work
@@ -254,9 +254,9 @@ export const Header = () => {
 						<div className="px-6 py-8 max-h-[80vh] overflow-y-auto">
 							<div className="space-y-1">
 								<Link
-									href="/#work"
+									href="/work"
 									className={`block py-4 px-3 text-xl rounded-lg transition-all ${
-										isActive('/#work')
+										isActive('/work')
 											? 'text-[#00ffe0] bg-black bg-opacity-40'
 											: 'text-white hover:bg-black hover:bg-opacity-20 hover:text-[#00ffe0]'
 									}`}

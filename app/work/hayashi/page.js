@@ -25,6 +25,8 @@ export default function Hayashi() {
 				heroImage="/images/hayashicase4.jpg"
 				heroVideo="/images/hayashicase2.webm"
 				variant="gold"
+				projectType="Luxury Brand Website + Immersive Visual Storytelling"
+				year="2022"
 				intro="Hayashi enters the world of Japanese whisky with a mission: evolve the time-honored awamori rice spirit process, blending the tranquil aura of Okinawan island life with the meticulous artistry that defines Japan's premium beverages."
 				challenge="Hayashi needed more than just a pretty label—they wanted a digital launch that exuded upscale cool while educating consumers about their luxury status. The brand’s three core pillars—Japanese Artistry, Aged to Perfection, and Okinawan Lifestyle—had to shine through every aspect of the site. We had to capture the spirit’s radiant character, grounded in island serenity, while making sure Hayashi would be instantly recognizable on the shelf (and online)."
 				solution="We leaned into immersive visual storytelling to introduce Hayashi as the star of its own narrative. From gold-foil accents and intricate forest motifs to subtle nods at Ryukyu Islands culture, we built a clean, elegant website that weaves mystery, modernity, and tradition into each scroll. By showcasing the bottle as a central figure, we reinforced the brand identity at every turn—ensuring Hayashi's prestige and uniqueness resonated with whisky aficionados and novices alike."

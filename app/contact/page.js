@@ -253,7 +253,7 @@ export default function ContactPage() {
 		{
 			question: 'Do you work with enterprise clients and large organizations?',
 			answer:
-				"Absolutely! We work with organizations of all sizes, from pre-seed startups to Fortune 500 companies. Our enterprise clients appreciate our strategic approach, technical expertise, and ability to handle complex, large-scale projects with security, compliance, and scalability requirements.",
+				'Absolutely! We work with organizations of all sizes, from pre-seed startups to Fortune 500 companies. Our enterprise clients appreciate our strategic approach, technical expertise, and ability to handle complex, large-scale projects with security, compliance, and scalability requirements.',
 		},
 		{
 			question: 'What makes House of Giants different from other agencies?',
@@ -263,12 +263,12 @@ export default function ContactPage() {
 		{
 			question: 'How long does a typical project take?',
 			answer:
-				"Project timelines vary based on scope and complexity. A typical website might take 8-12 weeks, while more complex digital platforms can take 3-6 months. Enterprise projects may have longer timelines to accommodate stakeholder reviews and compliance requirements.",
+				'Project timelines vary based on scope and complexity. A typical website might take 8-12 weeks, while more complex digital platforms can take 3-6 months. Enterprise projects may have longer timelines to accommodate stakeholder reviews and compliance requirements.',
 		},
 		{
 			question: "What's your pricing structure?",
 			answer:
-				"We provide custom quotes based on project scope, complexity, and timeline. Our projects typically start at $25,000, with enterprise solutions scaling based on requirements. We offer flexible payment schedules and can accommodate procurement processes for larger organizations.",
+				'We provide custom quotes based on project scope, complexity, and timeline. Our projects typically start at $25,000, with enterprise solutions scaling based on requirements. We offer flexible payment schedules and can accommodate procurement processes for larger organizations.',
 		},
 		{
 			question: 'Do you offer ongoing support after launch?',
@@ -324,12 +324,7 @@ export default function ContactPage() {
 
 			{/* Hero Section with Split Layout and Form */}
 			<Section count="0.0" title="Contact">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 						<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
 							<h1 className="text-4xl md:text-6xl font-900 mb-4 -grad-header">
@@ -430,12 +425,7 @@ export default function ContactPage() {
 
 			{/* FAQ Section with Sidebar Contact Options */}
 			<Section count="1.0" title="FAQ">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12">
 						<div>
 							<SectionHeader
@@ -544,12 +534,7 @@ export default function ContactPage() {
 
 			{/* Testimonials */}
 			<Section count="2.0" title="Success Stories">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<SectionHeader
 						title="Client Success Stories"
 						subtitle="in their own words."
@@ -565,12 +550,7 @@ export default function ContactPage() {
 
 			{/* Detailed Contact Form Section */}
 			<Section count="3.0" title="Detailed Contact Form" id="contact-detailed">
-				<Container
-					className="-has-background"
-					background="var(--c-primary-dark)"
-					pt="var(--section-spacing-top)"
-					pb="var(--section-spacing-bottom)"
-				>
+				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<SectionHeader
 						title="Tell Us More"
 						subtitle="About Your Project"

@@ -29,9 +29,6 @@ export const CaseStudy = ({
 	testimonial,
 	images,
 	variant = 'default',
-	projectType,
-	client,
-	year,
 }) => {
 	const containerRef = useRef(null);
 	const { scrollYProgress } = useScroll({
@@ -74,44 +71,36 @@ export const CaseStudy = ({
 
 				{/* Hero Header */}
 				<motion.header
-					className="h-screen flex flex-col max-w-[var(--container-width)] mx-auto px-4 md:px-8 items-center justify-center relative gap-0"
+					className="h-screen flex flex-col max-w-[var(--container-width)] mx-auto px-4 md:px-8 items-center justify-center relative"
 					style={{ y: headerY }}
 				>
-					<motion.div className="mb-8" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
-						<div className="flex items-center justify-center text-white/60 text-xs tracking-wider uppercase px-4">
-							<div className="flex items-center justify-center flex-wrap gap-x-2 gap-y-1 max-w-4xl">
-								{projectType?.split(' + ').map((type, index) => (
-									<div key={index} className="flex items-center">
-										<span className="font-medium text-center">{type}</span>
-										{index < projectType.split(' + ').length - 1 && (
-											<span className="mx-2 sm:mx-3 text-cyber-green/60">+</span>
-										)}
-									</div>
-								))}
-								{year && (
-									<>
-										<span className="text-white/40 mx-2 sm:mx-3">•</span>
-										<span className="font-light">{year}</span>
-									</>
-								)}
-							</div>
-						</div>
+					<motion.div
+						className="px-4 py-2 border border-cyber-green/20 rounded-lg cursor-default"
+						whileHover={{
+							scale: 1.05,
+							boxShadow: '0 0 20px rgba(0, 255, 224, 0.3)',
+							borderColor: 'rgba(0, 255, 224, 0.6)',
+						}}
+						transition={{ duration: 0.3, ease: 'easeOut' }}
+					>
+						<span className="text-cyber-green">01</span>
+						<span className="text-white ml-2">Case Study</span>
 					</motion.div>
 					<motion.h1
 						initial={{ opacity: 0, y: 50 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
-						className="text-[clamp(3rem,8vw,8rem)] font-display font-black -grad-header text-center leading-[0.75] tracking-[-0.025em] mb-6"
+						className="text-[clamp(3rem,8vw,8rem)] font-display font-black -grad-header text-center leading-[0.8] tracking-[-0.02em] mb-0"
 					>
 						{title}
 					</motion.h1>
 					<motion.div
-						className="relative z-10 flex flex-col items-center gap-6"
+						className="relative z-10 flex flex-col items-center gap-8"
 						initial={{ opacity: 0, y: 50 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
 					>
-						<h2 className="text-[clamp(1.25rem,3vw,2.5rem)] text-white/90 text-center font-serif font-light leading-[1.2] tracking-[-0.005em] mb-8">
+						<h2 className="text-[clamp(1.5rem,4vw,3rem)] text-white text-center font-serif font-light leading-[1.1] tracking-[-0.01em]">
 							{subtitle}
 						</h2>
 						{liveUrl && (
@@ -180,9 +169,17 @@ export const CaseStudy = ({
 										viewport={{ once: true, margin: '-20%' }}
 										transition={{ duration: 0.6 }}
 									>
-										<h3 className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-cyber-green leading-[1.2] tracking-[-0.01em]">
+										<motion.h3
+											className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-cyber-green leading-[1.2] tracking-[-0.01em] cursor-default"
+											whileHover={{
+												scale: 1.02,
+												textShadow: '0 0 8px rgba(0, 255, 224, 0.6)',
+												letterSpacing: '-0.02em',
+											}}
+											transition={{ duration: 0.3, ease: 'easeOut' }}
+										>
 											The Challenge
-										</h3>
+										</motion.h3>
 										<p className="text-[clamp(1.125rem,2vw,1.5rem)] text-moon-rock leading-[1.6] font-light tracking-[-0.005em]">
 											{challenge}
 										</p>
@@ -196,9 +193,17 @@ export const CaseStudy = ({
 										viewport={{ once: true, margin: '-20%' }}
 										transition={{ duration: 0.6, delay: 0.2 }}
 									>
-										<h3 className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-cyber-green leading-[1.2] tracking-[-0.01em]">
+										<motion.h3
+											className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-cyber-green leading-[1.2] tracking-[-0.01em] cursor-default"
+											whileHover={{
+												scale: 1.02,
+												textShadow: '0 0 8px rgba(0, 255, 224, 0.6)',
+												letterSpacing: '-0.02em',
+											}}
+											transition={{ duration: 0.3, ease: 'easeOut' }}
+										>
 											The Solution
-										</h3>
+										</motion.h3>
 										<p className="text-[clamp(1.125rem,2vw,1.5rem)] text-moon-rock leading-[1.6] font-light tracking-[-0.005em]">
 											{solution}
 										</p>
@@ -265,16 +270,30 @@ export const CaseStudy = ({
 															viewport={{ once: true }}
 															transition={{ delay: 0.3 }}
 														>
-															<span
-																className="text-lg tracking-wider uppercase inline-block"
+															<motion.span
+																className="text-lg tracking-wider uppercase cursor-default inline-block"
 																style={{ color: step.color }}
+																whileHover={{
+																	scale: 1.05,
+																	textShadow: `0 0 12px ${step.color}80`,
+																	letterSpacing: '0.15em',
+																}}
+																transition={{ duration: 0.3, ease: 'easeOut' }}
 															>
 																{step.phase}
-															</span>
+															</motion.span>
 
-															<h3 className="text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-moon-rock mt-2 leading-[1.2] tracking-[-0.01em]">
+															<motion.h3
+																className="text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-moon-rock mt-2 leading-[1.2] tracking-[-0.01em] cursor-default"
+																whileHover={{
+																	scale: 1.02,
+																	opacity: 0.9,
+																	letterSpacing: '-0.02em',
+																}}
+																transition={{ duration: 0.3, ease: 'easeOut' }}
+															>
 																{step.title}
-															</h3>
+															</motion.h3>
 														</motion.div>
 
 														<p
@@ -286,13 +305,25 @@ export const CaseStudy = ({
 															{step.details.map((detail, i) => (
 																<motion.li
 																	key={i}
-																	className="flex items-center space-x-4 text-moon-rock/50 text-[clamp(0.875rem,1.5vw,1rem)] font-light"
+																	className="flex items-center space-x-4 text-moon-rock/50 text-[clamp(0.875rem,1.5vw,1rem)] font-light cursor-default group"
 																	initial={{ opacity: 0, x: -20 }}
 																	whileInView={{ opacity: 1, x: 0 }}
+																	whileHover={{
+																		x: 8,
+																		color: 'rgba(255, 255, 255, 0.8)',
+																	}}
 																	viewport={{ once: true }}
-																	transition={{ delay: 0.4 + i * 0.1 }}
+																	transition={{ delay: 0.4 + i * 0.1, duration: 0.3, ease: 'easeOut' }}
 																>
-																	<span className="h-px w-8" style={{ backgroundColor: step.color }} />
+																	<motion.span
+																		className="h-px w-8"
+																		style={{ backgroundColor: step.color }}
+																		whileHover={{
+																			width: '3rem',
+																			boxShadow: `0 0 8px ${step.color}80`,
+																		}}
+																		transition={{ duration: 0.3, ease: 'easeOut' }}
+																	/>
 																	<span>{detail}</span>
 																</motion.li>
 															))}
@@ -302,9 +333,13 @@ export const CaseStudy = ({
 													{/* Phase Visual */}
 													<div className="col-span-7">
 														<motion.div
-															className="relative aspect-[4/3] overflow-hidden rounded-lg"
+															className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group"
 															initial={{ clipPath: 'inset(0 100% 0 0)' }}
 															whileInView={{ clipPath: 'inset(0 0% 0 0)' }}
+															whileHover={{
+																scale: 1.02,
+																boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+															}}
 															viewport={{ once: true }}
 															transition={{ duration: 1.2, delay: 0.4 }}
 														>
@@ -344,9 +379,16 @@ export const CaseStudy = ({
 							transition={{ duration: 0.8 }}
 						>
 							{section.title && (
-								<h3 className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-cyber-green mb-8 leading-[1.2] tracking-[-0.01em]">
+								<motion.h3
+									className="text-3xl font-bold text-cyber-green mb-8 cursor-default"
+									whileHover={{
+										scale: 1.02,
+										textShadow: '0 0 8px rgba(0, 255, 224, 0.6)',
+									}}
+									transition={{ duration: 0.3, ease: 'easeOut' }}
+								>
 									{section.title}
-								</h3>
+								</motion.h3>
 							)}
 							<div className={section.className}>{section.content}</div>
 						</motion.div>
@@ -375,27 +417,54 @@ export const CaseStudy = ({
 									className="p-16 border border-cyber-green/20 rounded-lg bg-black/20 backdrop-blur-sm"
 									initial={{ opacity: 0, y: 50 }}
 									whileInView={{ opacity: 1, y: 0 }}
+									whileHover={{
+										borderColor: 'rgba(0, 255, 224, 0.4)',
+										boxShadow: '0 0 30px rgba(0, 255, 224, 0.1)',
+									}}
 									viewport={{ once: true, margin: '-20%' }}
 									transition={{ duration: 0.8 }}
 								>
-									<h3 className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-cyber-green mb-8 leading-[1.2] tracking-[-0.01em]">
+									<motion.h3
+										className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-cyber-green mb-8 leading-[1.2] tracking-[-0.01em] cursor-default"
+										whileHover={{
+											scale: 1.02,
+											textShadow: '0 0 8px rgba(0, 255, 224, 0.6)',
+										}}
+										transition={{ duration: 0.3, ease: 'easeOut' }}
+									>
 										The Impact
-									</h3>
+									</motion.h3>
 									<div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
 										{impact?.stats?.map((stat, index) => (
 											<motion.div
 												key={stat.value}
-												className="space-y-4 flex flex-col"
+												className="space-y-4 flex flex-col cursor-default group"
+												whileHover={{
+													scale: 1.05,
+													y: -4,
+												}}
 												initial={{ opacity: 0, y: 20 }}
 												whileInView={{ opacity: 1, y: 0 }}
 												viewport={{ once: true }}
-												transition={{ duration: 0.6, delay: index * 0.1 }}
+												transition={{ duration: 0.3, delay: index * 0.1, ease: 'easeOut' }}
 											>
-												<p className="text-[clamp(3rem,6vw,4rem)] font-black text-moon-rock mb-0 leading-[0.9] tracking-[-0.02em]">
+												<motion.p
+													className="text-[clamp(3rem,6vw,4rem)] font-black text-moon-rock mb-0 leading-[0.9] tracking-[-0.02em]"
+													whileHover={{
+														textShadow: '0 0 12px rgba(255, 255, 255, 0.3)',
+													}}
+												>
 													{stat.value}
-													<span className="text-cyber-green">{stat.unit}</span>
-												</p>
-												<p className="text-moon-rock text-[clamp(0.875rem,1.5vw,1rem)] font-light leading-[1.4]">
+													<motion.span
+														className="text-cyber-green"
+														whileHover={{
+															textShadow: '0 0 8px rgba(0, 255, 224, 0.8)',
+														}}
+													>
+														{stat.unit}
+													</motion.span>
+												</motion.p>
+												<p className="text-moon-rock text-[clamp(0.875rem,1.5vw,1rem)] font-light leading-[1.4] group-hover:text-moon-rock/80 transition-colors duration-300">
 													{stat.description}
 												</p>
 											</motion.div>
@@ -411,13 +480,18 @@ export const CaseStudy = ({
 					<Section count="6.0" title="What do they think?">
 						<div className="text-[clamp(1.5rem,3vw,2.25rem)] text-moon-rock leading-[1.3] p-8 lg:py-20 lg:px-32 relative mb-20">
 							<blockquote className="font-semibold max-w-[39ch]">
-								<svg
-									className="mb-8"
+								<motion.svg
+									className="mb-8 cursor-default"
 									xmlns="http://www.w3.org/2000/svg"
 									width="73"
 									height="65"
 									viewBox="0 0 73 65"
 									fill="none"
+									whileHover={{
+										scale: 1.1,
+										filter: 'drop-shadow(0 0 8px rgba(0, 255, 224, 0.6))',
+									}}
+									transition={{ duration: 0.3, ease: 'easeOut' }}
 								>
 									<path
 										d="M0 40.4268C0 28.4485 1.67512 19.8171 5.02536 14.5325C8.3756 9.07182 14.4589 4.22764 23.2754 0L33.3261 15.061C26.8019 18.7602 23.0109 21.8428 21.9529 24.3089C21.0713 26.5989 20.6304 28.7127 20.6304 30.6504H33.0616V65H0V40.4268ZM39.6739 40.4268C39.6739 28.4485 41.2609 19.8171 44.4348 14.5325C47.785 9.07182 53.9565 4.22764 62.9493 0L73 15.061C66.4758 18.7602 62.6848 21.8428 61.6268 24.3089C60.5688 26.5989 60.0399 28.7127 60.0399 30.6504H72.7355V65H39.6739V40.4268Z"
@@ -436,15 +510,20 @@ export const CaseStudy = ({
 											<stop offset="1" stopColor="#00FFE0" />
 										</linearGradient>
 									</defs>
-								</svg>
+								</motion.svg>
 								<span dangerouslySetInnerHTML={{ __html: testimonial.quote }} />
-								<svg
-									className="rotate-180 inline h-4 w-auto -mt-5"
+								<motion.svg
+									className="rotate-180 inline h-4 w-auto -mt-5 cursor-default"
 									xmlns="http://www.w3.org/2000/svg"
 									width="73"
 									height="65"
 									viewBox="0 0 73 65"
 									fill="none"
+									whileHover={{
+										scale: 1.1,
+										filter: 'drop-shadow(0 0 8px rgba(0, 255, 224, 0.6))',
+									}}
+									transition={{ duration: 0.3, ease: 'easeOut' }}
 								>
 									<path
 										d="M0 40.4268C0 28.4485 1.67512 19.8171 5.02536 14.5325C8.3756 9.07182 14.4589 4.22764 23.2754 0L33.3261 15.061C26.8019 18.7602 23.0109 21.8428 21.9529 24.3089C21.0713 26.5989 20.6304 28.7127 20.6304 30.6504H33.0616V65H0V40.4268ZM39.6739 40.4268C39.6739 28.4485 41.2609 19.8171 44.4348 14.5325C47.785 9.07182 53.9565 4.22764 62.9493 0L73 15.061C66.4758 18.7602 62.6848 21.8428 61.6268 24.3089C60.5688 26.5989 60.0399 28.7127 60.0399 30.6504H72.7355V65H39.6739V40.4268Z"
@@ -463,7 +542,7 @@ export const CaseStudy = ({
 											<stop offset="1" stopColor="#00FFE0" />
 										</linearGradient>
 									</defs>
-								</svg>
+								</motion.svg>
 							</blockquote>
 							<figcaption className="pt-8">
 								{testimonial.author}

@@ -116,12 +116,7 @@ export const AudienceSelector = ({ onAudienceSelect }) => {
 
 	return (
 		<Section count="1.5" title="Choose Your Path">
-			<Container
-				className="-has-background"
-				background="var(--c-primary-dark)"
-				pt="clamp(var(--sp-sm), 10vh, 12rem)"
-				pb="var(--section-spacing-bottom)"
-			>
+			<Container pt="clamp(var(--sp-sm), 10vh, 12rem)" pb="var(--section-spacing-bottom)">
 				<motion.div variants={accentLineVariants} initial="hidden" animate="visible" className="flex flex-col gap-4">
 					<AccentLine showBackButton={showContact} onBack={handleBack} />
 				</motion.div>
