@@ -9,7 +9,6 @@ export const StyledContact = styled.div`
 		props.alternate
 			? 'linear-gradient(-270deg, #ff2a6d 0%, #9b4dff 100%)'
 			: 'linear-gradient(-270deg, var(--c-neon-sky) 0%, var(--c-cyber-green) 100%)'};
-	color: var(--c-primary-dark);
 	display: flex;
 	min-height: 100vh;
 	overflow: hidden;

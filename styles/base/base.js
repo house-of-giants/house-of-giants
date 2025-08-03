@@ -5,7 +5,7 @@ export const Base = css`
 
 	body {
 		background: var(--c-moon-rock);
-		color: var(--c-primary-dark);
+		color: var(--c-moon-rock);
 		font-family: var(--f-body);
 		margin: 0;
 		min-height: 100%;

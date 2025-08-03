@@ -3,7 +3,6 @@
 import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
-	color: var(--c-primary-dark);
 	overflow: hidden;
 	position: ${(props) => (props.$stick ? 'sticky' : 'relative')};
 	padding-bottom: ${(props) => props.$pBottom || 'var(--sp-2xl)'};
