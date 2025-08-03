@@ -44,7 +44,7 @@ export const CaseStudy = ({
 	const headerScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
 
 	return (
-		<div ref={containerRef} className="bg-[--c-primary-dark] min-h-screen">
+		<div ref={containerRef} className="min-h-screen">
 			<ScrollProgress progress={scrollYProgress} />
 			<FloatingGradients variant={variant} intensity="low" />
 
@@ -77,14 +77,25 @@ export const CaseStudy = ({
 					className="h-screen flex flex-col max-w-[var(--container-width)] mx-auto px-4 md:px-8 items-center justify-center relative gap-0"
 					style={{ y: headerY }}
 				>
-					<motion.div
-						className="px-6 py-3 border border-cyber-green/30 rounded-full bg-black/20 backdrop-blur-sm mb-8"
-						initial={{ opacity: 0, y: -20 }}
-						animate={{ opacity: 1, y: 0 }}
-					>
-						<span className="text-cyber-green text-sm font-semibold tracking-wider">{projectType || 'Project'}</span>
-						{year && <span className="text-white/60 ml-2 text-xs">•</span>}
-						{year && <span className="text-white/60 ml-2 text-xs font-medium">{year}</span>}
+					<motion.div className="mb-8" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
+						<div className="flex items-center justify-center text-white/60 text-xs tracking-wider uppercase px-4">
+							<div className="flex items-center justify-center flex-wrap gap-x-2 gap-y-1 max-w-4xl">
+								{projectType?.split(' + ').map((type, index) => (
+									<div key={index} className="flex items-center">
+										<span className="font-medium text-center">{type}</span>
+										{index < projectType.split(' + ').length - 1 && (
+											<span className="mx-2 sm:mx-3 text-cyber-green/60">+</span>
+										)}
+									</div>
+								))}
+								{year && (
+									<>
+										<span className="text-white/40 mx-2 sm:mx-3">•</span>
+										<span className="font-light">{year}</span>
+									</>
+								)}
+							</div>
+						</div>
 					</motion.div>
 					<motion.h1
 						initial={{ opacity: 0, y: 50 }}

@@ -16,11 +16,7 @@ export const NextCaseStudies = ({ nextCases, currentCase }) => {
 	const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
 
 	return (
-		<motion.div
-			ref={containerRef}
-			style={{ opacity, scale }}
-			className="relative py-32 bg-gradient-to-b from-transparent to-[rgba(16,19,23,0.98)]"
-		>
+		<motion.div ref={containerRef} style={{ opacity, scale }} className="relative py-32">
 			<div className="max-w-[var(--container-width)] mx-auto px-4 md:px-8">
 				{/* Header */}
 				<div className="text-center mb-16">

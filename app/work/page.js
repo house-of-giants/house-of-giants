@@ -13,15 +13,15 @@ import Link from 'next/link';
 
 const workData = [
 	{
-		title: 'BackForty Management',
+		title: 'CyberNest',
 		description:
-			'A digital experience that breaks the conventional mold for a 20+ year artist management and music supervision firm.',
-		image: '/images/backfortytransitions.gif',
-		tags: ['Web Design', 'Web Development', 'Brand Evolution'],
-		url: '/work/backforty',
+			'A next-generation cybersecurity intelligence platform that surfaces peer-reviewed, community-driven, high-signal intelligence that actually helps cybersecurity leaders make faster, smarter decisions.',
+		image: '/images/cybernest-home.webp',
+		tags: ['SaaS Platform', 'Web Application', 'AI Integration'],
+		url: '/work/cybernest',
 		featured: true,
-		year: '2023',
-		client: 'BackForty Management',
+		year: '2024',
+		client: 'CyberNest',
 	},
 	{
 		title: 'Shakey Graves',
@@ -31,7 +31,18 @@ const workData = [
 		tags: ['Web Design', 'AI Integration', 'Interactive Experience'],
 		url: '/work/shakey-graves',
 		year: '2021',
+		featured: true,
 		client: 'Shakey Graves',
+	},
+	{
+		title: 'BackForty Management',
+		description:
+			'A digital experience that breaks the conventional mold for a 20+ year artist management and music supervision firm.',
+		image: '/images/backfortytransitions.gif',
+		tags: ['Web Design', 'Web Development', 'Brand Evolution'],
+		url: '/work/backforty',
+		year: '2023',
+		client: 'BackForty Management',
 	},
 	{
 		title: 'Hayashi Whisky',

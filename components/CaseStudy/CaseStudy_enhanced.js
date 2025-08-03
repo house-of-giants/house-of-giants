@@ -41,7 +41,7 @@ export const CaseStudy = ({
 	const headerScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
 
 	return (
-		<div ref={containerRef} className="bg-[--c-primary-dark] min-h-screen">
+		<div ref={containerRef} className="min-h-screen">
 			<ScrollProgress progress={scrollYProgress} />
 			<FloatingGradients variant={variant} intensity="low" />
 
@@ -74,12 +74,12 @@ export const CaseStudy = ({
 					className="h-screen flex flex-col max-w-[var(--container-width)] mx-auto px-4 md:px-8 items-center justify-center relative"
 					style={{ y: headerY }}
 				>
-					<motion.div 
+					<motion.div
 						className="px-4 py-2 border border-cyber-green/20 rounded-lg cursor-default"
-						whileHover={{ 
+						whileHover={{
 							scale: 1.05,
 							boxShadow: '0 0 20px rgba(0, 255, 224, 0.3)',
-							borderColor: 'rgba(0, 255, 224, 0.6)'
+							borderColor: 'rgba(0, 255, 224, 0.6)',
 						}}
 						transition={{ duration: 0.3, ease: 'easeOut' }}
 					>
@@ -100,7 +100,9 @@ export const CaseStudy = ({
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
 					>
-						<h2 className="text-[clamp(1.5rem,4vw,3rem)] text-white text-center font-serif font-light leading-[1.1] tracking-[-0.01em]">{subtitle}</h2>
+						<h2 className="text-[clamp(1.5rem,4vw,3rem)] text-white text-center font-serif font-light leading-[1.1] tracking-[-0.01em]">
+							{subtitle}
+						</h2>
 						{liveUrl && (
 							<div className="flex gap-4">
 								<Button href={liveUrl} target="_blank" size="xl" variant="primary">
@@ -133,7 +135,9 @@ export const CaseStudy = ({
 										viewport={{ once: true }}
 										transition={{ duration: 0.8 }}
 									/>
-									<p className="text-[clamp(1.25rem,2.5vw,1.75rem)] leading-[1.6] text-moon-rock pl-8 font-normal tracking-[-0.005em]">{intro}</p>
+									<p className="text-[clamp(1.25rem,2.5vw,1.75rem)] leading-[1.6] text-moon-rock pl-8 font-normal tracking-[-0.005em]">
+										{intro}
+									</p>
 								</div>
 								{images?.intro && (
 									<motion.figure
@@ -165,16 +169,20 @@ export const CaseStudy = ({
 										viewport={{ once: true, margin: '-20%' }}
 										transition={{ duration: 0.6 }}
 									>
-										<motion.h3 
+										<motion.h3
 											className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-cyber-green leading-[1.2] tracking-[-0.01em] cursor-default"
-											whileHover={{ 
+											whileHover={{
 												scale: 1.02,
 												textShadow: '0 0 8px rgba(0, 255, 224, 0.6)',
-												letterSpacing: '-0.02em'
+												letterSpacing: '-0.02em',
 											}}
 											transition={{ duration: 0.3, ease: 'easeOut' }}
-										>The Challenge</motion.h3>
-										<p className="text-[clamp(1.125rem,2vw,1.5rem)] text-moon-rock leading-[1.6] font-light tracking-[-0.005em]">{challenge}</p>
+										>
+											The Challenge
+										</motion.h3>
+										<p className="text-[clamp(1.125rem,2vw,1.5rem)] text-moon-rock leading-[1.6] font-light tracking-[-0.005em]">
+											{challenge}
+										</p>
 									</motion.div>
 								)}
 								{solution && (
@@ -185,16 +193,20 @@ export const CaseStudy = ({
 										viewport={{ once: true, margin: '-20%' }}
 										transition={{ duration: 0.6, delay: 0.2 }}
 									>
-										<motion.h3 
+										<motion.h3
 											className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-cyber-green leading-[1.2] tracking-[-0.01em] cursor-default"
-											whileHover={{ 
+											whileHover={{
 												scale: 1.02,
 												textShadow: '0 0 8px rgba(0, 255, 224, 0.6)',
-												letterSpacing: '-0.02em'
+												letterSpacing: '-0.02em',
 											}}
 											transition={{ duration: 0.3, ease: 'easeOut' }}
-										>The Solution</motion.h3>
-										<p className="text-[clamp(1.125rem,2vw,1.5rem)] text-moon-rock leading-[1.6] font-light tracking-[-0.005em]">{solution}</p>
+										>
+											The Solution
+										</motion.h3>
+										<p className="text-[clamp(1.125rem,2vw,1.5rem)] text-moon-rock leading-[1.6] font-light tracking-[-0.005em]">
+											{solution}
+										</p>
 									</motion.div>
 								)}
 							</div>
@@ -258,28 +270,30 @@ export const CaseStudy = ({
 															viewport={{ once: true }}
 															transition={{ delay: 0.3 }}
 														>
-															<motion.span 
-																className="text-lg tracking-wider uppercase cursor-default inline-block" 
+															<motion.span
+																className="text-lg tracking-wider uppercase cursor-default inline-block"
 																style={{ color: step.color }}
-																whileHover={{ 
+																whileHover={{
 																	scale: 1.05,
 																	textShadow: `0 0 12px ${step.color}80`,
-																	letterSpacing: '0.15em'
+																	letterSpacing: '0.15em',
 																}}
 																transition={{ duration: 0.3, ease: 'easeOut' }}
 															>
 																{step.phase}
 															</motion.span>
 
-															<motion.h3 
+															<motion.h3
 																className="text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-moon-rock mt-2 leading-[1.2] tracking-[-0.01em] cursor-default"
-																whileHover={{ 
+																whileHover={{
 																	scale: 1.02,
 																	opacity: 0.9,
-																	letterSpacing: '-0.02em'
+																	letterSpacing: '-0.02em',
 																}}
 																transition={{ duration: 0.3, ease: 'easeOut' }}
-															>{step.title}</motion.h3>
+															>
+																{step.title}
+															</motion.h3>
 														</motion.div>
 
 														<p
@@ -294,19 +308,19 @@ export const CaseStudy = ({
 																	className="flex items-center space-x-4 text-moon-rock/50 text-[clamp(0.875rem,1.5vw,1rem)] font-light cursor-default group"
 																	initial={{ opacity: 0, x: -20 }}
 																	whileInView={{ opacity: 1, x: 0 }}
-																	whileHover={{ 
+																	whileHover={{
 																		x: 8,
-																		color: 'rgba(255, 255, 255, 0.8)'
+																		color: 'rgba(255, 255, 255, 0.8)',
 																	}}
 																	viewport={{ once: true }}
 																	transition={{ delay: 0.4 + i * 0.1, duration: 0.3, ease: 'easeOut' }}
 																>
-																	<motion.span 
-																		className="h-px w-8" 
+																	<motion.span
+																		className="h-px w-8"
 																		style={{ backgroundColor: step.color }}
-																		whileHover={{ 
+																		whileHover={{
 																			width: '3rem',
-																			boxShadow: `0 0 8px ${step.color}80`
+																			boxShadow: `0 0 8px ${step.color}80`,
 																		}}
 																		transition={{ duration: 0.3, ease: 'easeOut' }}
 																	/>
@@ -322,9 +336,9 @@ export const CaseStudy = ({
 															className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group"
 															initial={{ clipPath: 'inset(0 100% 0 0)' }}
 															whileInView={{ clipPath: 'inset(0 0% 0 0)' }}
-															whileHover={{ 
+															whileHover={{
 																scale: 1.02,
-																boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+																boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
 															}}
 															viewport={{ once: true }}
 															transition={{ duration: 1.2, delay: 0.4 }}
@@ -364,14 +378,18 @@ export const CaseStudy = ({
 							viewport={{ once: true, margin: '-20%' }}
 							transition={{ duration: 0.8 }}
 						>
-							{section.title && <motion.h3 
-								className="text-3xl font-bold text-cyber-green mb-8 cursor-default"
-								whileHover={{ 
-									scale: 1.02,
-									textShadow: '0 0 8px rgba(0, 255, 224, 0.6)'
-								}}
-								transition={{ duration: 0.3, ease: 'easeOut' }}
-							>{section.title}</motion.h3>}
+							{section.title && (
+								<motion.h3
+									className="text-3xl font-bold text-cyber-green mb-8 cursor-default"
+									whileHover={{
+										scale: 1.02,
+										textShadow: '0 0 8px rgba(0, 255, 224, 0.6)',
+									}}
+									transition={{ duration: 0.3, ease: 'easeOut' }}
+								>
+									{section.title}
+								</motion.h3>
+							)}
 							<div className={section.className}>{section.content}</div>
 						</motion.div>
 					</div>
@@ -399,50 +417,56 @@ export const CaseStudy = ({
 									className="p-16 border border-cyber-green/20 rounded-lg bg-black/20 backdrop-blur-sm"
 									initial={{ opacity: 0, y: 50 }}
 									whileInView={{ opacity: 1, y: 0 }}
-									whileHover={{ 
+									whileHover={{
 										borderColor: 'rgba(0, 255, 224, 0.4)',
-										boxShadow: '0 0 30px rgba(0, 255, 224, 0.1)'
+										boxShadow: '0 0 30px rgba(0, 255, 224, 0.1)',
 									}}
 									viewport={{ once: true, margin: '-20%' }}
 									transition={{ duration: 0.8 }}
 								>
-									<motion.h3 
+									<motion.h3
 										className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-cyber-green mb-8 leading-[1.2] tracking-[-0.01em] cursor-default"
-										whileHover={{ 
+										whileHover={{
 											scale: 1.02,
-											textShadow: '0 0 8px rgba(0, 255, 224, 0.6)'
+											textShadow: '0 0 8px rgba(0, 255, 224, 0.6)',
 										}}
 										transition={{ duration: 0.3, ease: 'easeOut' }}
-									>The Impact</motion.h3>
+									>
+										The Impact
+									</motion.h3>
 									<div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
 										{impact?.stats?.map((stat, index) => (
-											<motion.div 
-												key={stat.value} 
+											<motion.div
+												key={stat.value}
 												className="space-y-4 flex flex-col cursor-default group"
-												whileHover={{ 
+												whileHover={{
 													scale: 1.05,
-													y: -4
+													y: -4,
 												}}
 												initial={{ opacity: 0, y: 20 }}
 												whileInView={{ opacity: 1, y: 0 }}
 												viewport={{ once: true }}
 												transition={{ duration: 0.3, delay: index * 0.1, ease: 'easeOut' }}
 											>
-												<motion.p 
+												<motion.p
 													className="text-[clamp(3rem,6vw,4rem)] font-black text-moon-rock mb-0 leading-[0.9] tracking-[-0.02em]"
-													whileHover={{ 
-														textShadow: '0 0 12px rgba(255, 255, 255, 0.3)'
+													whileHover={{
+														textShadow: '0 0 12px rgba(255, 255, 255, 0.3)',
 													}}
 												>
 													{stat.value}
-													<motion.span 
+													<motion.span
 														className="text-cyber-green"
-														whileHover={{ 
-															textShadow: '0 0 8px rgba(0, 255, 224, 0.8)'
+														whileHover={{
+															textShadow: '0 0 8px rgba(0, 255, 224, 0.8)',
 														}}
-													>{stat.unit}</motion.span>
+													>
+														{stat.unit}
+													</motion.span>
 												</motion.p>
-												<p className="text-moon-rock text-[clamp(0.875rem,1.5vw,1rem)] font-light leading-[1.4] group-hover:text-moon-rock/80 transition-colors duration-300">{stat.description}</p>
+												<p className="text-moon-rock text-[clamp(0.875rem,1.5vw,1rem)] font-light leading-[1.4] group-hover:text-moon-rock/80 transition-colors duration-300">
+													{stat.description}
+												</p>
 											</motion.div>
 										))}
 									</div>
@@ -463,9 +487,9 @@ export const CaseStudy = ({
 									height="65"
 									viewBox="0 0 73 65"
 									fill="none"
-									whileHover={{ 
+									whileHover={{
 										scale: 1.1,
-										filter: 'drop-shadow(0 0 8px rgba(0, 255, 224, 0.6))'
+										filter: 'drop-shadow(0 0 8px rgba(0, 255, 224, 0.6))',
 									}}
 									transition={{ duration: 0.3, ease: 'easeOut' }}
 								>
@@ -495,9 +519,9 @@ export const CaseStudy = ({
 									height="65"
 									viewBox="0 0 73 65"
 									fill="none"
-									whileHover={{ 
+									whileHover={{
 										scale: 1.1,
-										filter: 'drop-shadow(0 0 8px rgba(0, 255, 224, 0.6))'
+										filter: 'drop-shadow(0 0 8px rgba(0, 255, 224, 0.6))',
 									}}
 									transition={{ duration: 0.3, ease: 'easeOut' }}
 								>
