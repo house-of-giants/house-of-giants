@@ -1,6 +1,6 @@
-import sendgrid from '@sendgrid/mail';
+import { Resend } from 'resend';
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function sendEmail(req, res) {
 	try {
@@ -18,7 +18,7 @@ async function sendEmail(req, res) {
 			emailHtml = generateDetailedFormEmail(req.body);
 		}
 
-		await sendgrid.send({
+		await resend.emails.send({
 			to: 'hello@houseofgiants.com',
 			from: 'hello@houseofgiants.com',
 			subject: req.body.subject,
@@ -27,8 +27,8 @@ async function sendEmail(req, res) {
 
 		return res.status(200).json({ status: 200, error: null });
 	} catch (error) {
-		console.error('SendGrid Error:', error);
-		return res.status(error.statusCode || 500).json({ error: error.message });
+		console.error('Resend Error:', error);
+		return res.status(500).json({ error: error.message });
 	}
 }
 
