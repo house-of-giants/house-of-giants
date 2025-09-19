@@ -75,24 +75,24 @@ export const CaseStudy = ({
 
 				{/* Hero Header */}
 				<motion.header
-					className="h-screen flex flex-col max-w-[var(--container-width)] mx-auto px-4 md:px-8 items-center justify-center relative gap-0"
+					className="h-screen flex flex-col max-w-[var(--container-width)] mx-auto px-3 sm:px-4 md:px-8 items-center justify-center relative gap-0"
 					style={{ y: headerY }}
 				>
-					<motion.div className="mb-8" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
-						<div className="flex items-center justify-center text-white/60 text-xs tracking-wider uppercase px-4">
-							<div className="flex items-center justify-center flex-wrap gap-x-2 gap-y-1 max-w-4xl">
+					<motion.div className="mb-6 sm:mb-8" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
+						<div className="flex items-center justify-center text-white/60 text-xs sm:text-sm tracking-wider uppercase px-2 sm:px-4">
+							<div className="flex items-center justify-center flex-wrap gap-x-1 sm:gap-x-2 gap-y-1 max-w-4xl">
 								{projectType?.split(' + ').map((type, index) => (
 									<div key={index} className="flex items-center">
-										<span className="font-medium text-center">{type}</span>
+										<span className="font-medium text-center whitespace-nowrap">{type}</span>
 										{index < projectType.split(' + ').length - 1 && (
-											<span className="mx-2 sm:mx-3 text-cyber-green/60">+</span>
+											<span className="mx-1 sm:mx-2 md:mx-3 text-cyber-green/60">+</span>
 										)}
 									</div>
 								))}
 								{year && (
 									<>
-										<span className="text-white/40 mx-2 sm:mx-3">•</span>
-										<span className="font-light">{year}</span>
+										<span className="text-white/40 mx-1 sm:mx-2 md:mx-3">•</span>
+										<span className="font-light whitespace-nowrap">{year}</span>
 									</>
 								)}
 							</div>
@@ -102,21 +102,22 @@ export const CaseStudy = ({
 						initial={{ opacity: 0, y: 50 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
-						className="text-[clamp(3rem,8vw,8rem)] font-display font-black -grad-header text-center leading-[0.75] tracking-[-0.025em] mb-6"
+						className="text-[clamp(2.5rem,6vw,8rem)] sm:text-[clamp(3rem,7vw,8rem)] md:text-[clamp(3.5rem,8vw,8rem)] font-display font-black -grad-header text-center leading-[0.8] sm:leading-[0.75] tracking-[-0.025em] mb-4 sm:mb-6 px-2 sm:px-4 break-words hyphens-auto"
+						style={{ wordBreak: 'break-word' }}
 					>
 						{title}
 					</motion.h1>
 					<motion.div
-						className="relative z-10 flex flex-col items-center gap-6"
+						className="relative z-10 flex flex-col items-center gap-4 sm:gap-6 px-2 sm:px-4"
 						initial={{ opacity: 0, y: 50 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
 					>
-						<h2 className="text-[clamp(1.25rem,3vw,2.5rem)] text-white/90 text-center font-serif font-light leading-[1.2] tracking-[-0.005em] mb-8">
+						<h2 className="text-[clamp(1rem,2.5vw,2.5rem)] sm:text-[clamp(1.25rem,3vw,2.5rem)] text-white/90 text-center font-serif font-light leading-[1.3] sm:leading-[1.2] tracking-[-0.005em] mb-6 sm:mb-8 max-w-4xl">
 							{subtitle}
 						</h2>
 						{liveUrl && (
-							<div className="flex gap-4">
+							<div className="flex gap-3 sm:gap-4">
 								<Button href={liveUrl} target="_blank" size="xl" variant="primary">
 									Visit live site
 									<span className="text-cyber-green ml-2">→</span>
