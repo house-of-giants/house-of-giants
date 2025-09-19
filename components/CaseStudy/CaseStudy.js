@@ -13,6 +13,7 @@ import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradie
 import { SectionSeparator } from '../SectionSeparator/SectionSeparator';
 import { Section } from '../Section/Section';
 import { NextCaseStudies } from './NextCaseStudies';
+import { getNextCaseStudies } from '@/utils/caseStudyUtils';
 
 export const CaseStudy = ({
 	title,
@@ -146,9 +147,10 @@ export const CaseStudy = ({
 										viewport={{ once: true }}
 										transition={{ duration: 0.8 }}
 									/>
-									<p className="text-[clamp(1.25rem,2.5vw,1.75rem)] leading-[1.6] text-moon-rock pl-8 font-normal tracking-[-0.005em]">
-										{intro}
-									</p>
+									<p
+										className="text-[clamp(1.25rem,2.5vw,1.75rem)] leading-[1.6] text-moon-rock pl-8 font-normal tracking-[-0.005em]"
+										dangerouslySetInnerHTML={{ __html: intro }}
+									/>
 								</div>
 								{images?.intro && (
 									<motion.figure
@@ -183,9 +185,10 @@ export const CaseStudy = ({
 										<h3 className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-cyber-green leading-[1.2] tracking-[-0.01em]">
 											The Challenge
 										</h3>
-										<p className="text-[clamp(1.125rem,2vw,1.5rem)] text-moon-rock leading-[1.6] font-light tracking-[-0.005em]">
-											{challenge}
-										</p>
+										<p
+											className="text-[clamp(1.125rem,2vw,1.5rem)] text-moon-rock leading-[1.6] font-light tracking-[-0.005em]"
+											dangerouslySetInnerHTML={{ __html: challenge }}
+										/>
 									</motion.div>
 								)}
 								{solution && (
@@ -199,9 +202,10 @@ export const CaseStudy = ({
 										<h3 className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-cyber-green leading-[1.2] tracking-[-0.01em]">
 											The Solution
 										</h3>
-										<p className="text-[clamp(1.125rem,2vw,1.5rem)] text-moon-rock leading-[1.6] font-light tracking-[-0.005em]">
-											{solution}
-										</p>
+										<p
+											className="text-[clamp(1.125rem,2vw,1.5rem)] text-moon-rock leading-[1.6] font-light tracking-[-0.005em]"
+											dangerouslySetInnerHTML={{ __html: solution }}
+										/>
 									</motion.div>
 								)}
 							</div>
@@ -482,35 +486,7 @@ export const CaseStudy = ({
 				)}
 			</div>
 			<SectionSeparator />
-			<NextCaseStudies
-				currentCase={title}
-				nextCases={[
-					{
-						title: 'Shakey Graves',
-						description:
-							'A case study for Shakey Graves "Movie of the Week" project. Featuring a custom web design and development, AI integration, and a unique user experience.',
-						image: '/images/shakeycard.jpg',
-						tags: ['Web Design', 'Web Development', 'AI'],
-						url: '/work/shakey-graves',
-					},
-					{
-						title: 'Hayashi Whisky',
-						description:
-							'A case study for Hayashi Whisky web design and development. Featuring a luxurious web design, immersive UI, and unique product storytelling.',
-						image: '/images/hayashicard.jpg',
-						tags: ['Web Design', 'Web Development', 'Luxury'],
-						url: '/work/hayashi',
-					},
-					{
-						title: 'BackForty Management',
-						description:
-							'A case study for BackForty Management. Featuring a custom web development, brand evolution, and unique page transitions.',
-						image: '/images/backfortycard.jpg',
-						tags: ['Web Design', 'Web Development', 'Brand Evolution'],
-						url: '/work/backforty',
-					},
-				]}
-			/>
+			<NextCaseStudies currentCase={title} nextCases={getNextCaseStudies(title, 4)} />
 			<ContactForm formSource={`Case Study - ${title}`} />
 		</div>
 	);

@@ -37,57 +37,55 @@ export default function ShakeyGraves() {
 					subtitle: 'Input your genre. Generate your soundtrack. Create your story.',
 					steps: [
 						{
-							phase: 'Phase 01',
-							title: 'Discovery & Planning',
+							phase: 'Discovery & Planning',
+							title: 'Understanding the Artist',
 							description:
-								'We dove into Shakey Graves’ concept, analyzing how multiple song versions could be neatly packaged for curious fans. We encouraged listeners to “play creator,” mixing track variations like building blocks to spark new angles on the same tune.',
+								"We began by deeply understanding Shakey Graves' unique musical style and the story behind his name. Through collaborative sessions, we identified the need for a website that would not just showcase his music, but tell his story and connect with his audience on a deeper level.",
+							details: [
+								'Artist brand analysis',
+								'Fan research & personas',
+								'Content strategy planning',
+								'Technical requirements',
+							],
+							image: '/images/shakeycase1.jpg',
 							color: '#00ffe0',
-							details: ['Creative Strategy', 'Iterative Collaboration', 'Discovery Workshop'],
-							image: '/images/shakeycase3.jpg',
 						},
 						{
-							phase: 'Phase 02',
-							title: 'Design & User Experience',
+							phase: 'Design & Development',
+							title: 'Crafting the Experience',
 							description:
-								'Inspired by the album artwork, we built an intuitive retro TV-wall UI. This layout speaks to the album’s “vintage meets new wave” vibe, guiding fans to the “Movie of the Week” generator page. We focused on clarity, visual intrigue, and minimal friction, ensuring each user could explore track variations without getting lost.',
-							color: '#c1ff1d',
+								"We designed a website that captures the essence of Shakey Graves' musical spirit. The development focused on creating smooth animations, intuitive navigation, and a responsive design that works seamlessly across all devices.",
 							details: [
-								'Web Design',
-								'User Journey Mapping',
-								'Immersive UI',
-								'Interactive Elements',
-								'Brand-Aligned UX',
+								'UI/UX design',
+								'Responsive development',
+								'Animation implementation',
+								'Performance optimization',
+							],
+							image: '/images/shakeycase2.jpg',
+							color: '#8e3dfd',
+						},
+						{
+							phase: 'Content & Branding',
+							title: 'Storytelling & Identity',
+							description:
+								'We worked closely with Shakey Graves to develop compelling content that tells his story authentically. The website showcases his music while highlighting the creativity and craftsmanship that sets him apart in the industry.',
+							details: ['Content creation', 'Artist storytelling', 'Music showcase', 'Visual identity'],
+							image: '/images/shakeycase3.jpg',
+							color: '#d4ff35',
+						},
+						{
+							phase: 'Launch & Optimization',
+							title: 'Going Live & Growing',
+							description:
+								'After a successful launch, we continue to work with Shakey Graves to optimize his website based on fan feedback and analytics. The platform is designed to evolve with his musical journey and career growth.',
+							details: [
+								'Launch preparation',
+								'Performance monitoring',
+								'Fan feedback integration',
+								'Ongoing optimization',
 							],
 							image: '/images/shakeycase4.jpg',
-						},
-						{
-							phase: 'Phase 03',
-							title: 'Development',
-							description:
-								"We combined sleek front-end frameworks like Next.js and Three.js with AI integration to generate a user's custom album page—complete with artwork, title, synopsis, and tracklist. Modular code structures allowed each “movie” to be saved, shared, or purchased, bridging creativity and functionality without slowing down the site.",
-							color: '#ff2a6d',
-							details: [
-								'Custom Front-end Development',
-								'AI / LLM Integration',
-								'Dynamic Content Integration',
-								'Randomized Album Generation',
-								'Modular Code Structure',
-							],
-							image: '/images/shakeycase5.jpg',
-						},
-						{
-							phase: 'Phase 04',
-							title: 'Launch & Optimization',
-							description:
-								'Post-deployment, we monitored site performance to handle the surge of curious fans. The results were instant: a 91% jump in new user visits and a 285% spike in page views. More importantly, album sales climbed steadily as fans enjoyed the creative freedom to craft their own unique “Movie of the Week.”',
-							color: '#9b4dff',
-							details: [
-								'Performance Optimization',
-								'Global Fan Engagement',
-								'Analytics & Monitoring',
-								'Scalable Infrastructure',
-							],
-							image: '/images/shakeycase6.jpg',
+							color: '#e61e5e',
 						},
 					],
 				}}
