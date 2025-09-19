@@ -57,50 +57,55 @@ export default function Hayashi() {
 						'We dove into the Ryukyu Island heritage, and what truly makes Japanese whisky so revered. Our team pinpointed the traits that set Hayashi apart—luxury, artistry, and island serenity—and brainstormed how best to convey them online without losing the sense of tradition.',
 					steps: [
 						{
-							phase: 'Discovery',
-							title: 'Exploring the brand',
+							phase: 'Discovery & Planning',
+							title: 'Understanding the Vision',
 							description:
-								"BackForty's story is part grit, part innovation—two qualities we wanted front and center. We kicked off by digging deep into their dual business model, identifying how best to convey the excitement of artist management while highlighting the strategic nature of music supervision. We hammered out core objectives, user paths, and brand essence long before any code was written.",
-							details: ['Brand Discovery', 'Luxury Market Positioning', 'Strategic Workshops'],
+								"We began by deeply understanding Hayashi's unique position in the market and their vision for the future. Through collaborative sessions, we identified the need for a website that would not just showcase their products, but tell their story and connect with their audience on a deeper level.",
+							details: [
+								'Brand analysis & positioning',
+								'User research & personas',
+								'Content strategy planning',
+								'Technical requirements',
+							],
+							image: '/images/hayashicase1.jpg',
+							color: '#00ffe0',
+						},
+						{
+							phase: 'Design & Development',
+							title: 'Crafting the Experience',
+							description:
+								"We designed a website that captures the essence of Hayashi's innovative spirit. The development focused on creating smooth animations, intuitive navigation, and a responsive design that works seamlessly across all devices.",
+							details: [
+								'UI/UX design',
+								'Responsive development',
+								'Animation implementation',
+								'Performance optimization',
+							],
+							image: '/images/hayashicase2.jpg',
+							color: '#8e3dfd',
+						},
+						{
+							phase: 'Content & Branding',
+							title: 'Storytelling & Identity',
+							description:
+								'We worked closely with Hayashi to develop compelling content that tells their story authentically. The website showcases their products while highlighting the innovation and craftsmanship that sets them apart in the market.',
+							details: ['Content creation', 'Brand storytelling', 'Product showcase', 'Visual identity'],
 							image: '/images/hayashicase3.jpg',
-							color: '#00FFE0',
+							color: '#d4ff35',
 						},
 						{
-							phase: 'Design & User Experience',
-							title: 'Crafting the experience',
+							phase: 'Launch & Optimization',
+							title: 'Going Live & Growing',
 							description:
-								'Emphasizing minimalism, gold foil accents, and forest illustrations, we built a story-first UI that immerses users in Hayashi’s refined world. Large-format imagery shows off the bottle’s design, while subtle transitions evoke a sense of timeless ritual—mirroring the care that goes into aging each drop. Every slide or section underlines the calm yet premium vibe the brand stands for.',
-							details: ['Minimalist Web Design', 'Immersive UI', 'Visual Storytelling', 'Interactive Elements'],
+								'After a successful launch, we continue to work with Hayashi to optimize their website based on user feedback and analytics. The platform is designed to evolve with their business needs and market changes.',
+							details: [
+								'Launch preparation',
+								'Performance monitoring',
+								'User feedback integration',
+								'Ongoing optimization',
+							],
 							image: '/images/hayashicase4.jpg',
-							color: '#8FFF5D',
-						},
-						{
-							phase: 'Development',
-							title: 'Building the site',
-							description:
-								'Behind the elegance lies a robust framework ensuring the site loads fast and adapts seamlessly on mobile. We infused interactive elements—like hover states and micro-animations—to keep users engaged, all while respecting the brand’s quiet sophistication. Scalability was key: as Hayashi releases new products or limited-edition batches, updates can be made effortlessly.',
-							details: [
-								'Responsive Web Development',
-								'Performance Optimization',
-								'Interactive Elements',
-								'Scroll Animations',
-							],
-							image: '/images/hayashicase5.jpg',
-							color: '#C1FF1D',
-						},
-						{
-							phase: 'Launch',
-							title: 'The final touch',
-							description:
-								'When the site went live, whisky enthusiasts and curious newcomers alike found a platform that evokes the soul of Okinawa’s island life: serene, yet brimming with potential. The golden accents, story-centric design, and frictionless UX helped elevate Hayashi beyond “just another whisky”—positioning it as a luxurious spirit in a league of its own.',
-							details: [
-								'Quality Assurance & Testing',
-								'Analytics Implementation',
-								'Performance Monitoring',
-								'Team Training & Handoff',
-							],
-							image: '/images/hayashicase6.jpg',
-							color: '#E2FF1D',
+							color: '#e61e5e',
 						},
 					],
 				}}
