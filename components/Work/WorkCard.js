@@ -18,7 +18,7 @@ export const WorkCard = ({ title, type, img, url, featured = false }) => {
 					src={img}
 					alt={title}
 					fill
-					sizes={featured ? '100vw' : '(max-width: 768px) 100vw, 50vw'}
+					sizes={featured ? '(max-width: 1280px) 100vw, 90vw' : '(max-width: 768px) 100vw, 50vw'}
 					priority={featured}
 					className="object-cover transition-transform duration-700 group-hover:scale-110"
 				/>

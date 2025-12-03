@@ -16,7 +16,7 @@ import { LocalBusinessSchema } from '@/components/Schema/LocalBusinessSchema';
 import { Inter } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google';
 import PlausibleScript from '@/components/PlausibleScript/PlausibleScript';
-import LuckyOrgangeScript from '@/components/LuckyOrangeScript/LuckyOrgangeScript';
+import LuckyOrangeScript from '@/components/LuckyOrangeScript/LuckyOrangeScript';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -104,7 +104,7 @@ export default function RootLayout({ children }) {
           <ContactFooter />
         </StyledComponentsRegistry>
         <PlausibleScript />
-        <LuckyOrgangeScript />
+        <LuckyOrangeScript />
       </body>
       <GoogleTagManager gtmId="GTM-PQCFTVXH" />
     </html>
