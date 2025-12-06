@@ -9,7 +9,7 @@
 	},
 	"dependencies": {
 		"@heroicons/react": "^2.2.0",
-		"@next/third-parties": "^15.3.1",
+		"@next/third-parties": "^15.5.7",
 		"@react-three/drei": "^9.121.5",
 		"@react-three/fiber": "^8.17.14",
 		"@shikijs/rehype": "^1.1.7",
@@ -20,7 +20,7 @@
 		"github-slugger": "^2.0.0",
 		"gray-matter": "^4.0.3",
 		"lucide-react": "^0.534.0",
-		"next": "^15.3.1",
+		"next": "^15.3.6",
 		"next-plausible": "^3.12.4",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
