@@ -67,7 +67,7 @@ const nextConfig = {
 					{
 						key: 'Content-Security-Policy',
 						value:
-							`default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.io https://www.googletagmanager.com https://tagmanager.google.com https://tools.luckyorange.com https://cdn.luckyorange.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: https://cdn.midjourney.com https://images.unsplash.com; font-src 'self' data:; connect-src 'self' https://plausible.io https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://*.luckyorange.com wss://*.luckyorange.com wss://in.visitors.live https:;`
+							`default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.io https://www.googletagmanager.com https://tagmanager.google.com https://tools.luckyorange.com https://cdn.luckyorange.com https://storage.googleapis.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: https://cdn.midjourney.com https://images.unsplash.com; font-src 'self' data:; connect-src 'self' https://plausible.io https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://*.luckyorange.com wss://*.luckyorange.com wss://in.visitors.live https:;`
 								.replace(/\s+/g, ' ')
 								.trim(),
 					},
