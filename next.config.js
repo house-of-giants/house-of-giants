@@ -53,10 +53,6 @@ const nextConfig = {
 						value: '1; mode=block',
 					},
 					{
-						key: 'X-Frame-Options',
-						value: 'DENY',
-					},
-					{
 						key: 'X-Content-Type-Options',
 						value: 'nosniff',
 					},
@@ -67,7 +63,7 @@ const nextConfig = {
 					{
 						key: 'Content-Security-Policy',
 						value:
-							`default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.io https://www.googletagmanager.com https://tagmanager.google.com https://tools.luckyorange.com https://cdn.luckyorange.com https://storage.googleapis.com https://use.fontawesome.com https://*.cloudfront.net; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: https://cdn.midjourney.com https://images.unsplash.com; font-src 'self' data: https://cdn.luckyorange.com https://tools.luckyorange.com https://*.luckyorange.com https://fonts.gstatic.com https://use.fontawesome.com; connect-src 'self' https://plausible.io https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://*.luckyorange.com wss://*.luckyorange.com wss://in.visitors.live https:; frame-ancestors https://*.luckyorange.com;`
+							`default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.io https://www.googletagmanager.com https://tagmanager.google.com https://tools.luckyorange.com https://cdn.luckyorange.com https://storage.googleapis.com https://use.fontawesome.com https://*.cloudfront.net; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https://use.fontawesome.com; img-src 'self' data: https: https://cdn.midjourney.com https://images.unsplash.com; font-src 'self' data: https:; connect-src 'self' https://plausible.io https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://*.luckyorange.com wss://*.luckyorange.com wss://in.visitors.live https:; frame-ancestors 'self' https://*.luckyorange.com https://luckyorange.com;`
 								.replace(/\s+/g, ' ')
 								.trim(),
 					},
