@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../Button/Button';
 import Mark from '../SVG/Mark';
-import { StyledHeader } from './StyledHeader';
 import { Socials } from '../Social/Socials';
 import { useElementHeight } from '../../hooks/useElementHeight';
 import { useEffect, useRef, useState } from 'react';
@@ -64,7 +63,10 @@ export const Header = () => {
 	};
 
 	return (
-		<StyledHeader ref={headerRef}>
+		<header
+			ref={headerRef}
+			className="flex flex-col items-center justify-between mx-auto px-[var(--sp-xs)] py-[0.825rem] sticky top-0 bg-[rgba(26,31,36,0.95)] backdrop-blur-[10px] border-b border-[rgba(0,255,224,0.1)] z-50 [@media(min-width:1100px)]:flex-row [@media(min-width:1100px)]:py-[var(--sp-s)] [@media(min-width:1100px)]:px-[var(--sp-2xs)] [&>h1]:inline-flex [&>h1]:items-center [&>h1]:text-[length:var(--fs-m)] [&>h1]:mb-0 [&>h1]:break-words [&_h1_svg]:mr-[var(--sp-2xs)]"
+		>
 			{/* Left Side - Brand Identity */}
 			<Link href="/" className="group flex-shrink-0">
 				<motion.div className="flex uppercase font-black items-center gap-2 md:gap-4">
@@ -208,12 +210,16 @@ export const Header = () => {
 				</div>
 
 				{/* CTA Button */}
-				<Button
+				<Link
 					href="/contact"
-					className=" grad-border bg-[var(--c-primary-dark)] text-white font-serif italic text-lg md:text-xl px-4 py-2.5 md:px-6 md:py-3 transition-all duration-300 hover:scale-105 hover:shadow-glow"
+					className="group relative font-serif italic text-lg md:text-xl px-4 py-2.5 md:px-6 md:py-3 rounded-lg overflow-hidden"
 				>
-					Start Project
-				</Button>
+					<span className="relative z-10 transition-colors duration-300 text-white group-hover:text-black">Start Project</span>
+					{/* Gradient border that fills on hover */}
+					<span className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#00ffe0] to-[#c1ff1d] p-[2px]">
+						<span className="absolute inset-[2px] rounded-[6px] bg-[var(--c-primary-dark)] transition-opacity duration-300 group-hover:opacity-0" />
+					</span>
+				</Link>
 
 				{/* Mobile Menu Toggle Button */}
 				<button
@@ -398,6 +404,6 @@ export const Header = () => {
 					</motion.div>
 				)}
 			</AnimatePresence>
-		</StyledHeader>
+		</header>
 	);
 };

@@ -6,7 +6,6 @@ import { Section } from '../Section/Section';
 import { ContactHeader } from './ContactHeader';
 import { SuccessMessage } from './SuccessMessage';
 import fetchJson from '@/utils/fetchJson';
-import Link from 'next/link';
 import { Button } from '../Button/Button';
 import { sendGTMEvent } from '@next/third-parties/google';
 import { usePlausible } from '@/hooks/usePlausible';
@@ -320,7 +319,7 @@ const FullContactForm = ({ title, subtitle, accent, description, selectedAudienc
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
-								className="bg-black/20 backdrop-blur-md p-8 rounded-xl border border-gray-800 relative overflow-hidden"
+								className="p-8 rounded-xl border border-gray-800 relative overflow-hidden"
 							>
 								<div className="relative z-10">
 									<h2 className="text-2xl font-bold mb-6">Let's Start a Conversation</h2>

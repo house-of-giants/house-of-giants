@@ -86,7 +86,7 @@ export default function WebDesign() {
 				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 						<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-							<h1 className="text-5xl md:text-7xl font-900 mb-6 -grad-header">
+							<h1 className="text-5xl md:text-7xl font-900 mb-6 grad-header">
 								<span className="block text-[var(--c-accent)]">Designed for Impact.</span>
 								<span className="block">Built to Perform.</span>
 							</h1>
@@ -241,7 +241,7 @@ export default function WebDesign() {
 								viewport={{ once: true }}
 								transition={{ duration: 0.5 }}
 							>
-								<h3 className="text-4xl font-bold -grad-header mb-4 text-white">
+								<h3 className="text-4xl font-bold grad-header mb-4 text-white">
 									Denver Web Design <span className="text-[var(--c-accent)]">That Stands Out</span>
 								</h3>
 								<p className="text-lg text-moon-rock leading-relaxed">
@@ -270,7 +270,7 @@ export default function WebDesign() {
 								<div className="flex items-start">
 									<div className="text-[var(--c-accent)] text-3xl mr-4 mt-1">✅</div>
 									<div>
-										<h4 className="font-bold -grad-header font-serif mb-0">Local Business Understanding</h4>
+										<h4 className="font-bold grad-header font-serif mb-0">Local Business Understanding</h4>
 										<p className="text-lg text-moon-rock leading-relaxed mb-0">
 											We know what Denver customers respond to and how to position your brand in the local market for
 											maximum impact and engagement.
@@ -289,7 +289,7 @@ export default function WebDesign() {
 								<div className="flex items-start">
 									<div className="text-[var(--c-accent)] text-3xl mr-4 mt-1">✅</div>
 									<div>
-										<h4 className="font-bold -grad-header font-serif mb-0">Industry-Specific Design</h4>
+										<h4 className="font-bold grad-header font-serif mb-0">Industry-Specific Design</h4>
 										<p className="text-lg text-moon-rock leading-relaxed mb-0">
 											Our designs are tailored for Denver's tech, outdoor, healthcare, and hospitality sectors, with an
 											understanding of each industry's unique needs and audience expectations.
@@ -308,7 +308,7 @@ export default function WebDesign() {
 								<div className="flex items-start">
 									<div className="text-[var(--c-accent)] text-3xl mr-4 mt-1">✅</div>
 									<div>
-										<h4 className="font-bold -grad-header font-serif mb-0">Denver-Focused SEO</h4>
+										<h4 className="font-bold grad-header font-serif mb-0">Denver-Focused SEO</h4>
 										<p className="text-lg text-moon-rock leading-relaxed mb-0">
 											We optimize every design to improve local search rankings, ensuring your business appears in front
 											of Denver customers actively looking for your products or services.

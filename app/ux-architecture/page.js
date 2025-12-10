@@ -35,7 +35,7 @@ const ProcessStep = ({ number, title, description, features }) => (
 						className="bg-black bg-opacity-30 p-5 rounded-lg border border-gray-800 hover:border-[var(--c-accent)] transition-all duration-300"
 					>
 						<h3 className="text-2xl not-italic font-bold mb-2">{feature.title}</h3>
-						<p className="text-sm text-moon-rock leading-relaxed">{feature.description}</p>
+						<p className="text-sm text-moon-rock leading-relaxed mb-0">{feature.description}</p>
 					</div>
 				))}
 			</div>
@@ -244,7 +244,7 @@ export default function UXArchitecture() {
 				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 						<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-							<h1 className="text-5xl md:text-7xl font-900 mb-6 -grad-header">
+							<h1 className="text-5xl md:text-7xl font-900 mb-6 grad-header">
 								<span className="block text-[var(--c-accent)]">UX Architecture</span>
 								<span className="block">With Purpose</span>
 							</h1>
@@ -269,155 +269,67 @@ export default function UXArchitecture() {
 							transition={{ duration: 0.5, delay: 0.2 }}
 						>
 							<div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-indigo-800 opacity-70"></div>
-							<div className="absolute inset-0 flex items-center justify-center">
+							<div className="absolute inset-0 flex items-center justify-center p-8">
+								{/* Wireframe mockup */}
 								<motion.div
-									className="w-4/5 max-w-md"
-									initial={{ y: 20, opacity: 0 }}
-									animate={{ y: 0, opacity: 1 }}
-									transition={{ duration: 0.5, delay: 0.3 }}
+									className="w-full max-w-xs bg-black/50 backdrop-blur-sm rounded-lg border border-white/10 overflow-hidden"
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ delay: 0.4 }}
 								>
-									<motion.div
-										className="relative"
-										initial={{ scale: 0.95 }}
-										animate={{ scale: 1 }}
-										transition={{ duration: 0.5, delay: 0.4 }}
-									>
-										<div className="absolute top-0 left-0 w-full h-16 bg-black bg-opacity-40 rounded-t-xl flex items-center px-6">
-											<div className="flex space-x-2">
-												<div className="w-3 h-3 rounded-full bg-red-500"></div>
-												<div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-												<div className="w-3 h-3 rounded-full bg-green-500"></div>
-											</div>
-											<div className="ml-6 bg-white bg-opacity-10 rounded-full px-4 py-1 text-xs">
-												https://example.com
+									{/* Browser bar */}
+									<div className="flex items-center gap-2 px-4 py-3 bg-black/40 border-b border-white/10">
+										<div className="flex gap-1.5">
+											<div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+											<div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+											<div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+										</div>
+										<div className="flex-1 h-5 bg-white/10 rounded ml-2" />
+									</div>
+
+									{/* Page content */}
+									<div className="p-5 space-y-4">
+										{/* Nav */}
+										<div className="flex items-center justify-between">
+											<div className="w-8 h-8 rounded bg-indigo-500/50" />
+											<div className="flex gap-3">
+												<div className="w-12 h-2 bg-white/15 rounded" />
+												<div className="w-12 h-2 bg-white/15 rounded" />
+												<div className="w-12 h-2 bg-white/15 rounded" />
 											</div>
 										</div>
-										<div className="pt-16 bg-white bg-opacity-5 backdrop-blur-sm border border-white border-opacity-20 rounded-xl p-6">
-											<div className="flex justify-between mb-6">
-												<motion.div
-													className="w-1/2 h-8 bg-white bg-opacity-10 rounded-lg"
-													animate={{
-														opacity: [0.5, 0.8, 0.5],
-													}}
-													transition={{
-														duration: 3,
-														repeat: Infinity,
-														repeatType: 'reverse',
-													}}
-												></motion.div>
-												<div className="flex space-x-3">
-													<motion.div
-														className="w-8 h-8 bg-[var(--c-accent)] rounded-lg"
-														whileHover={{ scale: 1.1 }}
-														transition={{ duration: 0.2 }}
-													></motion.div>
-													<motion.div
-														className="w-8 h-8 bg-white bg-opacity-10 rounded-lg"
-														whileHover={{ scale: 1.1 }}
-														transition={{ duration: 0.2 }}
-													></motion.div>
-												</div>
-											</div>
-											<div className="mb-6">
-												<motion.div
-													className="h-12 bg-white bg-opacity-10 rounded-lg mb-3"
-													animate={{
-														opacity: [0.5, 0.7, 0.5],
-													}}
-													transition={{
-														duration: 4,
-														repeat: Infinity,
-														repeatType: 'reverse',
-														delay: 0.5,
-													}}
-												></motion.div>
-												<motion.div
-													className="h-4 bg-white bg-opacity-10 rounded w-2/3 mb-2"
-													animate={{
-														opacity: [0.5, 0.7, 0.5],
-														width: ['60%', '65%', '60%'],
-													}}
-													transition={{
-														duration: 5,
-														repeat: Infinity,
-														repeatType: 'reverse',
-													}}
-												></motion.div>
-												<motion.div
-													className="h-4 bg-white bg-opacity-10 rounded mb-2"
-													animate={{
-														opacity: [0.5, 0.7, 0.5],
-													}}
-													transition={{
-														duration: 4.5,
-														repeat: Infinity,
-														repeatType: 'reverse',
-														delay: 0.3,
-													}}
-												></motion.div>
-												<motion.div
-													className="h-4 bg-white bg-opacity-10 rounded w-4/5"
-													animate={{
-														opacity: [0.5, 0.7, 0.5],
-														width: ['80%', '85%', '80%'],
-													}}
-													transition={{
-														duration: 4.2,
-														repeat: Infinity,
-														repeatType: 'reverse',
-														delay: 0.1,
-													}}
-												></motion.div>
-											</div>
-											<div className="grid grid-cols-2 gap-4 mb-6">
-												<motion.div
-													className="h-32 bg-white bg-opacity-10 rounded-lg"
-													animate={{
-														opacity: [0.5, 0.7, 0.5],
-													}}
-													transition={{
-														duration: 3,
-														repeat: Infinity,
-														repeatType: 'reverse',
-														delay: 0.2,
-													}}
-												></motion.div>
-												<motion.div
-													className="h-32 bg-white bg-opacity-10 rounded-lg"
-													animate={{
-														opacity: [0.5, 0.7, 0.5],
-													}}
-													transition={{
-														duration: 3.5,
-														repeat: Infinity,
-														repeatType: 'reverse',
-														delay: 0.4,
-													}}
-												></motion.div>
-											</div>
-											<div className="flex justify-center">
-												<motion.div
-													className="w-1/2 h-10 bg-[var(--c-accent)] rounded-lg"
-													whileHover={{ scale: 1.05 }}
-													animate={{
-														y: [0, -3, 0],
-													}}
-													transition={{
-														y: {
-															duration: 2,
-															repeat: Infinity,
-															repeatType: 'reverse',
-														},
-														scale: { duration: 0.2 },
-													}}
-												></motion.div>
-											</div>
+
+										{/* Hero */}
+										<div className="h-20 bg-indigo-500/20 rounded border border-indigo-400/30" />
+
+										{/* Cards */}
+										<div className="grid grid-cols-3 gap-3">
+											<motion.div
+												className="h-14 bg-white/10 rounded"
+												animate={{ opacity: [0.5, 0.8, 0.5] }}
+												transition={{ duration: 3, repeat: Infinity, delay: 0 }}
+											/>
+											<motion.div
+												className="h-14 bg-white/10 rounded"
+												animate={{ opacity: [0.5, 0.8, 0.5] }}
+												transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+											/>
+											<motion.div
+												className="h-14 bg-white/10 rounded"
+												animate={{ opacity: [0.5, 0.8, 0.5] }}
+												transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+											/>
 										</div>
-									</motion.div>
-									<div className="mt-6 flex justify-center space-x-2">
-										<div className="w-16 h-1 bg-white bg-opacity-30 rounded-full"></div>
-										<div className="w-8 h-1 bg-[var(--c-accent)] rounded-full"></div>
-										<div className="w-8 h-1 bg-white bg-opacity-30 rounded-full"></div>
+
+										{/* Text lines */}
+										<div className="space-y-2">
+											<div className="h-2 bg-white/10 rounded w-full" />
+											<div className="h-2 bg-white/10 rounded w-4/5" />
+											<div className="h-2 bg-white/10 rounded w-3/5" />
+										</div>
+
+										{/* CTA */}
+										<div className="h-8 bg-[var(--c-accent)] rounded" />
 									</div>
 								</motion.div>
 							</div>
@@ -592,7 +504,7 @@ export default function UXArchitecture() {
 								viewport={{ once: true }}
 								transition={{ duration: 0.5 }}
 							>
-								<h3 className="text-4xl font-bold -grad-header mb-4 text-white">
+								<h3 className="text-4xl font-bold grad-header mb-4 text-white">
 									Denver UX Architecture <span className="text-[var(--c-accent)]">with Local Expertise</span>
 								</h3>
 								<p className="text-lg text-moon-rock leading-relaxed mb-0">
@@ -612,7 +524,7 @@ export default function UXArchitecture() {
 								<div className="flex items-start">
 									<div className="text-[var(--c-accent)] text-3xl mr-4 mt-1">✅</div>
 									<div>
-										<h4 className="font-bold -grad-header font-serif mb-0">Technology Focus</h4>
+										<h4 className="font-bold grad-header font-serif mb-0">Technology Focus</h4>
 										<p className="text-lg text-moon-rock leading-relaxed mb-0">
 											Denver's tech-savvy users expect intuitive, innovative interfaces that work effortlessly on all
 											devices. Our UX architecture meets these high expectations.
@@ -631,7 +543,7 @@ export default function UXArchitecture() {
 								<div className="flex items-start">
 									<div className="text-[var(--c-accent)] text-3xl mr-4 mt-1">✅</div>
 									<div>
-										<h4 className="font-bold -grad-header font-serif mb-0">Active Lifestyle</h4>
+										<h4 className="font-bold grad-header font-serif mb-0">Active Lifestyle</h4>
 										<p className="text-lg text-moon-rock leading-relaxed mb-0">
 											We create mobile-first experiences for Denver's on-the-go audience who access digital products
 											while hiking, skiing, or enjoying Colorado's outdoor lifestyle.
@@ -650,7 +562,7 @@ export default function UXArchitecture() {
 								<div className="flex items-start">
 									<div className="text-[var(--c-accent)] text-3xl mr-4 mt-1">✅</div>
 									<div>
-										<h4 className="font-bold -grad-header font-serif mb-0">Competitive Market</h4>
+										<h4 className="font-bold grad-header font-serif mb-0">Competitive Market</h4>
 										<p className="text-lg text-moon-rock leading-relaxed mb-0">
 											Our UX architecture helps your business stand out in Denver's crowded digital landscape by
 											creating memorable, distinctive experiences that drive conversions.

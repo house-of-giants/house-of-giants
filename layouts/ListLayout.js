@@ -3,7 +3,7 @@
 import Link from '@/components/Blog/Link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Container } from '@/components/Container/Container';
 import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
 import LazyImage from '@/components/Image/LazyImage';
@@ -173,7 +173,6 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 				<div className="py-12">
 					<div className="grid grid-cols-1 gap-8 md:grid-cols-2">
 						{!filteredBlogPosts.length && <p className="text-gray-300">No posts found.</p>}
-						<AnimatePresence>
 							{displayPosts.map((post, index) => {
 								const { slug, date, title, excerpt, image, author } = post;
 								const formattedDate = new Date(date).toLocaleDateString('en-US', {
@@ -258,7 +257,6 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 									</motion.div>
 								);
 							})}
-						</AnimatePresence>
 					</div>
 				</div>
 			</div>

@@ -29,7 +29,7 @@ export const PricingCTA = () => {
 					>
 						<div className="inline-block relative">
 							<div className="text-xl md:text-2xl text-moon-rock font-serif italic mb-0 tracking-wide">Starting at</div>
-							<h2 className="relative mb-0 -grad-header z-10 font-display text-7xl md:text-8xl font-black tracking-tight text-white">
+							<h2 className="relative mb-0 grad-header z-10 font-display text-7xl md:text-8xl font-black tracking-tight text-white">
 								$15k
 							</h2>
 						</div>

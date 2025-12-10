@@ -4,8 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useMedia } from '@/utils/useMedia';
 
 import { Grid } from '../Grid/Grid';
-import { StyledGridItem } from '../Grid/StyledGridItem';
 import LazyImage from '@/components/Image/LazyImage';
+
 const Team = () => {
 	const isBig = useMedia(['(min-width: 1024px)'], [1], 0);
 	const { scrollYProgress } = useScroll();
@@ -15,8 +15,8 @@ const Team = () => {
 	return (
 		<Grid cols="1fr" gap="var(--sp-m)" pt="var(--sp-2xl)" justify="center" align="center">
 			<motion.div style={{ y: domAnim, opacity: teamOpacityAnim }} className="-stagger">
-				<StyledGridItem>
-					<div className="team-img" style={{ display: 'flex', justifyContent: 'center' }}>
+				<div>
+					<div className="mb-[var(--sp-l)] flex justify-center">
 						<LazyImage
 							src="/images/dom.jpeg"
 							alt=""
@@ -30,9 +30,9 @@ const Team = () => {
 							}}
 						/>
 					</div>
-					<h4 className="-m0 -lh-1 -fw-700 text-center">Dominic Magnifico</h4>
+					<h4 className="-m0 -lh-1 -fw-700 text-center mb-[var(--sp-xs)]">Dominic Magnifico</h4>
 					<h5 className="-m0 -serif text-center">Founder, Developer</h5>
-				</StyledGridItem>
+				</div>
 			</motion.div>
 		</Grid>
 	);

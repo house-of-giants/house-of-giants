@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export function middleware(request) {
+export function proxy(request) {
 	// Get the If-Modified-Since header from the request
 	const ifModifiedSince = request.headers.get('if-modified-since');
 

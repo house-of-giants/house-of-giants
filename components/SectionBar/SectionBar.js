@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { StyledSectionBar } from './StyledSectionBar';
 import { useSection } from '../SectionContext/SectionContext';
 import { TextScramble } from './TextScramble';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
@@ -118,12 +117,10 @@ export const SectionBar = () => {
 	);
 
 	return (
-		<>
-			<StyledSectionBar>
-				{renderSectionInfo()}
-				{renderMarquee()}
-				{renderStatusInfo()}
-			</StyledSectionBar>
-		</>
+		<div className="styled-section-bar">
+			{renderSectionInfo()}
+			{renderMarquee()}
+			{renderStatusInfo()}
+		</div>
 	);
 };

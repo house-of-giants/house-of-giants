@@ -87,7 +87,7 @@ const Testimonials = ({ noHeader = false }) => {
 					className="text-center mb-16 md:mb-24"
 				>
 					<h2 className="relative inline-block">
-						<span className="block text-[clamp(3rem,8vw,6rem)] font-black leading-[0.85] -grad-header">Don't take</span>
+						<span className="block text-[clamp(3rem,8vw,6rem)] font-black leading-[0.85] grad-header">Don't take</span>
 						<span className="block text-[clamp(3rem,8vw,6rem)] text-white leading-[0.85] font-bold mt-4">
 							our word for it.
 						</span>

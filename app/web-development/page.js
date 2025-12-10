@@ -35,7 +35,7 @@ const ProcessStep = ({ number, title, description, features }) => (
 						className="bg-black bg-opacity-30 p-5 rounded-lg border border-gray-800 hover:border-[var(--c-accent)] transition-all duration-300"
 					>
 						<h3 className="text-2xl not-italic font-bold mb-2">{feature.title}</h3>
-						<p className="text-sm text-moon-rock leading-relaxed">{feature.description}</p>
+						<p className="text-sm text-moon-rock leading-relaxed mb-0">{feature.description}</p>
 					</div>
 				))}
 			</div>
@@ -230,7 +230,7 @@ export default function WebDevelopment() {
 				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 						<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-							<h1 className="text-5xl md:text-7xl font-900 mb-6 -grad-header">
+							<h1 className="text-5xl md:text-7xl font-900 mb-6 grad-header">
 								<span className="block text-[var(--c-accent)]">Web Development</span>
 								<span className="block">That Drives Growth</span>
 							</h1>
@@ -368,7 +368,7 @@ export default function WebDevelopment() {
 								viewport={{ once: true }}
 								transition={{ duration: 0.5 }}
 							>
-								<h3 className="text-4xl font-bold -grad-header mb-4 text-white">Our Development Philosophy</h3>
+								<h3 className="text-4xl font-bold grad-header mb-4 text-white">Our Development Philosophy</h3>
 								<p className="text-lg text-moon-rock leading-relaxed mb-4">
 									Our development approach focuses on three key pillars: performance, scalability, and user experience.
 									We believe that a great website should not only look good but also perform exceptionally well and
@@ -394,7 +394,7 @@ export default function WebDevelopment() {
 								<div className="flex items-start">
 									<div className="text-[var(--c-accent)] text-3xl mr-4 mt-1">✅</div>
 									<div>
-										<h4 className="font-bold -grad-header font-serif mb-0">Performance</h4>
+										<h4 className="font-bold grad-header font-serif mb-0">Performance</h4>
 										<p className="text-lg text-moon-rock leading-relaxed mb-0">
 											We build lightning-fast websites that keep users engaged and improve SEO rankings. Every
 											millisecond counts when it comes to keeping visitors on your site.
@@ -413,7 +413,7 @@ export default function WebDevelopment() {
 								<div className="flex items-start">
 									<div className="text-[var(--c-accent)] text-3xl mr-4 mt-1">✅</div>
 									<div>
-										<h4 className="font-bold -grad-header font-serif mb-0">Scalability</h4>
+										<h4 className="font-bold grad-header font-serif mb-0">Scalability</h4>
 										<p className="text-lg text-moon-rock leading-relaxed mb-0">
 											Our solutions scale with your business, adapting to new requirements without complete rebuilds. We
 											architect systems that grow as your company evolves.
@@ -432,7 +432,7 @@ export default function WebDevelopment() {
 								<div className="flex items-start">
 									<div className="text-[var(--c-accent)] text-3xl mr-4 mt-1">✅</div>
 									<div>
-										<h4 className="font-bold -grad-header font-serif mb-0">User Experience</h4>
+										<h4 className="font-bold grad-header font-serif mb-0">User Experience</h4>
 										<p className="text-lg text-moon-rock leading-relaxed mb-0">
 											We design intuitive interfaces that guide users toward meaningful actions. The best technology is
 											invisible, enabling frictionless interactions with your brand.
@@ -521,19 +521,19 @@ export default function WebDevelopment() {
 								<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
 									<div className="bg-black bg-opacity-30 p-5 rounded-lg border border-gray-800 hover:border-[var(--c-accent)] transition-all duration-300">
 										<h4 className="font-bold mb-2">Deployment</h4>
-										<p className="text-sm text-moon-rock leading-relaxed">
+										<p className="text-sm text-moon-rock leading-relaxed mb-0">
 											Carefully orchestrated deployments with monitoring and rollback capabilities
 										</p>
 									</div>
 									<div className="bg-black bg-opacity-30 p-5 rounded-lg border border-gray-800 hover:border-[var(--c-accent)] transition-all duration-300">
 										<h4 className="font-bold mb-2">Training</h4>
-										<p className="text-sm text-moon-rock leading-relaxed">
+										<p className="text-sm text-moon-rock leading-relaxed mb-0">
 											Comprehensive training sessions for your team to manage the new system
 										</p>
 									</div>
 									<div className="bg-black bg-opacity-30 p-5 rounded-lg border border-gray-800 hover:border-[var(--c-accent)] transition-all duration-300">
 										<h4 className="font-bold mb-2">Post-Launch Support</h4>
-										<p className="text-sm text-moon-rock leading-relaxed">
+										<p className="text-sm text-moon-rock leading-relaxed mb-0">
 											Dedicated support period to ensure everything runs smoothly after launch
 										</p>
 									</div>

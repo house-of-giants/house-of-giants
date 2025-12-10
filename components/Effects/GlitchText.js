@@ -12,7 +12,7 @@ export const GlitchText = ({ text, className }) => {
 			onHoverStart={() => setIsHovered(true)}
 			onHoverEnd={() => setIsHovered(false)}
 		>
-			<span className="block -grad-header relative z-10">{text}</span>
+			<span className="block grad-header relative z-10">{text}</span>
 
 			{isHovered && (
 				<>

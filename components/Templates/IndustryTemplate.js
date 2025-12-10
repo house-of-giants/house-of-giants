@@ -33,7 +33,7 @@ export const IndustryHero = ({ industry, headline, subheadline, description, her
 						>
 							<h1 className="mb-8">
 								<span
-									className={`block text-6xl md:text-8xl font-black tracking-tight leading-[0.9] mb-4 -grad-header`}
+									className={`block text-6xl md:text-8xl font-black tracking-tight leading-[0.9] mb-4 grad-header`}
 								>
 									{headline}
 								</span>

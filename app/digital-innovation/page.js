@@ -35,7 +35,7 @@ const ProcessStep = ({ number, title, description, features }) => (
 						className="bg-black bg-opacity-30 p-5 rounded-lg border border-gray-800 hover:border-[var(--c-accent)] transition-all duration-300"
 					>
 						<h3 className="text-2xl not-italic font-bold mb-2">{feature.title}</h3>
-						<p className="text-sm text-moon-rock leading-relaxed">{feature.description}</p>
+						<p className="text-sm text-moon-rock leading-relaxed mb-0">{feature.description}</p>
 					</div>
 				))}
 			</div>
@@ -214,7 +214,7 @@ export default function DigitalInnovation() {
 				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 						<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-							<h1 className="text-5xl md:text-7xl font-900 mb-6 -grad-header">
+							<h1 className="text-5xl md:text-7xl font-900 mb-6 grad-header">
 								<span className="block text-[var(--c-accent)]">Digital Innovation</span>
 								<span className="block">With Purpose</span>
 							</h1>
@@ -344,7 +344,7 @@ export default function DigitalInnovation() {
 											transition={{ duration: 0.3, delay: 0.1 }}
 										>
 											<h5 className="font-bold text-lg mb-2">Strategic Analysis</h5>
-											<p className="text-sm text-moon-rock leading-relaxed">
+											<p className="text-sm text-moon-rock leading-relaxed mb-0">
 												Dig into the core of the business issue before touching code.
 											</p>
 										</motion.div>
@@ -357,7 +357,7 @@ export default function DigitalInnovation() {
 											transition={{ duration: 0.3, delay: 0.2 }}
 										>
 											<h5 className="font-bold text-lg mb-2">The Many Paths Strategy</h5>
-											<p className="text-sm text-moon-rock leading-relaxed">
+											<p className="text-sm text-moon-rock leading-relaxed mb-0">
 												Consider multiple directions before choosing the smartest build.
 											</p>
 										</motion.div>
@@ -370,7 +370,7 @@ export default function DigitalInnovation() {
 											transition={{ duration: 0.3, delay: 0.3 }}
 										>
 											<h5 className="font-bold text-lg mb-2">ROI-Driven Selection</h5>
-											<p className="text-sm text-moon-rock leading-relaxed">
+											<p className="text-sm text-moon-rock leading-relaxed mb-0">
 												Choosing solutions with measurable business impact
 											</p>
 										</motion.div>
@@ -480,7 +480,7 @@ export default function DigitalInnovation() {
 								viewport={{ once: true }}
 								transition={{ duration: 0.5 }}
 							>
-								<h3 className="text-4xl font-bold -grad-header mb-4 text-white">
+								<h3 className="text-4xl font-bold grad-header mb-4 text-white">
 									Denver's Digital <span className="text-[var(--c-accent)]">Innovation Leader</span>
 								</h3>
 								<p className="text-lg text-moon-rock leading-relaxed mb-0">
@@ -500,7 +500,7 @@ export default function DigitalInnovation() {
 								<div className="flex items-start">
 									<div className="text-[var(--c-accent)] text-3xl mr-4 mt-1">✅</div>
 									<div>
-										<h4 className="font-bold -grad-header font-serif mb-0">Local Innovation Network</h4>
+										<h4 className="font-bold grad-header font-serif mb-0">Local Innovation Network</h4>
 										<p className="text-lg text-moon-rock leading-relaxed mb-0">
 											We're deeply connected to Denver's tech ecosystem and talent pool, giving us access to the latest
 											innovations and specialized expertise.
@@ -519,7 +519,7 @@ export default function DigitalInnovation() {
 								<div className="flex items-start">
 									<div className="text-[var(--c-accent)] text-3xl mr-4 mt-1">✅</div>
 									<div>
-										<h4 className="font-bold -grad-header font-serif mb-0">Industry Knowledge</h4>
+										<h4 className="font-bold grad-header font-serif mb-0">Industry Knowledge</h4>
 										<p className="text-lg text-moon-rock leading-relaxed mb-0">
 											We have a deep understanding of Denver's key industries and their challenges, allowing us to
 											create tailored innovation solutions for local businesses.
@@ -538,7 +538,7 @@ export default function DigitalInnovation() {
 								<div className="flex items-start">
 									<div className="text-[var(--c-accent)] text-3xl mr-4 mt-1">✅</div>
 									<div>
-										<h4 className="font-bold -grad-header font-serif mb-0">Local Impact</h4>
+										<h4 className="font-bold grad-header font-serif mb-0">Local Impact</h4>
 										<p className="text-lg text-moon-rock leading-relaxed mb-0">
 											We're committed to strengthening Denver's digital presence and competitiveness on the global stage
 											through innovative technology solutions.

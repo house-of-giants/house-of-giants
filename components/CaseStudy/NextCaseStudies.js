@@ -39,7 +39,7 @@ export const NextCaseStudies = ({ nextCases, currentCase }) => {
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						viewport={{ once: true }}
-						className="text-4xl md:text-6xl font-black -grad-header mb-4"
+						className="text-4xl md:text-6xl font-black grad-header mb-4"
 					>
 						Continue Exploring
 					</motion.h2>

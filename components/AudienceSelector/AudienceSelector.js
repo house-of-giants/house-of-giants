@@ -134,7 +134,7 @@ export const AudienceSelector = ({ onAudienceSelect }) => {
 							>
 								{/* Subtle background animation during selection */}
 								<motion.div
-									className="absolute inset-0 bg-gradient-to-br from-[var(--c-neon-sky)]/3 via-transparent to-[var(--c-cyber-green)]/3 rounded-2xl"
+									className="absolute inset-0 rounded-2xl"
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
 									transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -160,7 +160,7 @@ export const AudienceSelector = ({ onAudienceSelect }) => {
 							>
 								{/* Refined background animation for contact form */}
 								<motion.div
-									className="absolute inset-0 bg-gradient-to-br from-[var(--c-cyber-purple)]/4 via-[var(--c-neon-sky)]/3 to-[var(--c-cyber-green)]/4 rounded-2xl"
+									className="absolute inset-0 rounded-2xl"
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
 									transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}

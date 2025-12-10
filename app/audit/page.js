@@ -13,7 +13,7 @@ export default function AuditPage() {
 						{/* Hero Section */}
 						<div className="space-y-8 mb-16 text-center">
 							<h1 className="text-[clamp(3rem,8vw,8rem)] font-black leading-[0.85] tracking-tight">
-								<span className="block -grad-header">Free Website</span>
+								<span className="block grad-header">Free Website</span>
 								<span className="block text-white">Audit</span>
 							</h1>
 

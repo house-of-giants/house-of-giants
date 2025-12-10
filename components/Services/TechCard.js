@@ -14,7 +14,7 @@ export const TechCard = ({ title, category, description, features, index }) => {
 
 				{/* Content */}
 				<div className="space-y-6">
-					<h3 className="text-[clamp(2rem, 4vw, 2.5rem)] font-normal not-italic leading-none tracking-tight -grad-header">
+					<h3 className="text-[clamp(2rem, 4vw, 2.5rem)] font-normal not-italic leading-none tracking-tight grad-header">
 						{title}
 					</h3>
 					<p className="text-moon-rock text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: description }} />

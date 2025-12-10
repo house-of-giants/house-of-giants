@@ -327,7 +327,7 @@ export default function ContactPage() {
 				<Container pt="var(--section-spacing-top)" pb="var(--section-spacing-bottom)">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 						<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-							<h1 className="text-4xl md:text-6xl font-900 mb-4 -grad-header">
+							<h1 className="text-4xl md:text-6xl font-900 mb-4 grad-header">
 								<span className="block">Ready to</span>
 								<span className="block text-[var(--c-accent)]">Transform Your</span>
 								<span className="block">Digital Presence?</span>
@@ -452,7 +452,7 @@ export default function ContactPage() {
 								transition={{ duration: 0.5 }}
 							>
 								<h3 className="font-serif text-2xl font-bold mb-4 relative">
-									<span className="-grad-header">Need Immediate Help?</span>
+									<span className="grad-header">Need Immediate Help?</span>
 								</h3>
 								<div className="space-y-4 mb-6">
 									<div className="flex items-center gap-3">
@@ -520,7 +520,7 @@ export default function ContactPage() {
 							>
 								<div className="relative z-10">
 									<h3 className="font-serif text-2xl font-bold mb-6 relative">
-										<span className="-grad-header">Follow Us</span>
+										<span className="grad-header">Follow Us</span>
 									</h3>
 									<Socials theme="dark" />
 								</div>
@@ -589,7 +589,7 @@ export default function ContactPage() {
 								transition={{ duration: 0.5 }}
 							>
 								<h3 className="font-serif text-2xl font-bold mb-6 relative">
-									<span className="-grad-header">Our Process</span>
+									<span className="grad-header">Our Process</span>
 								</h3>
 								<div className="space-y-5">
 									<div className="flex items-start pb-4">
@@ -640,7 +640,7 @@ export default function ContactPage() {
 
 								<div className="relative z-10">
 									<h3 className="font-serif text-2xl font-bold mb-6 relative">
-										<span className="-grad-header">Why Work With Us</span>
+										<span className="grad-header">Why Work With Us</span>
 									</h3>
 									<div className="space-y-6">
 										{benefits.slice(0, 3).map((benefit, index) => (

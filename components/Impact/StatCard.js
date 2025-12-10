@@ -13,7 +13,7 @@ const StatCard = ({ value, description }) => (
 	>
 		<div className="flex flex-col items-start text-left">
 			<div className="text-5xl font-bold tracking-tight mb-3 relative inline-block gradient-text-anim">{value}</div>
-			<p className="text-sm uppercase tracking-wider font-medium text-[var(--c-moon-rock)] mt-4 leading-relaxed">
+			<p className="text-sm uppercase tracking-wider font-medium text-[var(--c-moon-rock)] mt-4 mb-0 leading-relaxed">
 				{description}
 			</p>
 		</div>

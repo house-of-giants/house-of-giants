@@ -67,7 +67,7 @@ export default function WorkPage() {
 									<span className="text-white ml-2">Showcase</span>
 								</div>
 
-								<h1 className="text-[clamp(3rem,12vw,12rem)] font-display font-black -grad-header text-center leading-[0.85] tracking-tight mb-8">
+								<h1 className="text-[clamp(3rem,12vw,12rem)] font-display font-black grad-header text-center leading-[0.85] tracking-tight mb-8">
 									Our Work
 								</h1>
 

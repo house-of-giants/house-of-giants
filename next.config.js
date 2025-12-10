@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+	serverExternalPackages: ['shiki'],
 	experimental: {
 		mdxRs: false,
-		serverComponentsExternalPackages: ['shiki'],
 	},
 	reactStrictMode: true,
 

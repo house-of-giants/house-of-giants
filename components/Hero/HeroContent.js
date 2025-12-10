@@ -56,9 +56,9 @@ export const HeroContent = () => {
 										teams.
 									</p>
 
-									<div className="text-[clamp(0.9rem,1.5vw,1rem)] text-cyber-green font-black uppercase tracking-wider">
-										No templates → <span className="text-cyber-pink">No mercy</span>
-									</div>
+									<p className="text-[clamp(0.9rem,1.5vw,1rem)] text-cyber-green leagin font-black uppercase tracking-wider">
+										No templates&hellip;<span className="text-cyber-pink leading-1">No mercy</span>
+									</p>
 								</motion.div>
 							</div>
 
@@ -72,7 +72,7 @@ export const HeroContent = () => {
 								>
 									<div className="text-moon-rock/50 text-sm uppercase tracking-wider font-medium">Est. 2017</div>
 									<div className="text-moon-rock/60 text-sm leading-relaxed max-w-xs lg:ml-auto">
-										Building digital experiences that exceed expectations for over a decade in the industry
+										Building digital experiences that exceed expectations for over a decade
 									</div>
 								</motion.div>
 							</div>

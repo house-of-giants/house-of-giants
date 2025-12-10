@@ -1,10 +1,8 @@
 import AnimatedTitle from '@/components/AnimatedTitle/AnimatedTitle';
 import JsonLd from '@/components/Schema/JsonLd';
 import { Header } from '@/components/Header/Header';
-import GlobalStyles from '@/components/Styles/GlobalStyles';
 import { ContactFooter } from '@/components/Contact/ContactFooter';
 import { FloatingGradients } from '@/components/FloatingGradients/FloatingGradients';
-import StyledComponentsRegistry from 'lib/registry';
 import { nikolai } from '@/styles/fonts';
 import ScrollToTop from '@/components/ScrollToTop/ScrollToTop';
 
@@ -90,19 +88,16 @@ export default function RootLayout({ children }) {
         <JsonLd />
       </head>
       <body className="bg-[var(--c-primary-dark)]">
-        <StyledComponentsRegistry>
-          <LocalBusinessSchema />
-          <GlobalStyles />
-          <ScrollToTop />
-          <FloatingGradients variant="cyber" intensity="low" />
-          <Header />
-          <AnimatedTitle />
-          <SectionProvider>
-            <SectionBar />
-            {children}
-          </SectionProvider>
-          <ContactFooter />
-        </StyledComponentsRegistry>
+        <LocalBusinessSchema />
+        <ScrollToTop />
+        <FloatingGradients variant="cyber" intensity="low" />
+        <Header />
+        <AnimatedTitle />
+        <SectionProvider>
+          <SectionBar />
+          {children}
+        </SectionProvider>
+        <ContactFooter />
         <PlausibleScript />
         <LuckyOrangeScript />
       </body>

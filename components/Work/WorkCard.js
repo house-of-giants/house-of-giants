@@ -51,7 +51,7 @@ export const WorkCard = ({ title, type, img, url, featured = false }) => {
 							transition={{ duration: 0.5 }}
 							className="transform transition-transform duration-300"
 						>
-							<h3 className="text-[2rem] font-black text-white mb-4 group-hover:-grad-header transition-colors duration-300">
+							<h3 className="text-[2rem] font-black text-white mb-4 group-hover:grad-header transition-colors duration-300">
 								{title}
 							</h3>
 

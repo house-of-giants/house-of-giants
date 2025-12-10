@@ -84,7 +84,7 @@ export function PostFooter({ slug, title, tags }) {
 							transition={{ duration: 0.6 }}
 							viewport={{ once: true }}
 						>
-							<h2 className="text-6xl md:text-7xl font-serif -grad-header mb-6">Stay in the loop</h2>
+							<h2 className="text-6xl md:text-7xl font-serif grad-header mb-6">Stay in the loop</h2>
 							<p className="text-xl max-w-2xl mb-8">
 								Subscribe to our newsletter for the latest articles, case studies, and insights from our team.
 							</p>
@@ -225,7 +225,7 @@ export function PostFooter({ slug, title, tags }) {
 			{/* CTA footer */}
 			<footer className="flex flex-col items-center py-24 px-8 text-white border-t border-white border-opacity-10">
 				<motion.p
-					className="text-6xl md:text-9xl font-serif -grad-header mb-12"
+					className="text-6xl md:text-9xl font-serif grad-header mb-12"
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}

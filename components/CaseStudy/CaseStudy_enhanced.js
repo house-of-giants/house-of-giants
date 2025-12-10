@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import LazyImage from '@/components/Image/LazyImage';
 import { Button } from '@/components/Button/Button';
 import ContactForm from '@/components/Contact/ContactForm';
-import { CircleGrad } from '@/components/Cursor/StyledCursor';
+import { CircleGrad } from '@/components/Cursor/Cursor';
 import Mark from '@/components/SVG/Mark';
 import Love from '@/components/SVG/Love';
 import { ScrollProgress } from '@/components/ScrollProgress/ScrollProgress';
@@ -90,7 +90,7 @@ export const CaseStudy = ({
 						initial={{ opacity: 0, y: 50 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
-						className="text-[clamp(3rem,8vw,8rem)] font-display font-black -grad-header text-center leading-[0.8] tracking-[-0.02em] mb-0"
+						className="text-[clamp(3rem,8vw,8rem)] font-display font-black grad-header text-center leading-[0.8] tracking-[-0.02em] mb-0"
 					>
 						{title}
 					</motion.h1>
@@ -551,7 +551,7 @@ export const CaseStudy = ({
 							</figcaption>
 
 							<div className="absolute hidden lg:block lg:right-0 lg:bottom-0 opacity-40">
-								<CircleGrad className="contact-circ cursor-auto absolute flex" $transparent>
+								<CircleGrad className="contact-circ cursor-auto absolute flex" transparent>
 									<Love className="spin" fill="var(--c-wolf-gray)" />
 									<Mark fill="var(--c-wolf-gray)" width={72} className="absolute" />
 								</CircleGrad>
