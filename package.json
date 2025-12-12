@@ -9,21 +9,21 @@
 	},
 	"dependencies": {
 		"@heroicons/react": "^2.2.0",
-		"@next/third-parties": "^16.0.8",
+		"@next/third-parties": "^16.0.10",
 		"@react-three/drei": "^10.7.7",
 		"@react-three/fiber": "^9.4.2",
 		"@shikijs/rehype": "^3.19.0",
 		"@vercel/analytics": "^1.6.1",
 		"@vercel/og": "^0.8.5",
 		"classnames": "^2.5.1",
-		"framer-motion": "^12.23.25",
+		"framer-motion": "^12.23.26",
 		"github-slugger": "^2.0.0",
 		"gray-matter": "^4.0.3",
-		"lucide-react": "^0.556.0",
-		"next": "^16.0.8",
+		"lucide-react": "^0.560.0",
+		"next": "^16.0.10",
 		"next-plausible": "^3.12.5",
-		"react": "^19.2.1",
-		"react-dom": "^19.2.1",
+		"react": "^19.2.3",
+		"react-dom": "^19.2.3",
 		"react-hook-form": "^7.68.0",
 		"react-intersection-observer": "^10.0.0",
 		"react-responsive-carousel": "^3.2.23",
@@ -36,15 +36,15 @@
 		"resend": "^6.6.0",
 		"shiki": "^3.19.0",
 		"styled-components": "^6.1.19",
-		"three": "^0.181.2"
+		"three": "^0.182.0"
 	},
 	"devDependencies": {
-		"@tailwindcss/postcss": "^4.1.17",
+		"@tailwindcss/postcss": "^4.1.18",
 		"autoprefixer": "^10.4.22",
 		"babel-plugin-styled-components": "^2.1.4",
 		"postcss": "^8.5.6",
 		"postcss-nesting": "^13.0.2",
 		"prettier": "3.7.4",
-		"tailwindcss": "^4.1.17"
+		"tailwindcss": "^4.1.18"
 	}
 }
