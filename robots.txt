@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-# Allow API endpoints for Open Graph images
-Allow: /api/og/*
-
-# Add Sitemap URL (you should replace this with your actual sitemap URL)
-Sitemap: https://houseofgiants.com/sitemap.xml
