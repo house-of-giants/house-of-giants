@@ -3,8 +3,10 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { ArrowUpRight, Code, Palette, Users, Compass } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { Section, SectionHeader } from '@/components/layout/section';
+import { Section, SectionHeader } from '@/components/templates';
+import { Eyebrow } from '@/components/atoms/eyebrow';
+import { GradientText } from '@/components/atoms/gradient-text';
+import { ServiceCard } from '@/components/molecules/service-card';
 import { services } from '@/lib/data/services';
 
 const iconMap = {
@@ -24,10 +26,10 @@ export function ServicesPreview() {
 					eyebrow="What We Do"
 					title={
 						<>
-							Full-stack capabilities. <span className="text-muted-foreground">Singular focus.</span>
+							Custom web development. <GradientText className="block">Not the templated kind.</GradientText>
 						</>
 					}
-					description="We don't do everything. We do web—and we do it exceptionally well."
+					description="We build web applications and websites that don't break when you scale. That's it. That's what we do."
 				/>
 
 				<div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
@@ -35,51 +37,15 @@ export function ServicesPreview() {
 					<div className="space-y-2">
 						{services.map((service, index) => {
 							const Icon = iconMap[service.icon as keyof typeof iconMap];
-							const isActive = activeService === index;
-
 							return (
-								<button
+								<ServiceCard
 									key={service.id}
+									icon={Icon}
+									title={service.title}
+									description={service.shortDescription}
+									isActive={activeService === index}
 									onClick={() => setActiveService(index)}
-									className={cn(
-										'group w-full border p-6 text-left transition-all duration-300',
-										isActive ? 'border-primary bg-primary/5' : 'border-border hover:border-primary/50 bg-background'
-									)}
-								>
-									<div className="flex items-start gap-4">
-										<div
-											className={cn(
-												'flex size-10 items-center justify-center border transition-all duration-300',
-												isActive
-													? 'border-primary bg-primary text-primary-foreground'
-													: 'border-border text-muted-foreground group-hover:border-primary/50'
-											)}
-										>
-											<Icon className="size-5" />
-										</div>
-										<div className="min-w-0 flex-1">
-											<div className="flex items-center justify-between gap-4">
-												<h3
-													className={cn(
-														'font-display text-lg font-semibold transition-colors',
-														isActive ? 'text-primary' : 'text-foreground'
-													)}
-												>
-													{service.title}
-												</h3>
-												<ArrowUpRight
-													className={cn(
-														'size-5 flex-shrink-0 transition-all duration-300',
-														isActive
-															? 'text-primary translate-x-0 opacity-100'
-															: 'text-muted-foreground -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100'
-													)}
-												/>
-											</div>
-											<p className="text-muted-foreground mt-1 text-sm">{service.shortDescription}</p>
-										</div>
-									</div>
-								</button>
+								/>
 							);
 						})}
 					</div>
@@ -90,8 +56,8 @@ export function ServicesPreview() {
 							<div className="border-border bg-card border p-8 lg:p-12">
 								{/* Active indicator */}
 								<div className="mb-6 flex items-center gap-3">
-									<span className="eyebrow text-primary">0{activeService + 1}</span>
-									<div className="from-primary/50 h-px flex-1 bg-gradient-to-r to-transparent" />
+									<Eyebrow className="text-primary">0{activeService + 1}</Eyebrow>
+									<div className="from-primary/50 h-px flex-1 bg-linear-to-r to-transparent" />
 								</div>
 
 								<h3 className="heading-3 mb-4">{services[activeService].title}</h3>

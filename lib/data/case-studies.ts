@@ -32,45 +32,44 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
 	{
 		slug: 'cybernest',
-		title: 'CyberNest',
-		hook: 'Enterprise security platform that scales with your threat landscape',
+		title: 'The CyberNest',
+		hook: 'Cybersecurity intelligence platform with community-verified threat data',
 		client: {
-			name: 'CyberNest Security',
-			description: 'Leading cybersecurity SaaS platform protecting enterprise networks',
+			name: 'The CyberNest',
+			description: 'Cybersecurity intelligence platform helping security teams find trusted information',
 		},
-		industry: 'Enterprise SaaS',
-		timeline: '12 weeks',
-		services: ['Web Development', 'UX Architecture', 'Design System'],
+		industry: 'Cybersecurity Intelligence',
+		timeline: '2024',
+		services: ['Platform Development', 'SaaS Architecture', 'UX Design'],
 		challenge:
-			'CyberNest needed to transform their legacy dashboard into a modern, real-time threat monitoring platform that could handle millions of events per second while remaining intuitive for security analysts.',
+			'Security professionals face too much information with too little trust. CyberNest needed a complete intelligence platform serving both community members and expert networks, with sophisticated user management, real-time collaboration, smart content filtering, and enterprise-grade security.',
 		approach:
-			'We took a performance-first approach, architecting a real-time data pipeline that could process and visualize threats instantly. Our UX research with security teams shaped every interaction.',
+			'We focused on building trust through design, combining cutting-edge technology with thoughtful UX. The dual-audience challenge required careful planning for user management, data security, and scalable permissions.',
 		solution:
-			'A complete platform rebuild using React with server-side rendering, WebSocket connections for real-time updates, and a component library designed for information-dense security dashboards.',
+			'A next-generation platform using modern web architecture, intelligent content systems, and real-time collaboration tools. Features include AI-powered document summaries, community + expert ratings, smart trending algorithms, and live document annotation with team workspace isolation.',
 		results: [
 			{
-				metric: 'Response Time',
-				value: '-68%',
-				description: 'Faster threat detection to response',
+				metric: 'User Experience',
+				value: 'Enterprise',
+				description: 'Consumer-grade ease with enterprise security',
 			},
 			{
-				metric: 'User Efficiency',
-				value: '+124%',
-				description: 'Tasks completed per analyst session',
+				metric: 'Collaboration',
+				value: 'Real-time',
+				description: 'Live annotation and team workspaces',
 			},
 			{
-				metric: 'System Load',
-				value: '10M+',
-				description: 'Events processed per minute',
+				metric: 'Content',
+				value: 'AI-Powered',
+				description: 'Smart filtering and document summaries',
 			},
 		],
 		testimonial: {
-			quote:
-				"House of Giants understood that in cybersecurity, milliseconds matter. They built us a platform that doesn't just look modern—it actually makes our analysts faster.",
-			author: 'Marcus Chen',
-			title: 'CTO, CyberNest Security',
+			quote: "They are the best team I've ever worked with regarding application development thus far.",
+			author: 'Ben Siegel',
+			title: 'CEO, The CyberNest',
 		},
-		techStack: ['Next.js', 'TypeScript', 'WebSocket', 'D3.js', 'PostgreSQL'],
+		techStack: ['Next.js', 'TypeScript', 'Real-time Collaboration', 'AI/ML', 'PostgreSQL'],
 		images: {
 			hero: '/work/cybernest-hero.jpg',
 			thumbnail: '/work/cybernest-thumb.jpg',
@@ -80,44 +79,38 @@ export const caseStudies: CaseStudy[] = [
 	{
 		slug: 'hyperlocology',
 		title: 'Hyperlocology',
-		hook: 'From scrappy startup to Series A with a platform built to scale',
+		hook: 'Enterprise corporate website showcasing AI-powered advertising platform',
 		client: {
 			name: 'Hyperlocology',
-			description: 'Local marketing intelligence platform for multi-location brands',
+			description: 'AI-powered advertising platform for multi-location businesses',
 		},
-		industry: 'MarTech',
-		timeline: '16 weeks',
-		services: ['Web Development', 'Web Design', 'UX Architecture'],
+		industry: 'Multi-Location Advertising',
+		timeline: '2025',
+		services: ['Platform Development', 'WordPress Architecture', 'Custom CMS'],
 		challenge:
-			'Hyperlocology was running on a patchwork of tools and needed a unified platform before their Series A. They needed to prove their tech was enterprise-ready without the enterprise budget.',
+			'Hyperlocology needed a professional corporate website that would establish enterprise credibility while showcasing their AI-powered advertising platform for multi-location businesses. The site needed to serve as both a lead generation platform and a demonstration of technical capabilities.',
 		approach:
-			'We built for where they were going, not just where they were. Every architectural decision was made with 10x growth in mind while shipping fast enough to hit fundraising milestones.',
+			'Working alongside design partner Yeti Island, we planned a sophisticated navigation system and content organization strategy. We analyzed business requirements and identified the need for custom post types for customer stories and job listings.',
 		solution:
-			'A modular platform architecture that could add new marketing channels without code changes, white-label capabilities for enterprise clients, and a dashboard that made complex data feel simple.',
+			'A custom WordPress theme with modern architecture, leveraging WordPress 6.0+ features including block themes and custom post types. The modular, maintainable codebase supports diverse content types including customer success stories, job listings, and company resources.',
 		results: [
 			{
-				metric: 'Funding',
-				value: '$8.5M',
-				description: 'Series A raised post-launch',
+				metric: 'Architecture',
+				value: 'Modern',
+				description: 'WordPress 6.0+ block theme',
 			},
 			{
-				metric: 'Clients',
-				value: '+340%',
-				description: 'Growth in enterprise accounts',
+				metric: 'Content',
+				value: 'Custom',
+				description: 'Post types for stories & jobs',
 			},
 			{
-				metric: 'Scale',
-				value: '50K+',
-				description: 'Locations managed on platform',
+				metric: 'Performance',
+				value: 'Enterprise',
+				description: 'Grade standards for speed & UX',
 			},
 		],
-		testimonial: {
-			quote:
-				'Most agencies would have built what we asked for. House of Giants built what we actually needed—a platform that was investor-ready and scale-ready from day one.',
-			author: 'Sarah Park',
-			title: 'CEO, Hyperlocology',
-		},
-		techStack: ['React', 'Node.js', 'GraphQL', 'AWS', 'Redis'],
+		techStack: ['WordPress', 'Block Theme', 'Custom Post Types', 'PHP', 'JavaScript'],
 		images: {
 			hero: '/work/hyperlocology-hero.jpg',
 			thumbnail: '/work/hyperlocology-thumb.jpg',
@@ -127,38 +120,38 @@ export const caseStudies: CaseStudy[] = [
 	{
 		slug: 'shakey-graves',
 		title: 'Shakey Graves',
-		hook: "An artist's digital home as unconventional as his music",
+		hook: 'Interactive AI-powered album experience for Movie of the Week',
 		client: {
 			name: 'Shakey Graves',
-			description: 'Grammy-nominated artist known for genre-defying Americana',
+			description: 'Grammy-nominated artist known for bold creative choices and genre-defying music',
 		},
 		industry: 'Entertainment',
-		timeline: '8 weeks',
-		services: ['Web Design', 'Web Development', 'Creative Direction'],
+		timeline: '2021',
+		services: ['Web Design', 'Web Development', 'AI Integration'],
 		challenge:
-			'Alejandro Rose-Garcia needed a digital presence that could capture the raw, authentic energy of his live shows while handling tour dates, merch, and a rabidly loyal fanbase.',
+			'Shakey Graves took a cosmic leap with his album "Movie of the Week"—a film score for a fictional movie with multiple track versions. He needed a digital space where fans could piece together their own soundtrack with custom artwork, titles, and AI-powered movie synopses.',
 		approach:
-			"We immersed ourselves in Shakey's visual language and musical evolution, designing an experience that felt like discovering a hidden record store—intimate but exciting.",
+			'We designed a retro-inspired web experience built around a TV-wall aesthetic—reminiscent of vintage sets playing half-remembered shows—so fans could "channel surf" through different parts of Shakey\'s site.',
 		solution:
-			'A fully custom WordPress build with seamless integration to Shopify for merch, Bandsintown for tours, and a content architecture that lets the team update everything without touching code.',
+			'An AI-driven "Movie of the Week" generator where visitors select a movie genre, unlock personalized artwork, an original title, and a short synopsis, then receive a curated soundtrack pulled from hundreds of tracks. Nostalgic vibes meet modern tech.',
 		results: [
 			{
-				metric: 'Engagement',
-				value: '+89%',
-				description: 'Time on site increase',
+				metric: 'New Users',
+				value: '+91%',
+				description: 'Increase within the first week',
 			},
 			{
-				metric: 'Merch Sales',
-				value: '+156%',
-				description: 'Direct-to-fan revenue growth',
+				metric: 'Page Views',
+				value: '+285%',
+				description: 'Growth post-launch',
 			},
 			{
-				metric: 'Newsletter',
-				value: '+42%',
-				description: 'Email signup conversion rate',
+				metric: 'Combinations',
+				value: '1B+',
+				description: 'Unique album combinations created',
 			},
 		],
-		techStack: ['WordPress', 'Shopify', 'GSAP', 'Bandsintown API'],
+		techStack: ['Custom Web App', 'AI/ML', 'GSAP', 'Audio Integration'],
 		images: {
 			hero: '/work/shakey-hero.jpg',
 			thumbnail: '/work/shakey-thumb.jpg',
@@ -167,39 +160,39 @@ export const caseStudies: CaseStudy[] = [
 	},
 	{
 		slug: 'hayashi',
-		title: 'Hayashi',
-		hook: "Luxury brand presence for Denver's finest omakase",
+		title: 'Hayashi Whisky',
+		hook: 'Luxury Japanese whisky brand with immersive visual storytelling',
 		client: {
-			name: 'Hayashi',
-			description: "Intimate omakase experience in Denver's RiNo district",
+			name: 'Hayashi Whisky',
+			description: 'Premium Japanese whisky evolving the Okinawan awamori rice spirit tradition',
 		},
-		industry: 'Hospitality',
-		timeline: '6 weeks',
+		industry: 'Luxury Spirits',
+		timeline: '2022',
 		services: ['Web Design', 'Web Development', 'Brand Strategy'],
 		challenge:
-			'Chef Hayashi needed a digital presence that matched the precision and artistry of his 12-seat omakase counter. The site had to feel as intentional as every piece of fish he serves.',
+			'Hayashi needed more than a pretty label—they wanted a digital launch that exuded upscale cool while educating consumers about their luxury status. Three core pillars—Japanese Artistry, Aged to Perfection, and Okinawan Lifestyle—had to shine through every aspect of the site.',
 		approach:
-			'Restraint was everything. We stripped away every unnecessary element, letting the photography and typography create the same sense of anticipation you feel walking into the restaurant.',
+			'We leaned into immersive visual storytelling to introduce Hayashi as the star of its own narrative. From gold-foil accents and intricate forest motifs to subtle nods at Ryukyu Islands culture, we built a clean, elegant website.',
 		solution:
-			'A minimal, typography-driven site with micro-interactions that reward attention. Seamless Tock integration for reservations without breaking the aesthetic.',
+			"A luxury brand website weaving mystery, modernity, and tradition into each scroll. By showcasing the bottle as a central figure, we reinforced brand identity at every turn—ensuring Hayashi's prestige resonated with whisky aficionados and novices alike.",
 		results: [
 			{
-				metric: 'Bookings',
-				value: '100%',
-				description: 'Fully booked 3 months out',
+				metric: 'Brand',
+				value: 'Premium',
+				description: 'Luxury positioning established',
 			},
 			{
-				metric: 'Avg Check',
-				value: '+28%',
-				description: 'Increase in omakase upgrades',
+				metric: 'Storytelling',
+				value: 'Immersive',
+				description: 'Visual narrative experience',
 			},
 			{
-				metric: 'Coverage',
-				value: '5 Star',
-				description: 'Reviews from major publications',
+				metric: 'Heritage',
+				value: 'Okinawan',
+				description: 'Cultural authenticity showcased',
 			},
 		],
-		techStack: ['Next.js', 'Sanity CMS', 'Tock', 'Framer Motion'],
+		techStack: ['Next.js', 'GSAP', 'Framer Motion', 'Sanity CMS'],
 		images: {
 			hero: '/work/hayashi-hero.jpg',
 			thumbnail: '/work/hayashi-thumb.jpg',

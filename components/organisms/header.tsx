@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/atoms/logo';
 
 const navigation = [
 	{ name: 'Work', href: '/work' },
@@ -23,6 +24,7 @@ export function Header() {
 			setIsScrolled(window.scrollY > 20);
 		};
 
+		handleScroll();
 		window.addEventListener('scroll', handleScroll, { passive: true });
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
@@ -42,21 +44,17 @@ export function Header() {
 		<>
 			<header
 				className={cn(
-					'fixed top-0 right-0 left-0 z-50 transition-all duration-500',
-					isScrolled ? 'bg-background/80 border-border border-b backdrop-blur-xl' : 'bg-transparent'
+					'fixed top-0 right-0 left-0 z-50 border-b transition-all duration-500 ease-in-out',
+					isScrolled
+						? 'bg-background/60 border-border backdrop-blur-xl'
+						: 'border-transparent bg-transparent backdrop-blur-none'
 				)}
 			>
 				<div className="container-wide">
 					<nav className="flex h-20 items-center justify-between">
 						{/* Logo */}
-						<Link href="/" className="group relative z-50 flex items-center gap-2">
-							<div className="relative">
-								<div className="bg-primary text-primary-foreground font-display flex size-10 items-center justify-center text-lg font-bold">
-									HG
-								</div>
-								<div className="bg-primary absolute inset-0 opacity-0 blur-xl transition-opacity group-hover:opacity-50" />
-							</div>
-							<span className="font-display hidden text-lg font-semibold tracking-tight sm:block">House of Giants</span>
+						<Link href="/" className="group relative z-50 flex items-center">
+							<Logo width={180} className="text-foreground transition-opacity group-hover:opacity-80" />
 						</Link>
 
 						{/* Desktop Navigation */}

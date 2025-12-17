@@ -3,36 +3,37 @@
 import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { Users, Layers, Rocket, Code } from 'lucide-react';
-import { Section, SectionHeader } from '@/components/layout/section';
+import { Section, SectionHeader } from '@/components/templates';
+import { GradientText } from '@/components/atoms/gradient-text';
 
 const pillars = [
 	{
 		icon: Users,
 		title: 'Small on Purpose',
 		description:
-			'While other agencies scale to maximize profit, we stay lean to maximize quality. Founders in production, not just sales. Direct access to the people building your project.',
+			'Most web development companies scale to squeeze margins. We stay small because quality matters more than growth. You work directly with the founders writing your code, not account managers reading scripts.',
 		highlight: 'No account manager shuffle',
 	},
 	{
-		icon: Layers,
-		title: 'Tech-Agnostic',
+		icon: Code,
+		title: 'We Actually Understand Code',
 		description:
-			"We don't push our favorite stack. WordPress when it makes sense, React when it doesn't. You own everything we build—no platform lock-in, no recurring fees you don't need.",
-		highlight: 'Outcome-obsessed',
+			"We're not designers who learned to code last year or AI prompt engineers calling ourselves developers. We've been building custom web applications since before it was trendy. Whatever tech makes sense for your business, we know it.",
+		highlight: 'No proprietary lock-in',
 	},
 	{
 		icon: Rocket,
-		title: 'Built to Scale',
+		title: "Built for Where You're Going",
 		description:
-			"No rebuilding in 18 months. We architect for where you're going, not just where you are. Modular systems that grow with you, performance as a feature.",
+			"That MVP you need now? We build it to survive your growth. Architecture that doesn't fall apart when you actually get traction. We've seen enough startups die from technical debt to know better.",
 		highlight: 'From day one',
 	},
 	{
-		icon: Code,
-		title: 'We Understand Code',
+		icon: Layers,
+		title: 'We Own Every Line',
 		description:
-			'Not AI-dependent. Not design-only. Senior developers on every project who can explain every line we ship. Real debugging at 2 AM if needed.',
-		highlight: 'No vibe coding',
+			"AI speeds us up. Doesn't do our thinking. Every architectural decision, every line shipped—that's us. Real developers who can explain exactly why your code works the way it does.",
+		highlight: 'No guessing. Just knowing.',
 	},
 ];
 
@@ -42,13 +43,13 @@ export function Differentiation() {
 	return (
 		<Section className="relative">
 			<SectionHeader
-				eyebrow="Why House of Giants"
+				eyebrow="Why Work With Us"
 				title={
 					<>
-						Not just another agency. <span className="text-muted-foreground">A partner that ships.</span>
+						Not your typical web development agency. <GradientText>An actual partner.</GradientText>
 					</>
 				}
-				description="Four principles that define how we work and why clients come back."
+				description="Four principles that define how we work and why founders come back."
 			/>
 
 			<div className="bg-border grid grid-cols-1 gap-px md:grid-cols-2">
@@ -66,7 +67,7 @@ export function Differentiation() {
 							{/* Hover glow effect */}
 							<div
 								className={cn(
-									'from-primary/10 to-accent/5 absolute inset-0 bg-gradient-to-br via-transparent opacity-0 transition-opacity duration-500',
+									'from-primary/5 to-primary/5 absolute inset-0 bg-gradient-to-br opacity-0 transition-opacity duration-500',
 									isHovered && 'opacity-100'
 								)}
 							/>

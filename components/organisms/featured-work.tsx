@@ -4,24 +4,35 @@ import * as React from 'react';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Section, SectionHeader } from '@/components/layout/section';
+import { Section, SectionHeader } from '@/components/templates';
 import { getFeaturedCaseStudies } from '@/lib/data/case-studies';
 import { Button } from '@/components/ui/button';
+import { GradientText } from '@/components/atoms/gradient-text';
+import { GridPattern } from '@/components/backgrounds/grid-pattern';
+import { NoiseOverlay } from '@/components/backgrounds/noise-overlay';
 
 export function FeaturedWork() {
 	const featuredStudies = getFeaturedCaseStudies();
 	const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
 
 	return (
-		<Section background="muted" className="overflow-hidden" maskBottom="angle" >
+		<Section className="overflow-hidden" maskBottom="angle">
+			<div className="pointer-events-none absolute inset-0 -z-10">
+				<div className="bg-muted/10 absolute inset-0" />
+				<div className="gradient-section-glow absolute inset-0" />
+				<GridPattern className="opacity-15" />
+				<NoiseOverlay opacity={0.2} className="mix-blend-overlay" />
+				<div className="bg-primary/10 absolute top-0 left-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[100px]" />
+			</div>
+
 			<SectionHeader
 				eyebrow="Selected Work"
 				title={
 					<>
-						Results that speak <span className="text-gradient">louder than pitches</span>
+						Custom web development projects that shipped. <GradientText>With results.</GradientText>
 					</>
 				}
-				description="Real projects, real metrics, real impact. Here's what happens when you build with intention."
+				description="Real metrics from real projects. No vague 'increased engagement' bullshit."
 			/>
 
 			<div className="space-y-px">
@@ -54,7 +65,7 @@ export function FeaturedWork() {
 									/>
 
 									{/* Grid overlay */}
-									<div className="grid-pattern absolute inset-0 opacity-30" />
+									<GridPattern className="opacity-30" />
 
 									{/* Project number */}
 									<div className="font-display text-foreground/50 absolute top-6 left-6 text-sm font-medium">

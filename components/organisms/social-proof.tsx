@@ -2,9 +2,11 @@
 
 import * as React from 'react';
 import { cn } from '@/lib/utils';
-import { Section } from '@/components/layout/section';
+import { Section } from '@/components/templates/section';
+import { Eyebrow } from '@/components/atoms/eyebrow';
+import { GridPattern } from '@/components/backgrounds/grid-pattern';
+import { TestimonialCard } from '@/components/molecules/testimonial-card';
 import { clients, testimonials } from '@/lib/data/clients';
-import { Quote } from 'lucide-react';
 
 export function SocialProof() {
 	const [activeTestimonial, setActiveTestimonial] = React.useState(0);
@@ -20,7 +22,7 @@ export function SocialProof() {
 		<Section className="overflow-hidden" maskBottom="angle">
 			{/* Client Logos Marquee */}
 			<div className="relative mb-24">
-				<p className="eyebrow mb-12 text-center">Trusted by Industry Leaders</p>
+				<Eyebrow className="mb-12 text-center">Trusted by Industry Leaders</Eyebrow>
 
 				{/* Marquee wrapper */}
 				<div className="relative">
@@ -44,54 +46,33 @@ export function SocialProof() {
 			</div>
 
 			{/* Testimonials */}
-			<div className="mx-auto max-w-4xl">
-				<div className="relative">
-					{/* Quote icon */}
-					<Quote className="text-primary/10 absolute -top-6 -left-4 size-16" />
+			<div className="relative mx-auto max-w-5xl px-6 pt-12 md:px-12">
+				<GridPattern />
 
-					{/* Testimonial content */}
-					<div className="relative min-h-[200px]">
+				<div className="relative">
+					<div className="relative min-h-[350px] md:min-h-[300px]">
 						{testimonials.map((testimonial, index) => (
-							<div
+							<TestimonialCard
 								key={testimonial.author}
-								className={cn(
-									'absolute inset-0 transition-all duration-700',
-									activeTestimonial === index
-										? 'translate-y-0 opacity-100'
-										: 'pointer-events-none translate-y-8 opacity-0'
-								)}
-							>
-								<blockquote className="font-display mb-8 text-2xl leading-tight font-medium md:text-3xl lg:text-4xl">
-									&ldquo;{testimonial.quote}&rdquo;
-								</blockquote>
-								<div className="flex items-center gap-4">
-									{/* Avatar placeholder */}
-									<div className="from-primary/30 to-accent/30 flex size-12 items-center justify-center bg-gradient-to-br text-sm font-medium">
-										{testimonial.author
-											.split(' ')
-											.map((n) => n[0])
-											.join('')}
-									</div>
-									<div>
-										<p className="font-medium">{testimonial.author}</p>
-										<p className="text-muted-foreground text-sm">
-											{testimonial.title}, {testimonial.company}
-										</p>
-									</div>
-								</div>
-							</div>
+								quote={testimonial.quote}
+								author={testimonial.author}
+								title={testimonial.title}
+								company={testimonial.company}
+								isActive={activeTestimonial === index}
+							/>
 						))}
 					</div>
 
-					{/* Navigation dots */}
-					<div className="mt-12 flex items-center justify-center gap-2">
+					<div className="mt-8 flex items-center justify-center gap-1.5 md:mt-12">
 						{testimonials.map((_, index) => (
 							<button
 								key={index}
 								onClick={() => setActiveTestimonial(index)}
 								className={cn(
-									'h-1 transition-all duration-300',
-									activeTestimonial === index ? 'bg-primary w-8' : 'bg-border hover:bg-muted-foreground w-2'
+									'h-1 transition-all duration-500 ease-out',
+									activeTestimonial === index
+										? 'bg-accent w-12 shadow-[0_0_15px_rgba(var(--accent),0.5)]'
+										: 'w-3 bg-white/10 hover:w-6 hover:bg-white/30'
 								)}
 								aria-label={`Go to testimonial ${index + 1}`}
 							/>

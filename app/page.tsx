@@ -1,13 +1,13 @@
-import { Header, Footer } from '@/components/layout';
 import {
+	Header,
+	Footer,
 	Hero,
 	Differentiation,
 	FeaturedWork,
 	ServicesPreview,
 	SocialProof,
 	PricingTeaser,
-	CTABlock,
-} from '@/components/home';
+} from '@/components/organisms';
 
 export default function Home() {
 	return (
@@ -20,7 +20,6 @@ export default function Home() {
 				<ServicesPreview />
 				<SocialProof />
 				<PricingTeaser />
-				<CTABlock />
 			</main>
 			<Footer />
 		</>

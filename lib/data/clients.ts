@@ -27,24 +27,43 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
 	{
 		quote:
-			"House of Giants isn't like other agencies. They don't just execute—they challenge, refine, and ultimately deliver something better than what you asked for.",
-		author: 'Sarah Chen',
-		title: 'VP of Marketing',
-		company: 'CyberNest Security',
+			'Our website looks fantastic and we are getting more business off of it than we previously were. HoG did a great job listening to our needs and designing a website that looks and runs fantastic.',
+		author: 'Kathleen Lannes',
+		title: 'Sales Manager',
+		company: 'Longero',
 	},
 	{
 		quote:
-			'Working with House of Giants felt like having a technical co-founder for our web presence. They understood our constraints, our timeline, and most importantly, where we needed to be in 2 years.',
-		author: 'Marcus Park',
-		title: 'CEO',
-		company: 'Hyperlocology',
+			'They even took the time for in-depth research before calls which proved to me they understood the history and path.',
+		author: 'Bodie Johnson',
+		title: 'Founder',
+		company: '',
 	},
 	{
 		quote:
-			"They built us a site that's been fully booked since launch. More importantly, they understood that for a restaurant like ours, the website IS part of the experience.",
-		author: 'Chef Hayashi',
-		title: 'Owner',
-		company: 'Hayashi Omakase',
+			'I was most impressed with how seriously they took my ideas and incorporated them into their awesome design ability.',
+		author: 'Sheryl Glubok',
+		title: 'Business Owner',
+		company: '',
+	},
+	{
+		quote:
+			"The outcome has been fantastic, as we're successfully generating new people who want to get involved in our program.",
+		author: 'Ann Marie Beresford',
+		title: 'Program Director',
+		company: '',
+	},
+	{
+		quote: 'House of Giants was really forward-thinking in their design.',
+		author: 'Devan Crean',
+		title: 'Marketing Director',
+		company: '',
+	},
+	{
+		quote: 'They do a great job at getting to know the brand and investing in our collaboration.',
+		author: 'Katie Zak',
+		title: 'Brand Manager',
+		company: '',
 	},
 ];
 
