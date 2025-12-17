@@ -334,17 +334,18 @@ Footer additions:
 
 ### Pages to Create
 
-- `/services` (unified)
+- `/pods` (NEW - Core strategy)
+- `/services` (Unified)
 - `/about`
-- `/for-startups`
+- `/white-label` (Hidden/Footer)
 
 ### Pages to Enhance
 
-- `/` (homepage - complete redesign)
-- `/work` (add filtering, metrics display)
-- `/work/[slug]` (deep-dive format)
-- `/blog` (add categories)
-- `/pricing` (better "who it's for" framing)
+- `/` (Homepage - Founder focus)
+- `/pricing` (Add Pod tiers)
+- `/work` (Filtering & Metrics)
+- `/work/[slug]` (Deep dive)
+- `/blog` (Categories)
 
 ### Pages to Keep (minor refinements)
 
