@@ -7,9 +7,11 @@ export const metadata: Metadata = {
 	keywords: [
 		'about house of giants',
 		'denver web development team',
+		'custom web development partner',
 		'colorado web agency',
 		'founder-led development studio',
 		'custom web development denver',
+		'dedicated development team',
 		'punk rock agency',
 	],
 	openGraph: {

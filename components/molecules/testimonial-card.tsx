@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Quote } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -41,7 +40,11 @@ export function TestimonialCard({ quote, author, title, company, isActive = fals
 				<div className="flex flex-col text-left">
 					<span className="text-sm font-bold tracking-wide text-white uppercase">{author}</span>
 					<span className="text-muted-foreground text-xs tracking-wide uppercase">
-						{title} <span className="text-primary/50">/</span> <span className="text-accent">{company}</span>
+						{title} {company && (
+							<>
+								<span className="text-primary/50">/</span> <span className="text-accent">{company}</span>
+							</>
+						)}
 					</span>
 				</div>
 			</div>

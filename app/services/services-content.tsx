@@ -8,51 +8,57 @@ import {
 	Palette,
 	Users,
 	Compass,
-	Search,
-	Map,
 	Rocket,
-	Layers,
 	Target,
 	Package,
 	ArrowUpRight,
+	TrendingUp,
 } from 'lucide-react';
 import { Header, Footer } from '@/components/organisms';
-import { CTABlock } from '@/components/organisms/cta-block';
 import { Section, SectionHeader } from '@/components/templates';
 import { GradientText } from '@/components/atoms/gradient-text';
 import { GradientOrbs } from '@/components/backgrounds/gradient-orbs';
 import { NoiseOverlay } from '@/components/backgrounds/noise-overlay';
 import { StatusIndicator } from '@/components/atoms/status-indicator';
-import { ProcessStep } from '@/components/molecules/process-step';
 import { services } from '@/lib/data/services';
+import { Button } from '@/components/ui/button';
 
 const serviceIcons = {
 	development: Code,
-	design: Palette,
 	ux: Users,
-	strategy: Compass,
+	innovation: Compass,
+	immersive: Palette,
+	qsr: Package,
 };
 
-const processSteps = [
+const processPhases = [
 	{
-		label: 'Discovery',
-		description: 'We dig into your business, users, and goals',
-		icon: Search,
+		label: 'Plan',
+		description: "We dig into your goals, map out what we're building, and define success metrics before we start.",
+		substeps: ['Understand your business and users', 'Map out features and requirements'],
+		deliverables: ['User research', 'Site structure', 'Requirements doc', 'Success metrics'],
+		icon: Compass,
 	},
 	{
-		label: 'Strategy',
-		description: 'Technical roadmap and architectural decisions',
-		icon: Map,
-	},
-	{
-		label: 'Build',
-		description: 'Iterative development with regular check-ins',
-		icon: Layers,
+		label: 'Create',
+		description: 'We design the experience and build it with clean, fast code your team can actually use.',
+		substeps: ['Design the user experience', 'Build with clean, maintainable code'],
+		deliverables: ['UX designs', 'Component library', 'Production code', 'CMS setup'],
+		icon: Code,
 	},
 	{
 		label: 'Launch',
-		description: 'Deployment, training, and ongoing support',
+		description: 'We test everything thoroughly, then go live with analytics and a safety net.',
+		substeps: ['Test speed, accessibility, and devices', 'Go live with a safety net'],
+		deliverables: ['Speed & accessibility audit', 'Cross-device testing', 'Analytics setup', 'Launch checklist'],
 		icon: Rocket,
+	},
+	{
+		label: 'Scale',
+		description: 'We train your team, hand everything over, then help you optimize and grow.',
+		substeps: ['Train your team to own it', 'Improve based on real data'],
+		deliverables: ['Team training', 'Documentation', 'Performance tuning', 'Growth plan'],
+		icon: TrendingUp,
 	},
 ];
 
@@ -60,20 +66,20 @@ const approachItems = [
 	{
 		title: 'Tech-Agnostic',
 		description:
-			"We don't push a favorite stack. We choose what's right for your problem—whether that's a headless CMS, a monolithic framework, or something in between.",
+			"We don't force a single stack. We pick the right tools for your specific goals, ensuring performance and scalability from day one.",
 		icon: Compass,
 	},
 	{
-		title: 'Outcome-Obsessed',
+		title: 'Small by Design',
 		description:
-			"We measure success by your metrics, not ours. Faster load times, higher conversions, less maintenance headaches—that's what matters.",
-		icon: Target,
+			'The principals do the work. You get direct access to senior experts, faster decisions, and total accountability throughout the build.',
+		icon: Users,
 	},
 	{
-		title: 'Built to Hand Off',
+		title: 'Outcomes > Artifacts',
 		description:
-			"Your team will actually understand the code we write. Documentation, clean architecture, no proprietary lock-in. It's yours.",
-		icon: Package,
+			"We ship measurable impact, not just pretty pixels. Our sites are designed to drive revenue, scale with your growth, and stay fast.",
+		icon: Target,
 	},
 ];
 
@@ -115,8 +121,8 @@ export default function ServicesContent() {
 							className={cn('heading-display mb-6 opacity-0', mounted && 'animate-slide-up')}
 							style={{ animationDelay: '0.2s' }}
 						>
-							Custom web development services. <br className="hidden sm:block" />
-							<GradientText>Built for founders who ship.</GradientText>
+							Custom code. <br className="hidden sm:block" />
+							<GradientText>Built for those who ship.</GradientText>
 						</h1>
 
 						<p
@@ -126,8 +132,7 @@ export default function ServicesContent() {
 							)}
 							style={{ animationDelay: '0.3s' }}
 						>
-							We build custom web applications for startups and scale-ups who&apos;ve outgrown templates. No page
-							builders, no shortcuts—just clean code that scales with your ambitions.
+							No templates. No bloat. High-performance web apps built to scale with your ambitions.
 						</p>
 					</div>
 				</Section>
@@ -135,8 +140,9 @@ export default function ServicesContent() {
 				<Section className="relative">
 					<SectionHeader
 						eyebrow="What We Build"
-						title="Full-stack web development. Design to deployment."
-						description="Everything you need to launch a custom web application that actually works. Strategy, design, development, and ongoing support—all under one roof."
+						title="Full-stack web development."
+						subtitle="From strategy to deployment."
+						description="Everything you need to launch a custom web application that actually works. Strategy, design, development, and ongoing support. All under one roof."
 						className="mb-16"
 					/>
 
@@ -205,35 +211,86 @@ export default function ServicesContent() {
 						<NoiseOverlay opacity={0.2} className="mix-blend-overlay" />
 					</div>
 
-					<div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
-						<div className="lg:col-span-5">
-							<SectionHeader
-								eyebrow="Process"
-								title="How we work."
-								description="No black boxes. No hidden fees. Just a transparent, iterative process designed to get you from idea to launch."
-							/>
-						</div>
+					<SectionHeader
+						eyebrow="Delivery Lifecycle"
+						title="How we ship."
+						description="No black boxes. No hidden fees. Transparent phases with clear deliverables at every step. Definition of Done before we move on."
+						align="center"
+						className="mb-16"
+					/>
 
-						<div className="lg:col-span-7">
-							<div className="space-y-8">
-								{processSteps.map((step, index) => (
-									<ProcessStep
-										key={step.label}
-										index={index}
-										icon={step.icon}
-										label={step.label}
-										description={step.description}
-										className="bg-background/50 border-border hover:border-primary/50 rounded-xl border p-6 backdrop-blur-sm transition-colors"
-									/>
-								))}
+					<div className="grid gap-6 sm:grid-cols-2">
+						{processPhases.map((phase, index) => {
+							const Icon = phase.icon;
+							return (
+								<div
+									key={phase.label}
+									className="bg-background/50 border-border hover:border-primary/50 group relative flex flex-col rounded-xl border p-8 backdrop-blur-sm transition-all hover:shadow-lg"
+								>
+									<div className="mb-6 flex items-center justify-between">
+										<span className="bg-primary/10 text-primary font-display flex size-10 items-center justify-center rounded-lg text-base font-bold">
+											{index + 1}
+										</span>
+										<Icon className="text-muted-foreground group-hover:text-primary size-6 transition-colors" />
+									</div>
+
+									<h3 className="text-foreground mb-3 text-xl font-semibold">{phase.label}</h3>
+									<p className="text-muted-foreground mb-4 text-base leading-relaxed">{phase.description}</p>
+
+									<div className="border-border mb-4 border-t pt-4">
+										<p className="text-muted-foreground mb-2 text-xs font-medium tracking-wider uppercase">
+											Our job
+										</p>
+										<ul className="space-y-1.5">
+											{phase.substeps.map((item) => (
+												<li
+													key={item}
+													className="text-muted-foreground flex items-center gap-2 text-sm"
+												>
+													<span className="bg-primary/50 size-1.5 rounded-full" />
+													{item}
+												</li>
+											))}
+										</ul>
+									</div>
+
+									<div className="border-border mt-auto border-t pt-4">
+										<p className="text-muted-foreground mb-2 text-xs font-medium tracking-wider uppercase">
+											Deliverables
+										</p>
+										<ul className="space-y-1">
+											{phase.deliverables.map((item) => (
+												<li
+													key={item}
+													className="text-muted-foreground flex items-center gap-2 text-xs"
+												>
+													<span className="bg-primary/50 size-1 rounded-full" />
+													{item}
+												</li>
+											))}
+										</ul>
+									</div>
+								</div>
+							);
+						})}
+					</div>
+
+					<div className="border-border mt-12 border-t pt-8">
+						<div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+							<div className="text-center sm:text-left">
+								<p className="text-foreground mb-1 font-medium">Ready to see our process in action?</p>
+								<p className="text-muted-foreground text-sm">
+									Real projects. Real timelines. Real outcomes.
+								</p>
 							</div>
-							<div className="border-border mt-8 border-t pt-8">
-								<p className="text-muted-foreground mb-4 text-sm">Ready to see our process in action?</p>
-								<Link href="/work" className="text-primary group inline-flex items-center gap-2 font-medium">
-									<span className="link-underline">View case studies with real results</span>
-									<ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-								</Link>
-							</div>
+							<Button
+								href="/work"
+								variant="default"
+								size="cta"
+							>
+								View case studies
+								<ArrowUpRight className="size-4 transition-transform" />
+							</Button>
 						</div>
 					</div>
 				</Section>

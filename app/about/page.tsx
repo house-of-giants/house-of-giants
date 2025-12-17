@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { cn } from '@/lib/utils';
-import { MapPin, Code, Zap, Users, Mountain, Globe, Terminal } from 'lucide-react';
+import { MapPin, Code, Users, Mountain, Globe, Terminal, Shield } from 'lucide-react';
 import { Header, Footer } from '@/components/organisms';
 import { Section, SectionHeader } from '@/components/templates';
 import { GradientText } from '@/components/atoms/gradient-text';
@@ -58,8 +58,7 @@ export default function AboutPage() {
 							)}
 							style={{ animationDelay: '0.3s' }}
 						>
-							We&apos;re a small crew of builders who&apos;d rather collaborate than follow some agency formula. If you
-							care about your product, we&apos;ll care about it too.
+							We&apos;re a founder-led custom web development partner for startups and scale-ups who care about craft. No bloat, no templates—just high-performance code that drives revenue.
 						</p>
 					</div>
 				</Section>
@@ -122,11 +121,10 @@ export default function AboutPage() {
 							<div className="border-border bg-card text-primary group-hover:border-primary/50 group-hover:bg-primary/10 mb-6 inline-flex size-12 items-center justify-center rounded-lg border transition-colors">
 								<Users className="size-6" />
 							</div>
-							<h3 className="heading-3 mb-4">Small on Purpose</h3>
+							<h3 className="heading-3 mb-4">Small by Design</h3>
 							<p className="text-muted-foreground leading-relaxed">
-								We don&apos;t want to turn into the gigantic agencies we used to work at, where the production gets so
-								far removed from leadership that things just get lost. The people who you talk to are the same people
-								that work on your project.
+								The people you meet are the people who build. No account managers, no layers of bureaucracy—just direct 
+								accountability and fast decisions from principals who actually ship code.
 							</p>
 						</div>
 
@@ -136,21 +134,19 @@ export default function AboutPage() {
 							</div>
 							<h3 className="heading-3 mb-4">Tech Agnostic</h3>
 							<p className="text-muted-foreground leading-relaxed">
-								We don&apos;t hitch our horses to one specific thing. There&apos;s a ton of options out there, and we
-								like to explore all of them. We choose what&apos;s right for your problem, not what&apos;s easiest for
-								us or what we used on the last project.
+								We pick the right stack for the job, not the one we know best. Whether it&apos;s a headless CMS, a 
+								complex React app, or a performance-first marketing site, we solve for outcomes, not frameworks.
 							</p>
 						</div>
 
 						<div className="bg-background group border-border hover:border-primary/50 relative overflow-hidden rounded-lg border p-8 transition-colors">
 							<div className="border-border bg-card text-primary group-hover:border-primary/50 group-hover:bg-primary/10 mb-6 inline-flex size-12 items-center justify-center rounded-lg border transition-colors">
-								<Zap className="size-6" />
+								<Shield className="size-6" />
 							</div>
-							<h3 className="heading-3 mb-4">Fiercely Independent</h3>
+							<h3 className="heading-3 mb-4">Transparent Pricing</h3>
 							<p className="text-muted-foreground leading-relaxed">
-								Real partners, not vendors. Most agencies are just yes men who will build whatever you ask for, even if
-								it&apos;s a bad idea. We question everything. We dig deeper than surface problems to actually diagnose
-								what&apos;s wrong.
+								No black-box games. We offer flat monthly billing and clear pod-based tiers so you always know 
+								your velocity and your costs. We work as an extension of your team, not a vendor hidden behind an invoice.
 							</p>
 						</div>
 
@@ -158,10 +154,10 @@ export default function AboutPage() {
 							<div className="border-border bg-card text-primary group-hover:border-primary/50 group-hover:bg-primary/10 mb-6 inline-flex size-12 items-center justify-center rounded-lg border transition-colors">
 								<Mountain className="size-6" />
 							</div>
-							<h3 className="heading-3 mb-4">Colorado Roots</h3>
+							<h3 className="heading-3 mb-4">Colorado Punk Ethos</h3>
 							<p className="text-muted-foreground leading-relaxed">
-								Lifelong Coloradans. Colorado people are unique in that we&apos;re a no-bullshit type of community. We
-								bring that grounded, honest approach to our work. Denver-based, remote-friendly, always authentic.
+								Born in Denver with a &quot;punk-rock&quot; approach to digital: small, fast, and fiercely independent. 
+								We bring Colorado&apos;s grounded, no-bullshit culture to everything we build for our national partners.
 							</p>
 						</div>
 					</div>
@@ -205,7 +201,8 @@ export default function AboutPage() {
 								</p>
 								<p>
 									The pod model allows House of Giants to scale the right team for each project without the overhead of
-									a traditional agency. Clients get senior talent, and Dom stays involved on everything.
+									a traditional agency. It provides dedicated development teams for founders who need senior talent 
+									integrated directly into their product roadmap.
 								</p>
 							</div>
 
@@ -243,7 +240,7 @@ export default function AboutPage() {
 								</div>
 								<h2 className="heading-2 mb-6">
 									Deep roots in the <br />
-									<span className="text-gradient">Mile High City.</span>
+									<GradientText>Mile High City.</GradientText>
 								</h2>
 								<div className="text-muted-foreground space-y-2 text-lg">
 									<p>3839 Jackson Street</p>
@@ -255,16 +252,55 @@ export default function AboutPage() {
 								</div>
 							</div>
 
-							<div className="bg-card/50 border-border relative aspect-video w-full max-w-lg overflow-hidden rounded-xl border grayscale filter transition-all hover:grayscale-0 lg:w-1/2">
-								<div className="bg-muted/20 absolute inset-0 flex items-center justify-center">
-									<div className="grid grid-cols-6 gap-2 opacity-10">
-										{Array.from({ length: 24 }).map((_, i) => (
-											<div key={i} className="bg-foreground size-8 rounded-sm" />
-										))}
-									</div>
-									<div className="absolute">
-										<div className="bg-primary/20 absolute -inset-4 animate-ping rounded-full" />
-										<div className="bg-primary shadow-[0_0_20px_theme(colors.primary.DEFAULT)] relative size-3 rounded-full" />
+							<div className="bg-card/50 border-primary/20 relative w-full max-w-xs overflow-visible border filter transition-all hover:grayscale-0 lg:w-1/2">
+								{/* Colorado-shaped rectangle - nearly rectangular with subtle variations */}
+								<div
+									className="relative aspect-4/3 w-full"
+									style={{
+										clipPath: `polygon(
+                    0% 50%, 10% 40%, 20% 50%, 30% 40%, 40% 50%, 50% 40%,
+                    50% 0%, 80% 0%, 80% 20%, 90% 20%, 90% 0%, 100% 0%,
+                    100% 100%, 80% 100%, 80% 80%, 70% 80%, 70% 100%, 60% 100%,
+                    60% 80%, 40% 80%, 40% 100%, 20% 100%, 20% 80%, 0% 80%,
+                    0% 50%
+                  )`,
+									}}
+								>
+									{/* Border using box-shadow technique */}
+									<div
+										className="absolute inset-0"
+										style={{
+											clipPath: `polygon(
+												0% 50%, 10% 40%, 20% 50%, 30% 40%, 40% 50%, 50% 40%,
+												50% 0%, 80% 0%, 80% 20%, 90% 20%, 90% 0%, 100% 0%,
+												100% 100%, 80% 100%, 80% 80%, 70% 80%, 70% 100%, 60% 100%,
+												60% 80%, 40% 80%, 40% 100%, 20% 100%, 20% 80%, 0% 80%,
+												0% 50%
+											)`,
+										}}
+									/>
+									{/* Content with inset to show border */}
+									<div
+										className="bg-muted/20 absolute overflow-hidden"
+										style={{
+											left: '2px',
+											top: '2px',
+											right: '2px',
+											bottom: '2px',
+											clipPath: `polygon(
+												0% 50%, 10% 40%, 20% 50%, 30% 40%, 40% 50%, 50% 40%,
+												50% 0%, 80% 0%, 80% 20%, 90% 20%, 90% 0%, 100% 0%,
+												100% 100%, 80% 100%, 80% 80%, 70% 80%, 70% 100%, 60% 100%,
+												60% 80%, 40% 80%, 40% 100%, 20% 100%, 20% 80%, 0% 80%,
+												0% 50%
+											)`,
+										}}
+									>
+										{/* Denver location marker */}
+										<div className="absolute" style={{ left: '65%', top: '42%', transform: 'translate(-50%, -50%)' }}>
+											<div className="bg-primary/20 absolute -inset-4 animate-ping rounded-full" />
+											<div className="bg-primary shadow-[0_0_20px_var(--color-primary)] relative size-3 rounded-full" />
+										</div>
 									</div>
 								</div>
 							</div>

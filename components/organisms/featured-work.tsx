@@ -51,20 +51,17 @@ export function FeaturedWork() {
 						>
 							<div className="grid grid-cols-1 gap-0 lg:grid-cols-12">
 								{/* Image Column */}
-								<div className="bg-muted relative aspect-[16/10] overflow-hidden lg:col-span-5 lg:aspect-auto">
+								<div className="bg-muted relative aspect-16/10 overflow-hidden lg:col-span-5 lg:aspect-auto">
 									{/* Placeholder gradient - replace with actual images */}
 									<div
 										className={cn(
-											'absolute inset-0 bg-gradient-to-br transition-transform duration-700',
+											'absolute inset-0 bg-linear-to-br transition-transform duration-700',
 											index === 0 && 'from-primary/30 via-primary/10 to-accent/20',
 											index === 1 && 'from-accent/30 via-accent/10 to-primary/20',
 											index === 2 && 'from-pink/30 via-pink/10 to-primary/20',
 											hoveredIndex === index && 'scale-105'
 										)}
 									/>
-
-									{/* Grid overlay */}
-									<GridPattern className="opacity-30" />
 
 									{/* Project number */}
 									<div className="font-display text-foreground/50 absolute top-6 left-6 text-sm font-medium">

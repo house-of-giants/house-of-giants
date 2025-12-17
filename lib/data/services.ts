@@ -10,11 +10,27 @@ export interface Service {
 
 export const services: Service[] = [
 	{
+		id: 'strategy',
+		title: 'Digital Strategy',
+		shortDescription: 'Clarity before code',
+		description:
+			"Before we build anything, we make sure we're solving the right problem. Strategy sessions, audits, and roadmapping that align your digital presence with business objectives.",
+		deliverables: [
+			'Digital audits',
+			'Competitive analysis',
+			'Technical roadmapping',
+			'Platform selection',
+			'Growth strategy',
+		],
+		goodFor: ['Pre-development planning', 'Platform migrations', 'Technical debt assessment', 'Digital transformation'],
+		icon: 'compass',
+	},
+	{
 		id: 'development',
 		title: 'Web Development',
 		shortDescription: 'Custom code that scales with your ambitions',
 		description:
-			'We build performant, maintainable web applications using modern frameworks and best practices. No templates, no page builders—just clean, documented code that your team can actually work with.',
+			'We build performant, maintainable web applications using modern frameworks and best practices. No templates, no page builders. Just clean, documented code that your team can actually work with.',
 		deliverables: [
 			'Custom web applications',
 			'API development & integration',
@@ -29,22 +45,6 @@ export const services: Service[] = [
 			'Long-term scalability',
 		],
 		icon: 'code',
-	},
-	{
-		id: 'design',
-		title: 'Web Design',
-		shortDescription: 'Interfaces that convert and delight',
-		description:
-			'Design that serves a purpose. We create visual systems that reinforce your brand, guide users to action, and scale across your entire digital presence.',
-		deliverables: [
-			'UI/Visual design',
-			'Design systems',
-			'Responsive layouts',
-			'Motion & interaction design',
-			'Brand-aligned aesthetics',
-		],
-		goodFor: ['Brand differentiation', 'Conversion optimization', 'Design system needs', 'Product redesigns'],
-		icon: 'palette',
 	},
 	{
 		id: 'ux',
@@ -63,20 +63,20 @@ export const services: Service[] = [
 		icon: 'users',
 	},
 	{
-		id: 'strategy',
-		title: 'Digital Strategy',
-		shortDescription: 'Clarity before code',
+		id: 'design',
+		title: 'Web Design',
+		shortDescription: 'Interfaces that convert and delight',
 		description:
-			"Before we build anything, we make sure we're solving the right problem. Strategy sessions, audits, and roadmapping that align your digital presence with business objectives.",
+			'Design that serves a purpose. We create visual systems that reinforce your brand, guide users to action, and scale across your entire digital presence.',
 		deliverables: [
-			'Digital audits',
-			'Competitive analysis',
-			'Technical roadmapping',
-			'Platform selection',
-			'Growth strategy',
+			'UI/Visual design',
+			'Design systems',
+			'Responsive layouts',
+			'Motion & interaction design',
+			'Brand-aligned aesthetics',
 		],
-		goodFor: ['Pre-development planning', 'Platform migrations', 'Technical debt assessment', 'Digital transformation'],
-		icon: 'compass',
+		goodFor: ['Brand differentiation', 'Conversion optimization', 'Design system needs', 'Product redesigns'],
+		icon: 'palette',
 	},
 ];
 
