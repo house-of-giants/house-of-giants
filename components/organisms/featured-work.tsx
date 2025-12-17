@@ -105,7 +105,7 @@ export function FeaturedWork() {
 									</div>
 
 									{/* Results Grid */}
-									<div className="border-border grid grid-cols-3 gap-4 border-t pt-6">
+									<div className="border-border grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-4 border-t pt-6">
 										{study.results.slice(0, 3).map((result) => (
 											<div key={result.metric}>
 												<p

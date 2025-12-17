@@ -117,7 +117,7 @@ export default function AboutPage() {
 					</div>
 					<SectionHeader align="center" eyebrow="Philosophy" title="How we operate" />
 
-					<div className="grid gap-6 md:grid-cols-2">
+					<div className="grid grid-cols-1 gap-6 md:grid-cols-2">
 						<div className="bg-background group border-border hover:border-primary/50 relative overflow-hidden rounded-lg border p-8 transition-colors">
 							<div className="border-border bg-card text-primary group-hover:border-primary/50 group-hover:bg-primary/10 mb-6 inline-flex size-12 items-center justify-center rounded-lg border transition-colors">
 								<Users className="size-6" />

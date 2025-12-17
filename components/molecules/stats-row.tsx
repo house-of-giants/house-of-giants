@@ -12,7 +12,7 @@ export function StatsRow({ stats, className, mounted = true }: StatsRowProps) {
 	return (
 		<div
 			className={cn(
-				'border-border grid grid-cols-2 gap-8 border-t pt-12 opacity-0 md:grid-cols-4 md:gap-12',
+				'border-border grid grid-cols-[repeat(auto-fit,minmax(min(100%,140px),1fr))] gap-8 border-t pt-12 opacity-0 md:gap-12',
 				mounted && 'animate-slide-up',
 				className
 			)}

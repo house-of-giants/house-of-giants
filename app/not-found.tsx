@@ -18,13 +18,13 @@ export default function NotFound() {
 			</div>
 
 			<div className="relative z-10 container mx-auto flex min-h-screen flex-col justify-center px-6 py-24">
-				<div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
+				<div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
 					{/* Text content */}
 					<div className="max-w-xl space-y-8">
 						{/* 404 indicator */}
 						<div className="flex items-center gap-4">
 							<span className="text-primary font-mono text-sm tracking-wider">404</span>
-							<span className="bg-border h-px flex-1 max-w-16" />
+							<span className="bg-border h-px max-w-16 flex-1" />
 						</div>
 
 						{/* Headline */}
@@ -32,8 +32,8 @@ export default function NotFound() {
 
 						{/* Description */}
 						<p className="text-muted-foreground max-w-md text-lg leading-relaxed">
-							The page you&apos;re looking for has moved, been removed, or never existed in
-							the first place. No worries—let&apos;s get you somewhere useful.
+							The page you&apos;re looking for has moved, been removed, or never existed in the first place. No
+							worries—let&apos;s get you somewhere useful.
 						</p>
 
 						{/* CTA */}

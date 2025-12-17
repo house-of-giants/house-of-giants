@@ -65,7 +65,10 @@ export function Hero() {
 
 					{/* CTAs */}
 					<div
-						className={cn('mb-20 flex flex-col gap-4 opacity-0 sm:flex-row', mounted && 'animate-slide-up')}
+						className={cn(
+							'mb-20 grid grid-cols-1 gap-4 opacity-0 sm:w-fit sm:grid-cols-2',
+							mounted && 'animate-slide-up'
+						)}
 						style={{ animationDelay: '0.5s' }}
 					>
 						<Button href="/work" size="cta" className="group">
