@@ -1,28 +1,11 @@
-import { ArrowUpRight, Calendar, MessageSquare, FileText } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Eyebrow } from '@/components/atoms/eyebrow';
 import { GradientText } from '@/components/atoms/gradient-text';
 import { DecorativeCorner } from '@/components/atoms/decorative-corner';
 import { ProcessStep } from '@/components/molecules/process-step';
 import { AvailabilityBadge } from '@/components/molecules/availability-badge';
-
-const nextSteps = [
-	{
-		icon: MessageSquare,
-		label: 'Quick chat',
-		description: "15 min to see if we're a fit",
-	},
-	{
-		icon: FileText,
-		label: 'Scope & quote',
-		description: 'Clear deliverables, honest pricing',
-	},
-	{
-		icon: Calendar,
-		label: 'Kick off',
-		description: 'Start building within 2 weeks',
-	},
-];
+import { nextSteps } from '@/lib/data/navigation';
 
 export function CTABlock() {
 	return (
@@ -45,8 +28,8 @@ export function CTABlock() {
 						</h2>
 
 						<p className="text-muted-foreground mb-8 max-w-md text-lg leading-relaxed">
-							You're building something that matters. You need a development team that treats your product like their
-							own. Let's see if we're a fit.
+							You&apos;re building something that matters. You need a development team that treats your product like
+							their own. Let&apos;s see if we&apos;re a fit.
 						</p>
 
 						<div className="flex flex-col items-start gap-4 sm:flex-row">

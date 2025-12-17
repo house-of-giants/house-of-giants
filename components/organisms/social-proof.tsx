@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Section } from '@/components/templates/section';
 import { Eyebrow } from '@/components/atoms/eyebrow';
@@ -32,12 +33,18 @@ export function SocialProof() {
 
 					{/* Scrolling logos */}
 					<div className="flex overflow-hidden">
-						<div className="flex animate-[marquee_40s_linear_infinite]">
+						<div className="flex shrink-0 animate-[marquee_60s_linear_infinite] items-center">
 							{[...clients, ...clients].map((client, index) => (
-								<div key={`${client.name}-${index}`} className="flex items-center justify-center px-12 py-8">
-									<span className="font-display text-muted-foreground/50 hover:text-muted-foreground text-2xl font-semibold whitespace-nowrap transition-colors md:text-3xl">
-										{client.name}
-									</span>
+								<div key={`${client.name}-${index}`} className="shrink-0 px-10 md:px-14 lg:px-20">
+									<div className="relative h-14 w-[200px] md:h-16 md:w-[220px] lg:h-20 lg:w-[250px]">
+										<Image
+											src={client.logo}
+											alt={client.name}
+											fill
+											sizes="250px"
+											className="object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+										/>
+									</div>
 								</div>
 							))}
 						</div>

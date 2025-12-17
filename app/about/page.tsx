@@ -58,7 +58,8 @@ export default function AboutPage() {
 							)}
 							style={{ animationDelay: '0.3s' }}
 						>
-							We&apos;re a founder-led custom web development partner for startups and scale-ups who care about craft. No bloat, no templates—just high-performance code that drives revenue.
+							We&apos;re a founder-led custom web development partner for startups and scale-ups who care about craft.
+							No bloat, no templates—just high-performance code that drives revenue.
 						</p>
 					</div>
 				</Section>
@@ -123,7 +124,7 @@ export default function AboutPage() {
 							</div>
 							<h3 className="heading-3 mb-4">Small by Design</h3>
 							<p className="text-muted-foreground leading-relaxed">
-								The people you meet are the people who build. No account managers, no layers of bureaucracy—just direct 
+								The people you meet are the people who build. No account managers, no layers of bureaucracy—just direct
 								accountability and fast decisions from principals who actually ship code.
 							</p>
 						</div>
@@ -134,7 +135,7 @@ export default function AboutPage() {
 							</div>
 							<h3 className="heading-3 mb-4">Tech Agnostic</h3>
 							<p className="text-muted-foreground leading-relaxed">
-								We pick the right stack for the job, not the one we know best. Whether it&apos;s a headless CMS, a 
+								We pick the right stack for the job, not the one we know best. Whether it&apos;s a headless CMS, a
 								complex React app, or a performance-first marketing site, we solve for outcomes, not frameworks.
 							</p>
 						</div>
@@ -145,8 +146,8 @@ export default function AboutPage() {
 							</div>
 							<h3 className="heading-3 mb-4">Transparent Pricing</h3>
 							<p className="text-muted-foreground leading-relaxed">
-								No black-box games. We offer flat monthly billing and clear pod-based tiers so you always know 
-								your velocity and your costs. We work as an extension of your team, not a vendor hidden behind an invoice.
+								No black-box games. We offer flat monthly billing and clear pod-based tiers so you always know your
+								velocity and your costs. We work as an extension of your team, not a vendor hidden behind an invoice.
 							</p>
 						</div>
 
@@ -156,7 +157,7 @@ export default function AboutPage() {
 							</div>
 							<h3 className="heading-3 mb-4">Colorado Punk Ethos</h3>
 							<p className="text-muted-foreground leading-relaxed">
-								Born in Denver with a &quot;punk-rock&quot; approach to digital: small, fast, and fiercely independent. 
+								Born in Denver with a &quot;punk-rock&quot; approach to digital: small, fast, and fiercely independent.
 								We bring Colorado&apos;s grounded, no-bullshit culture to everything we build for our national partners.
 							</p>
 						</div>
@@ -176,7 +177,7 @@ export default function AboutPage() {
 
 					<div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
 						<div className="bg-muted/30 border-border relative aspect-square overflow-hidden rounded-2xl border">
-							<Image src="/domo.gif" alt="Dominic Magnifico" fill className="object-cover" />
+							<Image src="/images/site/domo.gif" alt="Dominic Magnifico" fill className="object-cover" />
 						</div>
 
 						<div>
@@ -201,7 +202,7 @@ export default function AboutPage() {
 								</p>
 								<p>
 									The pod model allows House of Giants to scale the right team for each project without the overhead of
-									a traditional agency. It provides dedicated development teams for founders who need senior talent 
+									a traditional agency. It provides dedicated development teams for founders who need senior talent
 									integrated directly into their product roadmap.
 								</p>
 							</div>
@@ -299,7 +300,7 @@ export default function AboutPage() {
 										{/* Denver location marker */}
 										<div className="absolute" style={{ left: '65%', top: '42%', transform: 'translate(-50%, -50%)' }}>
 											<div className="bg-primary/20 absolute -inset-4 animate-ping rounded-full" />
-											<div className="bg-primary shadow-[0_0_20px_var(--color-primary)] relative size-3 rounded-full" />
+											<div className="bg-primary relative size-3 rounded-full shadow-[0_0_20px_var(--color-primary)]" />
 										</div>
 									</div>
 								</div>

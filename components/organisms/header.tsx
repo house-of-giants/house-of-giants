@@ -6,14 +6,7 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/atoms/logo';
-
-const navigation = [
-	{ name: 'Work', href: '/work' },
-	{ name: 'Services', href: '/services' },
-	{ name: 'About', href: '/about' },
-	{ name: 'Blog', href: '/blog' },
-	{ name: 'Pricing', href: '/pricing' },
-];
+import { mainNavigation, contactInfo } from '@/lib/data/navigation';
 
 export function Header() {
 	const [isScrolled, setIsScrolled] = React.useState(false);
@@ -59,7 +52,7 @@ export function Header() {
 
 						{/* Desktop Navigation */}
 						<div className="hidden items-center gap-1 lg:flex">
-							{navigation.map((item) => (
+							{mainNavigation.map((item) => (
 								<Link
 									key={item.name}
 									href={item.href}
@@ -100,7 +93,7 @@ export function Header() {
 			>
 				<div className="flex h-full flex-col justify-center px-8">
 					<nav className="flex flex-col gap-2">
-						{navigation.map((item, index) => (
+						{mainNavigation.map((item, index) => (
 							<Link
 								key={item.name}
 								href={item.href}
@@ -125,7 +118,7 @@ export function Header() {
 							isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
 						)}
 						style={{
-							transitionDelay: isMobileMenuOpen ? `${navigation.length * 50 + 150}ms` : '0ms',
+							transitionDelay: isMobileMenuOpen ? `${mainNavigation.length * 50 + 150}ms` : '0ms',
 						}}
 					>
 						<Button
@@ -146,12 +139,12 @@ export function Header() {
 							isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
 						)}
 						style={{
-							transitionDelay: isMobileMenuOpen ? `${navigation.length * 50 + 200}ms` : '0ms',
+							transitionDelay: isMobileMenuOpen ? `${mainNavigation.length * 50 + 200}ms` : '0ms',
 						}}
 					>
-						<span>Denver, CO + Remote</span>
-						<a href="mailto:hello@houseofgiants.com" className="hover:text-foreground transition-colors">
-							hello@houseofgiants.com
+						<span>{contactInfo.location} + Remote</span>
+						<a href={`mailto:${contactInfo.email}`} className="hover:text-foreground transition-colors">
+							{contactInfo.email}
 						</a>
 					</div>
 				</div>

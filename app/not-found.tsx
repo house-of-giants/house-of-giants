@@ -52,7 +52,7 @@ export default function NotFound() {
 					<div className="relative shrink-0">
 						<div className="relative h-[800px] w-[800px]">
 							<Image
-								src="/macman.webp"
+								src="/images/site/macman.webp"
 								alt="Macman mascot"
 								fill
 								className="object-contain"

@@ -1,19 +1,19 @@
 export interface Client {
 	name: string;
-	logo?: string;
+	logo: string;
 }
 
 export const clients: Client[] = [
-	{ name: 'Microsoft' },
-	{ name: 'Uber' },
-	{ name: 'Salesforce' },
-	{ name: 'EA' },
-	{ name: 'Comcast' },
-	{ name: 'Purdue' },
-	{ name: 'Denver Botanic Gardens' },
-	{ name: 'Indiana Pacers' },
-	{ name: 'Nobel Prize' },
-	{ name: 'Shakey Graves' },
+	{ name: 'Microsoft', logo: '/images/clients/microsoft.webp' },
+	{ name: 'Uber', logo: '/images/clients/uber.webp' },
+	{ name: 'Salesforce', logo: '/images/clients/salesforce.webp' },
+	{ name: 'EA', logo: '/images/clients/ea.webp' },
+	{ name: 'Comcast', logo: '/images/clients/comcast.webp' },
+	{ name: 'Purdue', logo: '/images/clients/purdue.webp' },
+	{ name: 'Denver Botanic Gardens', logo: '/images/clients/botanic-gardens.webp' },
+	{ name: 'Indiana Pacers', logo: '/images/clients/pacers.webp' },
+	{ name: 'Nobel Prize', logo: '/images/clients/nobel.webp' },
+	{ name: 'Shakey Graves', logo: '/images/clients/shakey.webp' },
 ];
 
 export interface Testimonial {
