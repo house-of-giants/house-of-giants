@@ -10,7 +10,6 @@ import { GradientOrbs } from '@/components/backgrounds/gradient-orbs';
 import { NoiseOverlay } from '@/components/backgrounds/noise-overlay';
 import { StatusIndicator } from '@/components/atoms/status-indicator';
 import Image from 'next/image';
-import { GridPattern } from '@/components/backgrounds';
 
 export default function AboutPage() {
 	const [mounted, setMounted] = React.useState(false);
