@@ -20,7 +20,6 @@ export function FeaturedWork() {
 			<div className="pointer-events-none absolute inset-0 -z-10">
 				<div className="bg-muted/10 absolute inset-0" />
 				<div className="gradient-section-glow absolute inset-0" />
-				<GridPattern className="opacity-15" />
 				<NoiseOverlay opacity={0.2} className="mix-blend-overlay" />
 				<div className="bg-primary/10 absolute top-0 left-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[100px]" />
 			</div>

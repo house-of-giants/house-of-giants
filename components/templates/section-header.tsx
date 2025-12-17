@@ -14,7 +14,11 @@ export function SectionHeader({ eyebrow, title, description, align = 'left', cla
 		<div className={cn('mb-12 md:mb-16 lg:mb-20', align === 'center' && 'mx-auto max-w-3xl text-center', className)}>
 			{eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}
 			<h2 className="heading-2 mb-4">{title}</h2>
-			{description && <p className="body-large text-muted-foreground max-w-2xl">{description}</p>}
+			{description && (
+				<p className={cn('body-large text-muted-foreground max-w-2xl', align === 'center' && 'mx-auto')}>
+					{description}
+				</p>
+			)}
 		</div>
 	);
 }
