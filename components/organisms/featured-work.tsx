@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Section, SectionHeader } from '@/components/templates';
@@ -40,10 +41,17 @@ export function FeaturedWork() {
 					<Link key={study.slug} href={`/work/${study.slug}`} className="group block">
 						<article className="bg-background border-border group-hover:border-primary/50 relative border transition-all duration-500">
 							<div className="grid grid-cols-1 gap-0 lg:grid-cols-12">
-								<div className="bg-muted relative aspect-16/10 overflow-hidden lg:col-span-5 lg:aspect-auto">
+								<div className="bg-muted relative aspect-16/10 overflow-hidden lg:col-span-5 lg:aspect-auto lg:min-h-[300px]">
+									<Image
+										src={study.images.thumbnail}
+										alt={study.title}
+										fill
+										className="object-cover transition-transform duration-700 group-hover:scale-105"
+										sizes="(max-width: 1024px) 100vw, 40vw"
+									/>
 									<div
 										className={cn(
-											'absolute inset-0 bg-linear-to-br transition-transform duration-700 group-hover:scale-105',
+											'absolute inset-0 bg-linear-to-br opacity-60 mix-blend-overlay',
 											gradientByIndex[index % gradientByIndex.length]
 										)}
 									/>
