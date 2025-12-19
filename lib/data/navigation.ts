@@ -24,7 +24,7 @@ export const footerNavigation: NavItem[] = [...mainNavigation, { name: 'Contact'
 
 export const audienceNavigation: NavItem[] = [
 	{ name: 'For Startups', href: '/for-startups' },
-	{ name: 'For Restaurants', href: '/for-restaurants' },
+	{ name: 'For Agencies', href: '/for-agencies' },
 ];
 
 export const socialLinks: NavItem[] = [

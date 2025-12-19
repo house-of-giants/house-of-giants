@@ -5,11 +5,14 @@ import { Logo } from '@/components/atoms/logo';
 import { CTABlock } from './cta-block';
 import { footerNavigation, audienceNavigation, socialLinks, contactInfo } from '@/lib/data/navigation';
 
-export function Footer() {
+interface FooterProps {
+	hideCTA?: boolean;
+}
+
+export function Footer({ hideCTA = false }: FooterProps) {
 	return (
 		<footer className="border-border bg-background relative border-t">
-			{/* CTA Section */}
-			<CTABlock />
+			{!hideCTA && <CTABlock />}
 
 			{/* Footer Navigation */}
 			<div className="relative overflow-hidden py-16 lg:py-24">

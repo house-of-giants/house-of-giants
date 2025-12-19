@@ -63,7 +63,7 @@ export function CTABlock() {
 							</div>
 
 							{/* Availability indicator */}
-							<AvailabilityBadge slots={2} period="Q1 2025" />
+							<AvailabilityBadge slots={2} period="Q1 2026" />
 						</div>
 
 						{/* Decorative corner accents */}
