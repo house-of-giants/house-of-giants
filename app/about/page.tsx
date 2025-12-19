@@ -113,7 +113,7 @@ export default function AboutPage() {
 						<div className="bg-muted/10 absolute inset-0" />
 						<div className="gradient-section-glow absolute inset-0" />
 						<NoiseOverlay opacity={0.2} className="mix-blend-overlay" />
-						<div className="bg-primary/10 absolute top-0 left-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[100px]" />
+						<div className="bg-primary/10 absolute top-0 left-1/2 h-125 w-200 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[100px]" />
 					</div>
 					<SectionHeader align="center" eyebrow="Philosophy" title="How we operate" />
 
@@ -255,53 +255,11 @@ export default function AboutPage() {
 
 							<div className="bg-card/50 border-primary/20 relative w-full max-w-xs overflow-visible border filter transition-all hover:grayscale-0 lg:w-1/2">
 								{/* Colorado-shaped rectangle - nearly rectangular with subtle variations */}
-								<div
-									className="relative aspect-4/3 w-full"
-									style={{
-										clipPath: `polygon(
-                    0% 50%, 10% 40%, 20% 50%, 30% 40%, 40% 50%, 50% 40%,
-                    50% 0%, 80% 0%, 80% 20%, 90% 20%, 90% 0%, 100% 0%,
-                    100% 100%, 80% 100%, 80% 80%, 70% 80%, 70% 100%, 60% 100%,
-                    60% 80%, 40% 80%, 40% 100%, 20% 100%, 20% 80%, 0% 80%,
-                    0% 50%
-                  )`,
-									}}
-								>
-									{/* Border using box-shadow technique */}
-									<div
-										className="absolute inset-0"
-										style={{
-											clipPath: `polygon(
-												0% 50%, 10% 40%, 20% 50%, 30% 40%, 40% 50%, 50% 40%,
-												50% 0%, 80% 0%, 80% 20%, 90% 20%, 90% 0%, 100% 0%,
-												100% 100%, 80% 100%, 80% 80%, 70% 80%, 70% 100%, 60% 100%,
-												60% 80%, 40% 80%, 40% 100%, 20% 100%, 20% 80%, 0% 80%,
-												0% 50%
-											)`,
-										}}
-									/>
-									{/* Content with inset to show border */}
-									<div
-										className="bg-muted/20 absolute overflow-hidden"
-										style={{
-											left: '2px',
-											top: '2px',
-											right: '2px',
-											bottom: '2px',
-											clipPath: `polygon(
-												0% 50%, 10% 40%, 20% 50%, 30% 40%, 40% 50%, 50% 40%,
-												50% 0%, 80% 0%, 80% 20%, 90% 20%, 90% 0%, 100% 0%,
-												100% 100%, 80% 100%, 80% 80%, 70% 80%, 70% 100%, 60% 100%,
-												60% 80%, 40% 80%, 40% 100%, 20% 100%, 20% 80%, 0% 80%,
-												0% 50%
-											)`,
-										}}
-									>
-										{/* Denver location marker */}
-										<div className="absolute" style={{ left: '65%', top: '42%', transform: 'translate(-50%, -50%)' }}>
-											<div className="bg-primary/20 absolute -inset-4 animate-ping rounded-full" />
-											<div className="bg-primary relative size-3 rounded-full shadow-[0_0_20px_var(--color-primary)]" />
-										</div>
+								<div className="relative aspect-4/3 w-full">
+									{/* Denver location marker */}
+									<div className="absolute top-[32%] left-[55%] z-20 translate-x-1/2 translate-y-1/2">
+										<div className="bg-primary/20 absolute -inset-4 animate-ping rounded-full" />
+										<div className="bg-primary relative size-3 rounded-full shadow-[0_0_20px_var(--color-primary)]" />
 									</div>
 								</div>
 							</div>
