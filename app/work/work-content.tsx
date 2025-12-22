@@ -103,7 +103,7 @@ export default function WorkContent() {
 							)}
 							style={{ animationDelay: '0.3s' }}
 						>
-							We love what we do. And so do our partners. Check out what we've built together.
+							We love what we do. And so do our partners. Check out what we&apos;ve built together.
 						</p>
 					</div>
 				</Section>
@@ -114,10 +114,12 @@ export default function WorkContent() {
 						style={{ animationDelay: '0.4s' }}
 					>
 						<h2 className="heading-2 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 text-center">
-							<span className="text-muted-foreground">Show me</span>
+							<span className="text-muted-foreground">I want to see</span>
 							<Select value={activeFilter} onValueChange={(value) => value && setActiveFilter(value)}>
-								<SelectTrigger className="border-primary text-primary hover:bg-primary/5 [&_svg]:text-primary inline-flex h-auto w-auto gap-2 border-0 border-b-2 bg-transparent px-1 py-0 text-2xl font-bold transition-colors md:text-3xl lg:text-4xl [&_svg]:size-5 md:[&_svg]:size-6">
-									<SelectValue>{filterCategories.find((cat) => cat.id === activeFilter)?.label}</SelectValue>
+								<SelectTrigger className="border-primary text-primary hover:bg-primary/5 [&_svg]:text-primary font-display inline-flex h-auto w-auto cursor-pointer gap-2 border-0 border-b-2 bg-transparent px-0 py-0 text-3xl leading-[1.15] font-semibold tracking-tight transition-colors md:text-4xl lg:text-5xl [&_svg]:size-5 md:[&_svg]:size-6 lg:[&_svg]:size-7">
+									<SelectValue className="font-display">
+										{filterCategories.find((cat) => cat.id === activeFilter)?.label}
+									</SelectValue>
 								</SelectTrigger>
 								<SelectContent align="center" className="border-border bg-background w-auto! min-w-50 border">
 									{filterCategories.map((category) => (
@@ -127,7 +129,6 @@ export default function WorkContent() {
 									))}
 								</SelectContent>
 							</Select>
-							<span className="text-muted-foreground">you&apos;ve built.</span>
 						</h2>
 					</div>
 
@@ -203,7 +204,7 @@ export default function WorkContent() {
 													<div className="relative pl-4">
 														<div className="bg-primary/20 group-hover:bg-primary absolute top-0 bottom-0 left-0 w-1 rounded-full transition-colors duration-300" />
 														<p className="text-muted-foreground text-sm leading-relaxed italic">
-															"{truncateQuote(study.testimonial.quote)}"
+															&quot;{truncateQuote(study.testimonial.quote)}&quot;
 														</p>
 														<div className="mt-3 flex items-center gap-2">
 															<p className="text-foreground text-xs font-medium">
