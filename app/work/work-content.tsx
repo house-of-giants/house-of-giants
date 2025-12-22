@@ -12,6 +12,7 @@ import { GradientOrbs } from '@/components/backgrounds/gradient-orbs';
 import { NoiseOverlay } from '@/components/backgrounds/noise-overlay';
 import { StatusIndicator } from '@/components/atoms/status-indicator';
 import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { caseStudies, CaseStudy } from '@/lib/data/case-studies';
 
 function hasQuantitativeStat(study: CaseStudy): boolean {
@@ -24,32 +25,40 @@ function truncateQuote(quote: string, maxLength: number = 80): string {
 	return quote.slice(0, maxLength).trim() + '...';
 }
 
+const filterCategories = [
+	{ id: 'all', label: 'everything', filter: () => true },
+	{
+		id: 'apps',
+		label: 'platforms & web apps',
+		filter: (study: CaseStudy) => study.industry === 'SaaS' || study.type === 'Platform',
+	},
+	{
+		id: 'creative',
+		label: 'creative work',
+		filter: (study: CaseStudy) => study.industry === 'Entertainment',
+	},
+	{
+		id: 'brand',
+		label: 'custom brand websites',
+		filter: (study: CaseStudy) =>
+			study.industry === 'Luxury' ||
+			(study.type === 'Website' && study.industry !== 'SaaS' && study.industry !== 'Entertainment'),
+	},
+] as const;
+
 export default function WorkContent() {
 	const [mounted, setMounted] = React.useState(false);
-	const [activeIndustry, setActiveIndustry] = React.useState('All');
-	const [activeType, setActiveType] = React.useState('All');
+	const [activeFilter, setActiveFilter] = React.useState<string>('all');
 
 	React.useEffect(() => {
 		setMounted(true);
 	}, []);
 
-	const uniqueIndustries = React.useMemo(() => {
-		const industries = new Set(caseStudies.map((study) => study.industry));
-		return ['All', ...Array.from(industries)];
-	}, []);
-
-	const uniqueTypes = React.useMemo(() => {
-		const types = new Set(caseStudies.map((study) => study.type));
-		return ['All', ...Array.from(types)];
-	}, []);
-
 	const filteredStudies = React.useMemo(() => {
-		return caseStudies.filter((study) => {
-			const industryMatch = activeIndustry === 'All' || study.industry === activeIndustry;
-			const typeMatch = activeType === 'All' || study.type === activeType;
-			return industryMatch && typeMatch;
-		});
-	}, [activeIndustry, activeType]);
+		const category = filterCategories.find((cat) => cat.id === activeFilter);
+		if (!category) return caseStudies;
+		return caseStudies.filter(category.filter);
+	}, [activeFilter]);
 
 	return (
 		<>
@@ -101,50 +110,28 @@ export default function WorkContent() {
 
 				<Section className="min-h-screen">
 					<div
-						className={cn(
-							'scrollbar-hide mb-12 flex flex-nowrap items-center gap-6 overflow-x-auto pb-4 opacity-0 md:flex-wrap md:justify-center md:pb-0',
-							mounted && 'animate-slide-up'
-						)}
+						className={cn('mb-16 flex justify-center opacity-0', mounted && 'animate-slide-up')}
 						style={{ animationDelay: '0.4s' }}
 					>
-						<div className="flex flex-nowrap gap-2">
-							{uniqueIndustries.map((industry) => (
-								<button
-									key={industry}
-									onClick={() => setActiveIndustry(industry)}
-									className={cn(
-										'rounded-full border px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-300',
-										activeIndustry === industry
-											? 'bg-primary border-primary text-primary-foreground'
-											: 'bg-background border-border text-muted-foreground hover:border-primary/50 hover:text-foreground'
-									)}
-								>
-									{industry}
-								</button>
-							))}
-						</div>
-
-						<div className="bg-border hidden h-8 w-px shrink-0 md:block" />
-
-						<div className="flex flex-nowrap gap-2">
-							{uniqueTypes.map((type) => (
-								<button
-									key={type}
-									onClick={() => setActiveType(type)}
-									className={cn(
-										'rounded-full border px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-300',
-										activeType === type
-											? 'bg-primary border-primary text-primary-foreground'
-											: 'bg-background border-border text-muted-foreground hover:border-primary/50 hover:text-foreground'
-									)}
-								>
-									{type}
-								</button>
-							))}
-						</div>
+						<h2 className="heading-2 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 text-center">
+							<span className="text-muted-foreground">Show me</span>
+							<Select value={activeFilter} onValueChange={(value) => value && setActiveFilter(value)}>
+								<SelectTrigger className="border-primary text-primary hover:bg-primary/5 [&_svg]:text-primary inline-flex h-auto w-auto gap-2 border-0 border-b-2 bg-transparent px-1 py-0 text-2xl font-bold transition-colors md:text-3xl lg:text-4xl [&_svg]:size-5 md:[&_svg]:size-6">
+									<SelectValue>{filterCategories.find((cat) => cat.id === activeFilter)?.label}</SelectValue>
+								</SelectTrigger>
+								<SelectContent align="center" className="border-border bg-background w-auto! min-w-50 border">
+									{filterCategories.map((category) => (
+										<SelectItem key={category.id} value={category.id} className="px-4 py-3">
+											{category.label}
+										</SelectItem>
+									))}
+								</SelectContent>
+							</Select>
+							<span className="text-muted-foreground">you&apos;ve built.</span>
+						</h2>
 					</div>
 
-					<div key={`${activeIndustry}-${activeType}`} className="grid grid-cols-1 gap-8 md:grid-cols-2">
+					<div key={activeFilter} className="grid grid-cols-1 gap-8 md:grid-cols-2">
 						{filteredStudies.map((study, index) => (
 							<Link
 								key={study.slug}
@@ -248,15 +235,8 @@ export default function WorkContent() {
 					{filteredStudies.length === 0 && (
 						<div className="py-20 text-center">
 							<p className="text-muted-foreground text-lg">No case studies found for this filter.</p>
-							<Button
-								variant="outline"
-								className="mt-4"
-								onClick={() => {
-									setActiveIndustry('All');
-									setActiveType('All');
-								}}
-							>
-								Clear filters
+							<Button variant="outline" className="mt-4" onClick={() => setActiveFilter('all')}>
+								Show everything
 							</Button>
 						</div>
 					)}
