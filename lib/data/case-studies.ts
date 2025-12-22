@@ -150,7 +150,7 @@ export const caseStudies: CaseStudy[] = [
 			title: 'CEO',
 			company: 'The CyberNest',
 		},
-		techStack: ['Next.js', 'TypeScript', 'Real-time Collaboration', 'AI/ML', 'PostgreSQL'],
+		techStack: ['Next.js', 'Real-time Collaboration', 'AI/ML', 'Prisma ORM'],
 		images: {
 			hero: '/images/case-studies/cybernest/cybernest-hero.jpg',
 			thumbnail: '/images/case-studies/cybernest/cybernest-card.jpg',
@@ -375,22 +375,22 @@ export const caseStudies: CaseStudy[] = [
 		slug: 'shakey-graves',
 		title: 'Shakey Graves',
 		subtitle: 'Movie of the Week',
-		hook: 'Interactive AI-powered album experience for Movie of the Week',
+		hook: 'We shipped AI-powered creative tools in 2023—before the boom. Over 1 billion unique soundtrack combinations.',
 		client: {
 			name: 'Shakey Graves',
 			description: 'Grammy-nominated artist known for bold creative choices and genre-defying music',
 		},
 		industry: 'Entertainment',
 		type: 'Campaign',
-		timeline: '2021',
-		services: ['Web Design', 'Web Development', 'AI'],
+		timeline: '3.5 months • 2023',
+		services: ['Web Design', 'Web Development', 'AI', 'Three.js'],
 		liveUrl: 'https://www.shakeygraves.com',
 		challenge:
-			'Shakey Graves took a cosmic leap with his album "Movie of the Week"—a film score for a fictional movie with multiple track versions. He needed a digital space where fans could piece together their own soundtrack with custom artwork, titles, and AI-powered movie synopses.',
+			'In mid-2023, before AI tools went mainstream, Shakey Graves took a cosmic leap with his album "Movie of the Week": a film score for a fictional movie with multiple track versions. He needed a digital space where fans could piece together their own soundtrack with custom artwork, titles, and AI-powered movie synopses. The vision: turn passive listeners into active creators, powered by technology most brands hadn\'t touched yet.',
 		approach:
-			'We designed a retro-inspired web experience built around a TV-wall aesthetic—reminiscent of vintage sets playing half-remembered shows—so fans could "channel surf" through different parts of Shakey\'s site.',
+			'We designed a retro-inspired web experience built around Shakey\'s iconic CRT TV wall. The same wall featured on his album cover and used in his live shows. Using Three.js, we recreated the nostalgic aesthetic digitally, letting fans "channel surf" through an interactive experience that felt both familiar and futuristic.',
 		solution:
-			'An AI-driven "Movie of the Week" generator where visitors select a movie genre, unlock personalized artwork, an original title, and a short synopsis, then receive a curated soundtrack pulled from hundreds of tracks. Nostalgic vibes meet modern tech.',
+			'An AI-driven "Movie of the Week" generator where visitors select a movie genre, unlock personalized artwork from Shakey\'s personal library of AI-generated art, receive an original title and synopsis (generated from prompts we co-created with Shakey himself), and get a curated soundtrack pulled from hundreds of tracks—including studio sessions, outtakes, and alternate recordings. The result was so compelling that Shakey challenged his fans to produce real short films from the generated concepts.',
 		results: [
 			{
 				metric: 'New Users',
@@ -407,11 +407,18 @@ export const caseStudies: CaseStudy[] = [
 			{
 				metric: 'Combinations',
 				value: '1B+',
-				description: 'Unique album combinations created',
-				context: 'Over 1 billion unique soundtrack permutations',
+				description: 'Unique soundtrack permutations',
+				context: 'Every generated album is one-of-a-kind',
 			},
 		],
-		techStack: ['Custom Web App', 'AI/ML', 'GSAP', 'Audio Integration'],
+		testimonial: {
+			quote:
+				"They presented a site that essentially was nothing like we envisioned, but was everything we didn't know we wanted. House of Giants pushed our vision because we understood their trust in their ability to bring us a site with tools and interactivity that we didn't know existed.",
+			author: 'Bodie Johnson',
+			title: 'Manager',
+			company: 'Shakey Graves',
+		},
+		techStack: ['Three.js', 'AI/ML', 'GSAP', 'Audio Integration', 'Custom Web App'],
 		images: {
 			hero: '/images/case-studies/shakeygraves/shakeycase1.jpg',
 			thumbnail: '/images/case-studies/shakeygraves/shakeycard.jpg',
@@ -430,64 +437,56 @@ export const caseStudies: CaseStudy[] = [
 				title: 'Input your genre. Generate your soundtrack. Create your story.',
 				steps: [
 					{
-						phase: 'Discovery & Planning',
-						title: 'Understanding the Artist',
+						phase: 'Asset Curation',
+						title: 'Mining the Archives',
 						description:
-							"We began by deeply understanding Shakey Graves' unique musical style and the story behind his name. Through collaborative sessions, we identified the need for a website that would not just showcase his music, but tell his story and connect with his audience on a deeper level.",
+							'Shakey had amassed a massive library of AI-generated artwork that mirrored the vibe of his new album—hundreds of pieces we hosted and leveraged as album covers for each generated soundtrack. We also dove deep into his recording archives: studio sessions, one-off recordings, outtakes, and alternate versions of every track. Each song on the released album had multiple recordings, making every generated soundtrack genuinely unique.',
 						bullets: [
-							'Artist brand analysis',
-							'Fan research & personas',
-							'Content strategy planning',
-							'Technical requirements',
+							'Curated hundreds of AI-generated artworks',
+							'Catalogued full recording archive',
+							'Multiple versions per track for variety',
+							'Built asset delivery pipeline',
 						],
 						image: '/images/case-studies/shakeygraves/shakeycase1.jpg',
 					},
 					{
-						phase: 'Design & Development',
-						title: 'Crafting the Experience',
+						phase: 'Technical Architecture',
+						title: 'Recreating the TV Wall',
 						description:
-							"We designed a website that captures the essence of Shakey Graves' musical spirit. The development focused on creating smooth animations, intuitive navigation, and a responsive design that works seamlessly across all devices.",
-						bullets: ['UI/UX design', 'Responsive development', 'Animation implementation', 'Performance optimization'],
+							"Using Three.js, we architected and recreated Shakey's iconic CRT TV wall. We aimed for the same aesthetic from his album cover and the physical installation he uses in live shows. The digital version lets fans channel-surf through an interactive 3D environment that captures the nostalgic warmth of vintage television while delivering a cutting-edge web experience.",
+						bullets: [
+							'Three.js 3D environment',
+							'CRT TV visual effects',
+							'Interactive channel surfing',
+							'Responsive 3D scaling',
+						],
 						image: '/images/case-studies/shakeygraves/shakeycase2.jpg',
 					},
 					{
-						phase: 'Content & Branding',
-						title: 'Storytelling & Identity',
+						phase: 'AI Integration',
+						title: 'Crafting the Synopsis Engine',
 						description:
-							'We worked closely with Shakey Graves to develop compelling content that tells his story authentically. The website showcases his music while highlighting the creativity and craftsmanship that sets him apart in the industry.',
-						bullets: ['Content creation', 'Artist storytelling', 'Music showcase', 'Visual identity'],
+							'This was 2023...before prompt engineering was a job title and before every agency claimed AI expertise. We collaborated directly with Shakey to architect the AI prompt that generates each movie synopsis. Every generated "film" gets a unique title, genre-appropriate artwork from his collection, and a compelling synopsis that feels like it could be a real movie. The experience was so inspiring that Shakey challenged his fans to actually produce short films based on their generated concepts.',
+						bullets: [
+							'Early AI adoption',
+							'Custom prompt engineering',
+							'Genre-aware generation',
+							'Fan film challenge integration',
+						],
 						image: '/images/case-studies/shakeygraves/shakeycase3.jpg',
 					},
 					{
-						phase: 'Launch & Optimization',
-						title: 'Going Live & Growing',
+						phase: 'Launch & Impact',
+						title: '1 Billion Combinations',
 						description:
-							'After a successful launch, we continue to work with Shakey Graves to optimize his website based on fan feedback and analytics. The platform is designed to evolve with his musical journey and career growth.',
+							'With hundreds of tracks, multiple versions per song, and AI-generated synopses, we created a system capable of over 1 billion unique soundtrack combinations. The launch drove a 91% increase in new users within the first week and 285% growth in page views—turning an album release into an interactive phenomenon. Two years later, this kind of AI-powered fan experience is everywhere. In 2023, it was genuinely novel.',
 						bullets: [
-							'Launch preparation',
-							'Performance monitoring',
-							'Fan feedback integration',
-							'Ongoing optimization',
+							'+91% new users week one',
+							'+285% page view growth',
+							'1B+ unique combinations',
+							'Ahead of the AI curve',
 						],
 						image: '/images/case-studies/shakeygraves/shakeycase4.jpg',
-					},
-				],
-			},
-			{
-				type: 'metrics',
-				title: 'The Impact',
-				items: [
-					{
-						value: '91%',
-						metric: 'Increase in new users within the first week',
-					},
-					{
-						value: '285%',
-						metric: 'Growth in page views post-launch',
-					},
-					{
-						value: '1billion+',
-						metric: 'Over 1 billion (yes billion) unique album combinations created with the soundtrack generator',
 					},
 				],
 			},
@@ -529,7 +528,7 @@ export const caseStudies: CaseStudy[] = [
 				description: 'Cultural authenticity showcased',
 			},
 		],
-		techStack: ['Next.js', 'GSAP', 'Framer Motion', 'Sanity CMS'],
+		techStack: ['Next.js', 'GSAP', 'Framer Motion', 'Strapi CMS'],
 		images: {
 			hero: '/images/case-studies/hayashi/hayashicase2.jpg',
 			thumbnail: '/images/case-studies/hayashi/hayashicard.jpg',
