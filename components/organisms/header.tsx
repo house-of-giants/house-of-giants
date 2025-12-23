@@ -2,15 +2,25 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/atoms/logo';
-import { mainNavigation, contactInfo } from '@/lib/data/navigation';
+import { mainNavigation, secondaryNavigation, contactInfo } from '@/lib/data/navigation';
 
 export function Header() {
 	const [isScrolled, setIsScrolled] = React.useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+	const pathname = usePathname();
+
+	const allNavigation = [...mainNavigation, ...secondaryNavigation];
+
+	// Helper to check if link is active
+	const isActiveLink = (href: string) => {
+		if (href === '/') return pathname === '/';
+		return pathname.startsWith(href);
+	};
 
 	React.useEffect(() => {
 		const handleScroll = () => {
@@ -52,16 +62,27 @@ export function Header() {
 
 						{/* Desktop Navigation */}
 						<div className="hidden items-center gap-1 lg:flex">
-							{mainNavigation.map((item) => (
-								<Link
-									key={item.name}
-									href={item.href}
-									className="text-muted-foreground hover:text-foreground group relative px-4 py-2 text-sm transition-colors"
-								>
-									<span className="relative z-10">{item.name}</span>
-									<span className="bg-muted absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100" />
-								</Link>
-							))}
+							{mainNavigation.map((item) => {
+								const isActive = isActiveLink(item.href);
+								return (
+									<Link
+										key={item.name}
+										href={item.href}
+										className={cn(
+											"group relative px-4 py-2 text-sm transition-colors",
+											isActive 
+												? "text-foreground font-medium" 
+												: "text-muted-foreground hover:text-foreground"
+										)}
+									>
+										<span className="relative z-10">{item.name}</span>
+										<span className="bg-muted absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100" />
+										{isActive && (
+											<span className="bg-primary absolute right-4 bottom-0 left-4 h-0.5" />
+										)}
+									</Link>
+								);
+							})}
 						</div>
 
 						{/* CTA Button */}
@@ -91,34 +112,43 @@ export function Header() {
 					isMobileMenuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
 				)}
 			>
-				<div className="flex h-full flex-col justify-center px-8">
-					<nav className="flex flex-col gap-2">
-						{mainNavigation.map((item, index) => (
-							<Link
-								key={item.name}
-								href={item.href}
-								onClick={() => setIsMobileMenuOpen(false)}
-								className={cn(
-									'group border-border font-display hover:text-primary flex items-center justify-between border-b py-4 text-4xl font-semibold transition-all duration-300',
-									isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-								)}
-								style={{
-									transitionDelay: isMobileMenuOpen ? `${index * 50 + 100}ms` : '0ms',
-								}}
-							>
-								<span>{item.name}</span>
-								<ArrowUpRight className="size-6 -translate-x-4 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
-							</Link>
-						))}
+				<div className="flex h-full flex-col overflow-y-auto px-6 py-24 sm:px-8 sm:py-28">
+					<nav className="flex flex-col gap-1 sm:gap-2">
+						{allNavigation.map((item, index) => {
+							const isActive = isActiveLink(item.href);
+							return (
+								<Link
+									key={item.name}
+									href={item.href}
+									onClick={() => setIsMobileMenuOpen(false)}
+									className={cn(
+										'group border-border font-display flex items-center justify-between border-b py-3 text-3xl font-semibold transition-all duration-300 sm:py-4 sm:text-4xl',
+										isActive ? 'text-primary' : 'hover:text-primary',
+										isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+									)}
+									style={{
+										transitionDelay: isMobileMenuOpen ? `${index * 50 + 100}ms` : '0ms',
+									}}
+								>
+									<span>{item.name}</span>
+									<ArrowUpRight className={cn(
+										"size-5 transition-all sm:size-6",
+										isActive 
+											? "translate-x-0 opacity-100" 
+											: "-translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+									)} />
+								</Link>
+							);
+						})}
 					</nav>
 
 					<div
 						className={cn(
-							'mt-12 transition-all duration-500',
+							'mt-8 transition-all duration-500 sm:mt-12',
 							isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
 						)}
 						style={{
-							transitionDelay: isMobileMenuOpen ? `${mainNavigation.length * 50 + 150}ms` : '0ms',
+							transitionDelay: isMobileMenuOpen ? `${allNavigation.length * 50 + 150}ms` : '0ms',
 						}}
 					>
 						<Button
@@ -135,11 +165,11 @@ export function Header() {
 					{/* Mobile footer info */}
 					<div
 						className={cn(
-							'text-muted-foreground absolute right-8 bottom-8 left-8 flex flex-col justify-between gap-4 text-sm transition-all duration-500 sm:flex-row',
+							'text-muted-foreground mt-8 flex flex-col justify-between gap-3 pb-4 text-sm transition-all duration-500 sm:flex-row sm:gap-4',
 							isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
 						)}
 						style={{
-							transitionDelay: isMobileMenuOpen ? `${mainNavigation.length * 50 + 200}ms` : '0ms',
+							transitionDelay: isMobileMenuOpen ? `${allNavigation.length * 50 + 200}ms` : '0ms',
 						}}
 					>
 						<span>{contactInfo.location} + Remote</span>

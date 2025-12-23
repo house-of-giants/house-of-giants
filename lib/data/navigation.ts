@@ -15,15 +15,32 @@ export interface ProcessStepData {
 export const mainNavigation: NavItem[] = [
 	{ name: 'Work', href: '/work' },
 	{ name: 'Services', href: '/services' },
-	{ name: 'Pods', href: '/dedicated-teams' },
-	{ name: 'About', href: '/about' },
+	{ name: 'Dedicated Teams', href: '/dedicated-teams' },
+	{ name: 'Pricing', href: '/pricing' },
 	{ name: 'Blog', href: '/blog' },
+	{ name: 'About', href: '/about' },
+];
+
+export const secondaryNavigation: NavItem[] = [
+	{ name: 'Partnerships', href: '/partnerships' },
+];
+
+export const footerNavigation: NavItem[] = [
+	{ name: 'Work', href: '/work' },
+	{ name: 'Services', href: '/services' },
+	{ name: 'Dedicated Teams', href: '/dedicated-teams' },
 	{ name: 'Pricing', href: '/pricing' },
 ];
 
-export const footerNavigation: NavItem[] = [...mainNavigation, { name: 'Contact', href: '/contact' }];
+export const companyNavigation: NavItem[] = [
+	{ name: 'About', href: '/about' },
+	{ name: 'Blog', href: '/blog' },
+	{ name: 'Contact', href: '/contact' },
+];
 
-export const audienceNavigation: NavItem[] = [
+export const partnershipNavigation: NavItem[] = [
+	{ name: 'Partner With Us', href: '/partnerships' },
+	{ name: 'White-Label', href: '/partnerships/white-label' },
 	{ name: 'For Startups', href: '/for-startups' },
 ];
 

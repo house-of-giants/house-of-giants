@@ -160,7 +160,8 @@ export default function StartupsContent() {
 				<Section>
 					<SectionHeader
 						eyebrow="The Problem"
-						title="Templates don't scale. Agencies don't move fast."
+						title="Templates don't scale."
+            subtitle="Agencies don't move fast."
 						className="mb-16"
 					/>
 
@@ -196,7 +197,8 @@ export default function StartupsContent() {
 
 					<SectionHeader
 						eyebrow="The Solution"
-						title="Built for startup speed. Without the startup shortcuts."
+						title="Built for startup speed."
+            subtitle="Without the startup shortcuts."
 						align="center"
 						className="mb-16"
 					/>
@@ -225,7 +227,7 @@ export default function StartupsContent() {
 				</Section>
 
 				<Section>
-					<SectionHeader eyebrow="Proof" title="Real startups. Real results." className="mb-16" />
+					<SectionHeader eyebrow="Proof" title="Real startups." subtitle="Real results." className="mb-16" />
 
 					<div className="space-y-px">
 						{startupCaseStudies.slice(0, 2).map((study, index) => (

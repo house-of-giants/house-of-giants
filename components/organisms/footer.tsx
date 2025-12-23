@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { Eyebrow } from '@/components/atoms/eyebrow';
 import { Logo } from '@/components/atoms/logo';
 import { CTABlock } from './cta-block';
-import { footerNavigation, audienceNavigation, socialLinks, contactInfo } from '@/lib/data/navigation';
+import { footerNavigation, companyNavigation, partnershipNavigation, socialLinks, contactInfo } from '@/lib/data/navigation';
 
 interface FooterProps {
 	hideCTA?: boolean;
@@ -34,9 +34,9 @@ export function Footer({ hideCTA = false }: FooterProps) {
 							</div>
 						</div>
 
-						{/* Pages Column */}
+						{/* Solutions Column */}
 						<div>
-							<Eyebrow className="mb-6">Navigation</Eyebrow>
+							<Eyebrow className="mb-6">Solutions</Eyebrow>
 							<ul className="space-y-3">
 								{footerNavigation.map((item) => (
 									<li key={item.name}>
@@ -51,11 +51,11 @@ export function Footer({ hideCTA = false }: FooterProps) {
 							</ul>
 						</div>
 
-						{/* Audiences Column */}
+						{/* Partners Column */}
 						<div>
-							<Eyebrow className="mb-6">Industries</Eyebrow>
+							<Eyebrow className="mb-6">For Partners</Eyebrow>
 							<ul className="space-y-3">
-								{audienceNavigation.map((item) => (
+								{partnershipNavigation.map((item) => (
 									<li key={item.name}>
 										<Link
 											href={item.href}
@@ -68,24 +68,41 @@ export function Footer({ hideCTA = false }: FooterProps) {
 							</ul>
 						</div>
 
-						{/* Social Column */}
+						{/* Company Column */}
 						<div>
-							<Eyebrow className="mb-6">Connect</Eyebrow>
+							<Eyebrow className="mb-6">Company</Eyebrow>
 							<ul className="space-y-3">
-								{socialLinks.map((item) => (
+								{companyNavigation.map((item) => (
 									<li key={item.name}>
-										<a
+										<Link
 											href={item.href}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="text-muted-foreground hover:text-foreground link-underline inline-flex items-center gap-1 transition-colors"
+											className="text-muted-foreground hover:text-foreground link-underline transition-colors"
 										>
 											{item.name}
-											<ArrowUpRight className="size-3 opacity-50" />
-										</a>
+										</Link>
 									</li>
 								))}
 							</ul>
+							
+							{/* Social Links */}
+							<div className="mt-6">
+								<Eyebrow className="mb-4 text-xs">Connect</Eyebrow>
+								<ul className="space-y-3">
+									{socialLinks.map((item) => (
+										<li key={item.name}>
+											<a
+												href={item.href}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="text-muted-foreground hover:text-foreground link-underline inline-flex items-center gap-1 transition-colors"
+											>
+												{item.name}
+												<ArrowUpRight className="size-3 opacity-50" />
+											</a>
+										</li>
+									))}
+								</ul>
+							</div>
 						</div>
 					</div>
 

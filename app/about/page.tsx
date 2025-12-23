@@ -156,9 +156,9 @@ export default function AboutPage() {
 							<div className="border-border bg-card text-primary group-hover:border-primary/50 group-hover:bg-primary/10 mb-6 inline-flex size-12 items-center justify-center rounded-lg border transition-colors">
 								<Mountain className="size-6" />
 							</div>
-							<h3 className="heading-3 mb-4">Colorado Punk Ethos</h3>
+							<h3 className="heading-3 mb-4">Colorado Punks At Heart</h3>
 							<p className="text-muted-foreground leading-relaxed">
-								Born in Denver with a &quot;punk-rock&quot; approach to digital: small, fast, and fiercely independent.
+								Born in Denver with a &quot;question everything&quot; approach to digital: small, fast, and fiercely independent.
 								We bring Colorado&apos;s grounded, no-bullshit culture to everything we build for our national partners.
 							</p>
 						</div>

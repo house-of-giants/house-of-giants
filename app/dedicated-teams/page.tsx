@@ -2,25 +2,25 @@ import { Metadata } from 'next';
 import DedicatedTeamsContent from './dedicated-teams-content';
 
 export const metadata: Metadata = {
-	title: 'Dedicated Development Teams | Custom Engineering Pods | House of Giants',
+	title: 'Dedicated Engineering Teams Boulder & Denver | House of Giants',
 	description:
-		'Scale your product with a dedicated development team. Senior-led engineering pods that integrate directly into your workflow. Predictable monthly pricing, zero hiring overhead.',
+		'Scale your startup with a dedicated development team. Senior-led engineering pods in Colorado that integrate directly into your product roadmap.',
 	keywords: [
-		'dedicated development team',
-		'engineering pod',
-		'custom web development team',
-		'fractional cto services',
-		'remote development team',
-		'staff augmentation denver',
-		'managed engineering team',
-		'software development partner',
+		'dedicated development team denver',
+		'engineering pods colorado',
+		'custom web development team boulder',
+		'fractional cto services denver',
+		'remote development team rocky mountains',
+		'staff augmentation colorado',
+		'managed engineering team denver',
+		'software development partner boulder',
 		'dedicated developers for startups',
-		'agency engineering partner',
+		'agency engineering partner colorado',
 	],
 	openGraph: {
-		title: 'Dedicated Development Teams | House of Giants',
+		title: 'Dedicated Engineering Teams | House of Giants',
 		description:
-			'A fully managed engineering team that treats your product like their own. Senior-led, predictable pricing, and high-velocity output.',
+			'A fully managed engineering team that treats your product like their own. Senior-led, predictable pricing, and Colorado-based expertise.',
 		url: 'https://houseofgiants.com/dedicated-teams',
 		type: 'website',
 	},
@@ -46,12 +46,18 @@ const dedicatedTeamsJsonLd = {
 		url: 'https://houseofgiants.com',
 		address: {
 			'@type': 'PostalAddress',
+			streetAddress: '3839 Jackson Street',
 			addressLocality: 'Denver',
 			addressRegion: 'CO',
+			postalCode: '80205',
 			addressCountry: 'US',
 		},
 	},
-	areaServed: 'Worldwide',
+	areaServed: [
+		{ '@type': 'State', name: 'Colorado' },
+		{ '@type': 'City', name: 'Denver' },
+		{ '@type': 'City', name: 'Boulder' },
+	],
 	hasOfferCatalog: {
 		'@type': 'OfferCatalog',
 		name: 'Development Pod Tiers',
