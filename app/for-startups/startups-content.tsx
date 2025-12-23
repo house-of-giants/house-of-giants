@@ -126,7 +126,7 @@ export default function StartupsContent() {
 							className={cn('heading-display mb-6 opacity-0', mounted && 'animate-slide-up')}
 							style={{ animationDelay: '0.2s' }}
 						>
-							Websites that help startups <br className="hidden sm:block" />
+							Code that helps startups <br className="hidden sm:block" />
 							<GradientText>get funded.</GradientText>
 						</h1>
 

@@ -97,13 +97,31 @@ The "No Bullshit" voice is preserved across all metadata and on-page content:
 - ✅ **Promoted Blog to primary navigation** - Massive SEO boost through increased link equity
 - ✅ **Added active page indicators** - Enhanced UX with visual state feedback
 - ✅ **Improved footer organization** - Clearer sections and better anchor text ("Partner With Us" vs "Overview")
+- ✅ **Fixed mobile navigation overflow** - Scrollable menu for better mobile UX
+- ✅ **Implemented breadcrumbs with structured data** - BreadcrumbList schema + visual breadcrumbs on all key pages
+
+### Breadcrumb Implementation:
+
+**Pages with breadcrumbs:**
+
+- Services: Home > Web Development Services
+- Work: Home > Our Work
+- Case Studies: Home > Our Work > [Case Study Name]
+- Dedicated Teams: Home > Dedicated Development Teams
+- Pricing: Home > Pricing & Plans
+- About: Home > About Our Studio
+
+**Keyword-rich anchor text** throughout breadcrumb trail for maximum SEO value.
 
 ### SEO Impact:
 
 - **Blog visibility:** Now receives homepage link authority on every page
 - **Keyword optimization:** "Dedicated Teams" aligns with target phrase "dedicated development team"
 - **Internal linking:** Stronger crawlability and link equity distribution
+- **Breadcrumb schema:** BreadcrumbList JSON-LD on all pages for rich snippet eligibility
+- **Anchor text optimization:** Every breadcrumb link uses keyword-rich labels
 - **User signals:** Better engagement metrics from improved navigation clarity
+- **Rich Snippets:** Breadcrumbs eligible to appear in Google search results
 
 See `NAVIGATION_IMPROVEMENTS.md` for full details.
 
@@ -114,10 +132,11 @@ See `NAVIGATION_IMPROVEMENTS.md` for full details.
 To ensure House of Giants' survival and growth, we monitor the following metrics:
 
 1.  **Regional Share of Voice:** Outranking local "agencies" for craft-related searches.
-2.  **Rich Snippet Coverage:** Presence of star ratings (AggregateRating) and site search boxes in Google SERPs.
+2.  **Rich Snippet Coverage:** Presence of star ratings (AggregateRating), breadcrumbs, and site search boxes in Google SERPs.
 3.  **Local Pack Position:** Maintaining Top 3 status for "Denver web development studio."
 4.  **Conversion Velocity:** Tracking how regional traffic converts to "Engineering Pod" inquiries.
 5.  **Blog Traffic Growth:** Measuring organic search traffic to blog posts (newly prioritized in navigation).
+6.  **Breadcrumb Visibility:** Monitor breadcrumb rich results appearing in SERPs via Search Console.
 
 ---
 

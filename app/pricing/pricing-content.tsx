@@ -17,9 +17,8 @@ import {
 	MessageSquare,
 } from 'lucide-react';
 import { Header, Footer } from '@/components/organisms';
-import { Section, SectionHeader } from '@/components/templates';
+import { PageHeader, GradientTitle, Section, SectionHeader } from '@/components/templates';
 import { GradientText } from '@/components/atoms/gradient-text';
-import { GradientOrbs } from '@/components/backgrounds/gradient-orbs';
 import { NoiseOverlay } from '@/components/backgrounds/noise-overlay';
 import { Button } from '@/components/ui/button';
 import {
@@ -81,44 +80,16 @@ export default function PricingContent() {
 		<>
 			<Header />
 			<main>
-				{/* Hero Section */}
-				<Section
-					padding="none"
-					container="none"
-					className="relative flex min-h-[50vh] items-center justify-center overflow-hidden pt-32 pb-20"
-				>
-					<div className="bg-background absolute inset-0 overflow-visible">
-						<GradientOrbs />
-						<NoiseOverlay />
-					</div>
-
-					<div className="container-wide relative z-10 text-center">
-						<p
-							className={cn('eyebrow mb-4 opacity-0', mounted && 'animate-slide-up')}
-							style={{ animationDelay: '0.1s' }}
-						>
-							Transparent Pricing
-						</p>
-
-						<h1
-							className={cn('heading-display mb-6 opacity-0', mounted && 'animate-slide-up')}
-							style={{ animationDelay: '0.2s' }}
-						>
-							No black boxes. <br className="hidden sm:block" />
-							<GradientText>No hourly surprises.</GradientText>
-						</h1>
-
-						<p
-							className={cn(
-								'body-large text-muted-foreground mx-auto mb-10 max-w-2xl opacity-0',
-								mounted && 'animate-slide-up'
-							)}
-							style={{ animationDelay: '0.3s' }}
-						>
-							We price by project scope, not hours. You know the investment before we write a line of code.
-						</p>
-					</div>
-				</Section>
+				<PageHeader
+					eyebrow="Transparent Pricing"
+					title={
+						<>
+							No black boxes. <GradientTitle>No hourly surprises.</GradientTitle>
+						</>
+					}
+					description="We price by project scope, not hours. You know the investment before we write a line of code."
+					minHeight="min-h-[50vh]"
+				/>
 
 				{/* Decision Tree Section */}
 				<Section>

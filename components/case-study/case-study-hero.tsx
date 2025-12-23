@@ -7,6 +7,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { CaseStudy } from '@/lib/data/case-studies';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Breadcrumbs, BreadcrumbItem } from '@/components/molecules';
 import { NoiseOverlay } from '@/components/backgrounds/noise-overlay';
 import { Reveal } from './reveal';
 
@@ -15,6 +16,13 @@ interface CaseStudyHeroProps {
 }
 
 export function CaseStudyHero({ study }: CaseStudyHeroProps) {
+	// Custom breadcrumbs for case studies with keyword-rich labels
+	const breadcrumbs: BreadcrumbItem[] = [
+		{ label: 'Home', href: '/' },
+		{ label: 'Our Work', href: '/work' },
+		{ label: study.title, href: `/work/${study.slug}` },
+	];
+
 	return (
 		<section className="relative h-[85vh] min-h-[600px] w-full overflow-hidden">
 			<div className="absolute inset-0 z-0">
@@ -24,7 +32,8 @@ export function CaseStudyHero({ study }: CaseStudyHeroProps) {
 				<NoiseOverlay opacity={0.1} />
 			</div>
 
-			<div className="container-wide relative z-10 flex h-full flex-col justify-end pb-12 md:pb-20 lg:pb-24">
+			<div className="container-wide relative z-10 flex h-full flex-col justify-between pt-28 pb-12 md:pb-20 lg:pb-24">
+				<Breadcrumbs items={breadcrumbs} className="opacity-80" />
 				<Reveal>
 					<div className="space-y-6 md:space-y-8">
 						<div className="flex flex-wrap gap-3">
@@ -72,7 +81,7 @@ export function CaseStudyHero({ study }: CaseStudyHeroProps) {
 						</div>
 					</div>
 				</Reveal>
-			</div>
+				</div>
 
 			<div className="via-border absolute right-0 bottom-0 left-0 h-px bg-gradient-to-r from-transparent to-transparent" />
 		</section>

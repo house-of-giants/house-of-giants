@@ -2,68 +2,27 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
 import { MapPin, Code, Users, Mountain, Globe, Terminal, Shield } from 'lucide-react';
 import { Header, Footer } from '@/components/organisms';
-import { Section, SectionHeader } from '@/components/templates';
+import { PageHeader, GradientTitle, Section, SectionHeader } from '@/components/templates';
 import { GradientText } from '@/components/atoms/gradient-text';
-import { GradientOrbs } from '@/components/backgrounds/gradient-orbs';
 import { NoiseOverlay } from '@/components/backgrounds/noise-overlay';
-import { StatusIndicator } from '@/components/atoms/status-indicator';
 import Image from 'next/image';
 
 export default function AboutPage() {
-	const [mounted, setMounted] = React.useState(false);
-
-	React.useEffect(() => {
-		setMounted(true);
-	}, []);
-
 	return (
 		<>
 			<Header />
 			<main>
-				<Section
-					padding="none"
-					container="none"
-					className="relative flex min-h-[60vh] items-center justify-center overflow-hidden pt-32 pb-20"
-				>
-					<div className="bg-background absolute inset-0 overflow-visible">
-						<GradientOrbs />
-						<NoiseOverlay />
-					</div>
-
-					<div className="container-wide relative z-10 text-center">
-						<div
-							className={cn('flex justify-center opacity-0', mounted && 'animate-slide-up')}
-							style={{ animationDelay: '0.1s' }}
-						>
-							<div className="bg-background/50 border-border mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1 backdrop-blur-sm">
-								<StatusIndicator />
-								<span className="text-muted-foreground text-xs font-medium tracking-wider uppercase">About Us</span>
-							</div>
-						</div>
-
-						<h1
-							className={cn('heading-display mb-6 opacity-0', mounted && 'animate-slide-up')}
-							style={{ animationDelay: '0.2s' }}
-						>
-							No suits. No scripts. <br className="hidden sm:block" />
-							<GradientText>Just the work.</GradientText>
-						</h1>
-
-						<p
-							className={cn(
-								'body-large text-muted-foreground mx-auto mb-10 max-w-2xl opacity-0',
-								mounted && 'animate-slide-up'
-							)}
-							style={{ animationDelay: '0.3s' }}
-						>
-							We&apos;re a founder-led custom web development partner for startups and scale-ups who care about craft.
-							No bloat, no templates—just high-performance code that drives revenue.
-						</p>
-					</div>
-				</Section>
+				<PageHeader
+					eyebrow="About Us"
+					title={
+						<>
+							No suits. No scripts. <GradientTitle>Just the work.</GradientTitle>
+						</>
+					}
+					description="We're a founder-led custom web development partner for startups and scale-ups who care about craft. No bloat, no templates—just high-performance code that drives revenue."
+				/>
 
 				<Section className="relative">
 					<div className="grid gap-12 lg:grid-cols-12 lg:gap-20">

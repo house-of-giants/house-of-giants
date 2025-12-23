@@ -27,11 +27,9 @@ import {
 	Code2,
 } from 'lucide-react';
 import { Header, Footer } from '@/components/organisms';
-import { Section, SectionHeader } from '@/components/templates';
+import { PageHeader, GradientTitle, Section, SectionHeader } from '@/components/templates';
 import { GradientText } from '@/components/atoms/gradient-text';
-import { GradientOrbs } from '@/components/backgrounds/gradient-orbs';
 import { NoiseOverlay } from '@/components/backgrounds/noise-overlay';
-import { StatusIndicator } from '@/components/atoms/status-indicator';
 import { Button } from '@/components/ui/button';
 import { CaseStudyCard } from '@/components/molecules';
 import { podTiers, podBenefits, hogResponsibilities, partnerResponsibilities, podFaqs } from '@/lib/data/pods';
@@ -145,52 +143,17 @@ export default function DedicatedTeamsContent() {
 		<>
 			<Header />
 			<main>
-				<Section
-					padding="none"
-					container="none"
-					className="relative flex min-h-[70vh] items-center justify-center overflow-hidden pt-32 pb-24 md:pb-32"
-				>
-					<div className="bg-background absolute inset-0 overflow-visible">
-						<GradientOrbs />
-						<NoiseOverlay />
-					</div>
-
-					<div className="container-wide relative z-10 text-center">
-						<div
-							className={cn('flex justify-center opacity-0', mounted && 'animate-slide-up')}
-							style={{ animationDelay: '0.1s' }}
-						>
-							<div className="bg-background/50 border-border mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1 backdrop-blur-sm">
-								<StatusIndicator />
-								<span className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
-									Scalable Engineering Capacity
-								</span>
-							</div>
-						</div>
-
-						<h1
-							className={cn('heading-display mb-6 opacity-0', mounted && 'animate-slide-up')}
-							style={{ animationDelay: '0.2s' }}
-						>
-							Your vision, plus our <br className="hidden sm:block" />
-							<GradientText>dedicated engineering pod.</GradientText>
-						</h1>
-
-						<p
-							className={cn(
-								'body-large text-muted-foreground mx-auto mb-10 max-w-2xl opacity-0',
-								mounted && 'animate-slide-up'
-							)}
-							style={{ animationDelay: '0.3s' }}
-						>
-							Scale your product with a fully managed, dedicated development team. Senior-led architecture, predictable
-							monthly cost, and zero hiring overhead.
-						</p>
-
-						<div
-							className={cn('flex flex-wrap justify-center gap-4 opacity-0', mounted && 'animate-slide-up')}
-							style={{ animationDelay: '0.4s' }}
-						>
+				<PageHeader
+					eyebrow="Scalable Engineering Capacity"
+					title={
+						<>
+							Your vision, plus our <GradientTitle>dedicated engineering pod.</GradientTitle>
+						</>
+					}
+					description="Scale your product with a fully managed, dedicated development team. Senior-led architecture, predictable monthly cost, and zero hiring overhead."
+					minHeight="min-h-[70vh]"
+					actions={
+						<>
 							<Button href="/contact?source=dedicated-teams" size="cta" className="gap-2">
 								<MessageSquare className="size-4" />
 								Build Your Pod
@@ -206,9 +169,9 @@ export default function DedicatedTeamsContent() {
 								What is a Pod?
 								<ArrowUpRight className="size-4" />
 							</Button>
-						</div>
-					</div>
-				</Section>
+						</>
+					}
+				/>
 
 				<Section>
 					<div className="mx-auto max-w-4xl">
