@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		'/contact',
 		'/for-startups',
 		'/dedicated-teams',
+		'/partnerships',
+		'/partnerships/white-label',
 	].map((route) => ({
 		url: `${baseUrl}${route}`,
 		lastModified: new Date(),

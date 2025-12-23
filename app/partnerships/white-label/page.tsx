@@ -34,12 +34,41 @@ const whiteLabelJsonLd = {
 	areaServed: 'Worldwide',
 };
 
+const breadcrumbJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{
+			'@type': 'ListItem',
+			position: 1,
+			name: 'Home',
+			item: 'https://houseofgiants.com',
+		},
+		{
+			'@type': 'ListItem',
+			position: 2,
+			name: 'Partnerships',
+			item: 'https://houseofgiants.com/partnerships',
+		},
+		{
+			'@type': 'ListItem',
+			position: 3,
+			name: 'White-Label',
+			item: 'https://houseofgiants.com/partnerships/white-label',
+		},
+	],
+};
+
 export default function WhiteLabelPage() {
 	return (
 		<>
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(whiteLabelJsonLd) }}
+			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
 			/>
 			<WhiteLabelContent />
 		</>

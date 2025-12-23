@@ -86,10 +86,30 @@ const servicesJsonLd = {
 	},
 };
 
+const breadcrumbJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{
+			'@type': 'ListItem',
+			position: 1,
+			name: 'Home',
+			item: 'https://houseofgiants.com',
+		},
+		{
+			'@type': 'ListItem',
+			position: 2,
+			name: 'Services',
+			item: 'https://houseofgiants.com/services',
+		},
+	],
+};
+
 export default function ServicesPage() {
 	return (
 		<>
 			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }} />
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 			<ServicesContent />
 		</>
 	);

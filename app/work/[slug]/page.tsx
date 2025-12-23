@@ -90,6 +90,33 @@ function generateJsonLd(study: NonNullable<ReturnType<typeof getCaseStudyBySlug>
 	};
 }
 
+function generateBreadcrumbJsonLd(study: NonNullable<ReturnType<typeof getCaseStudyBySlug>>) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{
+				'@type': 'ListItem',
+				position: 1,
+				name: 'Home',
+				item: 'https://houseofgiants.com',
+			},
+			{
+				'@type': 'ListItem',
+				position: 2,
+				name: 'Our Work',
+				item: 'https://houseofgiants.com/work',
+			},
+			{
+				'@type': 'ListItem',
+				position: 3,
+				name: study.title,
+				item: `https://houseofgiants.com/work/${study.slug}`,
+			},
+		],
+	};
+}
+
 export default async function CaseStudyPage({ params }: PageProps) {
 	const { slug } = await params;
 	const study = getCaseStudyBySlug(slug);
@@ -99,10 +126,12 @@ export default async function CaseStudyPage({ params }: PageProps) {
 	}
 
 	const jsonLd = generateJsonLd(study);
+	const breadcrumbJsonLd = generateBreadcrumbJsonLd(study);
 
 	return (
 		<>
 			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 			<CaseStudyContent study={study} />
 		</>
 	);

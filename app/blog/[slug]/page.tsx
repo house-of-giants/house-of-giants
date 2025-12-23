@@ -94,6 +94,33 @@ function generateJsonLd(post: NonNullable<ReturnType<typeof getPostBySlug>>) {
 	};
 }
 
+function generateBreadcrumbJsonLd(post: NonNullable<ReturnType<typeof getPostBySlug>>) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{
+				'@type': 'ListItem',
+				position: 1,
+				name: 'Home',
+				item: 'https://houseofgiants.com',
+			},
+			{
+				'@type': 'ListItem',
+				position: 2,
+				name: 'Blog',
+				item: 'https://houseofgiants.com/blog',
+			},
+			{
+				'@type': 'ListItem',
+				position: 3,
+				name: post.title,
+				item: `https://houseofgiants.com${post.permalink}`,
+			},
+		],
+	};
+}
+
 function getShareUrl(permalink: string): string {
 	// Use environment variable if available, otherwise use production URL
 	// Share links work fine with the production URL even when accessed locally
@@ -110,11 +137,13 @@ export default async function BlogPostPage({ params }: PageProps) {
 	}
 
 	const jsonLd = generateJsonLd(post);
+	const breadcrumbJsonLd = generateBreadcrumbJsonLd(post);
 	const shareUrl = getShareUrl(post.permalink);
 
 	return (
 		<>
 			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 			<PostContent post={post} shareUrl={shareUrl} />
 		</>
 	);

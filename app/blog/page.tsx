@@ -33,10 +33,30 @@ const blogJsonLd = {
 	},
 };
 
+const breadcrumbJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{
+			'@type': 'ListItem',
+			position: 1,
+			name: 'Home',
+			item: 'https://houseofgiants.com',
+		},
+		{
+			'@type': 'ListItem',
+			position: 2,
+			name: 'Blog',
+			item: 'https://houseofgiants.com/blog',
+		},
+	],
+};
+
 export default function BlogPage() {
 	return (
 		<>
 			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }} />
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 			<BlogContent />
 		</>
 	);

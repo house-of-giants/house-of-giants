@@ -76,11 +76,31 @@ const faqJsonLd = {
 	})),
 };
 
+const breadcrumbJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{
+			'@type': 'ListItem',
+			position: 1,
+			name: 'Home',
+			item: 'https://houseofgiants.com',
+		},
+		{
+			'@type': 'ListItem',
+			position: 2,
+			name: 'Pricing',
+			item: 'https://houseofgiants.com/pricing',
+		},
+	],
+};
+
 export default function PricingPage() {
 	return (
 		<>
 			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingJsonLd) }} />
 			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 			<PricingContent />
 		</>
 	);

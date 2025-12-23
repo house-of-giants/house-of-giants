@@ -34,12 +34,35 @@ const partnershipsJsonLd = {
 	},
 };
 
+const breadcrumbJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{
+			'@type': 'ListItem',
+			position: 1,
+			name: 'Home',
+			item: 'https://houseofgiants.com',
+		},
+		{
+			'@type': 'ListItem',
+			position: 2,
+			name: 'Partnerships',
+			item: 'https://houseofgiants.com/partnerships',
+		},
+	],
+};
+
 export default function PartnershipsPage() {
 	return (
 		<>
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(partnershipsJsonLd) }}
+			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
 			/>
 			<PartnershipsContent />
 		</>
