@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
+@plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -580,6 +581,349 @@ html.lenis body {
 	/* Top highlight bar gradient */
 	.gradient-bar-accent {
 		@apply from-primary via-accent to-primary bg-linear-to-r;
+	}
+
+	/* ========================================
+     PROSE STYLING - Dark Cyber Aesthetic
+     Optimized for readability and best-in-class layout
+     ======================================== */
+	.prose {
+		/* Base typography - dark theme aware */
+		color: var(--muted-foreground);
+		/* Optimal reading width: 65-75 characters */
+		max-width: 65ch;
+	}
+
+	/* Headings - base styles (modifiers in component handle specifics) */
+	.prose h1,
+	.prose h2,
+	.prose h3,
+	.prose h4,
+	.prose h5,
+	.prose h6 {
+		color: var(--foreground) !important;
+		font-family: var(--font-display);
+		line-height: 1.2;
+	}
+
+	.prose h1 {
+		font-size: 2.5rem;
+		line-height: 1.1;
+		margin-top: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.prose h2 {
+		font-size: 2rem;
+		line-height: 1.15;
+		margin-top: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.prose h3 {
+		font-size: 1.5rem;
+		line-height: 1.2;
+		margin-top: 2rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.prose h4 {
+		@apply font-display text-xl font-semibold tracking-tight;
+		margin-top: 2rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.prose h5 {
+		@apply font-display text-lg font-semibold tracking-tight;
+		margin-top: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.prose h6 {
+		@apply font-display text-base font-semibold tracking-tight;
+		margin-top: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	/* Paragraphs - optimized for readability */
+	.prose p {
+		font-size: 1.125rem;
+		line-height: 1.75;
+		margin-bottom: 1.5rem;
+		color: oklch(0.7 0.01 260);
+	}
+
+	/* Lists - improved spacing and markers */
+	.prose ul,
+	.prose ol {
+		margin-bottom: 1.5rem;
+		padding-left: 1.5rem;
+		color: oklch(0.7 0.01 260) !important;
+	}
+
+	.prose ul > li {
+		position: relative;
+		margin-bottom: 0.5rem;
+		line-height: 1.75;
+		color: oklch(0.7 0.01 260) !important;
+	}
+
+	.prose ul > li::marker {
+		color: var(--primary);
+		font-size: 1.25em;
+	}
+
+	.prose ol > li {
+		margin-bottom: 0.5rem;
+		line-height: 1.75;
+		padding-left: 0.5rem;
+		color: oklch(0.7 0.01 260) !important;
+	}
+
+	.prose ol > li::marker {
+		color: var(--primary);
+		font-weight: 600;
+	}
+
+	/* Code blocks - enhanced readability with cyber aesthetic */
+	.prose pre {
+		background: oklch(0.1 0.015 260) !important;
+		border: 1px solid oklch(1 0 0 / 10%);
+		border-radius: 0;
+		margin: 2rem 0;
+		padding: 1.5rem;
+		overflow-x: auto;
+		line-height: 1.7;
+		font-size: 0.875rem;
+		position: relative;
+		/* Subtle cyber glow effect */
+		box-shadow:
+			0 0 0 1px oklch(1 0 0 / 5%),
+			0 0 30px oklch(0.85 0.22 170 / 8%);
+	}
+
+	/* Shiki generates a pre > code structure */
+	.prose pre code {
+		background: transparent !important;
+		padding: 0;
+		font-size: inherit;
+		font-weight: normal;
+		white-space: pre;
+		/* Don't override Shiki's syntax colors */
+		color: inherit;
+		/* Remove any filters that might affect Shiki colors */
+		filter: none;
+	}
+
+	/* Shiki code blocks - don't override inline styles for syntax colors */
+	.prose pre.shiki,
+	.prose pre[class*='shiki'] {
+		background: oklch(0.1 0.015 260) !important;
+	}
+
+	/* Ensure Shiki span colors are preserved - don't override */
+	.prose pre code span {
+		/* Shiki applies colors via inline styles, preserve them */
+	}
+
+	/* Line numbers if present */
+	.prose pre code .line-number,
+	.prose pre code [class*='line-number'] {
+		color: oklch(0.45 0.01 260);
+		margin-right: 1.5rem;
+		user-select: none;
+	}
+
+	/* Code block language labels */
+	.prose pre code.language-js::before {
+		content: 'js';
+	}
+	.prose pre code.language-javascript::before {
+		content: 'javascript';
+	}
+	.prose pre code.language-ts::before {
+		content: 'ts';
+	}
+	.prose pre code.language-typescript::before {
+		content: 'typescript';
+	}
+	.prose pre code.language-tsx::before {
+		content: 'tsx';
+	}
+	.prose pre code.language-jsx::before {
+		content: 'jsx';
+	}
+	.prose pre code.language-css::before {
+		content: 'css';
+	}
+	.prose pre code.language-html::before {
+		content: 'html';
+	}
+	.prose pre code.language-json::before {
+		content: 'json';
+	}
+	.prose pre code.language-bash::before {
+		content: 'bash';
+	}
+	.prose pre code.language-shell::before {
+		content: 'shell';
+	}
+	.prose pre code.language-python::before {
+		content: 'python';
+	}
+
+	.prose pre code[class*='language-']::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0.25rem 0.75rem;
+		font-size: 0.65rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: oklch(0.55 0.01 260);
+		background: oklch(0.08 0.015 260);
+		border-bottom-left-radius: 0;
+	}
+
+	/* Inline code */
+	.prose code {
+		color: var(--primary);
+		font-size: 0.875em;
+		font-weight: 500;
+		background: oklch(0.15 0.01 260);
+		padding: 0.125rem 0.375rem;
+		border-radius: 0.25rem;
+	}
+
+	/* Blockquotes - improved spacing */
+	.prose blockquote {
+		border-left: 3px solid var(--primary);
+		background: oklch(0.85 0.22 170 / 5%);
+		margin: 2rem 0;
+		padding: 1rem 1.5rem;
+		font-style: italic;
+		color: oklch(0.7 0.01 260);
+	}
+
+	.prose blockquote p {
+		margin-bottom: 0.5rem;
+	}
+
+	.prose blockquote p:last-child {
+		margin-bottom: 0;
+	}
+
+	/* Tables - dark cyber styling with better readability */
+	.prose table {
+		width: 100%;
+		margin: 2rem 0;
+		border-collapse: collapse;
+		font-size: 0.9375rem;
+	}
+
+	.prose table th {
+		background: oklch(0.2 0.01 260 / 40%);
+		border: 1px solid var(--border);
+		padding: 0.75rem 1rem;
+		text-align: left;
+		font-weight: 600;
+		color: var(--foreground);
+	}
+
+	.prose table td {
+		border: 1px solid var(--border);
+		padding: 0.75rem 1rem;
+		color: oklch(0.7 0.01 260);
+		line-height: 1.6;
+	}
+
+	.prose table tr:nth-child(even) {
+		background: oklch(0.2 0.01 260 / 15%);
+	}
+
+	/* Images - better spacing */
+	.prose img {
+		margin: 2.5rem 0;
+	}
+
+	/* Horizontal rules */
+	.prose hr {
+		border-color: var(--border);
+		margin: 3rem 0;
+		border-top-width: 1px;
+	}
+
+	/* Links - improved hover states */
+	.prose a {
+		text-decoration: none;
+		transition:
+			color 0.2s ease,
+			text-decoration 0.2s ease;
+	}
+
+	.prose a:hover {
+		color: var(--accent);
+		text-decoration: underline;
+	}
+
+	/* Strong and emphasis */
+	.prose strong {
+		color: var(--foreground);
+		font-weight: 600;
+	}
+
+	.prose em {
+		color: oklch(0.7 0.01 260);
+		font-style: italic;
+	}
+
+	/* Large prose variant - optimized */
+	.prose-lg {
+		font-size: 1.125rem;
+		line-height: 1.75;
+	}
+
+	.prose-lg p {
+		font-size: 1.125rem;
+		line-height: 1.75;
+		margin-bottom: 1.5rem;
+	}
+
+	.prose-lg h1 {
+		font-size: 2.75rem;
+		line-height: 1.1;
+	}
+
+	.prose-lg h2 {
+		font-size: 2.25rem;
+		line-height: 1.15;
+	}
+
+	.prose-lg h3 {
+		font-size: 1.75rem;
+		line-height: 1.2;
+	}
+
+	/* Ensure dark mode styling */
+	.prose.dark,
+	.dark .prose {
+		color: oklch(0.7 0.01 260);
+	}
+
+	.prose.dark h1,
+	.dark .prose h1,
+	.prose.dark h2,
+	.dark .prose h2,
+	.prose.dark h3,
+	.dark .prose h3,
+	.prose.dark h4,
+	.dark .prose h4,
+	.prose.dark h5,
+	.dark .prose h5,
+	.prose.dark h6,
+	.dark .prose h6 {
+		color: var(--foreground) !important;
 	}
 }
 

@@ -49,7 +49,7 @@ export const projectTypes: ProjectType[] = [
 export const pricingTiers: PricingTier[] = [
 	{
 		id: 'baseline',
-		name: 'Baseline Brawler',
+		name: 'Foundational',
 		price: '$15K+',
 		timeline: '4-6 weeks',
 		scope: '3-4 layouts, light CMS',
@@ -66,7 +66,7 @@ export const pricingTiers: PricingTier[] = [
 	},
 	{
 		id: 'growth',
-		name: 'Growth Engine',
+		name: 'Scalable',
 		price: '$25K+',
 		timeline: '6-8 weeks',
 		scope: '6-8 layouts, modular components',
@@ -84,7 +84,7 @@ export const pricingTiers: PricingTier[] = [
 	},
 	{
 		id: 'flagship',
-		name: 'Flagship Flex',
+		name: 'Enterprise',
 		price: '$40K+',
 		timeline: '10-14 weeks',
 		scope: 'Auth, dashboards, APIs',

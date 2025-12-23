@@ -22,9 +22,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://houseofgiants.com'),
 	title: 'Custom Web Development Partner in Denver | House of Giants',
 	description:
-		'Denver development studio partnering with founders who care about craft. No bullshit, no templates—just custom web development that scales.',
+		'Denver development studio partnering with founders who care about craft. No bullshit, no templates...just custom web development that scales.',
 	keywords: [
 		'custom web development',
 		'web development partner',

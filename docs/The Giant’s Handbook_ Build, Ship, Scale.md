@@ -12,7 +12,7 @@
 
 ***Who we are*** **::** We build **high‑performance websites and web apps** for **startups/scale‑ups, multi‑location restaurants (QSR), and creative/enterprise teams**. Our stance: **No templates. No bloat. Tech‑agnostic. Results‑first.** 
 
-***What we sell*** **::** Three transparent build tiers: **Baseline Brawler ($15k+)**, **Growth Engine ($25k+)**, **Flagship Flex ($40k+)** with a **flat monthly billing model** until completion. 
+***What we sell*** **::** Three transparent build tiers: **Foundational ($15k+)**, **Scalable ($25k+)**, **Enterprise ($40k+)** with a **flat monthly billing model** until completion. 
 
 **How we win:**
 
@@ -194,11 +194,11 @@ The rejection of Anti-Personas directly supports our operational tenets:
 
 **Packages** (price floor \+ signals):
 
-* **Baseline Brawler — $15k+** (3–4 layouts, light CMS, core flows). 
+* **Foundational — $15k+** (3–4 layouts, light CMS, core flows). 
 
-* **Growth Engine — $25k+** (6–8 layouts, modular components, directories, admin‑friendly backend). 
+* **Scalable — $25k+** (6–8 layouts, modular components, directories, admin‑friendly backend). 
 
-* **Flagship Flex — $40k+** (auth flows, role‑based dashboards, APIs/real‑time, custom content types). 
+* **Enterprise — $40k+** (auth flows, role‑based dashboards, APIs/real‑time, custom content types). 
 
 **Billing model:** **Flat monthly** until completion; scope/timeline set up front; prorate if we finish early; continue monthly if scope/time expands. 
 
