@@ -6,7 +6,7 @@ interface SectionHeaderProps {
 	eyebrow?: string;
 	title: React.ReactNode;
 	subtitle?: React.ReactNode;
-	description?: string;
+	description?: React.ReactNode;
 	align?: 'left' | 'center';
 	className?: string;
 }
@@ -17,9 +17,9 @@ export function SectionHeader({ eyebrow, title, subtitle, description, align = '
 			{eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}
 			<h2 className="heading-2 mb-4">{title} {subtitle && <GradientText className="block">{subtitle}</GradientText>}</h2>
 			{description && (
-				<p className={cn('body-large text-muted-foreground max-w-2xl', align === 'center' && 'mx-auto')}>
+				<div className={cn('body-large text-muted-foreground max-w-2xl', align === 'center' && 'mx-auto')}>
 					{description}
-				</p>
+				</div>
 			)}
 		</div>
 	);

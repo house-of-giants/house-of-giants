@@ -1,3 +1,6 @@
+import * as React from 'react';
+import Link from 'next/link';
+
 export interface ProjectType {
 	id: 'marketing' | 'product' | 'application';
 	title: string;
@@ -19,7 +22,7 @@ export interface PricingTier {
 
 export interface PricingFaq {
 	question: string;
-	answer: string;
+	answer: string | React.ReactNode;
 }
 
 export const projectTypes: ProjectType[] = [
@@ -129,8 +132,16 @@ export const pricingFaqs: PricingFaq[] = [
 	},
 	{
 		question: 'What about ongoing work?',
-		answer:
-			'We offer dedicated development pods for ongoing partnerships. Predictable monthly pricing, consistent velocity. Perfect for teams that need steady development capacity.',
+		answer: (
+			<>
+				We offer{' '}
+				<Link href="/dedicated-teams" className="text-primary hover:underline font-medium">
+					dedicated development pods
+				</Link>{' '}
+				for ongoing partnerships. Predictable monthly pricing, consistent velocity. Perfect for teams that need
+				steady development capacity.
+			</>
+		),
 	},
 ];
 

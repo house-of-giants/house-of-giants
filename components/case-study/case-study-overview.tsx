@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
 import { CaseStudy } from '@/lib/data/case-studies';
 import { Section } from '@/components/templates/section';
 import { SectionHeader } from '@/components/templates/section-header';
@@ -52,11 +53,36 @@ export function CaseStudyOverview({ study }: CaseStudyOverviewProps) {
 								<div>
 									<p className="eyebrow mb-2">Role</p>
 									<div className="flex flex-wrap gap-2">
-										{study.services.map((service) => (
-											<span key={service} className="text-muted-foreground bg-muted/50 px-2 py-1 text-sm">
-												{service}
-											</span>
-										))}
+										{study.services.map((service) => {
+											// Map service strings to IDs for anchor linking
+											const serviceIdMap: Record<string, string> = {
+												'Web Design': 'design',
+												'Web App Design': 'design',
+												'Web Development': 'development',
+												'Web App Development': 'development',
+												'Platform Development': 'development',
+												'UX Architecture': 'ux',
+												'Brand Strategy': 'strategy',
+											};
+											const serviceId = serviceIdMap[service];
+
+											return serviceId ? (
+												<Link
+													key={service}
+													href={`/services#${serviceId}`}
+													className="text-muted-foreground bg-muted/50 hover:bg-primary/10 hover:text-primary transition-colors px-2 py-1 text-sm"
+												>
+													{service}
+												</Link>
+											) : (
+												<span
+													key={service}
+													className="text-muted-foreground bg-muted/50 px-2 py-1 text-sm"
+												>
+													{service}
+												</span>
+											);
+										})}
 									</div>
 								</div>
 

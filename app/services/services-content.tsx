@@ -55,7 +55,15 @@ const processPhases = [
 	},
 	{
 		label: 'Scale',
-		description: 'We train your team, hand everything over, then help you optimize and grow.',
+		description: (
+			<>
+				We train your team, hand everything over, then help you optimize and grow through our{' '}
+				<Link href="/dedicated-teams" className="text-primary hover:underline">
+					dedicated pods
+				</Link>
+				.
+			</>
+		),
 		substeps: ['Train your team to own it', 'Improve based on real data'],
 		deliverables: ['Team training', 'Documentation', 'Performance tuning', 'Growth plan'],
 		icon: TrendingUp,
@@ -142,7 +150,16 @@ export default function ServicesContent() {
 						eyebrow="What We Build"
 						title="Full-stack web development."
 						subtitle="From strategy to deployment."
-						description="Everything you need to launch a custom web application that actually works. Strategy, design, development, and ongoing support. All under one roof."
+						description={
+							<>
+								Everything you need to launch a custom web application that actually works. Strategy,
+								design, development, and ongoing support. Delivered via{' '}
+								<Link href="/dedicated-teams" className="text-primary hover:underline">
+									dedicated engineering pods
+								</Link>{' '}
+								or focused project builds.
+							</>
+						}
 						className="mb-16"
 					/>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import {
 	Crown,
@@ -258,7 +259,16 @@ export default function DedicatedTeamsContent() {
 						<SectionHeader
 							eyebrow="The Model"
 							title="What the heck is an engineering pod?"
-							description="Think of it as a 'plug-and-play' dev team. Most agencies sell you hours or projects; we sell you a self-sustaining unit of senior talent."
+							description={
+								<>
+									Think of it as a &apos;plug-and-play&apos; dev team. Most agencies sell you hours or projects; we sell
+									you a self-sustaining unit of senior talent capable of executing our full range of{' '}
+									<Link href="/services" className="text-primary hover:underline">
+										development services
+									</Link>
+									.
+								</>
+							}
 							className="mb-12 md:mb-16"
 						/>
 

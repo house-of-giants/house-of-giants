@@ -39,8 +39,7 @@ const dedicatedTeamsJsonLd = {
 	'@type': 'Service',
 	serviceType: 'Dedicated Development Team',
 	name: 'Engineering Pods',
-	description:
-		'A fully managed, senior-led development team that integrates directly into your product roadmap.',
+	description: 'A fully managed, senior-led development team that integrates directly into your product roadmap.',
 	provider: {
 		'@type': 'Organization',
 		name: 'House of Giants',
@@ -85,10 +84,7 @@ const dedicatedTeamsJsonLd = {
 export default function DedicatedTeamsPage() {
 	return (
 		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(dedicatedTeamsJsonLd) }}
-			/>
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(dedicatedTeamsJsonLd) }} />
 			<DedicatedTeamsContent />
 		</>
 	);

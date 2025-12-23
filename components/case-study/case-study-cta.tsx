@@ -31,9 +31,9 @@ export function CaseStudyCTA() {
 									<ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
 								</Button>
 							</Link>
-							<Link href="/work">
+							<Link href="/dedicated-teams">
 								<Button variant="outline" size="lg" className="h-14 px-8 text-lg">
-									View More Work
+									Build a Pod
 								</Button>
 							</Link>
 						</div>

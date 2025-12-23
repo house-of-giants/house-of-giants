@@ -1,3 +1,6 @@
+import * as React from 'react';
+import Link from 'next/link';
+
 export interface PodTier {
 	id: 'starter' | 'standard' | 'full';
 	name: string;
@@ -21,7 +24,7 @@ export interface PodResponsibility {
 
 export interface PodFaq {
 	question: string;
-	answer: string;
+	answer: string | React.ReactNode;
 }
 
 export const podTiers: PodTier[] = [
@@ -156,13 +159,31 @@ export const partnerResponsibilities: PodResponsibility[] = [
 export const podFaqs: PodFaq[] = [
 	{
 		question: 'How is this different from hiring contractors?',
-		answer:
-			'Contractors are bodies you manage. A Pod is a complete, managed development unit with its own leadership. We handle architecture, code reviews, sprints, and quality—you just provide requirements and direction.',
+		answer: (
+			<>
+				Contractors are bodies you manage. A Pod is a complete, managed development unit with its own leadership.
+				We handle architecture, code reviews, sprints, and quality—you just provide requirements and direction.
+				See how this works in our{' '}
+				<Link href="/work" className="text-primary hover:underline font-medium">
+					case studies
+				</Link>
+				.
+			</>
+		),
 	},
 	{
 		question: 'Do you offer white-label partnerships?',
-		answer:
-			"Yes. While we bring our own process and Pod OS, we can work under your brand and bridge our tools into your client's view. We're happy to be the invisible engine behind your agency's delivery.",
+		answer: (
+			<>
+				Yes. While we bring our own process and Pod OS, we can work under your brand and bridge our tools into
+				your client&apos;s view. We&apos;re happy to be the invisible engine behind your agency&apos;s delivery.
+				Check out our{' '}
+				<Link href="/services" className="text-primary hover:underline font-medium">
+					full range of services
+				</Link>{' '}
+				to see how we can support you.
+			</>
+		),
 	},
 	{
 		question: 'What if I need to scale up or down?',

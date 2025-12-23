@@ -49,10 +49,11 @@ export function PricingTeaser() {
 				<div className="mb-16 text-center">
 					<Eyebrow className="mb-4">Transparent Pricing</Eyebrow>
 					<h2 className="heading-2 mb-4">
-						Dedicated development teams. <GradientText>Fixed monthly pricing.</GradientText>
+						Dedicated development teams. <br />
+						<GradientText>Fixed monthly pricing.</GradientText>
 					</h2>
 					<p className="body-large text-muted-foreground mx-auto max-w-2xl">
-						Tired of project-based pricing? We offer dedicated development pods—self-sustaining teams that work as an
+						Tired of project-based pricing? We offer dedicated development pods. Self-sustaining teams that work as an
 						extension of yours. Predictable cost, consistent velocity.
 					</p>
 				</div>

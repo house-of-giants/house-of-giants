@@ -142,6 +142,45 @@ export default function WorkContent() {
 							</Button>
 						</div>
 					)}
+
+					<div className="mt-32 border-t border-border pt-20">
+						<div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+							<div>
+								<h2 className="heading-2 mb-6">
+									Looking for something <br />
+									<GradientText>more permanent?</GradientText>
+								</h2>
+								<p className="body-large text-muted-foreground mb-8">
+									Beyond individual projects, we provide dedicated engineering pods to help you scale
+									your internal capacity without the hiring headache.
+								</p>
+								<div className="flex flex-wrap gap-4">
+									<Button href="/dedicated-teams" variant="default" size="lg">
+										Explore Dedicated Pods
+									</Button>
+									<Button href="/services" variant="outline" size="lg">
+										View Our Services
+									</Button>
+								</div>
+							</div>
+							<div className="bg-card/50 border border-border rounded-2xl p-8 backdrop-blur-sm">
+								<h3 className="heading-4 mb-4 text-primary">Why partner with us?</h3>
+								<ul className="space-y-4">
+									{[
+										'Senior-led architecture on every build',
+										'No junior-only teams or learning on your dime',
+										'Direct access to principals and architects',
+										'Battle-tested workflows and proven velocity',
+									].map((benefit) => (
+										<li key={benefit} className="flex items-start gap-3 text-sm text-muted-foreground">
+											<div className="mt-1 size-1.5 shrink-0 rounded-full bg-primary" />
+											{benefit}
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+					</div>
 				</Section>
 			</main>
 			<Footer />

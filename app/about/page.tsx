@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { MapPin, Code, Users, Mountain, Globe, Terminal, Shield } from 'lucide-react';
 import { Header, Footer } from '@/components/organisms';
@@ -190,20 +191,18 @@ export default function AboutPage() {
 
 							<div className="text-muted-foreground space-y-4 text-lg leading-relaxed">
 								<p>
-									A Colorado native with over a decade of experience building custom web applications. House of Giants
-									was founded in 2017 with a simple idea: great work happens when you cut the bureaucracy and focus on
-									the craft.
+									A Colorado native with over a decade of experience building{' '}
+									<Link href="/services" className="text-primary hover:underline">
+										custom web applications
+									</Link>
+									. House of Giants was founded in 2017 with a simple idea: great work happens when you cut the
+									bureaucracy and focus on the craft.
 								</p>
 								<p>
 									Dom is a developer first—still writing code every day, architecting systems, and staying hands-on with
 									every project. When a project needs more firepower, he brings in specialists from a network built over
 									years of collaboration. Developers, designers, and strategists who meet his standards. No random
 									contractors. No offshore surprises.
-								</p>
-								<p>
-									The pod model allows House of Giants to scale the right team for each project without the overhead of
-									a traditional agency. It provides dedicated development teams for founders who need senior talent
-									integrated directly into their product roadmap.
 								</p>
 							</div>
 
