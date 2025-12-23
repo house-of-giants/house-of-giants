@@ -15,6 +15,7 @@ export interface ProcessStepData {
 export const mainNavigation: NavItem[] = [
 	{ name: 'Work', href: '/work' },
 	{ name: 'Services', href: '/services' },
+	{ name: 'Pods', href: '/dedicated-teams' },
 	{ name: 'About', href: '/about' },
 	{ name: 'Blog', href: '/blog' },
 	{ name: 'Pricing', href: '/pricing' },
@@ -24,14 +25,13 @@ export const footerNavigation: NavItem[] = [...mainNavigation, { name: 'Contact'
 
 export const audienceNavigation: NavItem[] = [
 	{ name: 'For Startups', href: '/for-startups' },
-	{ name: 'For Agencies', href: '/for-agencies' },
 ];
 
 export const socialLinks: NavItem[] = [
-	{ name: 'Twitter / X', href: 'https://x.com/haborhouse', external: true },
-	{ name: 'LinkedIn', href: 'https://linkedin.com/company/houseofgiants', external: true },
-	{ name: 'GitHub', href: 'https://github.com/houseofgiants', external: true },
-	{ name: 'Dribbble', href: 'https://dribbble.com/houseofgiants', external: true },
+	{ name: 'Twitter / X', href: 'https://x.com/_houseofgiants', external: true },
+	{ name: 'LinkedIn', href: 'https://linkedin.com/company/house-of-giants', external: true },
+	{ name: 'GitHub', href: 'https://github.com/house-of-giants', external: true },
+	{ name: 'Dribbble', href: 'https://dribbble.com/house-of-giants', external: true },
 ];
 
 export const nextSteps: ProcessStepData[] = [

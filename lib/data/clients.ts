@@ -36,14 +36,14 @@ export const testimonials: Testimonial[] = [
 		quote:
 			'They even took the time for in-depth research before calls which proved to me they understood the history and path.',
 		author: 'Bodie Johnson',
-		title: 'Founder',
-		company: '',
+		title: 'CEO & Owner',
+		company: 'BackForty Management',
 	},
 	{
 		quote:
 			'I was most impressed with how seriously they took my ideas and incorporated them into their awesome design ability.',
 		author: 'Sheryl Glubok',
-		title: 'Business Owner',
+		title: 'Independent Filmmaker',
 		company: '',
 	},
 	{
@@ -51,19 +51,19 @@ export const testimonials: Testimonial[] = [
 			"The outcome has been fantastic, as we're successfully generating new people who want to get involved in our program.",
 		author: 'Ann Marie Beresford',
 		title: 'Program Director',
-		company: '',
+		company: 'Adaptive Sports Association',
 	},
 	{
 		quote: 'House of Giants was really forward-thinking in their design.',
 		author: 'Devan Crean',
-		title: 'Marketing Director',
-		company: '',
+		title: 'Former Marketing & Communications Manager',
+		company: 'Air Methods',
 	},
 	{
 		quote: 'They do a great job at getting to know the brand and investing in our collaboration.',
 		author: 'Katie Zak',
-		title: 'Brand Manager',
-		company: '',
+		title: 'Marketing Director',
+		company: 'Untapped Learning',
 	},
 ];
 

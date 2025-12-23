@@ -145,9 +145,9 @@ export const partnerResponsibilities: PodResponsibility[] = [
 		],
 	},
 	{
-		category: 'Pod Enablement & Access',
+		category: 'Pod Enablement & Context',
 		items: [
-			'Provide access to repos, environments, tools, and services',
+			'Provide access to any existing repos, environments, and documentation',
 			'Supply a project or account manager for coordination',
 		],
 	},
@@ -162,7 +162,7 @@ export const podFaqs: PodFaq[] = [
 	{
 		question: 'Do you offer white-label partnerships?',
 		answer:
-			"Yes, but it's not required. We prefer to work as House of Giants when possible—it's simpler for everyone. But if your client relationships require white-labeling, we're happy to work under your brand, in your tools, invisible to your clients.",
+			"Yes. While we bring our own process and Pod OS, we can work under your brand and bridge our tools into your client's view. We're happy to be the invisible engine behind your agency's delivery.",
 	},
 	{
 		question: 'What if I need to scale up or down?',
@@ -172,17 +172,17 @@ export const podFaqs: PodFaq[] = [
 	{
 		question: 'How do you handle communication?',
 		answer:
-			"Your Pod Lead is your single point of contact. They join your Slack, attend your standups, and integrate into your workflow. To your team, they're just another colleague.",
+			"Your Pod Lead is your single point of contact. We bring you into our dedicated delivery channels for full transparency, providing real-time visibility into sprints, blockers, and progress without the management overhead.",
 	},
 	{
 		question: 'What technologies do you work with?',
 		answer:
-			"We're technology-agnostic but specialize in modern web stacks: React, Next.js, Node, TypeScript, headless CMS platforms, and cloud infrastructure. If it's web, we build it.",
+			"We lead with a modern, high-velocity stack: React, Next.js, Node, TypeScript, and headless CMS platforms. While we bring our own proven toolchain (Pod OS), we ensure it integrates seamlessly with your target environment for final delivery.",
 	},
 	{
 		question: 'How fast can we start?',
 		answer:
-			'Most Pods are operational within 2-3 weeks of signing. We run a structured onboarding workshop to establish architecture, repos, and workflows before sprints begin.',
+			'Most Pods are operational within 2 weeks. We run a structured onboarding to deploy the Pod OS, establish the technical foundation, and audit any existing codebase so we can start shipping immediately.',
 	},
 ];
 
