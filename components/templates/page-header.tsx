@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { Breadcrumbs, BreadcrumbItem } from '@/components/molecules';
 import { GradientText } from '@/components/atoms/gradient-text';
@@ -43,19 +42,9 @@ export function PageHeader({
 	className,
 	contentClassName,
 }: PageHeaderProps) {
-	const [mounted, setMounted] = React.useState(false);
-
-	React.useEffect(() => {
-		setMounted(true);
-	}, []);
-
 	return (
 		<section
-			className={cn(
-				'relative flex items-center justify-center overflow-hidden pt-32 pb-20',
-				minHeight,
-				className
-			)}
+			className={cn('relative flex items-center justify-center overflow-hidden pt-32 pb-20', minHeight, className)}
 		>
 			{/* Background */}
 			<div className="bg-background absolute inset-0 overflow-visible">
@@ -63,58 +52,29 @@ export function PageHeader({
 				<NoiseOverlay />
 			</div>
 
-			{/* Content */}
 			<div className="container-wide relative z-10">
-				{/* Breadcrumbs */}
-				{!hideBreadcrumbs && <Breadcrumbs items={breadcrumbs} className="text-left mb-8 mt-4" />}
+				{!hideBreadcrumbs && <Breadcrumbs items={breadcrumbs} variant="hero" className="mb-8" />}
 
 				{/* Centered Content */}
 				<div className={cn('text-center', contentClassName)}>
 					{/* Eyebrow */}
 					{eyebrow && (
-						<div
-							className={cn('flex justify-center opacity-0', mounted && 'animate-slide-up')}
-							style={{ animationDelay: '0.1s' }}
-						>
-							<div className="bg-background/50 border-border mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1 backdrop-blur-sm">
+						<div className="flex justify-center">
+							<div className="bg-background/50 border-border mb-6 inline-flex items-center gap-2 border px-3 py-1 backdrop-blur-sm">
 								<StatusIndicator />
-								<span className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
-									{eyebrow}
-								</span>
+								<span className="text-muted-foreground text-xs font-medium tracking-wider uppercase">{eyebrow}</span>
 							</div>
 						</div>
 					)}
 
 					{/* Title */}
-					<h1
-						className={cn('heading-display mb-6 opacity-0', mounted && 'animate-slide-up')}
-						style={{ animationDelay: eyebrow ? '0.2s' : '0.1s' }}
-					>
-						{title}
-					</h1>
+					<h1 className="heading-display mb-6">{title}</h1>
 
 					{/* Description */}
-					{description && (
-						<div
-							className={cn(
-								'body-large text-muted-foreground mx-auto mb-10 max-w-2xl opacity-0',
-								mounted && 'animate-slide-up'
-							)}
-							style={{ animationDelay: eyebrow ? '0.3s' : '0.2s' }}
-						>
-							{description}
-						</div>
-					)}
+					{description && <div className="body-large text-muted-foreground mx-auto mb-10 max-w-2xl">{description}</div>}
 
 					{/* Actions */}
-					{actions && (
-						<div
-							className={cn('flex flex-wrap justify-center gap-4 opacity-0', mounted && 'animate-slide-up')}
-							style={{ animationDelay: eyebrow ? '0.4s' : '0.3s' }}
-						>
-							{actions}
-						</div>
-					)}
+					{actions && <div className="flex flex-wrap justify-center gap-4">{actions}</div>}
 				</div>
 			</div>
 		</section>
@@ -133,4 +93,3 @@ export function GradientTitle({ children }: { children: React.ReactNode }) {
 		</>
 	);
 }
-

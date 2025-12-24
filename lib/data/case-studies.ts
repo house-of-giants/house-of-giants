@@ -375,7 +375,7 @@ export const caseStudies: CaseStudy[] = [
 		slug: 'shakey-graves',
 		title: 'Shakey Graves',
 		subtitle: 'Movie of the Week',
-		hook: 'We shipped AI-powered creative tools in 2023—before the boom. Over 1 billion unique soundtrack combinations.',
+		hook: 'We shipped AI-powered creative tools in 2023...before the AI boom. Over 1 billion unique soundtrack combinations.',
 		client: {
 			name: 'Shakey Graves',
 			description: 'Grammy-nominated artist known for bold creative choices and genre-defying music',
@@ -751,4 +751,62 @@ export function getRelatedCaseStudies(currentSlug: string, limit: number = 4): C
 
 export function getAllSlugs(): string[] {
 	return caseStudies.map((study) => study.slug);
+}
+
+// -----------------------------------------------------------------------------
+// Filtering Utilities
+// -----------------------------------------------------------------------------
+
+/**
+ * Get case studies that match any of the provided service keywords
+ */
+export function getCaseStudiesByServices(serviceKeywords: string[], limit: number = 3): CaseStudy[] {
+	const normalizedKeywords = serviceKeywords.map((k) => k.toLowerCase());
+
+	return caseStudies
+		.filter((study) =>
+			study.services.some((service) =>
+				normalizedKeywords.some(
+					(keyword) => service.toLowerCase().includes(keyword) || keyword.includes(service.toLowerCase())
+				)
+			)
+		)
+		.slice(0, limit);
+}
+
+/**
+ * Get case studies with partner credits (white-label/agency work)
+ */
+export function getPartnershipCaseStudies(limit: number = 3): CaseStudy[] {
+	// Studies with partner credits are explicit partnerships
+	const partnered = caseStudies.filter((study) => study.partnerCredit);
+
+	// If not enough partnered studies, supplement with featured ones
+	if (partnered.length >= limit) {
+		return partnered.slice(0, limit);
+	}
+
+	const remaining = caseStudies
+		.filter((study) => !study.partnerCredit && study.featured)
+		.slice(0, limit - partnered.length);
+
+	return [...partnered, ...remaining];
+}
+
+/**
+ * Get case studies by industry
+ */
+export function getCaseStudiesByIndustry(industries: string[], limit: number = 3): CaseStudy[] {
+	const normalizedIndustries = industries.map((i) => i.toLowerCase());
+
+	return caseStudies
+		.filter((study) => normalizedIndustries.some((ind) => study.industry.toLowerCase().includes(ind)))
+		.slice(0, limit);
+}
+
+/**
+ * Get case studies by type
+ */
+export function getCaseStudiesByType(types: CaseStudy['type'][], limit: number = 3): CaseStudy[] {
+	return caseStudies.filter((study) => types.includes(study.type)).slice(0, limit);
 }

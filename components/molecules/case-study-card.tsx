@@ -12,7 +12,6 @@ interface CaseStudyCardProps {
 	variant?: 'default' | 'minimal' | 'featured';
 	className?: string;
 	index?: number;
-	mounted?: boolean;
 }
 
 function hasQuantitativeStat(study: CaseStudy): boolean {
@@ -30,7 +29,6 @@ export function CaseStudyCard({
 	variant = 'default',
 	className,
 	index = 0,
-	mounted = true,
 }: CaseStudyCardProps) {
 	const isMinimal = variant === 'minimal';
 	const isFeatured = variant === 'featured';
@@ -112,12 +110,10 @@ export function CaseStudyCard({
 		<Link
 			href={`/work/${study.slug}`}
 			className={cn(
-				'group relative block h-full overflow-hidden rounded-2xl border opacity-0 transition-all duration-500',
+				'group relative block h-full overflow-hidden border transition-all duration-500',
 				'bg-background border-border hover:border-primary/50 hover:shadow-2xl',
-				mounted && 'animate-slide-up',
 				className
 			)}
-			style={{ animationDelay: `${0.1 + index * 0.08}s` }}
 		>
 			<article className="flex h-full flex-col">
 				{/* Image Section */}
@@ -136,9 +132,9 @@ export function CaseStudyCard({
 						)}
 					/>
 
-					<div className="bg-background/90 absolute top-4 left-4 inline-flex rounded-full px-3 py-1 text-xs font-medium backdrop-blur-sm">
-						{study.industry}
-					</div>
+				<div className="bg-background/90 absolute top-4 left-4 inline-flex px-3 py-1 text-xs font-medium backdrop-blur-sm">
+					{study.industry}
+				</div>
 				</div>
 
 				{/* Content Section */}
@@ -181,18 +177,18 @@ export function CaseStudyCard({
 							<div className="space-y-6">
 								<div className="flex flex-wrap gap-2">
 									{study.services.slice(0, 3).map((service) => (
-										<span
-											key={service}
-											className="border-border text-muted-foreground bg-background/50 group-hover:border-primary/30 inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs transition-colors"
-										>
-											{service}
-										</span>
+									<span
+										key={service}
+										className="border-border text-muted-foreground bg-background/50 group-hover:border-primary/30 inline-flex items-center border px-2.5 py-0.5 text-xs transition-colors"
+									>
+										{service}
+									</span>
 									))}
 								</div>
 
 								<div className="border-border border-t pt-4">
 									{hasQuantitativeStat(study) ? (
-										<div className="bg-primary/10 group-hover:bg-primary/20 rounded-xl p-4 transition-colors duration-300">
+										<div className="bg-primary/10 group-hover:bg-primary/20 p-4 transition-colors duration-300">
 											<div className="flex items-baseline gap-2">
 												<span className="font-display text-primary text-3xl font-bold tracking-tight">
 													{study.results[0].value}
@@ -212,7 +208,7 @@ export function CaseStudyCard({
 										</div>
 									) : study.testimonial ? (
 										<div className="relative pl-4">
-											<div className="bg-primary/20 group-hover:bg-primary absolute top-0 bottom-0 left-0 w-1 rounded-full transition-colors duration-300" />
+											<div className="bg-primary/20 group-hover:bg-primary absolute top-0 bottom-0 left-0 w-1 transition-colors duration-300" />
 											<p className="text-muted-foreground text-sm leading-relaxed italic">
 												&quot;{truncateQuote(study.testimonial.quote)}&quot;
 											</p>
@@ -240,7 +236,7 @@ export function CaseStudyCard({
 				</div>
 
 				{/* Border Overlay */}
-				<div className="border-primary pointer-events-none absolute inset-0 rounded-2xl border-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+				<div className="border-primary pointer-events-none absolute inset-0 border-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 			</article>
 		</Link>
 	);

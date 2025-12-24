@@ -60,7 +60,7 @@ export function Differentiation() {
 					return (
 						<div
 							key={pillar.title}
-							className="bg-background group relative"
+							className="bg-background group hover:border-primary/50 relative border border-transparent transition-colors"
 							onMouseEnter={() => setHoveredIndex(index)}
 							onMouseLeave={() => setHoveredIndex(null)}
 						>

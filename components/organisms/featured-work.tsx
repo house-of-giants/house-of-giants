@@ -2,9 +2,9 @@ import { Section, SectionHeader } from '@/components/templates';
 import { getFeaturedCaseStudies } from '@/lib/data/case-studies';
 import { Button } from '@/components/ui/button';
 import { GradientText } from '@/components/atoms/gradient-text';
-import { NoiseOverlay } from '@/components/backgrounds/noise-overlay';
+import { SectionBackground } from '@/components/backgrounds/section-background';
+import { AnimatedArrow } from '@/components/atoms/animated-arrow';
 import { CaseStudyCard } from '@/components/molecules/case-study-card';
-import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
 export function FeaturedWork() {
@@ -12,12 +12,7 @@ export function FeaturedWork() {
 
 	return (
 		<Section className="overflow-hidden" maskBottom="angle">
-			<div className="pointer-events-none absolute inset-0 -z-10">
-				<div className="bg-muted/10 absolute inset-0" />
-				<div className="gradient-section-glow absolute inset-0" />
-				<NoiseOverlay opacity={0.2} className="mix-blend-overlay" />
-				<div className="bg-primary/10 absolute top-0 left-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[100px]" />
-			</div>
+			<SectionBackground variant="glow" glowPosition="top" />
 
 			<SectionHeader
 				eyebrow="Selected Work"
@@ -39,7 +34,7 @@ export function FeaturedWork() {
 				<Link href="/work">
 					<Button variant="outline" size="lg" className="group gap-2">
 						View All Projects
-						<ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+						<AnimatedArrow />
 					</Button>
 				</Link>
 			</div>

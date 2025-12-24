@@ -26,12 +26,7 @@ export default async function OGImage() {
 				</div>
 			}
 		>
-			<OGHeadline
-				lines={[
-					{ text: 'Insights on building' },
-					{ gradient: 'products that scale.' },
-				]}
-			/>
+			<OGHeadline lines={[{ text: 'Insights on building' }, { gradient: 'products that scale.' }]} />
 			<p style={{ ...ogText.body, margin: 0, marginBottom: '32px', maxWidth: '550px' }}>
 				Practical advice for startups and founders from the House of Giants team.
 			</p>

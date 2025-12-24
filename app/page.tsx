@@ -1,6 +1,4 @@
 import {
-	Header,
-	Footer,
 	Hero,
 	Differentiation,
 	FeaturedWork,
@@ -11,17 +9,13 @@ import {
 
 export default function Home() {
 	return (
-		<>
-			<Header />
-			<main>
-				<Hero />
-				<Differentiation />
-				<FeaturedWork />
-				<ServicesPreview />
-				<SocialProof />
-				<PricingTeaser />
-			</main>
-			<Footer />
-		</>
+		<main>
+			<Hero />
+			<Differentiation />
+			<FeaturedWork />
+			<ServicesPreview />
+			<SocialProof />
+			<PricingTeaser />
+		</main>
 	);
 }

@@ -18,11 +18,7 @@ export default async function OGImage() {
 				</span>
 			}
 		>
-			<OGHeadline
-				lines={[
-					{ text: "You've outgrown", gradient: 'templates.' },
-				]}
-			/>
+			<OGHeadline lines={[{ text: "You've outgrown", gradient: 'templates.' }]} />
 			<p style={{ ...ogText.body, margin: 0, marginBottom: '32px', maxWidth: '600px' }}>
 				Custom web development for startups ready for the next stage.
 			</p>
@@ -31,4 +27,3 @@ export default async function OGImage() {
 		{ ...size }
 	);
 }
-

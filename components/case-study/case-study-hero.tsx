@@ -33,7 +33,7 @@ export function CaseStudyHero({ study }: CaseStudyHeroProps) {
 			</div>
 
 			<div className="container-wide relative z-10 flex h-full flex-col justify-between pt-28 pb-12 md:pb-20 lg:pb-24">
-				<Breadcrumbs items={breadcrumbs} className="opacity-80" />
+				<Breadcrumbs items={breadcrumbs} variant="overlay" align="left" />
 				<Reveal>
 					<div className="space-y-6 md:space-y-8">
 						<div className="flex flex-wrap gap-3">

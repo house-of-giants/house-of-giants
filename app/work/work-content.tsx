@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import { cn } from '@/lib/utils';
-import { Header, Footer } from '@/components/organisms';
 import { PageHeader, GradientTitle, Section } from '@/components/templates';
 import { GradientText } from '@/components/atoms/gradient-text';
 import { Button } from '@/components/ui/button';
@@ -32,12 +31,7 @@ const filterCategories = [
 ] as const;
 
 export default function WorkContent() {
-	const [mounted, setMounted] = React.useState(false);
 	const [activeFilter, setActiveFilter] = React.useState<string>('all');
-
-	React.useEffect(() => {
-		setMounted(true);
-	}, []);
 
 	const filteredStudies = React.useMemo(() => {
 		const category = filterCategories.find((cat) => cat.id === activeFilter);
@@ -46,106 +40,94 @@ export default function WorkContent() {
 	}, [activeFilter]);
 
 	return (
-		<>
-			<Header />
-			<main>
-				<PageHeader
-					eyebrow="Custom Web Development • Case Studies"
-					title={
-						<>
-							Work that shipped.
-							<GradientTitle>With proof.</GradientTitle>
-						</>
-					}
-					description="We love what we do. And so do our partners. Check out what we've built together."
-					minHeight="min-h-[50vh]"
-				/>
+		<main>
+			<PageHeader
+				eyebrow="Custom Web Development • Case Studies"
+				title={
+					<>
+						Work that shipped.
+						<GradientTitle>With proof.</GradientTitle>
+					</>
+				}
+				description="We love what we do. And so do our partners. Check out what we've built together."
+				minHeight="min-h-[50vh]"
+			/>
 
-				<Section className="min-h-screen">
-					<div
-						className={cn('mb-16 flex justify-center opacity-0', mounted && 'animate-slide-up')}
-						style={{ animationDelay: '0.4s' }}
-					>
-						<h2 className="heading-2 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 text-center">
-							<span className="text-muted-foreground">I want to see</span>
-							<Select value={activeFilter} onValueChange={(value) => value && setActiveFilter(value)}>
-								<SelectTrigger className="border-primary text-primary hover:bg-primary/5 [&_svg]:text-primary font-display inline-flex h-auto w-auto cursor-pointer gap-2 border-0 border-b-2 bg-transparent px-0 py-0 text-3xl leading-[1.15] font-semibold tracking-tight transition-colors md:text-4xl lg:text-5xl [&_svg]:size-5 md:[&_svg]:size-6 lg:[&_svg]:size-7">
-									<SelectValue className="font-display">
-										{filterCategories.find((cat) => cat.id === activeFilter)?.label}
-									</SelectValue>
-								</SelectTrigger>
-								<SelectContent align="center" className="border-border bg-background w-auto! min-w-50 border">
-									{filterCategories.map((category) => (
-										<SelectItem key={category.id} value={category.id} className="px-4 py-3">
-											{category.label}
-										</SelectItem>
-									))}
-								</SelectContent>
-							</Select>
-						</h2>
+			<Section className="min-h-screen">
+				<div className="mb-16 flex justify-center">
+					<h2 className="heading-2 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 text-center">
+						<span className="text-muted-foreground">I want to see</span>
+						<Select value={activeFilter} onValueChange={(value) => value && setActiveFilter(value)}>
+							<SelectTrigger className="border-primary text-primary hover:bg-primary/5 [&_svg]:text-primary font-display inline-flex h-auto w-auto cursor-pointer gap-2 border-0 border-b-2 bg-transparent px-0 py-0 text-3xl leading-[1.15] font-semibold tracking-tight transition-colors md:text-4xl lg:text-5xl [&_svg]:size-5 md:[&_svg]:size-6 lg:[&_svg]:size-7">
+								<SelectValue className="font-display">
+									{filterCategories.find((cat) => cat.id === activeFilter)?.label}
+								</SelectValue>
+							</SelectTrigger>
+							<SelectContent align="center" className="border-border bg-background w-auto! min-w-50 border">
+								{filterCategories.map((category) => (
+									<SelectItem key={category.id} value={category.id} className="px-4 py-3">
+										{category.label}
+									</SelectItem>
+								))}
+							</SelectContent>
+						</Select>
+					</h2>
+				</div>
+
+				<div key={activeFilter} className="grid grid-cols-1 gap-8 md:grid-cols-2">
+					{filteredStudies.map((study) => (
+						<CaseStudyCard key={study.slug} study={study} />
+					))}
+				</div>
+
+				{filteredStudies.length === 0 && (
+					<div className="py-20 text-center">
+						<p className="text-muted-foreground text-lg">No case studies found for this filter.</p>
+						<Button variant="outline" className="mt-4" onClick={() => setActiveFilter('all')}>
+							Show everything
+						</Button>
 					</div>
+				)}
 
-					<div key={activeFilter} className="grid grid-cols-1 gap-8 md:grid-cols-2">
-						{filteredStudies.map((study, index) => (
-							<CaseStudyCard
-								key={study.slug}
-								study={study}
-								index={index}
-								mounted={mounted}
-							/>
-						))}
-					</div>
-
-					{filteredStudies.length === 0 && (
-						<div className="py-20 text-center">
-							<p className="text-muted-foreground text-lg">No case studies found for this filter.</p>
-							<Button variant="outline" className="mt-4" onClick={() => setActiveFilter('all')}>
-								Show everything
-							</Button>
-						</div>
-					)}
-
-					<div className="mt-32 border-t border-border pt-20">
-						<div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-							<div>
-								<h2 className="heading-2 mb-6">
-									Looking for something <br />
-									<GradientText>more permanent?</GradientText>
-								</h2>
-								<p className="body-large text-muted-foreground mb-8">
-									Beyond individual projects, we provide dedicated engineering pods to help you scale
-									your internal capacity without the hiring headache.
-								</p>
-								<div className="flex flex-wrap gap-4">
-									<Button href="/dedicated-teams" variant="default" size="lg">
-										Explore Dedicated Pods
-									</Button>
-									<Button href="/services" variant="outline" size="lg">
-										View Our Services
-									</Button>
-								</div>
-							</div>
-							<div className="bg-card/50 border border-border rounded-2xl p-8 backdrop-blur-sm">
-								<h3 className="heading-4 mb-4 text-primary">Why partner with us?</h3>
-								<ul className="space-y-4">
-									{[
-										'Senior-led architecture on every build',
-										'No junior-only teams or learning on your dime',
-										'Direct access to principals and architects',
-										'Battle-tested workflows and proven velocity',
-									].map((benefit) => (
-										<li key={benefit} className="flex items-start gap-3 text-sm text-muted-foreground">
-											<div className="mt-1 size-1.5 shrink-0 rounded-full bg-primary" />
-											{benefit}
-										</li>
-									))}
-								</ul>
+				<div className="border-border mt-32 border-t pt-20">
+					<div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+						<div>
+							<h2 className="heading-2 mb-6">
+								Looking for something <br />
+								<GradientText>more permanent?</GradientText>
+							</h2>
+							<p className="body-large text-muted-foreground mb-8">
+								Beyond individual projects, we provide dedicated engineering pods to help you scale your internal
+								capacity without the hiring headache.
+							</p>
+							<div className="flex flex-wrap gap-4">
+								<Button href="/dedicated-teams" variant="default" size="lg">
+									Explore Dedicated Pods
+								</Button>
+								<Button href="/services" variant="outline" size="lg">
+									View Our Services
+								</Button>
 							</div>
 						</div>
+						<div className="bg-card/50 border-border border p-8 backdrop-blur-sm">
+							<h3 className="heading-4 text-primary mb-4">Why partner with us?</h3>
+							<ul className="space-y-4">
+								{[
+									'Senior-led architecture on every build',
+									'No junior-only teams or learning on your dime',
+									'Direct access to principals and architects',
+									'Battle-tested workflows and proven velocity',
+								].map((benefit) => (
+									<li key={benefit} className="text-muted-foreground flex items-start gap-3 text-sm">
+										<div className="bg-primary mt-1 size-1.5 shrink-0 rounded-full" />
+										{benefit}
+									</li>
+								))}
+							</ul>
+						</div>
 					</div>
-				</Section>
-			</main>
-			<Footer />
-		</>
+				</div>
+			</Section>
+		</main>
 	);
 }

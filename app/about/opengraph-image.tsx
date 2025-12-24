@@ -28,12 +28,7 @@ export default async function OGImage() {
 				</div>
 			}
 		>
-			<OGHeadline
-				lines={[
-					{ text: 'No suits. No scripts.' },
-					{ gradient: 'Just the work.' },
-				]}
-			/>
+			<OGHeadline lines={[{ text: 'No suits. No scripts.' }, { gradient: 'Just the work.' }]} />
 			<p style={{ ...ogText.body, margin: 0, marginBottom: '32px', maxWidth: '650px' }}>
 				A founder-led custom web development partner for startups and scale-ups who care about craft.
 			</p>

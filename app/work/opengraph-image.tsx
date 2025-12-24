@@ -22,11 +22,7 @@ export default async function OGImage() {
 				</div>
 			}
 		>
-			<OGHeadline
-				lines={[
-					{ text: 'Real projects.', gradient: 'Real metrics.', gap: '20px' },
-				]}
-			/>
+			<OGHeadline lines={[{ text: 'Real projects.', gradient: 'Real metrics.', gap: '20px' }]} />
 			<p style={{ ...ogText.body, margin: 0, maxWidth: '600px' }}>
 				Case studies showcasing custom web applications that drive revenue and scale.
 			</p>

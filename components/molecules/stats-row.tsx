@@ -5,18 +5,15 @@ import { StatCard } from './stat-card';
 interface StatsRowProps {
 	stats: Array<{ value: string; label: string }>;
 	className?: string;
-	mounted?: boolean;
 }
 
-export function StatsRow({ stats, className, mounted = true }: StatsRowProps) {
+export function StatsRow({ stats, className }: StatsRowProps) {
 	return (
 		<div
 			className={cn(
-				'border-border grid grid-cols-[repeat(auto-fit,minmax(min(100%,140px),1fr))] gap-8 border-t pt-12 opacity-0 md:gap-12',
-				mounted && 'animate-slide-up',
+				'border-border grid grid-cols-[repeat(auto-fit,minmax(min(100%,140px),1fr))] gap-8 border-t pt-12 md:gap-12',
 				className
 			)}
-			style={{ animationDelay: '0.65s' }}
 		>
 			{stats.map((stat) => (
 				<StatCard key={stat.label} value={stat.value} label={stat.label} />

@@ -10,9 +10,16 @@ export interface BreadcrumbItem {
 	href: string;
 }
 
+type BreadcrumbVariant = 'default' | 'hero' | 'overlay';
+type BreadcrumbAlign = 'left' | 'center' | 'right';
+
 interface BreadcrumbsProps {
 	items?: BreadcrumbItem[];
 	className?: string;
+	/** Visual variant: 'default' (minimal), 'hero' (centered with container), 'overlay' (for hero images) */
+	variant?: BreadcrumbVariant;
+	/** Text alignment */
+	align?: BreadcrumbAlign;
 }
 
 // Keyword-rich breadcrumb labels for SEO
@@ -43,10 +50,10 @@ function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
 
 	segments.forEach((segment, index) => {
 		currentPath += `/${segment}`;
-		
+
 		// Use predefined label or format the segment
 		const label = BREADCRUMB_LABELS[currentPath] || formatSegment(segment);
-		
+
 		items.push({
 			label,
 			href: currentPath,
@@ -62,7 +69,7 @@ function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
 function formatSegment(segment: string): string {
 	return segment
 		.split('-')
-		.map(word => word.charAt(0).toUpperCase() + word.slice(1))
+		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
 		.join(' ');
 }
 
@@ -82,12 +89,12 @@ function generateBreadcrumbSchema(items: BreadcrumbItem[]) {
 	};
 }
 
-export function Breadcrumbs({ items: customItems, className }: BreadcrumbsProps) {
+export function Breadcrumbs({ items: customItems, className, variant = 'default', align = 'left' }: BreadcrumbsProps) {
 	const pathname = usePathname();
-	
+
 	// Use custom items if provided, otherwise generate from pathname
 	const items = customItems || generateBreadcrumbs(pathname);
-	
+
 	// Don't show breadcrumbs on homepage or if only one item
 	if (pathname === '/' || items.length <= 1) {
 		return null;
@@ -95,38 +102,41 @@ export function Breadcrumbs({ items: customItems, className }: BreadcrumbsProps)
 
 	const schema = generateBreadcrumbSchema(items);
 
+	// Determine alignment class
+	const alignClass = {
+		left: 'justify-start',
+		center: 'justify-center',
+		right: 'justify-end',
+	}[align];
+
+	const linkClass =
+		variant === 'overlay'
+			? 'text-white/50 hover:text-white/75 transition-colors duration-200'
+			: 'text-muted-foreground/50 hover:text-muted-foreground/80 transition-colors duration-200';
+
+	const currentClass = variant === 'overlay' ? 'text-white/65' : 'text-muted-foreground/70';
+
+	const separatorClass = variant === 'overlay' ? 'text-white/25' : 'text-muted-foreground/30';
+
 	return (
 		<>
-			{/* JSON-LD Schema */}
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-			/>
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-			{/* Visual Breadcrumbs */}
-			<nav
-				aria-label="Breadcrumb"
-				className={cn('mb-6 sm:mb-8', className)}
-			>
-				<ol className="flex flex-wrap items-center gap-2 text-sm">
+			<nav aria-label="Breadcrumb" className={cn('flex', alignClass, className)}>
+				<ol className="flex flex-wrap items-center gap-1.5 text-xs tracking-wide">
 					{items.map((item, index) => {
 						const isLast = index === items.length - 1;
 
 						return (
-							<li key={item.href} className="flex items-center gap-2">
-								{index > 0 && (
-									<ChevronRight className="text-muted-foreground size-3.5 shrink-0" aria-hidden="true" />
-								)}
-								
+							<li key={item.href} className="flex items-center gap-1.5">
+								{index > 0 && <ChevronRight className={cn('size-3 shrink-0', separatorClass)} aria-hidden="true" />}
+
 								{isLast ? (
-									<span className="text-foreground font-medium" aria-current="page">
+									<span className={currentClass} aria-current="page">
 										{item.label}
 									</span>
 								) : (
-									<Link
-										href={item.href}
-										className="text-muted-foreground hover:text-foreground transition-colors"
-									>
+									<Link href={item.href} className={linkClass}>
 										{item.label}
 									</Link>
 								)}
@@ -146,4 +156,3 @@ export function useBreadcrumbs(customItems?: BreadcrumbItem[]): BreadcrumbItem[]
 	const pathname = usePathname();
 	return customItems || generateBreadcrumbs(pathname);
 }
-

@@ -20,9 +20,7 @@ export default async function OGImage() {
 						border: `1px solid ${ogColors.primaryBorder}`,
 					}}
 				>
-					<span style={{ fontSize: '14px', fontWeight: 500, color: ogColors.primary }}>
-						White-Label Available
-					</span>
+					<span style={{ fontSize: '14px', fontWeight: 500, color: ogColors.primary }}>White-Label Available</span>
 				</div>
 			}
 		>

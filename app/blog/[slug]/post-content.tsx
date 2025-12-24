@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, Clock, Calendar, Share2, Twitter, Linkedin, Link as LinkIcon, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Header, Footer } from '@/components/organisms';
 import { Section } from '@/components/templates';
 import { GradientOrbs } from '@/components/backgrounds/gradient-orbs';
 import { NoiseOverlay } from '@/components/backgrounds/noise-overlay';
@@ -68,7 +67,6 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 
 	return (
 		<>
-			<Header />
 			{mounted && <ReadingProgress />}
 			<main className="relative">
 				{/* Premium Hero Section */}
@@ -310,7 +308,6 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 					</div>
 				</Section>
 			</main>
-			<Footer />
 		</>
 	);
 }

@@ -15,11 +15,7 @@ export default async function OGImage() {
 
 	return new ImageResponse(
 		<OGTemplate eyebrow="Pricing">
-			<OGHeadline
-				lines={[
-					{ text: 'No black boxes.', gradient: 'No surprises.', gap: '20px' },
-				]}
-			/>
+			<OGHeadline lines={[{ text: 'No black boxes.', gradient: 'No surprises.', gap: '20px' }]} />
 			<p style={{ ...ogText.body, margin: 0, marginBottom: '32px', maxWidth: '600px' }}>
 				Project-based pricing. Know your investment before we write a line of code.
 			</p>

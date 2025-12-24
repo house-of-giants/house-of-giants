@@ -155,10 +155,9 @@ export function OGTemplate({ eyebrow, children, footer }: OGTemplateProps) {
 	);
 }
 
-// Helper component for headline with gradient text
 interface HeadlineProps {
 	lines: Array<{
-		text: string;
+		text?: string;
 		gradient?: string;
 		gap?: string;
 	}>;
@@ -274,4 +273,3 @@ export function OGStats({ stats }: StatProps) {
 		</div>
 	);
 }
-

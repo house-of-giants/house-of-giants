@@ -17,16 +17,10 @@ export default async function OGImage() {
 		<OGTemplate
 			eyebrow="Dedicated Teams"
 			footer={
-				<span style={{ ...ogText.label, fontSize: '16px' }}>
-					Senior-led pods that integrate into your roadmap
-				</span>
+				<span style={{ ...ogText.label, fontSize: '16px' }}>Senior-led pods that integrate into your roadmap</span>
 			}
 		>
-			<OGHeadline
-				lines={[
-					{ text: 'Your product.', gradient: 'Our team.' },
-				]}
-			/>
+			<OGHeadline lines={[{ text: 'Your product.', gradient: 'Our team.' }]} />
 			<p style={{ ...ogText.body, margin: 0, marginBottom: '32px', maxWidth: '550px' }}>
 				A fully managed engineering team that treats your product like their own.
 			</p>
@@ -72,4 +66,3 @@ export default async function OGImage() {
 		{ ...size }
 	);
 }
-

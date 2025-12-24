@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist_Mono, Plus_Jakarta_Sans, Syne } from 'next/font/google';
 import { LenisProvider } from '@/components/providers/lenis-provider';
+import { Header, Footer } from '@/components/organisms';
 import './globals.css';
 
 const jakartaSans = Plus_Jakarta_Sans({
@@ -52,8 +53,7 @@ export const metadata: Metadata = {
 		url: 'https://houseofgiants.com',
 		siteName: 'House of Giants',
 		title: 'Custom Web Development Partner in Denver | House of Giants',
-		description:
-			'Founder-led development studio building custom web applications for people who care about craft.',
+		description: 'Founder-led development studio building custom web applications for people who care about craft.',
 		images: [
 			{
 				url: '/og-image.jpg',
@@ -220,7 +220,11 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={`${jakartaSans.variable} ${syne.variable} ${geistMono.variable}`}>
 			<body className="font-sans antialiased">
-				<LenisProvider>{children}</LenisProvider>
+				<LenisProvider>
+					<Header />
+					{children}
+					<Footer />
+				</LenisProvider>
 			</body>
 		</html>
 	);
