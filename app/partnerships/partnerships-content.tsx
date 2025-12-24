@@ -1,8 +1,4 @@
-'use client';
-
-import * as React from 'react';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
 import { Shield, Handshake, Rocket, ArrowUpRight, CheckCircle2, Zap, Users, Globe } from 'lucide-react';
 import { Section, SectionHeader } from '@/components/templates';
 import { GradientText } from '@/components/atoms/gradient-text';
@@ -52,12 +48,6 @@ const partnershipTypes = [
 ];
 
 export default function PartnershipsContent() {
-	const [mounted, setMounted] = React.useState(false);
-
-	React.useEffect(() => {
-		setMounted(true);
-	}, []);
-
 	return (
 		<main>
 			<Section
@@ -71,10 +61,7 @@ export default function PartnershipsContent() {
 				</div>
 
 				<div className="container-wide relative z-10 text-center">
-					<div
-						className={cn('flex justify-center opacity-0', mounted && 'animate-slide-up')}
-						style={{ animationDelay: '0.1s' }}
-					>
+					<div className="flex justify-center">
 						<div className="bg-background/50 border-border mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1 backdrop-blur-sm">
 							<StatusIndicator />
 							<span className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
@@ -83,21 +70,12 @@ export default function PartnershipsContent() {
 						</div>
 					</div>
 
-					<h1
-						className={cn('heading-display mb-6 opacity-0', mounted && 'animate-slide-up')}
-						style={{ animationDelay: '0.2s' }}
-					>
+					<h1 className="heading-display mb-6">
 						Good code makes <br className="hidden sm:block" />
 						<GradientText>good partners.</GradientText>
 					</h1>
 
-					<p
-						className={cn(
-							'body-large text-muted-foreground mx-auto mb-10 max-w-2xl opacity-0',
-							mounted && 'animate-slide-up'
-						)}
-						style={{ animationDelay: '0.3s' }}
-					>
+					<p className="body-large text-muted-foreground mx-auto mb-10 max-w-2xl">
 						We don&apos;t just build websites. We build technical infrastructure that helps agencies scale, consultants
 						look like heroes, and startups get funded. No bullshit, just results.
 					</p>
@@ -111,14 +89,10 @@ export default function PartnershipsContent() {
 						return (
 							<div
 								key={type.title}
-								className={cn(
-									'bg-background group border-border hover:border-primary/50 relative flex flex-col overflow-hidden rounded-2xl border p-8 opacity-0 transition-all hover:shadow-lg lg:p-10',
-									mounted && 'animate-slide-up'
-								)}
-								style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+								className="bg-background group border-border hover:border-primary/50 relative flex flex-col overflow-hidden border p-8 transition-all hover:shadow-lg lg:p-10"
 							>
 								<div className="mb-8 flex items-start justify-between">
-									<div className="border-border bg-card text-primary group-hover:border-primary/50 group-hover:bg-primary/10 inline-flex size-14 items-center justify-center rounded-xl border transition-colors">
+									<div className="border-border bg-card text-primary group-hover:border-primary/50 group-hover:bg-primary/10 inline-flex size-14 items-center justify-center border transition-colors">
 										<Icon className="size-7" />
 									</div>
 								</div>
@@ -194,7 +168,7 @@ export default function PartnershipsContent() {
 						</div>
 					</div>
 
-					<div className="bg-card/50 border-border relative overflow-hidden rounded-2xl border p-8 md:p-12">
+					<div className="bg-card/50 border-border relative overflow-hidden border p-8 md:p-12">
 						<div className="bg-primary/5 absolute inset-0" />
 						<blockquote className="relative z-10">
 							<p className="text-foreground mb-6 text-xl leading-relaxed font-medium italic">

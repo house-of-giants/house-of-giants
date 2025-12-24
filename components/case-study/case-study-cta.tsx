@@ -11,7 +11,7 @@ export function CaseStudyCTA() {
 	return (
 		<Section padding="default" maskBottom="none">
 			<Reveal>
-				<div className="border-border bg-card relative overflow-hidden rounded-3xl border p-12 text-center lg:p-24">
+				<div className="border-border bg-card relative overflow-hidden border p-12 text-center lg:p-24">
 					<div className="from-primary/5 pointer-events-none absolute inset-0 bg-gradient-to-b to-transparent" />
 					<div className="bg-primary/10 pointer-events-none absolute -top-24 -right-24 size-64 rounded-full blur-[100px]" />
 					<div className="bg-accent/10 pointer-events-none absolute -bottom-24 -left-24 size-64 rounded-full blur-[100px]" />

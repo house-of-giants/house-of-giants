@@ -64,7 +64,7 @@ export default function BlogContent() {
 				<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 					{sortedPosts.map((post) => (
 						<Link key={post.slug} href={post.permalink} className="group block">
-							<article className="bg-background border-border hover:border-primary/50 group relative flex h-full flex-col overflow-hidden rounded-2xl border transition-all duration-500 hover:shadow-2xl">
+							<article className="bg-background border-border hover:border-primary/50 group relative flex h-full flex-col overflow-hidden border transition-all duration-500 hover:shadow-2xl">
 								{post.image && (
 									<div className="bg-muted relative aspect-video w-full overflow-hidden">
 										<Image
@@ -107,7 +107,7 @@ export default function BlogContent() {
 									</div>
 								</div>
 
-								<div className="border-primary pointer-events-none absolute inset-0 rounded-2xl border-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+								<div className="border-primary pointer-events-none absolute inset-0 border-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 							</article>
 						</Link>
 					))}

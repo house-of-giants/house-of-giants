@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
 import {
 	Crown,
 	DollarSign,
@@ -129,12 +128,6 @@ const benefitIcons: Record<string, React.ComponentType<{ className?: string }>> 
 };
 
 export default function DedicatedTeamsContent() {
-	const [mounted, setMounted] = React.useState(false);
-
-	React.useEffect(() => {
-		setMounted(true);
-	}, []);
-
 	// Featured case studies that fit the "Pod" model
 	const podCaseStudies = caseStudies.filter((study) => ['cybernest', 'shakey-graves'].includes(study.slug));
 
@@ -184,19 +177,12 @@ export default function DedicatedTeamsContent() {
 					{problems.map((problem, index) => {
 						const Icon = problem.icon;
 						return (
-							<div
-								key={problem.title}
-								className={cn(
-									'group flex flex-col gap-8 py-12 opacity-0 transition-all md:flex-row',
-									mounted && 'animate-slide-up'
-								)}
-								style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-							>
+							<div key={problem.title} className="group flex flex-col gap-8 py-12 transition-all md:flex-row">
 								<div className="flex shrink-0 items-start gap-4">
 									<span className="text-primary pt-1.5 font-mono text-xs opacity-50">
 										0{index + 1} {'//'}
 									</span>
-									<div className="border-border bg-card/50 text-primary group-hover:border-primary/50 group-hover:bg-primary/10 flex size-12 items-center justify-center rounded-xl border transition-colors">
+									<div className="border-border bg-card/50 text-primary group-hover:border-primary/50 group-hover:bg-primary/10 flex size-12 items-center justify-center border transition-colors">
 										<Icon className="size-6" />
 									</div>
 								</div>
@@ -214,7 +200,7 @@ export default function DedicatedTeamsContent() {
 			</Section>
 
 			<Section id="what-is-a-pod" className="scroll-mt-24">
-				<div className="bg-card/30 border-border rounded-3xl border p-8 md:p-12 lg:p-16">
+				<div className="bg-card/30 border-border border p-8 md:p-12 lg:p-16">
 					<SectionHeader
 						eyebrow="The Model"
 						title="What the heck is an engineering pod?"
@@ -237,13 +223,9 @@ export default function DedicatedTeamsContent() {
 							return (
 								<div
 									key={item.title}
-									className={cn(
-										'bg-background/40 border-border/50 hover:border-primary/30 group hover:shadow-primary/5 relative rounded-2xl border p-8 opacity-0 backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-2xl',
-										mounted && 'animate-slide-up'
-									)}
-									style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+									className="bg-background/40 border-border/50 hover:border-primary/30 group hover:shadow-primary/5 relative border p-8 backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-2xl"
 								>
-									<div className="border-border bg-card/50 text-primary group-hover:border-primary/50 group-hover:bg-primary/10 mb-6 inline-flex size-12 items-center justify-center rounded-xl border transition-colors">
+									<div className="border-border bg-card/50 text-primary group-hover:border-primary/50 group-hover:bg-primary/10 mb-6 inline-flex size-12 items-center justify-center border transition-colors">
 										<Icon className="size-6" />
 									</div>
 									<h3 className="text-foreground font-display mb-2 text-lg font-bold">{item.title}</h3>
@@ -273,11 +255,7 @@ export default function DedicatedTeamsContent() {
 					{podBenefits.map((benefit, index) => {
 						const Icon = benefitIcons[benefit.icon] || Zap;
 						return (
-							<div
-								key={benefit.title}
-								className={cn('group flex gap-6 opacity-0', mounted && 'animate-slide-up')}
-								style={{ animationDelay: `${0.1 + index * 0.05}s` }}
-							>
+							<div key={benefit.title} className="group flex gap-6">
 								<div className="text-primary mt-1 shrink-0">
 									<Icon className="size-6" />
 								</div>
@@ -309,11 +287,7 @@ export default function DedicatedTeamsContent() {
 						{onboardingSteps.map((step, index) => {
 							const Icon = step.icon;
 							return (
-								<div
-									key={step.title}
-									className={cn('relative pl-16 opacity-0 lg:pt-20 lg:pl-0', mounted && 'animate-slide-up')}
-									style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-								>
+								<div key={step.title} className="relative pl-16 lg:pt-20 lg:pl-0">
 									{/* Step Indicator */}
 									<div className="bg-background border-primary absolute top-0 left-0 z-10 flex size-12 items-center justify-center rounded-full border-2 shadow-[0_0_20px_rgba(134,239,172,0.15)] lg:top-[-24px] lg:left-1/2 lg:-translate-x-1/2">
 										<Icon className="text-primary size-5" />
@@ -333,7 +307,7 @@ export default function DedicatedTeamsContent() {
 				</div>
 
 				{/* Stack section - Redesigned as an Integration Panel */}
-				<div className="bg-card/30 border-border mt-24 overflow-hidden rounded-3xl border md:mt-32">
+				<div className="bg-card/30 border-border mt-24 overflow-hidden border md:mt-32">
 					<div className="border-border bg-background/50 border-b p-6 px-8">
 						<div className="flex items-center gap-3">
 							<div className="bg-primary/20 size-2 animate-pulse rounded-full" />
@@ -393,11 +367,7 @@ export default function DedicatedTeamsContent() {
 
 				<div className="bg-border mx-auto grid max-w-5xl grid-cols-1 gap-px md:grid-cols-3">
 					{podTiers.map((tier, index) => (
-						<div
-							key={tier.id}
-							className={cn('bg-background relative flex flex-col p-8 opacity-0', mounted && 'animate-slide-up')}
-							style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-						>
+						<div key={tier.id} className="bg-background relative flex flex-col p-8">
 							{tier.popular && <div className="gradient-bar-accent absolute -top-px right-0 left-0 h-1" />}
 
 							{tier.popular && (
@@ -436,7 +406,7 @@ export default function DedicatedTeamsContent() {
 							<Button
 								href="/contact?source=dedicated-teams"
 								variant={tier.popular ? 'default' : 'outline'}
-								className={cn('mt-auto w-full', 'group')}
+								className="group mt-auto w-full"
 							>
 								Get Started
 								<ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -462,13 +432,7 @@ export default function DedicatedTeamsContent() {
 				/>
 
 				<div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
-					<div
-						className={cn(
-							'bg-background/50 border-border rounded-xl border p-8 opacity-0 backdrop-blur-sm',
-							mounted && 'animate-slide-up'
-						)}
-						style={{ animationDelay: '0.1s' }}
-					>
+					<div className="bg-background/50 border-border border p-8 backdrop-blur-sm">
 						<div className="border-primary/50 bg-primary/10 mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1">
 							<div className="bg-primary size-2 rounded-full" />
 							<span className="text-primary text-xs font-medium">What We Handle</span>
@@ -491,13 +455,7 @@ export default function DedicatedTeamsContent() {
 						</div>
 					</div>
 
-					<div
-						className={cn(
-							'bg-background/50 border-border rounded-xl border p-8 opacity-0 backdrop-blur-sm',
-							mounted && 'animate-slide-up'
-						)}
-						style={{ animationDelay: '0.2s' }}
-					>
+					<div className="bg-background/50 border-border border p-8 backdrop-blur-sm">
 						<div className="border-border bg-muted/50 mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1">
 							<div className="bg-muted-foreground size-2 rounded-full" />
 							<span className="text-muted-foreground text-xs font-medium">What You Provide</span>
@@ -533,14 +491,7 @@ export default function DedicatedTeamsContent() {
 
 				<div className="mx-auto max-w-3xl space-y-6">
 					{podFaqs.map((faq, index) => (
-						<div
-							key={faq.question}
-							className={cn(
-								'bg-background/50 border-border rounded-xl border p-6 opacity-0 backdrop-blur-sm',
-								mounted && 'animate-slide-up'
-							)}
-							style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-						>
+						<div key={faq.question} className="bg-background/50 border-border border p-6 backdrop-blur-sm">
 							<h3 className="text-foreground mb-3 font-semibold">{faq.question}</h3>
 							<p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
 						</div>

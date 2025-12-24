@@ -1,6 +1,3 @@
-'use client';
-
-import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -88,12 +85,6 @@ const startupScopes = [
 const gradientByIndex = ['from-primary/30 via-primary/10 to-accent/20', 'from-accent/30 via-accent/10 to-primary/20'];
 
 export default function StartupsContent() {
-	const [mounted, setMounted] = React.useState(false);
-
-	React.useEffect(() => {
-		setMounted(true);
-	}, []);
-
 	return (
 		<main>
 			<Section
@@ -107,10 +98,7 @@ export default function StartupsContent() {
 				</div>
 
 				<div className="container-wide relative z-10 text-center">
-					<div
-						className={cn('flex justify-center opacity-0', mounted && 'animate-slide-up')}
-						style={{ animationDelay: '0.1s' }}
-					>
+					<div className="flex justify-center">
 						<div className="bg-background/50 border-border mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1 backdrop-blur-sm">
 							<StatusIndicator />
 							<span className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
@@ -119,29 +107,17 @@ export default function StartupsContent() {
 						</div>
 					</div>
 
-					<h1
-						className={cn('heading-display mb-6 opacity-0', mounted && 'animate-slide-up')}
-						style={{ animationDelay: '0.2s' }}
-					>
+					<h1 className="heading-display mb-6">
 						Code that helps startups <br className="hidden sm:block" />
 						<GradientText>get funded.</GradientText>
 					</h1>
 
-					<p
-						className={cn(
-							'body-large text-muted-foreground mx-auto mb-10 max-w-2xl opacity-0',
-							mounted && 'animate-slide-up'
-						)}
-						style={{ animationDelay: '0.3s' }}
-					>
+					<p className="body-large text-muted-foreground mx-auto mb-10 max-w-2xl">
 						You&apos;ve outgrown Squarespace. You need more than a template. You need a web presence that earns investor
 						confidence, converts users, and scales with your growth.
 					</p>
 
-					<div
-						className={cn('flex flex-wrap justify-center gap-4 opacity-0', mounted && 'animate-slide-up')}
-						style={{ animationDelay: '0.4s' }}
-					>
+					<div className="flex flex-wrap justify-center gap-4">
 						<Button href="/contact?source=startups" size="cta" className="gap-2">
 							<Rocket className="size-4" />
 							Start Your Project
@@ -163,18 +139,14 @@ export default function StartupsContent() {
 				/>
 
 				<div className="grid gap-6 md:grid-cols-3">
-					{problems.map((problem, index) => {
+					{problems.map((problem) => {
 						const Icon = problem.icon;
 						return (
 							<div
 								key={problem.title}
-								className={cn(
-									'bg-background border-border hover:border-primary/50 group rounded-xl border p-8 opacity-0 transition-all hover:shadow-lg',
-									mounted && 'animate-slide-up'
-								)}
-								style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+								className="bg-background border-border hover:border-primary/50 group border p-8 transition-all hover:shadow-lg"
 							>
-								<div className="border-border bg-card text-primary group-hover:border-primary/50 group-hover:bg-primary/10 mb-6 inline-flex size-12 items-center justify-center rounded-xl border transition-colors">
+								<div className="border-border bg-card text-primary group-hover:border-primary/50 group-hover:bg-primary/10 mb-6 inline-flex size-12 items-center justify-center border transition-colors">
 									<Icon className="size-6" />
 								</div>
 								<h3 className="heading-4 mb-3">{problem.title}</h3>
@@ -201,16 +173,12 @@ export default function StartupsContent() {
 				/>
 
 				<div className="grid gap-6 md:grid-cols-3">
-					{solutions.map((solution, index) => {
+					{solutions.map((solution) => {
 						const Icon = solution.icon;
 						return (
 							<div
 								key={solution.title}
-								className={cn(
-									'bg-background/50 border-border hover:border-primary/50 group rounded-xl border p-8 opacity-0 backdrop-blur-sm transition-all hover:shadow-lg',
-									mounted && 'animate-slide-up'
-								)}
-								style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+								className="bg-background/50 border-border hover:border-primary/50 group border p-8 backdrop-blur-sm transition-all hover:shadow-lg"
 							>
 								<div className="text-primary mb-6">
 									<Icon className="size-8" />
@@ -319,17 +287,15 @@ export default function StartupsContent() {
 				/>
 
 				<div className="grid gap-6 md:grid-cols-3">
-					{startupScopes.map((scope, index) => {
+					{startupScopes.map((scope) => {
 						const Icon = scope.icon;
 						return (
 							<div
 								key={scope.name}
 								className={cn(
-									'bg-background/50 border-border hover:border-primary/50 group relative rounded-xl border p-8 opacity-0 backdrop-blur-sm transition-all hover:shadow-lg',
-									scope.popular && 'border-primary/30',
-									mounted && 'animate-slide-up'
+									'bg-background/50 border-border hover:border-primary/50 group relative border p-8 backdrop-blur-sm transition-all hover:shadow-lg',
+									scope.popular && 'border-primary/30'
 								)}
-								style={{ animationDelay: `${0.1 + index * 0.1}s` }}
 							>
 								{scope.popular && (
 									<div className="bg-primary/10 text-primary absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-xs font-medium">

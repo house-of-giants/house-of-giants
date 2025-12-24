@@ -3,8 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, Clock, Calendar, Share2, Twitter, Linkedin, Link as LinkIcon, ChevronRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { ArrowLeft, Clock, Calendar, Twitter, Linkedin, Link as LinkIcon, ChevronRight } from 'lucide-react';
 import { Section } from '@/components/templates';
 import { GradientOrbs } from '@/components/backgrounds/gradient-orbs';
 import { NoiseOverlay } from '@/components/backgrounds/noise-overlay';
@@ -52,12 +51,6 @@ function ReadingProgress() {
 }
 
 export default function PostContent({ post, shareUrl }: PostContentProps) {
-	const [mounted, setMounted] = React.useState(false);
-
-	React.useEffect(() => {
-		setMounted(true);
-	}, []);
-
 	const copyToClipboard = () => {
 		if (typeof window !== 'undefined') {
 			navigator.clipboard.writeText(shareUrl);
@@ -67,7 +60,7 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 
 	return (
 		<>
-			{mounted && <ReadingProgress />}
+			<ReadingProgress />
 			<main className="relative">
 				{/* Premium Hero Section */}
 				<Section
@@ -84,16 +77,10 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 
 					<div className="relative z-10 container max-w-5xl">
 						{/* Back Button & Breadcrumb */}
-						<div
-							className={cn(
-								'mb-12 flex items-center gap-4 opacity-0 transition-all duration-500',
-								mounted && 'animate-slide-up'
-							)}
-							style={{ animationDelay: '0.1s' }}
-						>
+						<div className="mb-12 flex items-center gap-4 transition-all duration-500">
 							<Link
 								href="/blog"
-								className="group bg-background/50 border-border hover:border-primary/50 flex items-center gap-2 rounded-full border px-4 py-2 text-sm backdrop-blur-sm transition-all hover:pl-3"
+								className="group bg-background/50 border-border hover:border-primary/50 flex items-center gap-2 border px-4 py-2 text-sm backdrop-blur-sm transition-all hover:pl-3"
 							>
 								<ArrowLeft className="size-4 transition-transform group-hover:-translate-x-1" />
 								<span className="text-muted-foreground group-hover:text-foreground font-medium">Back to Insights</span>
@@ -107,13 +94,7 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 						{/* Title Section */}
 						<div className="text-center md:text-left">
 							{post.tags && post.tags.length > 0 && (
-								<div
-									className={cn(
-										'mb-6 flex flex-wrap justify-center gap-2 opacity-0 md:justify-start',
-										mounted && 'animate-slide-up'
-									)}
-									style={{ animationDelay: '0.15s' }}
-								>
+								<div className="mb-6 flex flex-wrap justify-center gap-2 md:justify-start">
 									{post.tags.map((tag) => (
 										<span
 											key={tag}
@@ -125,24 +106,12 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 								</div>
 							)}
 
-							<h1
-								className={cn(
-									'heading-1 mb-8 max-w-4xl text-balance opacity-0 md:mb-10',
-									mounted && 'animate-slide-up'
-								)}
-								style={{ animationDelay: '0.2s' }}
-							>
+							<h1 className="heading-1 mb-8 max-w-4xl text-balance md:mb-10">
 								<GradientText as="span">{post.title}</GradientText>
 							</h1>
 
 							{/* Post Meta */}
-							<div
-								className={cn(
-									'border-border/50 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 opacity-0 md:justify-start',
-									mounted && 'animate-slide-up'
-								)}
-								style={{ animationDelay: '0.3s' }}
-							>
+							<div className="border-border/50 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:justify-start">
 								<div className="flex items-center gap-3">
 									<div className="border-primary/20 relative size-10 overflow-hidden rounded-full border-2">
 										<Image src={post.author.picture} alt={post.author.name} fill className="object-cover" />
@@ -175,13 +144,7 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 				{post.image && (
 					<Section padding="none" className="relative -mt-10 pb-20">
 						<div className="container-wide max-w-6xl">
-							<div
-								className={cn(
-									'border-border group relative aspect-video overflow-hidden rounded-3xl border opacity-0 shadow-2xl transition-all duration-700',
-									mounted && 'animate-slide-up'
-								)}
-								style={{ animationDelay: '0.4s' }}
-							>
+							<div className="border-border group relative aspect-video overflow-hidden border shadow-2xl transition-all duration-700">
 								<Image
 									src={post.image}
 									alt={post.title}
@@ -202,7 +165,7 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 						<aside className="sticky top-32 hidden h-fit flex-col gap-6 lg:col-span-1 lg:flex">
 							<button
 								onClick={copyToClipboard}
-								className="bg-card hover:bg-muted border-border hover:border-primary/50 flex size-12 items-center justify-center rounded-xl border transition-all"
+								className="bg-card hover:bg-muted border-border hover:border-primary/50 flex size-12 items-center justify-center border transition-all"
 								title="Copy Link"
 							>
 								<LinkIcon className="size-5" />
@@ -211,7 +174,7 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 								href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(shareUrl)}`}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="bg-card hover:bg-muted border-border hover:border-primary/50 flex size-12 items-center justify-center rounded-xl border transition-all"
+								className="bg-card hover:bg-muted border-border hover:border-primary/50 flex size-12 items-center justify-center border transition-all"
 								title="Share on Twitter"
 							>
 								<Twitter className="size-5" />
@@ -220,7 +183,7 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 								href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="bg-card hover:bg-muted border-border hover:border-primary/50 flex size-12 items-center justify-center rounded-xl border transition-all"
+								className="bg-card hover:bg-muted border-border hover:border-primary/50 flex size-12 items-center justify-center border transition-all"
 								title="Share on LinkedIn"
 							>
 								<Linkedin className="size-5" />
@@ -229,24 +192,14 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 
 						<div className="lg:col-span-10 lg:col-start-2 xl:col-span-8 xl:col-start-3">
 							<article
-								className={cn(
-									'prose prose-lg dark:prose-invert prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-headings:mt-16 prose-headings:mb-6 first:prose-headings:mt-0 prose-headings:text-foreground prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6 prose-a:text-primary prose-a:font-medium prose-a:no-underline prose-a:hover:underline prose-blockquote:border-l-primary prose-blockquote:bg-primary/5 prose-blockquote:my-10 prose-blockquote:py-3 prose-blockquote:pl-6 prose-blockquote:pr-6 prose-blockquote:italic prose-code:text-primary prose-code:before:content-none prose-code:after:content-none prose-pre:bg-muted/50 prose-pre:border prose-pre:border-border prose-pre:my-8 prose-pre:p-6 prose-pre:overflow-x-auto prose-img:rounded-2xl prose-img:my-10 prose-hr:border-border prose-hr:my-12 prose-li:text-muted-foreground prose-li:mb-2 prose-ol:mb-6 prose-ol:text-muted-foreground prose-ul:mb-6 prose-ul:text-muted-foreground prose-strong:text-foreground prose-strong:font-semibold max-w-[65ch] opacity-0',
-									mounted && 'animate-slide-up'
-								)}
-								style={{ animationDelay: '0.5s' }}
+								className="prose prose-lg dark:prose-invert prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-headings:mt-16 prose-headings:mb-6 first:prose-headings:mt-0 prose-headings:text-foreground prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6 prose-a:text-primary prose-a:font-medium prose-a:no-underline prose-a:hover:underline prose-blockquote:border-l-primary prose-blockquote:bg-primary/5 prose-blockquote:my-10 prose-blockquote:py-3 prose-blockquote:pl-6 prose-blockquote:pr-6 prose-blockquote:italic prose-code:text-primary prose-code:before:content-none prose-code:after:content-none prose-pre:bg-muted/50 prose-pre:border prose-pre:border-border prose-pre:my-8 prose-pre:p-6 prose-pre:overflow-x-auto prose-img:rounded-2xl prose-img:my-10 prose-hr:border-border prose-hr:my-12 prose-li:text-muted-foreground prose-li:mb-2 prose-ol:mb-6 prose-ol:text-muted-foreground prose-ul:mb-6 prose-ul:text-muted-foreground prose-strong:text-foreground prose-strong:font-semibold max-w-[65ch]"
 								dangerouslySetInnerHTML={{ __html: post.content }}
 							/>
 
 							{/* Post Footer / Author Bio */}
-							<div
-								className={cn(
-									'border-border bg-card mt-24 overflow-hidden rounded-3xl border p-8 opacity-0 md:p-12',
-									mounted && 'animate-slide-up'
-								)}
-								style={{ animationDelay: '0.6s' }}
-							>
+							<div className="border-border bg-card mt-24 overflow-hidden border p-8 md:p-12">
 								<div className="flex flex-col items-start gap-8 md:flex-row md:items-center">
-									<div className="border-primary/20 relative size-48 shrink-0 overflow-hidden rounded-2xl border-2">
+									<div className="border-primary/20 relative size-48 shrink-0 overflow-hidden border-2">
 										<Image
 											src={post.author.picture}
 											alt={post.author.name}
@@ -282,7 +235,7 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 								<div className="flex gap-4">
 									<button
 										onClick={copyToClipboard}
-										className="bg-card hover:bg-muted border-border flex size-12 items-center justify-center rounded-xl border transition-all"
+										className="bg-card hover:bg-muted border-border flex size-12 items-center justify-center border transition-all"
 									>
 										<LinkIcon className="size-5" />
 									</button>
@@ -290,7 +243,7 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 										href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(shareUrl)}`}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="bg-card hover:bg-muted border-border flex size-12 items-center justify-center rounded-xl border transition-all"
+										className="bg-card hover:bg-muted border-border flex size-12 items-center justify-center border transition-all"
 									>
 										<Twitter className="size-5" />
 									</a>
@@ -298,7 +251,7 @@ export default function PostContent({ post, shareUrl }: PostContentProps) {
 										href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="bg-card hover:bg-muted border-border flex size-12 items-center justify-center rounded-xl border transition-all"
+										className="bg-card hover:bg-muted border-border flex size-12 items-center justify-center border transition-all"
 									>
 										<Linkedin className="size-5" />
 									</a>

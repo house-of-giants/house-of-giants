@@ -1,8 +1,4 @@
-'use client';
-
-import * as React from 'react';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
 import {
 	Shield,
 	EyeOff,
@@ -83,12 +79,6 @@ const onboardingSteps = [
 ];
 
 export default function WhiteLabelContent() {
-	const [mounted, setMounted] = React.useState(false);
-
-	React.useEffect(() => {
-		setMounted(true);
-	}, []);
-
 	return (
 		<main>
 			<Section
@@ -102,10 +92,7 @@ export default function WhiteLabelContent() {
 				</div>
 
 				<div className="container-wide relative z-10 text-center">
-					<div
-						className={cn('flex justify-center opacity-0', mounted && 'animate-slide-up')}
-						style={{ animationDelay: '0.1s' }}
-					>
+					<div className="flex justify-center">
 						<div className="bg-background/50 border-border mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1 backdrop-blur-sm">
 							<StatusIndicator />
 							<span className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
@@ -114,36 +101,24 @@ export default function WhiteLabelContent() {
 						</div>
 					</div>
 
-					<h1
-						className={cn('heading-display mb-6 opacity-0', mounted && 'animate-slide-up')}
-						style={{ animationDelay: '0.2s' }}
-					>
+					<h1 className="heading-display mb-6">
 						Your brand. <br className="hidden sm:block" />
 						<GradientText>Our dedicated pod.</GradientText>
 					</h1>
 
-					<p
-						className={cn(
-							'body-large text-muted-foreground mx-auto mb-10 max-w-2xl opacity-0',
-							mounted && 'animate-slide-up'
-						)}
-						style={{ animationDelay: '0.3s' }}
-					>
+					<p className="body-large text-muted-foreground mx-auto mb-10 max-w-2xl">
 						Scale your agency&apos;s technical delivery without the hiring headache. Fully managed, senior-led
 						engineering pods that operate as an invisible extension of your team.
 					</p>
 
-					<div
-						className={cn('flex flex-wrap justify-center gap-4 opacity-0', mounted && 'animate-slide-up')}
-						style={{ animationDelay: '0.4s' }}
-					>
+					<div className="flex flex-wrap justify-center gap-4">
 						<Button href="/contact?source=white-label" size="cta" className="gap-2">
 							<MessageSquare className="size-4" />
 							Deploy a Pod
 						</Button>
 						<Link
 							href="#pricing"
-							className="bg-card/50 border-border hover:border-primary/50 flex h-14 items-center gap-2 rounded-lg border px-8 text-sm font-semibold transition-all hover:shadow-lg"
+							className="bg-card/50 border-border hover:border-primary/50 flex h-14 items-center gap-2 border px-8 text-sm font-semibold transition-all hover:shadow-lg"
 						>
 							View Pod Tiers
 							<ArrowUpRight className="size-4" />
@@ -172,7 +147,7 @@ export default function WhiteLabelContent() {
 						</div>
 					</div>
 
-					<div className="bg-card/30 border-border relative overflow-hidden rounded-2xl border p-8 md:p-12 lg:p-16">
+					<div className="bg-card/30 border-border relative overflow-hidden border p-8 md:p-12 lg:p-16">
 						<div className="bg-primary/5 absolute inset-0" />
 						<div className="relative z-10">
 							<div className="mb-8 flex items-center gap-3">
@@ -210,12 +185,8 @@ export default function WhiteLabelContent() {
 					className="mb-16"
 				/>
 				<div className="bg-border mx-auto grid max-w-5xl grid-cols-1 gap-px md:grid-cols-3">
-					{podTiers.map((tier, index) => (
-						<div
-							key={tier.id}
-							className={cn('bg-background relative flex flex-col p-8 opacity-0', mounted && 'animate-slide-up')}
-							style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-						>
+					{podTiers.map((tier) => (
+						<div key={tier.id} className="bg-background relative flex flex-col p-8">
 							{tier.popular && <div className="gradient-bar-accent absolute -top-px right-0 left-0 h-1" />}
 							{tier.popular && (
 								<div className="bg-primary/10 text-primary mb-4 inline-flex items-center gap-1 self-start px-3 py-1 text-xs font-medium">
@@ -272,12 +243,8 @@ export default function WhiteLabelContent() {
 				<div className="relative">
 					<div className="via-primary/20 absolute top-12 bottom-0 left-6 w-px bg-linear-to-r from-transparent to-transparent lg:top-12 lg:right-0 lg:left-0 lg:h-px lg:w-full" />
 					<div className="grid gap-12 lg:grid-cols-4 lg:gap-8">
-						{onboardingSteps.map((step, index) => (
-							<div
-								key={step.title}
-								className={cn('relative pl-16 opacity-0 lg:pt-20 lg:pl-0', mounted && 'animate-slide-up')}
-								style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-							>
+						{onboardingSteps.map((step) => (
+							<div key={step.title} className="relative pl-16 lg:pt-20 lg:pl-0">
 								<div className="bg-background border-primary absolute top-0 left-0 z-10 flex size-12 items-center justify-center rounded-full border-2 shadow-[0_0_20px_rgba(134,239,172,0.15)] lg:top-[-24px] lg:left-1/2 lg:-translate-x-1/2">
 									<step.icon className="text-primary size-5" />
 								</div>
