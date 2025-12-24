@@ -8,6 +8,7 @@ README.md
 /.pnp
 .pnp.js
 package-lock.json
+bun.lock
 
 # testing
 /coverage
